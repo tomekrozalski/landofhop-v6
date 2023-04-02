@@ -1,1 +1,1 @@
-<h1 class="grid h-screen place-content-center text-8xl">Text</h1>
+<header class="bg-black h-28">logo</header>
