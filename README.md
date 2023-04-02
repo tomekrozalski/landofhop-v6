@@ -1,38 +1,13 @@
-# create-svelte
+# Land of Hop, v6
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Beer catalogue with beverages I have drunk last few years. This is my playground to test some technologies and, above all, a place where I can prove that it is possible to build quite big application which is highly performant, scalable, has good accessibility etc.
 
-## Creating a project
+This is the sixth version of the application. In short previous versions were different in terms of stack:
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. React with Create React App
+2. React with Gatsby
+3. Svelte with Sapper
+4. React with Next
+5. Svelte with SvelteKit
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+This 6th version is still Svelte and SvelteKit. I am very happy with this set, but I would like to start over because the whole app needs a UI refactor. I decided to rebuild the page with TailwindCSS. I can do that based on the previous version, but I believe building an app from scratch is a good idea. I can fix most of the legacy code in the meantime.
