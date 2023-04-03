@@ -1,1 +1,5 @@
-<header class="bg-black h-28">logo</header>
+<script>
+	import Topbar from './layout/Topbar/Topbar.svelte';
+</script>
+
+<Topbar />

@@ -1,4 +1,5 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
+// import defaultTheme from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,6 +8,7 @@ export default {
 		colors: {
 			black: '#222',
 			white: '#fff',
+			gray: colors.gray,
 			red: {
 				DEFAULT: '#f94144'
 			},
