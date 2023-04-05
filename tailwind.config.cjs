@@ -29,7 +29,27 @@ export default {
 			}
 		},
 		fontFamily: {
-			sans: ['Inter', 'sans-serif']
+			sans: ['bilo', 'sans-serif']
+		},
+		container: {
+			center: true,
+			screens: {
+				sm: '100%',
+				lg: '1030px',
+				xl: '1160px'
+			}
+		},
+		extend: {
+			gridTemplateColumns: {
+				header: 'minmax(6rem, auto) 1fr minmax(6rem, auto)'
+			},
+			keyframes: {
+				smoothColor: {
+					'0%': { stroke: '#f8961e' },
+					'50%': { stroke: '#90be6d' },
+					'100%': { stroke: '#f8961e' }
+				}
+			}
 		}
 	},
 	plugins: [require('@tailwindcss/forms')]
