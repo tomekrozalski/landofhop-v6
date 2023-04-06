@@ -13,7 +13,7 @@ const { subscribe, update, set } = writable<{
 	searchPhrase: ''
 });
 
-function close() {
+function closeNavbar() {
 	update((store) => {
 		store.isNavigationOpened = false;
 
@@ -64,7 +64,7 @@ function setSearchPhrase(value: string) {
 }
 
 export default {
-	close,
+	closeNavbar,
 	closeSearchBar,
 	openSearchBar,
 	set,

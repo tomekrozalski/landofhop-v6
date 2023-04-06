@@ -23,7 +23,7 @@
 
 	afterNavigate(() => {
 		// when path change, close navigation
-		layoutStore.close();
+		layoutStore.closeNavbar();
 	});
 
 	$: $layoutStore.isLoading = !!$navigating;
