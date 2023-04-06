@@ -20,7 +20,7 @@
 	});
 </script>
 
-<main>
+<main class="mt-80">
 	{#if $layoutStore.isSearchbarActive}
 		<div>@ToDo Search Results</div>
 		<!-- <SearchResults /> -->
@@ -31,7 +31,7 @@
 
 <style>
 	main {
-		margin-top: var(--size-header-height);
+		/* margin-top: var(--size-header-height); */
 		min-height: calc(100vh - var(--size-header-height));
 		background-color: var(--color-white);
 		z-index: var(--index-main);

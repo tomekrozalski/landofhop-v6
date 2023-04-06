@@ -1,5 +1,5 @@
 <script lang="ts">
-	// import { translate } from 'svelte-intl';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import layoutStore from '../../utils/store';
 </script>
 
@@ -14,9 +14,9 @@
 	>
 		<title>
 			{#if $layoutStore.isNavigationOpened}
-				header.closeNavigation
+				{$LL.HEADER.CLOSE_NAVIGATION()}
 			{:else}
-				header.openNavigation
+				{$LL.HEADER.OPEN_NAVIGATION()}
 			{/if}
 		</title>
 		<circle

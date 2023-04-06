@@ -4,7 +4,7 @@
 	import { navigating } from '$app/stores';
 	import * as Sentry from '@sentry/svelte';
 	import { BrowserTracing } from '@sentry/tracing';
-	import '../app.css';
+	import '../../app.css';
 	import layoutStore from './layout/utils/store';
 	import Topbar from './layout/Topbar/Topbar.svelte';
 	import Main from './layout/Main.svelte';
