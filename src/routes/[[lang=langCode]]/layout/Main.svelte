@@ -20,7 +20,7 @@
 	});
 </script>
 
-<main class="mt-80">
+<main class="container mt-28">
 	{#if $layoutStore.isSearchbarActive}
 		<div>@ToDo Search Results</div>
 		<!-- <SearchResults /> -->
@@ -28,13 +28,3 @@
 		<slot />
 	{/if}
 </main>
-
-<style>
-	main {
-		/* margin-top: var(--size-header-height); */
-		min-height: calc(100vh - var(--size-header-height));
-		background-color: var(--color-white);
-		z-index: var(--index-main);
-		position: relative;
-	}
-</style>

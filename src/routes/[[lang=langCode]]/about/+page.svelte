@@ -5,4 +5,4 @@
 	console.log('page', $page);
 </script>
 
-<h1>{$LL.ABOUT.HEADER()}</h1>
+<h1>{$LL.about.header()}</h1>

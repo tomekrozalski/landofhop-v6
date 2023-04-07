@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import layoutStore from '../../utils/store';
 </script>
 
-<a on:click={layoutStore.closeNavbar} href="/" class="group flex">
+<a on:click={layoutStore.closeNavbar} href={$LL.link('/')} class="group flex">
 	<h1 class="flex w-full items-center justify-center">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

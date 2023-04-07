@@ -1,14 +1,23 @@
 import type { Translation } from '../i18n-types';
 
 const en = {
-	ABOUT: {
-		HEADER: 'About the app'
+	about: {
+		header: 'About the app'
 	},
-	HEADER: {
-		CLOSE_NAVIGATION: 'Close navigation',
-		OPEN_NAVIGATION: 'Open navigation'
+	header: {
+		closeNavigation: 'Close navigation',
+		openNavigation: 'Open navigation'
 	},
-	HI: 'Hi {name}!'
+	link: '/en{0}',
+	navigation: {
+		about: 'About',
+		addNewBeverage: 'Add new beverage',
+		brands: 'Brands',
+		places: 'Places',
+		login: 'Login',
+		logout: 'Logout',
+		stats: 'Stats'
+	}
 } satisfies Translation;
 
 export default en;

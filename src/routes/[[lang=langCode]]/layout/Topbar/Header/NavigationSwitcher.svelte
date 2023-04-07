@@ -14,9 +14,9 @@
 	>
 		<title>
 			{#if $layoutStore.isNavigationOpened}
-				{$LL.HEADER.CLOSE_NAVIGATION()}
+				{$LL.header.closeNavigation()}
 			{:else}
-				{$LL.HEADER.OPEN_NAVIGATION()}
+				{$LL.header.openNavigation()}
 			{/if}
 		</title>
 		<circle

@@ -31,6 +31,11 @@ export default {
 		fontFamily: {
 			sans: ['bilo', 'sans-serif']
 		},
+		fontWeight: {
+			normal: '300',
+			medium: '400',
+			bold: '500'
+		},
 		container: {
 			center: true,
 			screens: {

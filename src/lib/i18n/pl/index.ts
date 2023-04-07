@@ -1,14 +1,23 @@
 import type { BaseTranslation } from '../i18n-types';
 
 const pl = {
-	ABOUT: {
-		HEADER: 'O stronie'
+	about: {
+		header: 'O stronie'
 	},
-	HEADER: {
-		CLOSE_NAVIGATION: 'Zamknij nawigację',
-		OPEN_NAVIGATION: 'Otwórz nawigację'
+	header: {
+		closeNavigation: 'Zamknij nawigację',
+		openNavigation: 'Otwórz nawigację'
 	},
-	HI: 'Cześć {name:string}!'
+	link: '{0}',
+	navigation: {
+		about: 'O stronie',
+		addNewBeverage: 'Dodaj nowe piwo',
+		brands: 'Marki',
+		login: 'Zaloguj',
+		logout: 'Wyloguj',
+		places: 'Miejsca',
+		stats: 'Statystyki'
+	}
 } satisfies BaseTranslation;
 
 export default pl;
