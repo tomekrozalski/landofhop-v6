@@ -5,7 +5,7 @@
 
 <button
 	on:click={layoutStore.toggleNavbar}
-	class="group flex items-center justify-center focus:border-2 focus:border-black focus:bg-white"
+	class="more group flex items-center justify-center focus:border-2 focus:border-black focus:bg-white"
 >
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -24,21 +24,21 @@
 			cx="35.5"
 			cy="4.5"
 			r="4.5"
-			class="fill-white transition group-hover:fill-gray-400 group-focus:fill-black"
+			class="fill-white transition-colors group-hover:fill-gray-400 group-focus:fill-black"
 		/>
 		<circle
 			fill="#fff"
 			cx="20"
 			cy="4.5"
 			r="4.5"
-			class="fill-white transition group-hover:fill-gray-400 group-focus:fill-black"
+			class="fill-white transition-colors group-hover:fill-gray-400 group-focus:fill-black"
 		/>
 		<circle
 			fill="#fff"
 			cx="4.5"
 			cy="4.5"
 			r="4.5"
-			class="fill-white transition group-hover:fill-gray-400 group-focus:fill-black"
+			class="fill-white transition-colors group-hover:fill-gray-400 group-focus:fill-black"
 		/>
 	</svg>
 </button>

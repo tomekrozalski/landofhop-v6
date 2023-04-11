@@ -41,9 +41,18 @@
 @layer components {
 	.header {
 		grid-template-columns:
-			minmax(theme('spacing.24'), auto)
+			minmax(theme('spacing.28'), auto)
 			1fr
-			minmax(theme('spacing.24'), auto);
+			minmax(theme('spacing.28'), auto);
+		grid-template-areas: 'search logo more';
+	}
+
+	.logo {
+		grid-area: logo;
+	}
+
+	.more {
+		grid-area: more;
 	}
 
 	@keyframes smoothColor {
@@ -64,5 +73,9 @@
 		stroke-miterlimit: 10;
 		transform-origin: 137.5px;
 		animation: smoothColor 15s infinite;
+	}
+
+	.searchbar {
+		right: calc(100% - theme('spacing.28'));
 	}
 }
