@@ -6,7 +6,8 @@
 
 <li class="flex">
 	<a
-		class="flex items-center p-2 transition-colors hover:bg-black hover:text-white"
+		class="flex w-full items-center p-2 px-4 transition-colors hover:bg-black hover:text-white md:w-auto md:px-2"
+		class:justify-end={preload === 'off'}
 		data-sveltekit-preload-data={preload}
 		href={link}
 	>

@@ -23,13 +23,7 @@
 					d="M92.35 31.39a55.5 55.5 0 1 0 18.77-16.68"
 				/>
 			{:else}
-				<circle
-					cx="137.6"
-					cy="63.5"
-					r="55.5"
-					fill="#f9c74f"
-					class="letter-o animate-[smoothColor_15s_ease-in-out_infinite] fill-none"
-				/>
+				<circle cx="137.6" cy="63.5" r="55.5" fill="#f9c74f" class="letter-o fill-none" />
 			{/if}
 			<path
 				class="fill-black transition duration-200 group-hover:fill-white group-focus:fill-white"
@@ -39,12 +33,3 @@
 		</svg>
 	</h1>
 </a>
-
-<style>
-	.letter-o {
-		stroke-width: 1rem;
-		stroke-linecap: round;
-		stroke-miterlimit: 10;
-		transform-origin: 137.5px;
-	}
-</style>

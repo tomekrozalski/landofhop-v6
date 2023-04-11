@@ -17,23 +17,21 @@
 	<li class="flex">
 		{#if $authentication.isLoggedIn}
 			<button
-				class="relative flex items-center py-2 pl-8 pr-2 transition-colors hover:bg-black hover:text-white"
+				class="relative flex w-full items-center py-2 pl-10 pr-2 transition-colors hover:bg-black hover:text-white md:w-auto md:pl-8"
 				type="button"
 				on:click={logOut}
 			>
-				<Fa icon={faLockOpen} size="0.8x" class="absolute left-3" />
+				<Fa icon={faLockOpen} size="0.8x" class="absolute left-4 md:left-3" />
 				{$LL.navigation.logout()}
 			</button>
 		{:else}
-			<li class="flex">
-				<a
-					class="relative flex items-center py-2 pl-8 pr-2 transition-colors hover:bg-black hover:text-white"
-					href="/login"
-				>
-					<Fa icon={faLock} size="0.8x" class="absolute left-3" />
-					{$LL.navigation.login()}
-				</a>
-			</li>
+			<a
+				class="relative flex w-full items-center py-2 pl-10 pr-2 transition-colors hover:bg-black hover:text-white md:w-auto md:pl-8"
+				href="/login"
+			>
+				<Fa icon={faLock} size="0.8x" class="absolute left-4 md:left-3" />
+				{$LL.navigation.login()}
+			</a>
 		{/if}
 	</li>
 	<MenuLink label={$LL.navigation.about()} link={$LL.link('/about')} />

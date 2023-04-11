@@ -7,7 +7,7 @@
 	console.log('path', path);
 </script>
 
-<ul class="languages mr-5 flex flex-col py-1 md:flex-row">
+<ul class="flex flex-grow flex-col py-1 text-right md:ml-0 md:flex-row">
 	<MenuLink label="PL" link={path} preload="off" />
 	<MenuLink label="EN" link="/en{path}" preload="off" />
 </ul>

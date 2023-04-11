@@ -1,4 +1,4 @@
-// import defaultTheme from 'tailwindcss/defaultTheme';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
@@ -28,14 +28,6 @@ export default {
 				DEFAULT: '#277da1'
 			}
 		},
-		fontFamily: {
-			sans: ['bilo', 'sans-serif']
-		},
-		fontWeight: {
-			normal: '300',
-			medium: '400',
-			bold: '500'
-		},
 		container: {
 			center: true,
 			screens: {
@@ -44,18 +36,15 @@ export default {
 				xl: '1160px'
 			}
 		},
-		extend: {
-			gridTemplateColumns: {
-				header: 'minmax(6rem, auto) 1fr minmax(6rem, auto)'
-			},
-			keyframes: {
-				smoothColor: {
-					'0%': { stroke: '#f8961e' },
-					'50%': { stroke: '#90be6d' },
-					'100%': { stroke: '#f8961e' }
-				}
-			}
-		}
+		fontFamily: {
+			sans: ['bilo', ...defaultTheme.fontFamily.sans]
+		},
+		fontWeight: {
+			normal: '300',
+			medium: '400',
+			bold: '500'
+		},
+		extend: {}
 	},
 	plugins: [require('@tailwindcss/forms')]
 };
