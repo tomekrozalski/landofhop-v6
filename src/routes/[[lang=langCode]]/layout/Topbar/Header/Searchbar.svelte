@@ -4,7 +4,7 @@
 	// import Close from './Close.svelte';
 	// import SearchInput from './SearchInput.svelte';
 	import Fa from 'svelte-fa';
-	import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+	import { faMagnifyingGlass } from '@fortawesome/pro-light-svg-icons';
 </script>
 
 <div
