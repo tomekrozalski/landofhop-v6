@@ -78,4 +78,8 @@
 	.searchbar {
 		right: calc(100% - theme('spacing.28'));
 	}
+
+	.search-input {
+		width: calc(100% - theme('spacing.28'));
+	}
 }

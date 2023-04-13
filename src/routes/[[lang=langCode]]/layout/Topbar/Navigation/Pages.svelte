@@ -1,9 +1,7 @@
 <script lang="ts">
-	import Fa from 'svelte-fa';
-	import { faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
-
 	import authentication from '$lib/utils/stores/authentication';
 	import { LL } from '$lib/i18n/i18n-svelte';
+	import Icon from '$lib/atoms/Icon.svelte';
 	import MenuLink from './MenuLink.svelte';
 
 	function logOut() {
@@ -21,7 +19,7 @@
 				type="button"
 				on:click={logOut}
 			>
-				<Fa icon={faLockOpen} size="0.8x" class="absolute left-4 md:left-3" />
+				<Icon name="logout" size="0.8x" class="absolute left-4 md:left-3" />
 				{$LL.navigation.logout()}
 			</button>
 		{:else}
@@ -29,7 +27,7 @@
 				class="relative flex w-full items-center py-2 pl-10 pr-2 transition-colors hover:bg-black hover:text-white md:w-auto md:pl-8"
 				href="/login"
 			>
-				<Fa icon={faLock} size="0.8x" class="absolute left-4 md:left-3" />
+				<Icon name="login" size="0.8x" class="absolute left-4 md:left-3" />
 				{$LL.navigation.login()}
 			</a>
 		{/if}

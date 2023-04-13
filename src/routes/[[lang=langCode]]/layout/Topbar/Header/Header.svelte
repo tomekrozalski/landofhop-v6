@@ -1,7 +1,7 @@
 <script lang="ts">
 	import layoutStore from '../../utils/store';
 	import Logo from './Logo.svelte';
-	import SearchBar from './Searchbar.svelte';
+	import SearchBar from './Searchbar/Searchbar.svelte';
 	import NavigationSwitcher from './NavigationSwitcher.svelte';
 </script>
 

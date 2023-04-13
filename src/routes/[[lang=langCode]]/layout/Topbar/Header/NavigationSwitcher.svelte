@@ -1,44 +1,19 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
+	import Icon from '$lib/atoms/Icon.svelte';
 	import layoutStore from '../../utils/store';
 </script>
 
 <button
 	on:click={layoutStore.toggleNavbar}
 	class="more group flex items-center justify-center focus:border-2 focus:border-black focus:bg-white"
+	aria-label={$layoutStore.isNavigationOpened
+		? $LL.header.closeNavigation()
+		: $LL.header.openNavigation()}
 >
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 40 9"
-		class="h-[0.25rem] w-[1.25rem] md:h-[0.37rem] md:w-[1.87rem] lg:h-[0.5rem] lg:w-[2.5rem]"
-	>
-		<title>
-			{#if $layoutStore.isNavigationOpened}
-				{$LL.header.closeNavigation()}
-			{:else}
-				{$LL.header.openNavigation()}
-			{/if}
-		</title>
-		<circle
-			fill="#fff"
-			cx="35.5"
-			cy="4.5"
-			r="4.5"
-			class="fill-white transition-colors group-hover:fill-gray-400 group-focus:fill-black"
-		/>
-		<circle
-			fill="#fff"
-			cx="20"
-			cy="4.5"
-			r="4.5"
-			class="fill-white transition-colors group-hover:fill-gray-400 group-focus:fill-black"
-		/>
-		<circle
-			fill="#fff"
-			cx="4.5"
-			cy="4.5"
-			r="4.5"
-			class="fill-white transition-colors group-hover:fill-gray-400 group-focus:fill-black"
-		/>
-	</svg>
+	<Icon
+		name="ellipsis"
+		size="2x"
+		class="text-white transition-colors group-hover:text-gray-400 group-focus:text-black md:h-[0.37rem]"
+	/>
 </button>

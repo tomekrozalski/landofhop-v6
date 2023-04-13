@@ -8,6 +8,7 @@ export default {
 		colors: {
 			black: '#222',
 			white: '#fff',
+			transparent: colors.transparent,
 			gray: colors.gray,
 			red: {
 				DEFAULT: '#f94144'
@@ -46,5 +47,5 @@ export default {
 		},
 		extend: {}
 	},
-	plugins: [require('@tailwindcss/forms')]
+	plugins: []
 };
