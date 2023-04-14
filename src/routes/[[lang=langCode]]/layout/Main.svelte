@@ -20,7 +20,7 @@
 	});
 </script>
 
-<main class="container mt-28">
+<main class="container mt-16 md:mt-20 lg:mt-28">
 	{#if $layoutStore.isSearchbarActive}
 		<div>@ToDo Search Results</div>
 		<!-- <SearchResults /> -->

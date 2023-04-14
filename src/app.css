@@ -41,9 +41,9 @@
 @layer components {
 	.header {
 		grid-template-columns:
-			minmax(theme('spacing.28'), auto)
+			minmax(theme('spacing.16'), auto)
 			1fr
-			minmax(theme('spacing.28'), auto);
+			minmax(theme('spacing.16'), auto);
 		grid-template-areas: 'search logo more';
 	}
 
@@ -76,10 +76,44 @@
 	}
 
 	.searchbar {
-		right: calc(100% - theme('spacing.28'));
+		right: calc(100% - theme('spacing.16'));
 	}
 
 	.search-input {
-		width: calc(100% - theme('spacing.28'));
+		width: calc(100% - theme('spacing.16'));
+	}
+
+	@media screen(md) {
+		.header {
+			grid-template-columns:
+				minmax(theme('spacing.20'), auto)
+				1fr
+				minmax(theme('spacing.20'), auto);
+		}
+
+		.searchbar {
+			right: calc(100% - theme('spacing.20'));
+		}
+
+		.search-input {
+			width: calc(100% - theme('spacing.20'));
+		}
+	}
+
+	@media screen(lg) {
+		.header {
+			grid-template-columns:
+				minmax(theme('spacing.28'), auto)
+				1fr
+				minmax(theme('spacing.28'), auto);
+		}
+
+		.searchbar {
+			right: calc(100% - theme('spacing.28'));
+		}
+
+		.search-input {
+			width: calc(100% - theme('spacing.28'));
+		}
 	}
 }

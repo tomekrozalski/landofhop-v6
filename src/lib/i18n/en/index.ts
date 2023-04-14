@@ -6,7 +6,8 @@ const en = {
 	},
 	header: {
 		closeNavigation: 'Close navigation',
-		openNavigation: 'Open navigation'
+		openNavigation: 'Open navigation',
+		search: 'Search'
 	},
 	link: '/en{0}',
 	navigation: {

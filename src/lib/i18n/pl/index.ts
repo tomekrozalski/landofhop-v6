@@ -6,7 +6,8 @@ const pl = {
 	},
 	header: {
 		closeNavigation: 'Zamknij nawigację',
-		openNavigation: 'Otwórz nawigację'
+		openNavigation: 'Otwórz nawigację',
+		search: 'Szukaj'
 	},
 	link: '{0}',
 	navigation: {

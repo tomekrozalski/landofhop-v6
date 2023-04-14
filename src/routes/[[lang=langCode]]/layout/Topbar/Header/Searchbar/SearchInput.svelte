@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import pushState from '$lib/utils/helpers/pushState';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import layoutStore from '../../../utils/store';
 
-	function focusOnMount(input: HTMLInputElement) {
+	const focusOnMount = (input: HTMLInputElement) => {
 		input.focus();
-	}
+	};
 </script>
 
 <input
@@ -18,6 +19,6 @@
 	use:focusOnMount
 	bind:value={$layoutStore.searchPhrase}
 	transition:fade={{ duration: 200 }}
-	placeholder={'header.search'}
-	class="search-input border-b-2 border-b-black bg-transparent px-4 uppercase text-white focus:outline-none md:text-4xl lg:my-3 lg:border-b-white"
+	placeholder={$LL.header.search()}
+	class="search-input border-b-2 border-b-black bg-transparent px-4 uppercase text-white focus:outline-none md:text-3xl lg:my-6 lg:border-b-white"
 />
