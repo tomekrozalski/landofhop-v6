@@ -9,6 +9,9 @@ const pl = {
 		openNavigation: 'Otwórz nawigację',
 		search: 'Szukaj'
 	},
+	homePage: {
+		description: 'Baza piw, które wypiłem w przeciągu ostatnich lat'
+	},
 	link: '{0}',
 	navigation: {
 		about: 'O stronie',

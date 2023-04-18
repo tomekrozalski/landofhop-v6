@@ -9,6 +9,9 @@ const en = {
 		openNavigation: 'Open navigation',
 		search: 'Search'
 	},
+	homePage: {
+		description: 'Database of beers that I drunk last years'
+	},
 	link: '/en{0}',
 	navigation: {
 		about: 'About',
