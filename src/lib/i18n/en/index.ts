@@ -9,9 +9,6 @@ const en = {
 		openNavigation: 'Open navigation',
 		search: 'Search'
 	},
-	homePage: {
-		description: 'Database of beers that I drunk last years'
-	},
 	link: '/en{0}',
 	navigation: {
 		about: 'About',
@@ -21,6 +18,16 @@ const en = {
 		login: 'Login',
 		logout: 'Logout',
 		stats: 'Stats'
+	},
+	pages: {
+		home: {
+			description: 'Database of beers that I drunk last years'
+		},
+		login: {
+			email: 'E-mail',
+			submit: 'Send',
+			title: 'Log in'
+		}
 	}
 } satisfies Translation;
 

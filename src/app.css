@@ -41,6 +41,11 @@
 		--size-header-height: theme('spacing.16');
 	}
 
+	main {
+		margin-top: var(--size-header-height);
+		min-height: calc(100vh - var(--size-header-height));
+	}
+
 	@media screen(md) {
 		:root {
 			--size-header-height: theme('spacing.20');

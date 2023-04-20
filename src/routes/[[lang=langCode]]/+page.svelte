@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Land of Hop</title>
-	<meta name="description" content={$LL.homePage.description()} />
+	<meta name="description" content={$LL.pages.home.description()} />
 	<link rel="preconnect" href={PHOTO_SERVER} />
 </svelte:head>
 

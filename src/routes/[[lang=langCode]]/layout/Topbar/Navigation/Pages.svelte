@@ -2,7 +2,7 @@
 	import authentication from '$lib/utils/stores/authentication';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Icon from '$lib/atoms/Icon.svelte';
-	import MenuLink from './MenuLink.svelte';
+	import PageLink from './PageLink.svelte';
 
 	function logOut() {
 		// fetch('/api/user/logout')
@@ -32,12 +32,12 @@
 			</a>
 		{/if}
 	</li>
-	<MenuLink label={$LL.navigation.about()} link={$LL.link('/about')} />
-	<MenuLink label={$LL.navigation.stats()} link={$LL.link('/stats')} />
-	<MenuLink label={$LL.navigation.brands()} link={$LL.link('/brands')} />
-	<MenuLink label={$LL.navigation.places()} link={$LL.link('/places')} />
+	<PageLink label={$LL.navigation.about()} link={$LL.link('/about')} />
+	<PageLink label={$LL.navigation.stats()} link={$LL.link('/stats')} />
+	<PageLink label={$LL.navigation.brands()} link={$LL.link('/brands')} />
+	<PageLink label={$LL.navigation.places()} link={$LL.link('/places')} />
 	{#if $authentication.isLoggedIn}
-		<MenuLink
+		<PageLink
 			label={$LL.navigation.addNewBeverage()}
 			link={$LL.link('/dashboard/add-new-beverage')}
 		/>

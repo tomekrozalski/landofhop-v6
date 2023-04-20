@@ -9,9 +9,7 @@ const pl = {
 		openNavigation: 'Otwórz nawigację',
 		search: 'Szukaj'
 	},
-	homePage: {
-		description: 'Baza piw, które wypiłem w przeciągu ostatnich lat'
-	},
+
 	link: '{0}',
 	navigation: {
 		about: 'O stronie',
@@ -21,6 +19,16 @@ const pl = {
 		logout: 'Wyloguj',
 		places: 'Miejsca',
 		stats: 'Statystyki'
+	},
+	pages: {
+		home: {
+			description: 'Baza piw, które wypiłem w przeciągu ostatnich lat'
+		},
+		login: {
+			email: 'E-mail',
+			submit: 'Wyślij',
+			title: 'Zaloguj się'
+		}
 	}
 } satisfies BaseTranslation;
 
