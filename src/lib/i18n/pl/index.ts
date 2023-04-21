@@ -4,12 +4,16 @@ const pl = {
 	about: {
 		header: 'O stronie'
 	},
+	forms: {
+		validation: {
+			required: 'Pole jest wymagane'
+		}
+	},
 	header: {
 		closeNavigation: 'Zamknij nawigację',
 		openNavigation: 'Otwórz nawigację',
 		search: 'Szukaj'
 	},
-
 	link: '{0}',
 	navigation: {
 		about: 'O stronie',
@@ -26,6 +30,8 @@ const pl = {
 		},
 		login: {
 			email: 'E-mail',
+			incorrectEmail: 'Wymagany prawidłowy adres e-mail',
+			password: 'Hasło',
 			submit: 'Wyślij',
 			title: 'Zaloguj się'
 		}

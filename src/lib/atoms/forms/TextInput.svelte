@@ -1,7 +1,7 @@
 <script lang="ts">
 	import StatusIndicator from './StatusIndicator.svelte';
-	// import Error from './Error.svelte';
 
+	export let classNames: string = '';
 	export let errors: string;
 	export let focusOnMount: boolean = false;
 	export let handleChange: (e: Event) => void;
@@ -11,20 +11,21 @@
 	export let isTouched: boolean;
 	export let fieldName: string;
 	export let onEnter: () => void | null = () => null;
-	export let style: string = '';
 	export let type: 'email' | 'number' | 'password' | 'text' = 'text';
-	export let withStatusIndicator: boolean = false;
+
 	export let value: string | null;
 	$: disabled = isDisabled || value === null;
 
-	function dispatchKeydown(e) {
-		if (onEnter && e.key === 'Enter') {
-			e.preventDefault();
+	const dispatchKeydown = (e: Event) => {
+		const event = e as KeyboardEvent;
+
+		if (onEnter && event.key === 'Enter') {
+			event.preventDefault();
 			onEnter();
 		}
-	}
+	};
 
-	function listenOnKeydown(node: any) {
+	const listenOnKeydown = (node: HTMLInputElement | HTMLTextAreaElement) => {
 		node.addEventListener('keydown', dispatchKeydown);
 
 		return {
@@ -32,20 +33,18 @@
 				node.removeEventListener('keydown', dispatchKeydown);
 			}
 		};
-	}
+	};
 
-	function typeAction(node: any) {
-		node.type = type;
-	}
-
-	function focus(node: any) {
+	const focus = (node: HTMLInputElement | HTMLTextAreaElement) => {
 		if (focusOnMount) {
 			node.focus();
 		}
-	}
+	};
+
+	$: console.log('error', errors);
 </script>
 
-<StatusIndicator {disabled} {isTouched} isValid={!errors} {style} {withStatusIndicator}>
+<StatusIndicator {classNames} {isTouched} isValid={!errors}>
 	{#if isTextarea}
 		<textarea
 			class="h-32 w-full border-b-2 border-b-gray-200 bg-gray-100 px-2 text-lg leading-10 focus:border-b-black focus:outline-none"
@@ -67,14 +66,15 @@
 			name={fieldName}
 			use:focus
 			use:listenOnKeydown
-			use:typeAction
+			{type}
 			on:change={handleChange}
 			{value}
 		/>
 	{/if}
 	{#if errors}
-		errors
-		<!-- <Error>{errors}</Error> -->
+		<span class="absolute left-0 right-0 top-full z-10 bg-yellow-light px-4 py-2 text-sm">
+			{errors}
+		</span>
 	{/if}
 </StatusIndicator>
 
@@ -109,16 +109,5 @@
 
 	textarea:disabled {
 		resize: none;
-	}
-
-	input.isTouched,
-	textarea.isTouched {
-		padding-right: 2.6rem;
-	}
-
-	input:focus,
-	textarea:focus {
-		/* outline: none; */
-		/* border-bottom-color: var(--color-black); */
 	}
 </style>

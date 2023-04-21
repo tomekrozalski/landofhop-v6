@@ -19,7 +19,7 @@
 				type="button"
 				on:click={logOut}
 			>
-				<Icon name="logout" size="0.8x" class="absolute left-4 md:left-3" />
+				<Icon name="logout" size="0.8x" class="absolute left-4 md:left-3" style="solid" />
 				{$LL.navigation.logout()}
 			</button>
 		{:else}
@@ -27,7 +27,7 @@
 				class="relative flex w-full items-center py-2 pl-10 pr-2 transition-colors hover:bg-black hover:text-white md:w-auto md:pl-8"
 				href="/login"
 			>
-				<Icon name="login" size="0.8x" class="absolute left-4 md:left-3" />
+				<Icon name="login" size="0.8x" class="absolute left-4 md:left-3" style="solid" />
 				{$LL.navigation.login()}
 			</a>
 		{/if}

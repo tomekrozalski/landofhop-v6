@@ -6,21 +6,20 @@
 	export let formName: string;
 	export let formData: any;
 	let { errors, form, handleChange, touched } = formData;
-	let fieldName = 'email';
+	let fieldName = 'password';
 	let id = `${formName}-${fieldName}`;
 </script>
 
 <div class="my-3 grid grid-cols-3 gap-4">
-	<Label {id} isRequired>{$LL.pages.login.email()}</Label>
+	<Label {id} isRequired>{$LL.pages.login.password()}</Label>
 	<TextInput
 		classNames="col-span-2"
-		errors={$errors.email}
-		focusOnMount
+		errors={$errors.password}
 		{handleChange}
 		{id}
-		isTouched={$touched.email}
+		isTouched={$touched.password}
 		{fieldName}
-		type="email"
-		bind:value={$form.email}
+		type="password"
+		bind:value={$form.password}
 	/>
 </div>

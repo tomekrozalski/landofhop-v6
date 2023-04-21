@@ -4,6 +4,11 @@ const en = {
 	about: {
 		header: 'About the app'
 	},
+	forms: {
+		validation: {
+			required: 'Field is required'
+		}
+	},
 	header: {
 		closeNavigation: 'Close navigation',
 		openNavigation: 'Open navigation',
@@ -25,6 +30,8 @@ const en = {
 		},
 		login: {
 			email: 'E-mail',
+			incorrectEmail: 'The field should be valid e-mail address',
+			password: 'Password',
 			submit: 'Send',
 			title: 'Log in'
 		}

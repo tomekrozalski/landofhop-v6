@@ -20,6 +20,7 @@
 				class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white group-hover:text-gray-400"
 				name="xmark"
 				size="2.5x"
+				style="light"
 			/>
 		</button>
 	{:else}
@@ -31,6 +32,7 @@
 				class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white group-hover:text-gray-400"
 				name="search"
 				size="1.8x"
+				style="light"
 			/>
 		</button>
 	{/if}

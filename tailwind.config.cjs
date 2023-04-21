@@ -17,7 +17,8 @@ export default {
 				DEFAULT: '#f8961e'
 			},
 			yellow: {
-				DEFAULT: '#f9c74f'
+				DEFAULT: '#f9c74f',
+				light: '#fdf1d3'
 			},
 			green: {
 				DEFAULT: '#90be6d'

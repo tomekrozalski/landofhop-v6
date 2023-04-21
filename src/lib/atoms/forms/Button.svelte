@@ -13,7 +13,7 @@
 </script>
 
 <button
-	class="h-10 bg-black px-6 text-white transition-colors"
+	class="h-10 bg-black px-6 text-white transition-colors hover:bg-yellow-light hover:text-black"
 	class:isIrreversible
 	class:isSecondary
 	class:isSubmitting
@@ -68,7 +68,7 @@
 		background-color: var(--color-danger);
 	}
 
-	button:hover:not(:disabled):not(.isSubmitting):not(.isSecondary):not(.isIrreversible) {
+	/* button:hover:not(:disabled):not(.isSubmitting):not(.isSecondary):not(.isIrreversible) {
 		background-color: var(--color-grey-2);
 		color: var(--color-black);
 	}
@@ -80,7 +80,7 @@
 
 	button.isIrreversible:not(.isSubmitting):hover :global(.icon-database) {
 		fill: var(--color-black);
-	}
+	} */
 
 	button.isSecondary:hover {
 		background-color: var(--color-brand-10-light);

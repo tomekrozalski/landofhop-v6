@@ -1,60 +1,15 @@
 <script lang="ts">
-	// import SuccessIcon from '../vectors/Success.svelte';
-	// import WarningIcon from '../vectors/Warning.svelte';
+	import Icon from '$lib/atoms/Icon.svelte';
 
-	export let disabled: boolean = false;
+	export let classNames: string = '';
 	export let isTouched: boolean, isValid: boolean;
-	export let style: string = '';
-	export let withStatusIndicator: boolean = false;
 </script>
 
-{#if disabled && !withStatusIndicator}
+<span class="relative {classNames}">
+	{#if isTouched && isValid}
+		<Icon name="check" size="1.5x" class="absolute right-3 top-5 -translate-y-1/2 text-green" />
+	{:else if isTouched && !isValid}
+		<Icon name="xmark" size="1.5x" class="absolute right-3 top-5 -translate-y-1/2 text-red" />
+	{/if}
 	<slot />
-{:else}
-	<span {style}>
-		{#if isTouched && isValid}
-			SuccessIcon
-			<!-- <SuccessIcon /> -->
-		{:else if isTouched && !isValid}
-			WarningIcon
-			<!-- <WarningIcon /> -->
-		{/if}
-		<slot />
-	</span>
-{/if}
-
-<style>
-	span {
-		flex-grow: 1;
-		display: block;
-		position: relative;
-	}
-
-	span :global(svg) {
-		display: inline-block;
-		position: absolute;
-		top: calc(var(--size-input-height) / 2);
-		transform: translateY(-50%);
-	}
-
-	span :global(svg.icon-success) {
-		width: 1.4rem;
-		height: 1.1rem;
-		fill: var(--color-success);
-		right: 0.6rem;
-	}
-
-	span :global(svg.icon-warning) {
-		width: 1.4rem;
-		height: 1.3rem;
-		fill: var(--color-warning);
-		right: 0.8rem;
-	}
-
-	@media (min-width: 1024px) {
-		span {
-			flex-grow: unset;
-			width: 100%;
-		}
-	}
-</style>
+</span>
