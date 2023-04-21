@@ -19,7 +19,9 @@
 		"@fortawesome/pro-solid-svg-icons": "^6.4.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.15.0",
+		"@types/bcryptjs": "^2.4.2",
 		"@types/html-minifier": "^4.0.2",
+		"@types/jsonwebtoken": "^9.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"autoprefixer": "^10.4.14",
@@ -46,6 +48,9 @@
 	"dependencies": {
 		"@sentry/svelte": "^7.46.0",
 		"@sentry/tracing": "^7.46.0",
+		"bcryptjs": "^2.4.3",
+		"date-fns": "^2.29.3",
+		"jsonwebtoken": "^9.0.0",
 		"mongodb": "^5.2.0"
 	}
 }

@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
-	import { faLock, faLockOpen } from '@fortawesome/pro-solid-svg-icons';
+	import {
+		faLock,
+		faLockOpen,
+		faTriangleExclamation,
+		faBadgeCheck
+	} from '@fortawesome/pro-solid-svg-icons';
 	import {
 		faEllipsis,
 		faCheck,
@@ -8,10 +13,23 @@
 	} from '@fortawesome/pro-regular-svg-icons';
 	import { faMagnifyingGlass, faXmark as faXmarkLight } from '@fortawesome/pro-light-svg-icons';
 
-	export let name: 'check' | 'ellipsis' | 'login' | 'logout' | 'search' | 'xmark';
+	export let name:
+		| 'badgeCheck'
+		| 'check'
+		| 'ellipsis'
+		| 'login'
+		| 'logout'
+		| 'search'
+		| 'warning'
+		| 'xmark';
 	export let style: 'solid' | 'regular' | 'light' = 'regular';
 
 	const icons = {
+		badgeCheck: {
+			light: null,
+			regular: null,
+			solid: faBadgeCheck
+		},
 		check: {
 			light: null,
 			regular: faCheck,
@@ -36,6 +54,11 @@
 			light: faMagnifyingGlass,
 			regular: null,
 			solid: null
+		},
+		warning: {
+			light: null,
+			regular: null,
+			solid: faTriangleExclamation
 		},
 		xmark: {
 			light: faXmarkLight,

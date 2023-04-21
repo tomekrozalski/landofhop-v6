@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createForm } from 'svelte-forms-lib';
 	import * as yup from 'yup';
+	import authentication from '$lib/utils/stores/authentication';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Button from '$lib/atoms/forms/Button.svelte';
 	import Email from './Email.svelte';
@@ -21,24 +22,23 @@
 			password: yup.string().required($LL.forms.validation.required())
 		}),
 		onSubmit: (values) => {
-			console.log('values', values);
-			// 			authentication.setLoginStatus(Status.pending);
-			//
-			// 			fetch('/api/user/login', {
-			// 				method: 'POST',
-			// 				body: JSON.stringify(values)
-			// 			})
-			// 				.then(async (response) => {
-			// 					if (response.status >= 300) {
-			// 						const data = await response.json();
-			// 						throw new Error(data.message);
-			// 					}
-			//
-			// 					authentication.setLoginStatus(Status.fulfilled);
-			// 				})
-			// 				.catch(() => {
-			// 					authentication.setLoginStatus(Status.rejected);
-			// 				});
+			authentication.setLoginStatus('pending');
+
+			fetch('/login/api', {
+				method: 'POST',
+				body: JSON.stringify(values)
+			})
+				.then(async (response) => {
+					if (response.status >= 300) {
+						const data = await response.json();
+						throw new Error(data.message);
+					}
+
+					authentication.setLoginStatus('fulfilled');
+				})
+				.catch(() => {
+					authentication.setLoginStatus('rejected');
+				});
 		}
 	});
 

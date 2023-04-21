@@ -31,9 +31,11 @@ const pl = {
 		login: {
 			email: 'E-mail',
 			incorrectEmail: 'Wymagany prawidłowy adres e-mail',
+			loggedIn: 'Zalogowano poprawnie',
 			password: 'Hasło',
 			submit: 'Wyślij',
-			title: 'Zaloguj się'
+			title: 'Zaloguj się',
+			tryAgain: "Nie udało się zalogować. Spróbuj ponownie!"
 		}
 	}
 } satisfies BaseTranslation;

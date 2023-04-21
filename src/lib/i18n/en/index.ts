@@ -31,9 +31,11 @@ const en = {
 		login: {
 			email: 'E-mail',
 			incorrectEmail: 'The field should be valid e-mail address',
+			loggedIn: 'You have successfully logged in',
 			password: 'Password',
 			submit: 'Send',
-			title: 'Log in'
+			title: 'Log in',
+			tryAgain: 'Login failed. Try again!'
 		}
 	}
 } satisfies Translation;
