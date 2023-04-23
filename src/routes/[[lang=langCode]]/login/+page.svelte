@@ -19,7 +19,7 @@
 	{:else if $authentication.loginStatus === 'rejected'}
 		<ErrorMessage />
 	{/if}
-	{#if ['idle', 'rejected'].includes($authentication.loginStatus)}
+	{#if $authentication.loginStatus !== 'fulfilled'}
 		<LoginForm />
 	{/if}
 </Article>

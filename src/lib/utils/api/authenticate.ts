@@ -1,10 +1,17 @@
 import * as jwt from 'jsonwebtoken';
 import type { Cookies } from '@sveltejs/kit';
 import { JWT_SECRET } from '$env/static/private';
-import { generateTokens, updateSession } from '$lib/utils/api';
-import { sessions } from '$db/mongo';
+import { sessions } from '$lib/db/mongo';
+import { updateSession } from './sessions/update';
+import { generateTokens } from './sessions/tokens';
 
-async function authenticate(cookies: Cookies): Promise<boolean> {
+type AuthenticateTypes = {
+	cookies: Cookies;
+	ip: string;
+	userAgent: string;
+};
+
+const authenticate = async ({ cookies, ip, userAgent }: AuthenticateTypes): Promise<boolean> => {
 	const accessToken = cookies.get('accessToken');
 	const refreshToken = cookies.get('refreshToken');
 
@@ -14,7 +21,7 @@ async function authenticate(cookies: Cookies): Promise<boolean> {
 
 	if (accessToken) {
 		try {
-			const payload = jwt.verify(accessToken, JWT_SECRET);
+			const payload = jwt.verify(accessToken, JWT_SECRET) as jwt.JwtPayload;
 
 			const session = await sessions.findOne({
 				sessionToken: payload.sessionToken,
@@ -29,7 +36,7 @@ async function authenticate(cookies: Cookies): Promise<boolean> {
 
 	if (refreshToken) {
 		try {
-			const payload = jwt.verify(refreshToken, JWT_SECRET);
+			const payload = jwt.verify(refreshToken, JWT_SECRET) as jwt.JwtPayload;
 
 			const session = await sessions.findOne({
 				sessionToken: payload.sessionToken
@@ -39,7 +46,11 @@ async function authenticate(cookies: Cookies): Promise<boolean> {
 				return false;
 			}
 
-			const newSessionToken = await updateSession(session.sessionToken);
+			const newSessionToken = await updateSession({
+				ip,
+				sessionToken: session.sessionToken,
+				userAgent
+			});
 
 			generateTokens({
 				cookies,
@@ -54,6 +65,6 @@ async function authenticate(cookies: Cookies): Promise<boolean> {
 	}
 
 	return false;
-}
+};
 
 export default authenticate;

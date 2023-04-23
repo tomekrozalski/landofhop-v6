@@ -1,6 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { minify } from 'html-minifier';
 import { start_mongo } from '$lib/db/mongo';
+import authenticate from '$lib/utils/api/authenticate';
 
 const minification_options = {
 	collapseBooleanAttributes: true,
@@ -30,6 +31,13 @@ start_mongo()
 	});
 
 export const handle: Handle = async ({ event, resolve }) => {
+	if (event.cookies.get('accessToken') || event.cookies.get('refreshToken')) {
+		event.locals.authenticated = await authenticate({
+			cookies: event.cookies,
+			ip: event.getClientAddress(),
+			userAgent: event.request.headers.get('user-agent') ?? ''
+		});
+	}
 	const response = await resolve(event, {
 		transformPageChunk: ({ html }) => html.replace('%lang%', event.params.lang ?? 'pl')
 	});

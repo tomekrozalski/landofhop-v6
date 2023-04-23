@@ -22,9 +22,7 @@
 			password: yup.string().required($LL.forms.validation.required())
 		}),
 		onSubmit: (values) => {
-			authentication.setLoginStatus('pending');
-
-			fetch('/login/api', {
+			return fetch('/login/api/signin', {
 				method: 'POST',
 				body: JSON.stringify(values)
 			})

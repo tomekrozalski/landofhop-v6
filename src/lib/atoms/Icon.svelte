@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
 	import {
+		faBadgeCheck,
 		faLock,
 		faLockOpen,
-		faTriangleExclamation,
-		faBadgeCheck
+		faSpinner,
+		faTriangleExclamation
 	} from '@fortawesome/pro-solid-svg-icons';
 	import {
 		faEllipsis,
@@ -20,6 +21,7 @@
 		| 'login'
 		| 'logout'
 		| 'search'
+		| 'spinner'
 		| 'warning'
 		| 'xmark';
 	export let style: 'solid' | 'regular' | 'light' = 'regular';
@@ -54,6 +56,11 @@
 			light: faMagnifyingGlass,
 			regular: null,
 			solid: null
+		},
+		spinner: {
+			light: null,
+			regular: null,
+			solid: faSpinner
 		},
 		warning: {
 			light: null,

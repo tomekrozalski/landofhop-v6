@@ -5,9 +5,9 @@
 	import PageLink from './PageLink.svelte';
 
 	function logOut() {
-		// fetch('/api/user/logout')
-		// 	.then(authentication.logOut)
-		// 	.catch(() => console.warn('Log out failed'));
+		fetch('/login/api/signout')
+			.then(authentication.logOut)
+			.catch(() => console.warn('Log out failed'));
 	}
 </script>
 

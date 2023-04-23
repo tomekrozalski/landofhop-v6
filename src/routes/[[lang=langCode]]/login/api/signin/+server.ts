@@ -4,7 +4,7 @@ import { createSession } from '$lib/utils/api/sessions/create';
 import { generateTokens } from '$lib/utils/api/sessions/tokens';
 import { users } from '$lib/db/mongo';
 
-export const POST = async function ({ cookies, request }) {
+export const POST = async ({ cookies, request, getClientAddress }) => {
 	const { email, password } = await request.json();
 	const user = await users.findOne({ email });
 
@@ -19,7 +19,13 @@ export const POST = async function ({ cookies, request }) {
 			throw error(401, 'Authentication failed');
 		}
 
-		const sessionToken = await createSession({ userId: user._id.toString() });
+		console.log('request', request.headers);
+
+		const sessionToken = await createSession({
+			ip: getClientAddress(),
+			userId: user._id.toString(),
+			userAgent: request.headers.get('user-agent') ?? ''
+		});
 
 		if (!sessionToken) {
 			throw error(500, 'Creating session failed');
