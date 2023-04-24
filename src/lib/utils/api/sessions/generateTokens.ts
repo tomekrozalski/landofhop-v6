@@ -9,7 +9,7 @@ type generateTokensTypes = {
 	userId: string;
 };
 
-export const generateTokens = ({ cookies, sessionToken, userId }: generateTokensTypes) => {
+const generateTokens = ({ cookies, sessionToken, userId }: generateTokensTypes) => {
 	const accessToken = jwt.sign({ sessionToken, userId }, JWT_SECRET);
 	const refreshToken = jwt.sign({ sessionToken }, JWT_SECRET);
 
@@ -29,20 +29,4 @@ export const generateTokens = ({ cookies, sessionToken, userId }: generateTokens
 	});
 };
 
-export const removeTokens = (cookies: Cookies) => {
-	cookies.set('accessToken', 'deleted', {
-		expires: new Date(0),
-		httpOnly: true,
-		path: '/',
-		sameSite: 'strict',
-		secure: true
-	});
-
-	cookies.set('refreshToken', 'deleted', {
-		expires: new Date(0),
-		httpOnly: true,
-		path: '/',
-		sameSite: 'strict',
-		secure: true
-	});
-};
+export default generateTokens;

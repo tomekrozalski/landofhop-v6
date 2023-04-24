@@ -1,17 +1,14 @@
 import * as jwt from 'jsonwebtoken';
-import type { Cookies } from '@sveltejs/kit';
+import type { RequestEvent } from '@sveltejs/kit';
 import { JWT_SECRET } from '$env/static/private';
 import { sessions } from '$lib/db/mongo';
-import { updateSession } from './sessions/update';
-import { generateTokens } from './sessions/tokens';
+import { generateTokens, updateSession } from './sessions';
 
-type AuthenticateTypes = {
-	cookies: Cookies;
-	ip: string;
-	userAgent: string;
-};
-
-const authenticate = async ({ cookies, ip, userAgent }: AuthenticateTypes): Promise<boolean> => {
+const authenticate = async ({
+	cookies,
+	getClientAddress,
+	request
+}: RequestEvent): Promise<boolean> => {
 	const accessToken = cookies.get('accessToken');
 	const refreshToken = cookies.get('refreshToken');
 
@@ -47,9 +44,9 @@ const authenticate = async ({ cookies, ip, userAgent }: AuthenticateTypes): Prom
 			}
 
 			const newSessionToken = await updateSession({
-				ip,
+				ip: getClientAddress(),
 				sessionToken: session.sessionToken,
-				userAgent
+				userAgent: request.headers.get('user-agent') ?? ''
 			});
 
 			generateTokens({

@@ -7,7 +7,7 @@ type CreateSessionTypes = {
 	userAgent: string;
 };
 
-export const createSession = async ({ ip, userId, userAgent }: CreateSessionTypes) => {
+const createSession = async ({ ip, userId, userAgent }: CreateSessionTypes) => {
 	try {
 		const sessionToken = randomBytes(43).toString('hex');
 
@@ -26,3 +26,5 @@ export const createSession = async ({ ip, userId, userAgent }: CreateSessionType
 		return false;
 	}
 };
+
+export default createSession;

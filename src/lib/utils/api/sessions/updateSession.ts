@@ -7,7 +7,7 @@ type UpdateSessionTypes = {
 	userAgent: string;
 };
 
-export const updateSession = async ({ ip, sessionToken, userAgent }: UpdateSessionTypes) => {
+const updateSession = async ({ ip, sessionToken, userAgent }: UpdateSessionTypes) => {
 	try {
 		const newSessionToken = randomBytes(43).toString('hex');
 
@@ -29,3 +29,5 @@ export const updateSession = async ({ ip, sessionToken, userAgent }: UpdateSessi
 		throw new Error('Session update failed');
 	}
 };
+
+export default updateSession;

@@ -1,7 +1,6 @@
 import { error, json } from '@sveltejs/kit';
 import bcrypt from 'bcryptjs';
-import { createSession } from '$lib/utils/api/sessions/create';
-import { generateTokens } from '$lib/utils/api/sessions/tokens';
+import { createSession, generateTokens } from '$lib/utils/api/sessions';
 import { users } from '$lib/db/mongo';
 
 export const POST = async ({ cookies, request, getClientAddress }) => {

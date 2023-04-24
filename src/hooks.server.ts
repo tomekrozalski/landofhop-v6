@@ -32,12 +32,9 @@ start_mongo()
 
 export const handle: Handle = async ({ event, resolve }) => {
 	if (event.cookies.get('accessToken') || event.cookies.get('refreshToken')) {
-		event.locals.authenticated = await authenticate({
-			cookies: event.cookies,
-			ip: event.getClientAddress(),
-			userAgent: event.request.headers.get('user-agent') ?? ''
-		});
+		event.locals.authenticated = await authenticate(event);
 	}
+
 	const response = await resolve(event, {
 		transformPageChunk: ({ html }) => html.replace('%lang%', event.params.lang ?? 'pl')
 	});

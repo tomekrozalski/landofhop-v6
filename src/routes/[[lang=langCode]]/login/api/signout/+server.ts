@@ -1,7 +1,7 @@
 import { error, json } from '@sveltejs/kit';
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from '$env/static/private';
-import { removeTokens } from '$lib/utils/api/sessions/tokens.js';
+import { removeTokens } from '$lib/utils/api/sessions';
 import { sessions } from '$lib/db/mongo';
 
 export const GET = async ({ cookies }) => {
@@ -10,7 +10,10 @@ export const GET = async ({ cookies }) => {
 	}
 
 	try {
-		const { sessionToken } = jwt.verify(cookies.get('refreshToken') ?? '', JWT_SECRET) as jwt.JwtPayload;
+		const { sessionToken } = jwt.verify(
+			cookies.get('refreshToken') ?? '',
+			JWT_SECRET
+		) as jwt.JwtPayload;
 		await sessions.deleteOne({ sessionToken });
 		removeTokens(cookies);
 
