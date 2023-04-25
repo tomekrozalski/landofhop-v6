@@ -103,4 +103,14 @@
 	.search-input {
 		width: calc(100% - var(--size-header-height));
 	}
+
+	.beverage-list {
+		grid-template-columns: repeat(auto-fill, 160px);
+	}
+
+	@media screen(xl) {
+		.beverage-list {
+			grid-template-columns: repeat(auto-fill, 220px);
+		}
+	}
 }

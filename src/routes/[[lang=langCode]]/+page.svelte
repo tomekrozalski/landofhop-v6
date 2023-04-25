@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import { LL } from '$lib/i18n/i18n-svelte';
+	import BeverageList from '$lib/templates/BeverageList/BeverageList.svelte';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -9,4 +12,4 @@
 	<link rel="preconnect" href={PHOTO_SERVER} />
 </svelte:head>
 
-<h1>hi</h1>
+<BeverageList beverages={data.beverages} />

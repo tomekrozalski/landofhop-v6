@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { minify } from 'html-minifier';
 import { start_mongo } from '$lib/db/mongo';
-import authenticate from '$lib/utils/api/authenticate';
+import { authenticate } from '$lib/utils/api';
 
 const minification_options = {
 	collapseBooleanAttributes: true,
