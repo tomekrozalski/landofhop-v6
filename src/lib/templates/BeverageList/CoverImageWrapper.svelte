@@ -24,13 +24,11 @@
 	href="/details/{beverage.shortId}/{beverage.brand.badge}/{beverage.badge}"
 	style:aspect-ratio="{coverImage?.width} / {coverImage?.height}"
 	aria-label="{name.value}, {brand.name.value}"
-	class="relative w-full transition-transform hover:scale-90
-		focus:scale-90 focus:before:absolute focus:before:inset-0
-		focus:before:outline focus:before:outline-8 focus:before:outline-black"
+	class="group relative w-full focus:border-8 focus:border-black focus:outline-none"
 >
 	{#if !loaded && coverImage?.outline}
-		<span class="outline-wrapper" transition:toggleVisibility>
-			{@html coverImage.outline}
+		<span transition:toggleVisibility>
+			{@html coverImage.outline.replace('<svg', '<svg class="absolute inset-0"')}
 		</span>
 	{/if}
 	{#if eager || nativeLoading}
@@ -44,29 +42,11 @@
 		<noscript>
 			<picture>
 				<img
-					src="{PHOTO_SERVER}/{brand.badge}/{badge}/{shortId}/cover/jpg/1x.jpg"
 					alt="{name.value}, {brand.name.value}"
-					style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center;"
+					class="absolute inset-0 opacity-100"
+					src="{PHOTO_SERVER}/{brand.badge}/{badge}/{shortId}/cover/jpg/1x.jpg"
 				/>
 			</picture>
 		</noscript>
 	{/if}
 </a>
-
-<style>
-	a {
-		/* width: 100%;
-		height: 0;
-		position: relative;
-		transform: scale(1);
-		transition: transform var(--transition-default); */
-	}
-
-	.outline-wrapper :global(svg) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

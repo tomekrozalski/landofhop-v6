@@ -28,6 +28,9 @@ const pl = {
 		home: {
 			description: 'Baza piw, które wypiłem w przeciągu ostatnich lat'
 		},
+		listing: {
+			imageNotFound: 'Nie znaleziono zdjęcia'
+		},
 		login: {
 			email: 'E-mail',
 			incorrectEmail: 'Wymagany prawidłowy adres e-mail',
@@ -35,7 +38,7 @@ const pl = {
 			password: 'Hasło',
 			submit: 'Wyślij',
 			title: 'Zaloguj się',
-			tryAgain: "Nie udało się zalogować. Spróbuj ponownie!"
+			tryAgain: 'Nie udało się zalogować. Spróbuj ponownie!'
 		}
 	}
 } satisfies BaseTranslation;

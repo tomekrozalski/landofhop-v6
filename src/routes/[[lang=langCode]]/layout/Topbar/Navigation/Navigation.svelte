@@ -7,7 +7,7 @@
 
 <nav
 	transition:slide={{ duration: 200, easing: cubicInOut }}
-	class="fixed left-0 top-0 w-full bg-white"
+	class="fixed left-0 top-0 z-10 w-full bg-white"
 >
 	<div class="container flex h-80 w-full flex-row justify-between md:h-20 md:flex-row-reverse">
 		<Pages />

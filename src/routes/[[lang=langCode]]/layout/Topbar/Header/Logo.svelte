@@ -3,7 +3,11 @@
 	import layoutStore from '../../utils/store';
 </script>
 
-<a on:click={layoutStore.closeNavbar} href={$LL.link('/')} class="logo group flex">
+<a
+	on:click={layoutStore.closeNavbar}
+	href={$LL.link('/')}
+	class="logo group flex focus:outline-none"
+>
 	<h1 class="flex w-full items-center justify-center">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

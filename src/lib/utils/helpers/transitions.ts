@@ -1,5 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-function toggleVisibility(_node: any, _options?: any) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function toggleVisibility(_: HTMLElement) {
 	return { duration: 200 };
 }
 

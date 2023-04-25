@@ -28,6 +28,9 @@ const en = {
 		home: {
 			description: 'Database of beers that I drunk last years'
 		},
+		listing: {
+			imageNotFound: 'Image not found'
+		},
 		login: {
 			email: 'E-mail',
 			incorrectEmail: 'The field should be valid e-mail address',

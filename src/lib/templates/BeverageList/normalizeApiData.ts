@@ -4,8 +4,8 @@ import { AppLanguage, DateFormat } from '$lib/db/enums/Globals.enum';
 import type { RawBasics } from '$lib/db/types/RawBasics.d';
 import type { Basics } from './Basics.d';
 
-const normalizeApiData = (rawBasics: RawBasics[]): Basics[] => {
-	return rawBasics.map(({ added, badge, brand, containerType, coverImage, name, shortId }) => ({
+const normalizeApiData = (rawBasics: RawBasics[]): Basics[] =>
+	rawBasics.map(({ added, badge, brand, containerType, coverImage, name, shortId }) => ({
 		shortId,
 		badge,
 		brand: {
@@ -23,6 +23,5 @@ const normalizeApiData = (rawBasics: RawBasics[]): Basics[] => {
 		containerType,
 		added: format(new Date(added), DateFormat[AppLanguage.pl])
 	}));
-};
 
 export default normalizeApiData;

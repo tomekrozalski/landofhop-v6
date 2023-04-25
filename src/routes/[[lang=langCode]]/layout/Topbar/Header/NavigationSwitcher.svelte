@@ -6,7 +6,9 @@
 
 <button
 	on:click={layoutStore.toggleNavbar}
-	class="more group flex items-center justify-center text-xs focus:border-2 focus:border-black focus:bg-white md:text-sm lg:text-base"
+	class="more group flex items-center justify-center text-xs
+	focus:border-2 focus:border-black focus:bg-white focus:outline-none md:text-sm
+	lg:text-base"
 	aria-label={$layoutStore.isNavigationOpened
 		? $LL.header.closeNavigation()
 		: $LL.header.openNavigation()}
