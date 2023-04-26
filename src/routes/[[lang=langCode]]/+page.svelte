@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import { LL } from '$lib/i18n/i18n-svelte';
+	import Breadcrumbs from '$lib/atoms/Breadcrumbs.svelte';
 	import BeverageList from '$lib/templates/BeverageList/BeverageList.svelte';
 
 	export let data;
@@ -12,4 +13,5 @@
 	<link rel="preconnect" href={PHOTO_SERVER} />
 </svelte:head>
 
+<Breadcrumbs month={4} year={2023} />
 <BeverageList beverages={data.beverages} />

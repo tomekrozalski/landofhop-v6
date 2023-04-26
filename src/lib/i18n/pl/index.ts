@@ -4,6 +4,9 @@ const pl = {
 	about: {
 		header: 'O stronie'
 	},
+	breadcrumbs: {
+		list: 'lista'
+	},
 	forms: {
 		validation: {
 			required: 'Pole jest wymagane'

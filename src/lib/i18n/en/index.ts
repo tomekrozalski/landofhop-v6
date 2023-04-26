@@ -4,6 +4,9 @@ const en = {
 	about: {
 		header: 'About the app'
 	},
+	breadcrumbs: {
+		list: 'list'
+	},
 	forms: {
 		validation: {
 			required: 'Field is required'
