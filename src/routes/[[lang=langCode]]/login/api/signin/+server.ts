@@ -18,8 +18,6 @@ export const POST = async ({ cookies, request, getClientAddress }) => {
 			throw error(401, 'Authentication failed');
 		}
 
-		console.log('request', request.headers);
-
 		const sessionToken = await createSession({
 			ip: getClientAddress(),
 			userId: user._id.toString(),

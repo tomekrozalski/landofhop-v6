@@ -13,5 +13,5 @@
 	<link rel="preconnect" href={PHOTO_SERVER} />
 </svelte:head>
 
-<Breadcrumbs month={4} year={2023} />
+<Breadcrumbs month={data.scope.month} year={data.scope.year} />
 <BeverageList beverages={data.beverages} />

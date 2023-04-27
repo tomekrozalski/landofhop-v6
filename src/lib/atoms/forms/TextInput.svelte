@@ -40,8 +40,6 @@
 			node.focus();
 		}
 	};
-
-	$: console.log('error', errors);
 </script>
 
 <StatusIndicator {classNames} {isTouched} isValid={!errors}>
