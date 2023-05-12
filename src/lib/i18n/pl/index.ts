@@ -32,7 +32,8 @@ const pl = {
 			description: 'Baza piw, które wypiłem w przeciągu ostatnich lat'
 		},
 		listing: {
-			imageNotFound: 'Nie znaleziono zdjęcia'
+			imageNotFound: 'Nie znaleziono zdjęcia',
+			theNewestMonth: 'to jest najnowszy miesiąc'
 		},
 		login: {
 			email: 'E-mail',

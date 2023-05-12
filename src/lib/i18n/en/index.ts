@@ -32,7 +32,8 @@ const en = {
 			description: 'Database of beers that I drunk last years'
 		},
 		listing: {
-			imageNotFound: 'Image not found'
+			imageNotFound: 'Image not found',
+			theNewestMonth: 'this is the newest month'
 		},
 		login: {
 			email: 'E-mail',

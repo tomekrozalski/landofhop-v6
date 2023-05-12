@@ -3,7 +3,7 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Breadcrumbs from '$lib/atoms/Breadcrumbs.svelte';
 	import BeverageList from '$lib/templates/BeverageList/BeverageList.svelte';
-	import Pagination from '$lib/templates/BeverageList/Pagination.svelte';
+	import Pagination from '$lib/templates/BeverageList/Pagination/Pagination.svelte';
 
 	export let data;
 </script>
@@ -16,4 +16,4 @@
 
 <Breadcrumbs month={data.scope.month} year={data.scope.year} />
 <BeverageList beverages={data.beverages} />
-<Pagination month={data.scope.month} year={data.scope.year} />
+<Pagination isTheMostRecent month={data.scope.month} year={data.scope.year} />
