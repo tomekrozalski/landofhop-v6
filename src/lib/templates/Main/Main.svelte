@@ -1,6 +1,6 @@
 <script>
 	import { afterUpdate } from 'svelte';
-	import layoutStore from './utils/store';
+	import layoutStore from './store';
 	// import SearchResults from './SearchResults/SearchResults.svelte';
 
 	let path = '';

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import layoutStore from '../../../utils/store';
-	import SearchInput from './SearchInput.svelte';
+	import layoutStore from '$lib/templates/Main/store';
 	import Icon from '$lib/atoms/Icon.svelte';
+	import SearchInput from './SearchInput.svelte';
 </script>
 
 <div

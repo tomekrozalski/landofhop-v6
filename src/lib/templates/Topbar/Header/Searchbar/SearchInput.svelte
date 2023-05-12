@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import layoutStore from '$lib/templates/Main/store';
 	import pushState from '$lib/utils/helpers/pushState';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import layoutStore from '../../../utils/store';
 
 	const focusOnMount = (input: HTMLInputElement) => {
 		input.focus();

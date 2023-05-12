@@ -1,5 +1,5 @@
 <script lang="ts">
-	import storeLayout from '../utils/store';
+	import storeLayout from '$lib/templates/Main/store';
 	import Header from './Header/Header.svelte';
 	import Navigation from './Navigation/Navigation.svelte';
 </script>

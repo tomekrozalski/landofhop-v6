@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import layoutStore from '../../utils/store';
+	import layoutStore from '$lib/templates/Main/store';
 </script>
 
 <a
