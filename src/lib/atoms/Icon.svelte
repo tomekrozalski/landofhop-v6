@@ -2,6 +2,7 @@
 	import Fa from 'svelte-fa';
 	import {
 		faBadgeCheck,
+		faCaretLeft,
 		faCaretRight,
 		faLeaf,
 		faLock,
@@ -18,6 +19,7 @@
 
 	export let name:
 		| 'badgeCheck'
+		| 'caretLeft'
 		| 'caretRight'
 		| 'check'
 		| 'ellipsis'
@@ -35,6 +37,11 @@
 			light: null,
 			regular: null,
 			solid: faBadgeCheck
+		},
+		caretLeft: {
+			light: null,
+			regular: null,
+			solid: faCaretLeft
 		},
 		caretRight: {
 			light: null,

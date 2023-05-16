@@ -7,7 +7,7 @@
 	export let month: number;
 	export let year: number;
 	export let isTheMostRecent: boolean = false;
-	const isTheOldest = month === 6 && year === 2017;
+	$: isTheOldest = month === 6 && year === 2017;
 </script>
 
 <nav class="container mb-24 flex justify-between px-3">
