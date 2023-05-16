@@ -33,7 +33,9 @@ const en = {
 		},
 		listing: {
 			imageNotFound: 'Image not found',
-			theNewestMonth: 'this is the newest month'
+			noBeverageFound: 'No beverage found',
+			theNewestMonth: 'this is the newest month',
+			theOldestMonth: 'this is the oldest month'
 		},
 		login: {
 			email: 'E-mail',

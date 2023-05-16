@@ -15,7 +15,11 @@
 		faCheck,
 		faXmark as faXmarkRegular
 	} from '@fortawesome/pro-regular-svg-icons';
-	import { faMagnifyingGlass, faXmark as faXmarkLight } from '@fortawesome/pro-light-svg-icons';
+	import {
+		faFlagCheckered,
+		faMagnifyingGlass,
+		faXmark as faXmarkLight
+	} from '@fortawesome/pro-light-svg-icons';
 
 	export let name:
 		| 'badgeCheck'
@@ -23,6 +27,7 @@
 		| 'caretRight'
 		| 'check'
 		| 'ellipsis'
+		| 'finish'
 		| 'leaf'
 		| 'login'
 		| 'logout'
@@ -56,6 +61,11 @@
 		ellipsis: {
 			light: null,
 			regular: faEllipsis,
+			solid: null
+		},
+		finish: {
+			light: faFlagCheckered,
+			regular: null,
 			solid: null
 		},
 		leaf: {

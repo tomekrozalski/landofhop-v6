@@ -5,9 +5,7 @@
 	import formatListMonth from '$lib/utils/helpers/formatListMonth';
 	import Icon from '$lib/atoms/Icon.svelte';
 
-	export let month: number;
-	export let year: number;
-
+	$: ({ year, month } = $page.data.scope);
 	$: previousMonth = subMonths(new Date(year, month), 2);
 	$: previousMonthPath = '/list/' + format(previousMonth, 'yyyy-MM');
 
@@ -20,7 +18,6 @@
   border-2 border-black bg-black py-2 pl-4 pr-3
   text-base text-white transition-colors
   hover:bg-white hover:text-black"
-	data-sveltekit-noscroll
 >
 	{formatListMonth(previousMonth, locale)}
 	<Icon name="caretRight" class="ml-3" style="solid" />

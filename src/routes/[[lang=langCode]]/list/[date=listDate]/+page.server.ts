@@ -1,15 +1,25 @@
-import { endOfMonth, getYear } from 'date-fns';
+import { endOfMonth, isAfter, isBefore } from 'date-fns';
 import { error } from '@sveltejs/kit';
 import { basics } from '$lib/db/mongo';
+import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
 import normalizeApiData from '$lib/templates/BeverageList/normalizeApiData';
 
 export const prerender = true;
 
 export const load = async ({ params }) => {
+	const latestMonth = await getLatestMonth();
+
 	const [year, month] = params.date.split('-').map((elem) => +elem);
 	const date = new Date(year, month - 1);
 
-	if (year > getYear(new Date()) || year < 2017 || month > 12) {
+	if (month < 1 || month > 12) {
+		throw error(404, { message: 'Wrong date format' });
+	}
+
+	if (
+		isAfter(date, new Date(latestMonth.year, latestMonth.month - 2)) ||
+		isBefore(date, new Date(2017, 5))
+	) {
 		throw error(404, { message: 'Date our of scope' });
 	}
 
@@ -23,14 +33,11 @@ export const load = async ({ params }) => {
 		.sort({ added: -1 })
 		.toArray();
 
-	if (!rawBasics.length) {
-		throw error(404, { message: 'Date our of scope' });
-	}
-
 	const beverages = normalizeApiData(rawBasics);
 
 	return {
 		beverages,
+		latestMonth,
 		scope: {
 			month,
 			year

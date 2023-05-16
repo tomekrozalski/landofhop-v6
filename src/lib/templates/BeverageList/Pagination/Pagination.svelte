@@ -6,19 +6,20 @@
 
 	export let month: number;
 	export let year: number;
+
 	export let isTheMostRecent: boolean = false;
 	$: isTheOldest = month === 6 && year === 2017;
 </script>
 
-<nav class="container mb-24 flex justify-between px-3">
+<nav class="container flex justify-between px-3 pb-24">
 	{#if isTheMostRecent}
 		<TheMostRecent />
 	{:else}
-		<NextLink {month} {year} />
+		<NextLink />
 	{/if}
 	{#if isTheOldest}
 		<TheOldest />
 	{:else}
-		<PreviousLink {month} {year} />
+		<PreviousLink />
 	{/if}
 </nav>

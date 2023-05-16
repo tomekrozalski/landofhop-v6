@@ -4,9 +4,9 @@
 </script>
 
 <div
-	class="flex items-center justify-center bg-green
-	py-2 pl-3 pr-4 text-base text-white transition-colors"
+	class="flex items-center justify-center
+	bg-gray-400 py-2 pl-3 pr-4 text-base text-white transition-colors"
 >
-	<Icon name="leaf" class="mr-3" style="solid" />
-	{$LL.pages.listing.theNewestMonth()}
+	{$LL.pages.listing.theOldestMonth()}
+	<Icon name="finish" class="ml-3" style="light" />
 </div>

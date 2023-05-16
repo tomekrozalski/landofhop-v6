@@ -33,7 +33,9 @@ const pl = {
 		},
 		listing: {
 			imageNotFound: 'Nie znaleziono zdjęcia',
-			theNewestMonth: 'to jest najnowszy miesiąc'
+			noBeverageFound: 'Nie znaleziono żadnej pozycji',
+			theNewestMonth: 'to jest najnowszy miesiąc',
+			theOldestMonth: 'to jest najstarszy miesiąc'
 		},
 		login: {
 			email: 'E-mail',

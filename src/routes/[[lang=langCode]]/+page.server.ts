@@ -7,12 +7,13 @@ export const prerender = true;
 
 export const load = async () => {
 	const { month, year } = await getLatestMonth();
+	const currentDate = new Date(year, month - 1);
 
 	const rawBasics = await basics
 		.find({
 			added: {
-				$lt: endOfMonth(new Date(year, month - 1)),
-				$gte: new Date(year, month - 1)
+				$lt: endOfMonth(currentDate),
+				$gte: currentDate
 			}
 		})
 		.sort({ added: -1 })
