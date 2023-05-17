@@ -6,7 +6,7 @@
 	import { BrowserTracing } from '@sentry/tracing';
 	import Main from '$lib/templates/Main/Main.svelte';
 	import Topbar from '$lib/templates/Topbar/Topbar.svelte';
-	import layoutStore from '../lib/templates/Main/store';
+	import layoutStore from '$lib/templates/Main/store';
 	import '../app.css';
 
 	const appVersion = __version__ as string;
