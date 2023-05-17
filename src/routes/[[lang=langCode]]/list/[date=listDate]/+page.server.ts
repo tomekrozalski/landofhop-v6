@@ -1,7 +1,8 @@
-import { endOfMonth, isAfter, isBefore } from 'date-fns';
+import { differenceInMonths, endOfMonth, isAfter, isBefore } from 'date-fns';
 import { error } from '@sveltejs/kit';
 import { basics } from '$lib/db/mongo';
 import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
+import { OLDEST_LIST } from '$lib/utils/constants';
 import normalizeApiData from '$lib/templates/BeverageList/normalizeApiData';
 
 // export const prerender = true;
@@ -34,10 +35,14 @@ export const load = async ({ params }) => {
 		.toArray();
 
 	const beverages = normalizeApiData(rawBasics);
+	const latestMonthDate = new Date(latestMonth.year, latestMonth.month);
+	const nextMonth = new Date(year, month);
+	const isOneBeforeMostRecent = differenceInMonths(latestMonthDate, nextMonth) === 1;
 
 	return {
 		beverages,
-		latestMonth,
+		isOneBeforeMostRecent,
+		isTheOldest: month === OLDEST_LIST.month && year === OLDEST_LIST.year,
 		scope: {
 			month,
 			year

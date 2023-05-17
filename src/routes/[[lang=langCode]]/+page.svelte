@@ -16,4 +16,4 @@
 
 <Breadcrumbs month={data.scope.month} year={data.scope.year} />
 <BeverageList beverages={data.beverages} />
-<Pagination isTheMostRecent month={data.scope.month} year={data.scope.year} />
+<Pagination isTheMostRecent />

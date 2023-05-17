@@ -1,6 +1,7 @@
 <script lang="ts">
+	import Fa from 'svelte-fa';
+	import { faMagnifyingGlass, faXmark } from '@fortawesome/pro-light-svg-icons';
 	import layoutStore from '$lib/templates/Main/store';
-	import Icon from '$lib/atoms/Icon.svelte';
 	import SearchInput from './SearchInput.svelte';
 </script>
 
@@ -18,12 +19,11 @@
 			focus:border-2 focus:border-black focus:bg-white focus:outline-none
 			md:h-20 md:w-20 md:text-sm lg:h-28 lg:w-28 lg:text-base"
 		>
-			<Icon
-				class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-colors
-				group-hover:text-gray-400 group-focus:text-black"
-				name="xmark"
+			<Fa
+				icon={faXmark}
 				size="2.5x"
-				style="light"
+				class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-colors
+		group-hover:text-gray-400 group-focus:text-black"
 			/>
 		</button>
 	{:else}
@@ -33,12 +33,11 @@
 			focus:border-2 focus:border-black focus:bg-white focus:outline-none
 			md:h-20 md:w-20 md:text-sm lg:h-28 lg:w-28 lg:text-base"
 		>
-			<Icon
+			<Fa
+				icon={faMagnifyingGlass}
+				size="1.8x"
 				class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-colors
 				group-hover:text-gray-400 group-focus:text-black"
-				name="search"
-				size="1.8x"
-				style="light"
 			/>
 		</button>
 	{/if}

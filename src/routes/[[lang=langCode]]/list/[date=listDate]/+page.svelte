@@ -21,4 +21,4 @@
 {:else}
 	<NoBeverageFound />
 {/if}
-<Pagination month={data.scope.month} year={data.scope.year} />
+<Pagination />

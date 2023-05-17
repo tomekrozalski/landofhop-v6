@@ -1,6 +1,7 @@
 <script lang="ts">
+	import Fa from 'svelte-fa';
+	import { faEllipsis } from '@fortawesome/pro-regular-svg-icons';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import Icon from '$lib/atoms/Icon.svelte';
 	import layoutStore from '$lib/templates/Main/store';
 </script>
 
@@ -13,8 +14,8 @@
 		? $LL.header.closeNavigation()
 		: $LL.header.openNavigation()}
 >
-	<Icon
-		name="ellipsis"
+	<Fa
+		icon={faEllipsis}
 		size="2x"
 		class="text-white transition-colors group-hover:text-gray-400 group-focus:text-black md:h-[0.37rem]"
 	/>

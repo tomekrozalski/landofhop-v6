@@ -1,7 +1,8 @@
 <script lang="ts">
+	import Fa from 'svelte-fa';
+	import { faLock, faLockOpen } from '@fortawesome/pro-solid-svg-icons';
 	import authentication from '$lib/utils/stores/authentication';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import Icon from '$lib/atoms/Icon.svelte';
 	import PageLink from './PageLink.svelte';
 
 	function logOut() {
@@ -21,7 +22,7 @@
 				type="button"
 				on:click={logOut}
 			>
-				<Icon name="logout" size="0.8x" class="absolute left-4 md:left-3" style="solid" />
+				<Fa icon={faLockOpen} size="0.8x" class="absolute left-4 md:left-3" />
 				{$LL.navigation.logout()}
 			</button>
 		{:else}
@@ -31,7 +32,7 @@
 				md:w-auto md:pl-8"
 				href="/login"
 			>
-				<Icon name="login" size="0.8x" class="absolute left-4 md:left-3" style="solid" />
+				<Fa icon={faLock} size="0.8x" class="absolute left-4 md:left-3" />
 				{$LL.navigation.login()}
 			</a>
 		{/if}

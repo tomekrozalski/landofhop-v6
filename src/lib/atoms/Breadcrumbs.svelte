@@ -6,7 +6,7 @@
 	export let month: number;
 	export let year: number;
 
-	const locale = $page.params.lang || 'pl';
+	$: locale = $page.params.lang || 'pl';
 	$: date = new Date(year, month - 1);
 </script>
 

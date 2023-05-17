@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Icon from '$lib/atoms/Icon.svelte';
+	import Fa from 'svelte-fa';
+	import { faSpinner } from '@fortawesome/pro-solid-svg-icons';
 
 	export let handleClick: (e: Event) => void = () => {};
 	export let isIrreversible: boolean = false;
@@ -30,7 +31,7 @@
 		<!-- <DatabaseIcon /> -->
 	{/if}
 	{#if isSubmitting}
-		<Icon name="spinner" style="solid" class="absolute right-4 top-2.5 animate-spin" />
+		<Fa icon={faSpinner} class="absolute right-4 top-2.5 animate-spin" />
 	{/if}
 </button>
 

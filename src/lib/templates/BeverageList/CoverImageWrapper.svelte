@@ -26,7 +26,7 @@
 	aria-label="{name.value}, {brand.name.value}"
 	class="group relative w-full focus:border-8 focus:border-black focus:outline-none"
 >
-	{#if !loaded && coverImage?.outline}
+	{#if !eager && !nativeLoading && !loaded && coverImage?.outline}
 		<span transition:toggleVisibility>
 			{@html coverImage.outline.replace('<svg', '<svg class="absolute inset-0"')}
 		</span>
