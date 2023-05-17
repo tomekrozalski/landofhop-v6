@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import CoverImageWrapper from './CoverImageWrapper.svelte';
 	import BrokenCoverImage from './BrokenCoverImage.svelte';
 	import type { Basics } from './Basics.d';
@@ -15,7 +16,7 @@
 				{/key}
 			{:else}
 				<a
-					href="/details/{beverage.shortId}/{beverage.brand.badge}/{beverage.badge}"
+					href={$LL.link('/details/{beverage.shortId}/{beverage.brand.badge}/{beverage.badge}')}
 					class="group flex w-full justify-center focus:border-8 focus:border-black focus:outline-none"
 				>
 					<BrokenCoverImage type={beverage.containerType} />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { differenceInMonths, format } from 'date-fns';
+	import { format } from 'date-fns';
 	import Fa from 'svelte-fa';
 	import { faCaretLeft } from '@fortawesome/pro-solid-svg-icons';
 	import { page } from '$app/stores';

@@ -14,7 +14,9 @@ const pl = {
 	},
 	header: {
 		closeNavigation: 'Zamknij nawigację',
+		closeSearchbar: 'Zamnij wyszukiwarkę',
 		openNavigation: 'Otwórz nawigację',
+		openSearchbar: 'Otwórz wyszukiwarkę',
 		search: 'Szukaj'
 	},
 	link: '{0}',

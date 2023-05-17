@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import { faMagnifyingGlass, faXmark } from '@fortawesome/pro-light-svg-icons';
 	import layoutStore from '$lib/templates/Main/store';
 	import SearchInput from './SearchInput.svelte';
@@ -14,6 +15,7 @@
 	{/if}
 	{#if $layoutStore.isSearchbarActive}
 		<button
+			aria-label={$LL.header.closeSearchbar()}
 			on:click={layoutStore.closeSearchBar}
 			class="group absolute right-0 top-0 h-16 w-16 text-xs
 			focus:border-2 focus:border-black focus:bg-white focus:outline-none
@@ -28,6 +30,7 @@
 		</button>
 	{:else}
 		<button
+			aria-label={$LL.header.openSearchbar()}
 			on:click={layoutStore.openSearchBar}
 			class="group absolute right-0 top-0 h-16 w-16 text-xs
 			focus:border-2 focus:border-black focus:bg-white focus:outline-none

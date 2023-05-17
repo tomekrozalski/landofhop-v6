@@ -40,9 +40,17 @@ type RootTranslation = {
 		 */
 		closeNavigation: string
 		/**
+		 * Z​a​m​n​i​j​ ​w​y​s​z​u​k​i​w​a​r​k​ę
+		 */
+		closeSearchbar: string
+		/**
 		 * O​t​w​ó​r​z​ ​n​a​w​i​g​a​c​j​ę
 		 */
 		openNavigation: string
+		/**
+		 * O​t​w​ó​r​z​ ​w​y​s​z​u​k​i​w​a​r​k​ę
+		 */
+		openSearchbar: string
 		/**
 		 * S​z​u​k​a​j
 		 */
@@ -168,9 +176,17 @@ export type TranslationFunctions = {
 		 */
 		closeNavigation: () => LocalizedString
 		/**
+		 * Zamnij wyszukiwarkę
+		 */
+		closeSearchbar: () => LocalizedString
+		/**
 		 * Otwórz nawigację
 		 */
 		openNavigation: () => LocalizedString
+		/**
+		 * Otwórz wyszukiwarkę
+		 */
+		openSearchbar: () => LocalizedString
 		/**
 		 * Szukaj
 		 */

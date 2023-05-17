@@ -4,10 +4,7 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 </script>
 
-<div
-	class="flex items-center justify-center bg-green
-	py-2 pl-3 pr-4 text-base text-white transition-colors"
->
-	<Fa icon={faLeaf} class="mr-3" />
+<div class="flex items-center justify-center py-2 pl-3 pr-4 text-base transition-colors">
+	<Fa icon={faLeaf} class="mr-3 text-green" />
 	{$LL.pages.listing.theNewestMonth()}
 </div>

@@ -14,7 +14,9 @@ const en = {
 	},
 	header: {
 		closeNavigation: 'Close navigation',
+		closeSearchbar: 'Close searchbar',
 		openNavigation: 'Open navigation',
+		openSearchbar: 'Open searchbar',
 		search: 'Search'
 	},
 	link: '/en{0}',

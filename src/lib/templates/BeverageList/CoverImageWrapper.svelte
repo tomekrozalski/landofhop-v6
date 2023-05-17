@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import IntersectionObserver from '$lib/utils/helpers/IntersectionObserver.svelte';
 	import { toggleVisibility } from '$lib/utils/helpers/transitions';
@@ -25,7 +26,7 @@
 </script>
 
 <a
-	href="/"
+	href={$LL.link('/')}
 	style:aspect-ratio="{coverImage?.width} / {coverImage?.height}"
 	aria-label="{name.value}, {brand.name.value}"
 	class="group relative w-full focus:border-8 focus:border-black focus:outline-none"
