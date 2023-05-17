@@ -6,7 +6,7 @@
 	import PageLink from './PageLink.svelte';
 
 	function logOut() {
-		fetch('/login/api/signout')
+		fetch($LL.link('/login/api/signout'))
 			.then(authentication.logOut)
 			.catch(() => console.warn('Log out failed'));
 	}
@@ -30,7 +30,7 @@
 				class="relative flex w-full items-center py-2 pl-10 pr-2 transition-colors
 				hover:bg-black hover:text-white focus:bg-black focus:text-white focus:outline-none
 				md:w-auto md:pl-8"
-				href="/login"
+				href={$LL.link('/login')}
 			>
 				<Fa icon={faLock} size="0.8x" class="absolute left-4 md:left-3" />
 				{$LL.navigation.login()}
