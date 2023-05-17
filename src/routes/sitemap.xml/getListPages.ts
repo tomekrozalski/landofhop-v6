@@ -5,7 +5,7 @@ type MonthYearTypes = {
 	year: number;
 };
 
-const getListPages = (latest: MonthYearTypes): MonthYearTypes[] => {
+const getListPages = (latest: MonthYearTypes): string[] => {
 	const results = [OLDEST_LIST];
 
 	const addNext = () => {
@@ -17,14 +17,14 @@ const getListPages = (latest: MonthYearTypes): MonthYearTypes[] => {
 			results.push({ month: month + 1, year });
 		}
 
-		if (year < latest.year || (year === latest.year && month < latest.month)) {
+		if (year < latest.year || (year === latest.year && month < latest.month - 2)) {
 			addNext();
 		}
 	};
 
 	addNext();
 
-	return results;
+	return results.map((data) => `${data.year}-${data.month.toString().padStart(2, '0')}`);
 };
 
 export default getListPages;

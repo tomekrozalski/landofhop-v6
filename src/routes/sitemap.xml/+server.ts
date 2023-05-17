@@ -21,13 +21,13 @@ export const GET: RequestHandler = async ({ setHeaders }) => {
       <lastmod>${lastMod}</lastmod>
     </url>
 	  ${listPages.map(
-			({ month, year }) => `
+			(slug) => `
 	    <url>
-	      <loc>https://hop.land/list/${year}-${month.toString().padStart(2, '0')}</loc>
+	      <loc>https://hop.land/list/${slug}</loc>
 	      <lastmod>${lastMod}</lastmod>
 	    </url>
       <url>
-        <loc>https://hop.land/en/list/${year}-${month.toString().padStart(2, '0')}</loc>
+        <loc>https://hop.land/en/list/${slug}</loc>
         <lastmod>${lastMod}</lastmod>
       </url>
 	  `

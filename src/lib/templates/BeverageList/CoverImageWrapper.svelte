@@ -18,10 +18,14 @@
 			nativeLoading = true;
 		}
 	});
+
+	/* TODO
+	href -> /details/{beverage.shortId}/{beverage.brand.badge}/{beverage.badge}
+	*/
 </script>
 
 <a
-	href="/details/{beverage.shortId}/{beverage.brand.badge}/{beverage.badge}"
+	href="/"
 	style:aspect-ratio="{coverImage?.width} / {coverImage?.height}"
 	aria-label="{name.value}, {brand.name.value}"
 	class="group relative w-full focus:border-8 focus:border-black focus:outline-none"
