@@ -3,8 +3,6 @@ import type { RequestHandler } from '@sveltejs/kit';
 import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
 import getListPages from './getListPages';
 
-export const prerender = true;
-
 export const GET: RequestHandler = async ({ setHeaders }) => {
 	// -----------------------------------
 	// Beverage lists pages
