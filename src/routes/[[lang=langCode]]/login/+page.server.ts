@@ -1,6 +1,9 @@
+import bcrypt from 'bcryptjs';
 import { fail } from '@sveltejs/kit';
 import { superValidate } from 'sveltekit-superforms/server';
-import schema from './loginForm/loginSchema';
+import { users } from '$lib/db/mongo';
+import { createSession, generateTokens } from '$lib/utils/api/sessions';
+import schema from './loginForm/validationSchema';
 
 export const load = async () => {
 	const form = await superValidate(schema);
@@ -9,19 +12,46 @@ export const load = async () => {
 };
 
 export const actions = {
-	default: async ({ request }) => {
+	default: async ({ cookies, request, getClientAddress }) => {
 		const form = await superValidate(request, schema);
-		console.log('POST', form);
 
-		// Convenient validation check:
 		if (!form.valid) {
-			// Again, always return { form } and things will just work.
 			return fail(400, { form });
 		}
 
-		// TODO: Do something with the validated data
+		const { email, password } = form.data;
+		const user = await users.findOne({ email });
 
-		// Yep, return { form } here too
-		return { form };
+		if (!user) {
+			return fail(400, { form });
+		}
+
+		try {
+			const isAuthorized = await bcrypt.compare(password, user.password);
+
+			if (!isAuthorized) {
+				return fail(400, { form });
+			}
+
+			const sessionToken = await createSession({
+				ip: getClientAddress(),
+				userId: user._id.toString(),
+				userAgent: request.headers.get('user-agent') ?? ''
+			});
+
+			if (!sessionToken) {
+				return fail(500, { form });
+			}
+
+			generateTokens({
+				cookies,
+				sessionToken,
+				userId: user._id.toString()
+			});
+
+			return { form };
+		} catch {
+			return fail(500, { form });
+		}
 	}
 };

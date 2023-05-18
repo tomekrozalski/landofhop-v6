@@ -3,53 +3,25 @@
 	import type { Validation } from 'sveltekit-superforms';
 	import { page } from '$app/stores';
 	import { LL } from '$lib/i18n/i18n-svelte';
+	import authentication from '$lib/utils/stores/authentication';
 	import Label from '$lib/atoms/forms/Label.svelte';
 	import TextInput from '$lib/atoms/forms/TextInput.svelte';
 	import Button from '$lib/atoms/forms/Button.svelte';
-
-	import type { LoginSchema } from './loginSchema';
-	// import authentication from '$lib/utils/stores/authentication';
+	import type { LoginSchema } from './validationSchema';
 
 	$: data = $page.data.form as Validation<LoginSchema>;
 
 	const { form, errors, enhance, constraints, delayed } = superForm(data, {
-		validationMethod: 'onblur'
+		onResult: ({ result }) => {
+			if (result.type === 'success') {
+				authentication.setLoginStatus('fulfilled');
+			} else {
+				authentication.setLoginStatus('rejected');
+			}
+		}
 	});
 
 	const formName = 'login';
-
-	// 	const formData = createForm({
-	// 		initialValues: {
-	// 			email: '',
-	// 			password: ''
-	// 		},
-	// 		validationSchema: yup.object().shape({
-	// 			email: yup
-	// 				.string()
-	// 				.email($LL.pages.login.incorrectEmail())
-	// 				.required($LL.forms.validation.required()),
-	// 			password: yup.string().required($LL.forms.validation.required())
-	// 		}),
-	// 		onSubmit: (values) => {
-	// 			return fetch('/login/api/signin', {
-	// 				method: 'POST',
-	// 				body: JSON.stringify(values)
-	// 			})
-	// 				.then(async (response) => {
-	// 					if (response.status >= 300) {
-	// 						const data = await response.json();
-	// 						throw new Error(data.message);
-	// 					}
-	//
-	// 					authentication.setLoginStatus('fulfilled');
-	// 				})
-	// 				.catch(() => {
-	// 					authentication.setLoginStatus('rejected');
-	// 				});
-	// 		}
-	// 	});
-	//
-	// 	const { isSubmitting } = formData;
 </script>
 
 <form method="POST" use:enhance class="mx-auto max-w-xl">
@@ -78,6 +50,6 @@
 		/>
 	</div>
 	<div class="flex justify-end">
-		<Button isSubmitting={$delayed} type="submit">{$LL.pages.login.submit()}</Button>
+		<Button isDelayed={$delayed} type="submit">{$LL.pages.login.submit()}</Button>
 	</div>
 </form>
