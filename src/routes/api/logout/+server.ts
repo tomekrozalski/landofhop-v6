@@ -14,6 +14,7 @@ export const GET = async ({ cookies }) => {
 			cookies.get('refreshToken') ?? '',
 			JWT_SECRET
 		) as jwt.JwtPayload;
+
 		await sessions.deleteOne({ sessionToken });
 		removeTokens(cookies);
 

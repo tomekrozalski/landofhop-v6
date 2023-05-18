@@ -2,8 +2,6 @@
 	export let classNames: string = '';
 	export let errors: string[] | undefined = undefined;
 	export let value: string;
-
-	$: console.log('!', errors);
 </script>
 
 <span class="relative {classNames}">

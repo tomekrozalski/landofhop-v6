@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { get } from 'svelte/store';
 import { LL } from '$lib/i18n/i18n-svelte';
 
-const schema = z.object({
+const validationSchema = z.object({
 	email: z
 		.string()
 		.trim()
@@ -13,6 +13,6 @@ const schema = z.object({
 		.min(1, { message: get(LL).forms.validation.required() })
 });
 
-export type LoginSchema = typeof schema;
+export type ValidationSchemaTypes = typeof validationSchema;
 
-export default schema;
+export default validationSchema;

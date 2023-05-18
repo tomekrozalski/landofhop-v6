@@ -5,11 +5,10 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import PageLink from './PageLink.svelte';
 
-	function logOut() {
-		fetch($LL.link('/login/api/signout'))
+	const logOut = () =>
+		fetch('/api/logout')
 			.then(authentication.logOut)
 			.catch(() => console.warn('Log out failed'));
-	}
 </script>
 
 <ul class="flex flex-grow flex-col py-1 md:flex-grow-0 md:flex-row">

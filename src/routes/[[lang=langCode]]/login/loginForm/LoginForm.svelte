@@ -7,9 +7,9 @@
 	import Label from '$lib/atoms/forms/Label.svelte';
 	import TextInput from '$lib/atoms/forms/TextInput.svelte';
 	import Button from '$lib/atoms/forms/Button.svelte';
-	import type { LoginSchema } from './validationSchema';
+	import type { ValidationSchemaTypes } from './validationSchema';
 
-	$: data = $page.data.form as Validation<LoginSchema>;
+	$: data = $page.data.form as Validation<ValidationSchemaTypes>;
 
 	const { form, errors, enhance, constraints, delayed } = superForm(data, {
 		onResult: ({ result }) => {

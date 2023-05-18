@@ -3,7 +3,7 @@
 	import Article from '$lib/atoms/Article.svelte';
 	import Header from '$lib/atoms/headers/Primary.svelte';
 	import authentication from '$lib/utils/stores/authentication';
-	import LoginForm from './loginForm/LoginForm.svelte';
+	import LoginForm from './LoginForm/LoginForm.svelte';
 	import ErrorMessage from './ErrorMessage.svelte';
 	import SuccessMessage from './SuccessMessage.svelte';
 </script>
