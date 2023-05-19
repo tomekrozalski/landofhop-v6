@@ -12,12 +12,13 @@
 	$: data = $page.data.form as Validation<ValidationSchemaTypes>;
 
 	const { form, errors, enhance, constraints, delayed } = superForm(data, {
-		onResult: ({ result }) => {
-			if (result.type === 'success') {
+		onUpdated: ({ form }) => {
+			if (form.valid) {
 				authentication.setLoginStatus('fulfilled');
-			} else {
-				authentication.setLoginStatus('rejected');
 			}
+		},
+		onError: () => {
+			authentication.setLoginStatus('rejected');
 		}
 	});
 

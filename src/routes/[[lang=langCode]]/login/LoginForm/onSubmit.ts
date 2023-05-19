@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { fail } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import type { RequestEvent } from '@sveltejs/kit';
 import type { Validation } from 'sveltekit-superforms';
 import { users } from '$lib/db/mongo';
@@ -14,14 +14,14 @@ const onSubmit = async (
 	const user = await users.findOne({ email });
 
 	if (!user) {
-		return fail(400, { form });
+		throw error(401, 'Authentication failed');
 	}
 
 	try {
 		const isAuthorized = await bcrypt.compare(password, user.password);
 
 		if (!isAuthorized) {
-			return fail(400, { form });
+			throw error(401, 'Authentication failed');
 		}
 
 		const sessionToken = await createSession({
@@ -31,7 +31,7 @@ const onSubmit = async (
 		});
 
 		if (!sessionToken) {
-			return fail(500, { form });
+			throw error(500, 'Creating session failed');
 		}
 
 		generateTokens({
@@ -42,7 +42,7 @@ const onSubmit = async (
 
 		return { form };
 	} catch {
-		return fail(500, { form });
+		throw error(500, 'Decryption failed');
 	}
 };
 
