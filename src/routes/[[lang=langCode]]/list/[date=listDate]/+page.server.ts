@@ -5,7 +5,7 @@ import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
 import { OLDEST_LIST } from '$lib/utils/constants';
 import normalizeApiData from '$lib/templates/BeverageList/normalizeApiData';
 
-export const prerender = true;
+// export const prerender = true;
 
 export const load = async ({ params }) => {
 	const latestMonth = await getLatestMonth();

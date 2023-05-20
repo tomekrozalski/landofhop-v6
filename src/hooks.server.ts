@@ -1,4 +1,4 @@
-import type { Handle } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import { minify } from 'html-minifier';
 import { start_mongo } from '$lib/db/mongo';
 import { authenticate } from '$lib/utils/api';
@@ -30,9 +30,20 @@ start_mongo()
 		console.error('Mongo launch failed');
 	});
 
-export const handle: Handle = async ({ event, resolve }) => {
+export const handle = async ({ event, resolve }) => {
+	event.locals.authenticated = false;
+
 	if (event.cookies.get('accessToken') || event.cookies.get('refreshToken')) {
 		event.locals.authenticated = await authenticate(event);
+	}
+
+	if (
+		event.url.pathname.startsWith('/dashboard') ||
+		event.url.pathname.startsWith('/en/dashboard')
+	) {
+		if (!event.locals.authenticated) {
+			throw redirect(303, '/login');
+		}
 	}
 
 	const response = await resolve(event, {
