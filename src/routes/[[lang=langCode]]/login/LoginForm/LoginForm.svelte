@@ -3,7 +3,6 @@
 	import type { Validation } from 'sveltekit-superforms';
 	import { page } from '$app/stores';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import authentication from '$lib/utils/stores/authentication';
 	import Label from '$lib/atoms/forms/Label.svelte';
 	import TextInput from '$lib/atoms/forms/TextInput.svelte';
 	import Button from '$lib/atoms/forms/Button.svelte';
@@ -14,11 +13,11 @@
 	const { form, errors, enhance, constraints, delayed } = superForm(data, {
 		onUpdated: ({ form }) => {
 			if (form.valid) {
-				authentication.setLoginStatus('fulfilled');
+				// authentication.setLoginStatus('fulfilled');
 			}
 		},
 		onError: () => {
-			authentication.setLoginStatus('rejected');
+			// authentication.setLoginStatus('rejected');
 		}
 	});
 

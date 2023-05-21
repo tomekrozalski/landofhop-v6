@@ -13,6 +13,8 @@
 	aria-label={$layoutStore.isNavigationOpened
 		? $LL.header.closeNavigation()
 		: $LL.header.openNavigation()}
+	aria-controls="navigation"
+	aria-expanded={$layoutStore.isNavigationOpened}
 >
 	<Fa
 		icon={faEllipsis}

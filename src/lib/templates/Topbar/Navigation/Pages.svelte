@@ -1,19 +1,22 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
 	import { faLock, faLockOpen } from '@fortawesome/pro-solid-svg-icons';
-	import authentication from '$lib/utils/stores/authentication';
+	import { page } from '$app/stores';
+
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import PageLink from './PageLink.svelte';
 
-	const logOut = () =>
-		fetch('/api/logout')
-			.then(authentication.logOut)
-			.catch(() => console.warn('Log out failed'));
+	const logOut = () => {};
+	// fetch('/api/logout')
+	// 	.then(authentication.logOut)
+	// 	.catch(() => console.warn('Log out failed'));
+
+	$: ({ authenticated } = $page.data);
 </script>
 
 <ul class="flex flex-grow flex-col py-1 md:flex-grow-0 md:flex-row">
 	<li class="flex">
-		{#if $authentication.isLoggedIn}
+		{#if authenticated}
 			<button
 				class="relative flex w-full items-center py-2 pl-10 pr-2 transition-colors
 				hover:bg-black hover:text-white focus:bg-black focus:text-white focus:outline-none
@@ -37,10 +40,10 @@
 		{/if}
 	</li>
 	<PageLink label={$LL.navigation.about()} link={$LL.link('/about')} />
-	<PageLink label={$LL.navigation.stats()} link={$LL.link('/stats')} />
-	<PageLink label={$LL.navigation.brands()} link={$LL.link('/brands')} />
-	<PageLink label={$LL.navigation.places()} link={$LL.link('/places')} />
-	{#if $authentication.isLoggedIn}
+	<!-- <PageLink label={$LL.navigation.stats()} link={$LL.link('/stats')} /> -->
+	<!-- <PageLink label={$LL.navigation.brands()} link={$LL.link('/brands')} /> -->
+	<!-- <PageLink label={$LL.navigation.places()} link={$LL.link('/places')} /> -->
+	{#if authenticated}
 		<PageLink
 			label={$LL.navigation.addNewBeverage()}
 			link={$LL.link('/dashboard/add-new-beverage')}
