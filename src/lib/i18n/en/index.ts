@@ -22,11 +22,9 @@ const en = {
 	link: '/en{0}',
 	navigation: {
 		about: 'About',
-		addNewBeverage: 'Add new beverage',
+		addBeverage: 'Add new beverage',
 		brands: 'Brands',
 		places: 'Places',
-		login: 'Login',
-		logout: 'Logout',
 		stats: 'Stats'
 	},
 	pages: {

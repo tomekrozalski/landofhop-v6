@@ -22,10 +22,8 @@ const pl = {
 	link: '{0}',
 	navigation: {
 		about: 'O stronie',
-		addNewBeverage: 'Dodaj nowe piwo',
+		addBeverage: 'Dodaj piwo',
 		brands: 'Marki',
-		login: 'Zaloguj',
-		logout: 'Wyloguj',
 		places: 'Miejsca',
 		stats: 'Statystyki'
 	},

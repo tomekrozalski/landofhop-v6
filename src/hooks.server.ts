@@ -46,21 +46,19 @@ export const handle = async ({ event, resolve }) => {
 		}
 	}
 
-	console.log('event.locals.authenticated', event.locals.authenticated);
-
 	const response = await resolve(event, {
 		transformPageChunk: ({ html }) => html.replace('%lang%', event.params.lang ?? 'pl')
 	});
 
-	// 	const mode = process.env.NODE_ENV;
-	// 	const dev = mode === 'development';
-	//
-	// 	if (!dev && response.headers.get('content-type') === 'text/html') {
-	// 		return new Response(minify(await response.text(), minification_options), {
-	// 			status: response.status,
-	// 			headers: response.headers
-	// 		});
-	// 	}
+	const mode = process.env.NODE_ENV;
+	const dev = mode === 'development';
+
+	if (!dev && response.headers.get('content-type') === 'text/html') {
+		return new Response(minify(await response.text(), minification_options), {
+			status: response.status,
+			headers: response.headers
+		});
+	}
 
 	return response;
 };

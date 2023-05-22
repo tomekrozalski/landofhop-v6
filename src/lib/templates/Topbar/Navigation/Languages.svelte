@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import LanguageLink from './LanguageLink.svelte';
 
-	const path = $page.url.pathname.replace(/^\/en/, '') || '/';
+	$: path = $page.url.pathname.replace(/^\/en/, '') || '/';
 </script>
 
 <ul class="flex flex-grow flex-col py-1 text-right md:ml-0 md:flex-row">

@@ -67,21 +67,13 @@ type RootTranslation = {
 		 */
 		about: string
 		/**
-		 * D​o​d​a​j​ ​n​o​w​e​ ​p​i​w​o
+		 * D​o​d​a​j​ ​p​i​w​o
 		 */
-		addNewBeverage: string
+		addBeverage: string
 		/**
 		 * M​a​r​k​i
 		 */
 		brands: string
-		/**
-		 * Z​a​l​o​g​u​j
-		 */
-		login: string
-		/**
-		 * W​y​l​o​g​u​j
-		 */
-		logout: string
 		/**
 		 * M​i​e​j​s​c​a
 		 */
@@ -202,21 +194,13 @@ export type TranslationFunctions = {
 		 */
 		about: () => LocalizedString
 		/**
-		 * Dodaj nowe piwo
+		 * Dodaj piwo
 		 */
-		addNewBeverage: () => LocalizedString
+		addBeverage: () => LocalizedString
 		/**
 		 * Marki
 		 */
 		brands: () => LocalizedString
-		/**
-		 * Zaloguj
-		 */
-		login: () => LocalizedString
-		/**
-		 * Wyloguj
-		 */
-		logout: () => LocalizedString
 		/**
 		 * Miejsca
 		 */

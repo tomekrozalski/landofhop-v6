@@ -1,4 +1,4 @@
-import { error, json } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from '$env/static/private';
 import { removeTokens } from '$lib/utils/api/sessions';
@@ -18,7 +18,7 @@ export const GET = async ({ cookies }) => {
 		await sessions.deleteOne({ sessionToken });
 		removeTokens(cookies);
 
-		return json({ message: 'Logged out successfully' });
+		throw redirect(303, '/login');
 	} catch {
 		throw error(401, 'Logged out failed');
 	}
