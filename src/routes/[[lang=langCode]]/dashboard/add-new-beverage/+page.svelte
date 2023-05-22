@@ -1,8 +1,14 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	const logOut = () => fetch('/api/logout');
+	import { goto } from '$app/navigation';
 
-	$: console.log('!', $page);
+	const logOut = () =>
+		fetch('/api/logout')
+			.then(() => {
+				goto('/login', { invalidateAll: true });
+			})
+			.catch((err) => {
+				console.log('err', err);
+			});
 </script>
 
 <div class="container">
