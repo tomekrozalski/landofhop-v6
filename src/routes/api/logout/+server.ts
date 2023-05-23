@@ -1,10 +1,10 @@
-import { error, json } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from '$env/static/private';
 import { removeTokens } from '$lib/utils/api/sessions';
 import { sessions } from '$lib/db/mongo';
 
-export const GET = async ({ cookies }) => {
+export const POST = async ({ cookies }) => {
 	if (!cookies.get('refreshToken')) {
 		throw error(400, 'Already logged out');
 	}
@@ -21,5 +21,5 @@ export const GET = async ({ cookies }) => {
 	await sessions.deleteOne({ sessionToken });
 	removeTokens(cookies);
 
-	return json({ message: 'Logged out successfully' });
+	throw redirect(303, '/');
 };

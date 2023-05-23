@@ -1,18 +1,7 @@
-<script lang="ts">
-	import { goto } from '$app/navigation';
-
-	const logOut = () =>
-		fetch('/api/logout')
-			.then(() => {
-				goto('/login', { invalidateAll: true });
-			})
-			.catch((err) => {
-				console.log('err', err);
-			});
-</script>
-
 <div class="container">
 	Admin dashboard
 
-	<button on:click={logOut}>Wyloguj</button>
+	<form action="/api/logout" method="POST">
+		<button class="btn btn-primary">Logout</button>
+	</form>
 </div>

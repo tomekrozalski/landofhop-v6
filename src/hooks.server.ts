@@ -37,13 +37,12 @@ export const handle = async ({ event, resolve }) => {
 		event.locals.authenticated = await authenticate(event);
 	}
 
-	if (
-		event.url.pathname.startsWith('/dashboard') ||
-		event.url.pathname.startsWith('/en/dashboard')
-	) {
-		if (!event.locals.authenticated) {
-			throw redirect(303, '/login');
-		}
+	if (event.url.pathname.startsWith('/dashboard') && !event.locals.authenticated) {
+		throw redirect(303, '/login');
+	}
+
+	if (event.url.pathname.startsWith('/en/dashboard') && !event.locals.authenticated) {
+		throw redirect(303, '/en/login');
 	}
 
 	const response = await resolve(event, {

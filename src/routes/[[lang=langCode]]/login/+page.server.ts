@@ -4,16 +4,23 @@ import { error, fail, redirect } from '@sveltejs/kit';
 import { users } from '$lib/db/mongo';
 import { createSession, generateTokens } from '$lib/utils/api/sessions';
 import validationSchema from './validationSchema';
+import { get } from 'svelte/store';
+import { LL } from '$lib/i18n/i18n-svelte';
 
-export const load = async () => {
+export const load = async ({ parent, request }) => {
+	await parent();
+
+	console.log('->', request);
 	const form = await superValidate(validationSchema);
 
-	return { form, test: Math.random() };
+	console.log('1', get(LL).about.header());
+
+	return { form };
 };
 
 export const actions = {
-	default: async (event) => {
-		const form = await superValidate(event.request, validationSchema);
+	default: async ({ cookies, getClientAddress, request }) => {
+		const form = await superValidate(request, validationSchema);
 
 		if (!form.valid) {
 			return fail(400, { form });
@@ -33,9 +40,9 @@ export const actions = {
 		}
 
 		const sessionToken = await createSession({
-			ip: event.getClientAddress(),
+			ip: getClientAddress(),
 			userId: user._id.toString(),
-			userAgent: event.request.headers.get('user-agent') ?? ''
+			userAgent: request.headers.get('user-agent') ?? ''
 		});
 
 		if (!sessionToken) {
@@ -43,7 +50,7 @@ export const actions = {
 		}
 
 		generateTokens({
-			cookies: event.cookies,
+			cookies,
 			sessionToken,
 			userId: user._id.toString()
 		});
