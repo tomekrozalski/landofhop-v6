@@ -20,6 +20,7 @@ const en = {
 		search: 'Search'
 	},
 	link: '/en{0}',
+	log: `This log was called from '{fileName:string}'`,
 	navigation: {
 		about: 'About',
 		addBeverage: 'Add new beverage',

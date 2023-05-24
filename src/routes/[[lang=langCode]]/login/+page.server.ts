@@ -4,23 +4,31 @@ import { error, fail, redirect } from '@sveltejs/kit';
 import { users } from '$lib/db/mongo';
 import { createSession, generateTokens } from '$lib/utils/api/sessions';
 import validationSchema from './validationSchema';
-import { get } from 'svelte/store';
-import { LL } from '$lib/i18n/i18n-svelte';
 
-export const load = async ({ parent, request }) => {
-	await parent();
+import { z } from 'zod';
 
-	console.log('->', request);
-	const form = await superValidate(validationSchema);
+export const load = async ({ parent, locals }) => {
+	const form = await superValidate(
+		z.object({
+			email: z.string().trim().email({ message: locals.LL.pages.login.incorrectEmail() }),
+			password: z.string().trim().min(1, { message: locals.LL.forms.validation.required() })
+		})
+	);
 
-	console.log('1', get(LL).about.header());
+	console.log('1', locals.LL.about.header());
 
 	return { form };
 };
 
 export const actions = {
-	default: async ({ cookies, getClientAddress, request }) => {
-		const form = await superValidate(request, validationSchema);
+	default: async ({ cookies, getClientAddress, request, locals }) => {
+		const form = await superValidate(
+			request,
+			z.object({
+				email: z.string().trim().email({ message: locals.LL.pages.login.incorrectEmail() }),
+				password: z.string().trim().min(1, { message: locals.LL.forms.validation.required() })
+			})
+		);
 
 		if (!form.valid) {
 			return fail(400, { form });

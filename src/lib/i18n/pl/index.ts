@@ -20,6 +20,7 @@ const pl = {
 		search: 'Szukaj'
 	},
 	link: '{0}',
+	log: `To zostało wywołane przez '{fileName:string}'`,
 	navigation: {
 		about: 'O stronie',
 		addBeverage: 'Dodaj piwo',

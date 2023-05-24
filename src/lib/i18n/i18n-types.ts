@@ -61,6 +61,11 @@ type RootTranslation = {
 	 * @param {unknown} 0
 	 */
 	link: RequiredParams<'0'>
+	/**
+	 * T​o​ ​z​o​s​t​a​ł​o​ ​w​y​w​o​ł​a​n​e​ ​p​r​z​e​z​ ​'​{​f​i​l​e​N​a​m​e​}​'
+	 * @param {string} fileName
+	 */
+	log: RequiredParams<'fileName'>
 	navigation: {
 		/**
 		 * O​ ​s​t​r​o​n​i​e
@@ -188,6 +193,10 @@ export type TranslationFunctions = {
 	 * {0}
 	 */
 	link: (arg0: unknown) => LocalizedString
+	/**
+	 * To zostało wywołane przez '{fileName}'
+	 */
+	log: (arg: { fileName: string }) => LocalizedString
 	navigation: {
 		/**
 		 * O stronie
