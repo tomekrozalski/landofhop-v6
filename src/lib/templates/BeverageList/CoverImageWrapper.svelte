@@ -26,7 +26,7 @@
 </script>
 
 <a
-	href={$LL.link('/')}
+	href={$LL.link(`/details/${beverage.shortId}/${beverage.brand.badge}/${beverage.badge}`)}
 	style:aspect-ratio="{coverImage?.width} / {coverImage?.height}"
 	aria-label="{name.value}, {brand.name.value}"
 	class="group relative w-full focus:border-8 focus:border-black focus:outline-none"
