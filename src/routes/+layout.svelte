@@ -1,25 +1,10 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { dev } from '$app/environment';
 	import { navigating } from '$app/stores';
-	import * as Sentry from '@sentry/svelte';
-	import { BrowserTracing } from '@sentry/tracing';
 	import Main from '$lib/templates/Main/Main.svelte';
 	import Topbar from '$lib/templates/Topbar/Topbar.svelte';
 	import layoutStore from '$lib/templates/Main/store';
 	import '../app.css';
-
-	const appVersion = __version__ as string;
-
-	if (!dev) {
-		Sentry.init({
-			dsn: 'https://8c4fe696441240bf8e55f681656ee32b@o422922.ingest.sentry.io/4504322494431232',
-			integrations: [new BrowserTracing()],
-			environment: 'production',
-			release: 'land-of-hop@' + appVersion,
-			tracesSampleRate: 1.0
-		});
-	}
 
 	afterNavigate(() => {
 		// when path change, close navigation
