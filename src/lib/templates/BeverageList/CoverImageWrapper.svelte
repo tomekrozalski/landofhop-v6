@@ -37,11 +37,13 @@
 		</span>
 	{/if}
 	{#if eager || nativeLoading}
+		<div>hm {loaded ? 'loaded true' : 'loaded false'}</div>
 		<CoverImage {beverage} {eager} bind:loaded />
 	{:else}
 		<IntersectionObserver once={true} let:intersecting>
 			<div>bum {intersecting ? '1' : '2'}</div>
 			{#if intersecting}
+				<div>sdf</div>
 				<CoverImage {beverage} {eager} bind:loaded />
 			{/if}
 		</IntersectionObserver>

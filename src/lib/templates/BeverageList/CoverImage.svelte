@@ -18,6 +18,7 @@
 	}
 </script>
 
+<div>Tutaj {loaded ? 'a' : 'b'}</div>
 <img
 	alt={loaded || eager ? `${beverage.name.value}, ${beverage.brand.name.value}` : ''}
 	class="absolute transition-transform group-hover:scale-90 group-focus:scale-90"

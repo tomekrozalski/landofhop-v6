@@ -14,7 +14,7 @@
 		if (typeof IntersectionObserver !== 'undefined') {
 			const observer = new IntersectionObserver(
 				(entries) => {
-					info1 = JSON.stringify(entries);
+					info1 = JSON.stringify(entries[0]);
 					intersecting = entries[0].isIntersecting;
 					if (intersecting && once) {
 						observer.unobserve(container);
