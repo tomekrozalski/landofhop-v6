@@ -11,6 +11,7 @@
 		if (typeof IntersectionObserver !== 'undefined') {
 			const observer = new IntersectionObserver(
 				(entries) => {
+					console.log('entries', entries);
 					intersecting = entries[0].isIntersecting;
 					if (intersecting && once) {
 						observer.unobserve(container);
@@ -21,6 +22,8 @@
 
 			observer.observe(container);
 			return () => observer.unobserve(container);
+		} else {
+			console.warn('IntersectionObserver is not supported');
 		}
 	});
 </script>
