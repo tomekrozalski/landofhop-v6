@@ -17,7 +17,7 @@ const normalizeApiData = (rawBasics: RawBasics[]): Basics[] =>
 			coverImage: {
 				height: coverImage.height,
 				width: coverImage.width,
-				outline: ''
+				outline: coverImage.outlines
 			}
 		}),
 		containerType,
