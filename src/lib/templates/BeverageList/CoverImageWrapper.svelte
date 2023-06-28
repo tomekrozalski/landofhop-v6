@@ -16,7 +16,10 @@
 
 	onMount(() => {
 		if ('loading' in HTMLImageElement.prototype) {
+			console.log('onmount true');
 			nativeLoading = true;
+		} else {
+			console.log('onmount false');
 		}
 	});
 
