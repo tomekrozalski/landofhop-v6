@@ -16,10 +16,7 @@
 
 	onMount(() => {
 		if ('loading' in HTMLImageElement.prototype) {
-			console.log('onmount true');
 			nativeLoading = true;
-		} else {
-			console.log('onmount false');
 		}
 	});
 
@@ -29,7 +26,7 @@
 </script>
 
 <a
-	href={$LL.link(`/details/${beverage.shortId}/${beverage.brand.badge}/${beverage.badge}`)}
+	href={$LL.link(`/`)}
 	style:aspect-ratio="{coverImage?.width} / {coverImage?.height}"
 	aria-label="{name.value}, {brand.name.value}"
 	class="group relative w-full focus:z-10 focus:outline-none focus:outline-8 focus:outline-black"
@@ -40,13 +37,10 @@
 		</span>
 	{/if}
 	{#if eager || nativeLoading}
-		<div>hm {loaded ? 'loaded true' : 'loaded false'}</div>
 		<CoverImage {beverage} {eager} bind:loaded />
 	{:else}
 		<IntersectionObserver once={true} let:intersecting>
-			<div>bum {intersecting ? '1' : '2'}</div>
 			{#if intersecting}
-				<div>sdf</div>
 				<CoverImage {beverage} {eager} bind:loaded />
 			{/if}
 		</IntersectionObserver>
