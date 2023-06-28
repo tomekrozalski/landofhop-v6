@@ -40,6 +40,7 @@
 		<CoverImage {beverage} {eager} bind:loaded />
 	{:else}
 		<IntersectionObserver once={true} let:intersecting>
+			<div>bum {intersecting ? '1' : '2'}</div>
 			{#if intersecting}
 				<CoverImage {beverage} {eager} bind:loaded />
 			{/if}

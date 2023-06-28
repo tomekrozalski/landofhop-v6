@@ -26,5 +26,6 @@
 </script>
 
 <div bind:this={container} class="h-full w-full">
+	test {intersecting ? 'tak' : 'no'}
 	<slot {intersecting} />
 </div>
