@@ -1,18 +1,19 @@
 import { format } from 'date-fns';
+import type { Locales } from '$lib/i18n/i18n-types';
 import { translate } from '$lib/utils/api';
-import { AppLanguage, DateFormat } from '$lib/db/enums/Globals.enum';
+import { DateFormat } from '$lib/db/enums/Globals.enum';
 import type { RawBasics } from '$lib/db/types/RawBasics.d';
 import type { Basics } from './Basics.d';
 
-const normalizeApiData = (rawBasics: RawBasics[]): Basics[] =>
+const normalizeApiData = (rawBasics: RawBasics[], locale: Locales): Basics[] =>
 	rawBasics.map(({ added, badge, brand, containerType, coverImage, name, shortId }) => ({
 		shortId,
 		badge,
 		brand: {
 			...brand,
-			name: translate(brand.name, AppLanguage.pl)
+			name: translate(brand.name, locale)
 		},
-		name: translate(name, AppLanguage.pl),
+		name: translate(name, locale),
 		...(coverImage && {
 			coverImage: {
 				height: coverImage.height,
@@ -21,7 +22,7 @@ const normalizeApiData = (rawBasics: RawBasics[]): Basics[] =>
 			}
 		}),
 		containerType,
-		added: format(new Date(added), DateFormat[AppLanguage.pl])
+		added: format(new Date(added), DateFormat[locale])
 	}));
 
 export default normalizeApiData;

@@ -1,8 +1,3 @@
-export enum AppLanguage {
-	en = 'en',
-	pl = 'pl'
-}
-
 export enum DateFormat {
 	en = 'yyyy, do LLL',
 	pl = 'dd.MM.yyyy'

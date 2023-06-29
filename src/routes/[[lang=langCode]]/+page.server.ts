@@ -7,7 +7,7 @@ import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
 // 	isr: { expiration: 60 }
 // };
 
-export const load = async () => {
+export const load = async ({ locals }) => {
 	const { month, year } = await getLatestMonth();
 	const currentDate = new Date(year, month - 1);
 
@@ -21,7 +21,7 @@ export const load = async () => {
 		.sort({ added: -1 })
 		.toArray();
 
-	const beverages = normalizeApiData(rawBasics);
+	const beverages = normalizeApiData(rawBasics, locals.locale);
 
 	return {
 		beverages,

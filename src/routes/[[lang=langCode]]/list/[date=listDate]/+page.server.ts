@@ -9,10 +9,10 @@ import normalizeApiData from '$lib/templates/BeverageList/normalizeApiData';
 // 	isr: { expiration: 60 }
 // };
 
-export const load = async ({ params }) => {
+export const load = async ({ locals, params }) => {
 	const latestMonth = await getLatestMonth();
 
-	const [year, month] = params.date.split('-').map((elem) => +elem);
+	const [year, month] = params.date.split('-').map((elem) => +elem) as [number, number];
 	const date = new Date(year, month - 1);
 
 	if (month < 1 || month > 12) {
@@ -36,7 +36,7 @@ export const load = async ({ params }) => {
 		.sort({ added: -1 })
 		.toArray();
 
-	const beverages = normalizeApiData(rawBasics);
+	const beverages = normalizeApiData(rawBasics, locals.locale);
 	const latestMonthDate = new Date(latestMonth.year, latestMonth.month);
 	const nextMonth = new Date(year, month);
 	const isOneBeforeMostRecent = differenceInMonths(latestMonthDate, nextMonth) === 1;

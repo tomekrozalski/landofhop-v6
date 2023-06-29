@@ -1,12 +1,8 @@
-import type { AppLanguage } from '$lib/db/enums/Globals.enum';
-import type { LanguageValue } from '$lib/db/types/LanguageValue.d';
+import type { Locales } from '$lib/i18n/i18n-types';
 
-const translate = (values: LanguageValue[], desiredLanguage: AppLanguage): LanguageValue => {
-	return (
-		values.find((item) => item.language === desiredLanguage) ||
-		values.find((item) => !item.language) ||
-		values[0]
-	);
-};
+const translate = <T extends { language?: string }>(values: T[], desiredLanguage: Locales): T =>
+	values.find((item) => item.language === desiredLanguage) ||
+	values.find((item) => !item.language) ||
+	values[0];
 
 export default translate;
