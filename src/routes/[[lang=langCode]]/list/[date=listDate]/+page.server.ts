@@ -16,14 +16,14 @@ export const load = async ({ locals, params }) => {
 	const date = new Date(year, month - 1);
 
 	if (month < 1 || month > 12) {
-		throw error(404, { message: 'Wrong date format' });
+		throw error(404, 'Wrong date format');
 	}
 
 	if (
 		isAfter(date, new Date(latestMonth.year, latestMonth.month - 2)) ||
 		isBefore(date, new Date(2017, 5))
 	) {
-		throw error(404, { message: 'Date our of scope' });
+		throw error(404, 'Date our of scope');
 	}
 
 	const rawBasics = await basics

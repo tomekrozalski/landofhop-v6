@@ -1,5 +1,5 @@
 import type { ContainerType } from '../types/Beverage.enum';
-import type { LanguageValue } from './LanguageValue.d';
+import type LanguageValue from './LanguageValue.d';
 
 export type RawBasics = {
 	// _id: string;

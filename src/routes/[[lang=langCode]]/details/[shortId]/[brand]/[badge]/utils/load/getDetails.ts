@@ -10,7 +10,7 @@ const getDetails = async ({ shortId }: GetDetailsType): Promise<RawBeverage> => 
 	const beverage: RawBeverage | null = await beverages.findOne({ shortId });
 
 	if (!beverage) {
-		throw error(404);
+		throw error(404, 'Wrong beverage id');
 	}
 
 	return beverage;

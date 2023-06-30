@@ -1,26 +1,17 @@
-import {
-	AgedPreviousContent,
-	AgedTimeUnit,
-	AgedType,
-	AgedWood,
-	AlcoholRelate,
-	AlcoholScope,
-	AlcoholUnit,
-	Clarity,
-	ContainerColor,
-	ContainerMaterial,
-	ContainerType,
-	ContainerUnit,
-	Currency,
-	ExpirationDateUnit,
-	ExtractRelate,
-	ExtractUnit,
-	Fermentation,
-	HopRateUnit,
-	IngredientType,
-	TemperatureUnit
-} from '../enums/Beverage.enum';
-import type { LanguageValue } from './LanguageValue.d';
+import { Clarity, Fermentation } from '../enums/Beverage.enum';
+import type Aged from './RawBeverage/Aged.d';
+import type Alcohol from './RawBeverage/Alcohol.d';
+import type Container from './RawBeverage/Container.d';
+import type ExpirationDate from './RawBeverage/ExpirationDate.d';
+import type Extract from './RawBeverage/Extract.d';
+import type HopRate from './RawBeverage/HopRate.d';
+import type Ingredient from './RawBeverage/Ingredient.d';
+import type Institution from './RawBeverage/Institution.d';
+import type Place from './RawBeverage/Place.d';
+import type Price from './RawBeverage/Price.d';
+import type Tale from './RawBeverage/Tale.d';
+import type Temperature from './RawBeverage/Temperature.d';
+import type LanguageValue from './LanguageValue.d';
 
 export type RawBeverage = {
 	// _id: string;
@@ -31,90 +22,28 @@ export type RawBeverage = {
 		general: {
 			name: LanguageValue[];
 			series?: LanguageValue[];
-			brand: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			};
-			cooperation?: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			}[];
-			contract?: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			};
+			brand: Institution;
+			cooperation?: Institution[];
+			contract?: Institution;
 			isContract?: boolean;
-			place?: {
-				city: LanguageValue[];
-				country: string;
-				shortId: string;
-			};
+			place?: Place;
 			remark?: LanguageValue[];
-			tale?: {
-				article?: string;
-				language: string;
-				lead: string;
-			}[];
+			tale?: Tale[];
 			barcode?: string;
 		};
 		brewing?: {
 			fermentation?: Fermentation[];
-			extract?: {
-				relate: ExtractRelate;
-				unit: ExtractUnit;
-				value: number;
-			};
-			alcohol?: {
-				relate: AlcoholRelate;
-				unit: AlcoholUnit;
-				value: number;
-				scope?: AlcoholScope;
-			};
+			extract?: Extract;
+			alcohol?: Alcohol;
 			filtration?: boolean;
 			pasteurization?: boolean;
-			aged?: {
-				type?: AgedType;
-				wood?: AgedWood;
-				time?: {
-					value: number;
-					unit: AgedTimeUnit;
-				};
-				previousContent?: AgedPreviousContent[];
-			}[];
+			aged?: Aged[];
 			style?: LanguageValue[];
 			isDryHopped?: boolean;
-			dryHopped?: {
-				badge: string;
-				name: LanguageValue[];
-				type: IngredientType;
-			}[];
-			hopRate?: {
-				unit: HopRateUnit;
-				value: number;
-			};
+			dryHopped?: Ingredient[];
+			hopRate?: HopRate;
 			nitrogen?: boolean;
-			expirationDate?: {
-				value: number;
-				unit: ExpirationDateUnit;
-			};
+			expirationDate?: ExpirationDate;
 		};
 		ingredients?: {
 			descriptive?: {
@@ -122,11 +51,7 @@ export type RawBeverage = {
 				language: string;
 				list: string[];
 			}[];
-			tags?: {
-				badge: string;
-				name: LanguageValue[];
-				type: IngredientType;
-			}[];
+			tags?: Ingredient[];
 			smokedMalt?: boolean;
 		};
 		impressions?: {
@@ -135,115 +60,36 @@ export type RawBeverage = {
 			fullness?: number;
 			power?: number;
 			hoppyness?: number;
-			temperature?: {
-				from: number;
-				to: number;
-				unit: TemperatureUnit;
-			};
+			temperature?: Temperature;
 		};
-		container: {
-			color: ContainerColor;
-			material: ContainerMaterial;
-			unit: ContainerUnit;
-			type: ContainerType;
-			value: number;
-			hasCork?: boolean;
-			hasCapWireFlip?: boolean;
-		};
-		price?: {
-			currency: Currency;
-			date: Date;
-			shop?: string;
-			value: number;
-		}[];
+		container: Container;
+		price?: Price[];
 	};
 	// producer
 	producer?: {
 		general?: {
 			series?: LanguageValue[];
-			brand?: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			};
-			cooperation?: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			}[];
-			contract?: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			};
+			brand?: Institution;
+			cooperation?: Institution[];
+			contract?: Institution;
 			isContract?: boolean;
-			place?: {
-				city: LanguageValue[];
-				country: string;
-				shortId: string;
-			};
+			place?: Place;
 			remark?: LanguageValue[];
-			tale?: {
-				article?: string;
-				language: string;
-				lead: string;
-			}[];
+			tale?: Tale[];
 		};
 		brewing?: {
 			fermentation?: Fermentation[];
-			extract?: {
-				relate: ExtractRelate;
-				unit: ExtractUnit;
-				value: number;
-			};
-			alcohol?: {
-				relate: AlcoholRelate;
-				unit: AlcoholUnit;
-				value: number;
-				scope?: AlcoholScope;
-			};
+			extract?: Extract;
+			alcohol?: Alcohol;
 			filtration?: boolean;
 			pasteurization?: boolean;
-			aged?: {
-				type?: AgedType;
-				wood?: AgedWood;
-				time?: {
-					value: number;
-					unit: AgedTimeUnit;
-				};
-				previousContent?: AgedPreviousContent[];
-			}[];
+			aged?: Aged[];
 			style?: LanguageValue[];
 			isDryHopped?: boolean;
-			dryHopped?: {
-				badge: string;
-				name: LanguageValue[];
-				type: IngredientType;
-			}[];
-			hopRate?: {
-				unit: HopRateUnit;
-				value: number;
-			};
+			dryHopped?: Ingredient[];
+			hopRate?: HopRate;
 			nitrogen?: boolean;
-			expirationDate?: {
-				value: number;
-				unit: ExpirationDateUnit;
-			};
+			expirationDate?: ExpirationDate;
 		};
 		ingredients?: {
 			descriptive?: {
@@ -251,11 +97,7 @@ export type RawBeverage = {
 				language: string;
 				list: string[];
 			}[];
-			tags?: {
-				badge: string;
-				name: LanguageValue[];
-				type: IngredientType;
-			}[];
+			tags?: Ingredient[];
 			smokedMalt?: boolean;
 		};
 		impressions?: {
@@ -264,49 +106,18 @@ export type RawBeverage = {
 			fullness?: number;
 			power?: number;
 			hoppyness?: number;
-			temperature?: {
-				from: number;
-				to: number;
-				unit: TemperatureUnit;
-			};
+			temperature?: Temperature;
 		};
-		price?: {
-			currency: Currency;
-			date: Date;
-			shop?: string;
-			value: number;
-		}[];
+		price?: Price[];
 	};
 	// editorial
 	editorial?: {
 		general?: {
 			series?: LanguageValue[];
-			cooperation?: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			}[];
-			contract?: {
-				badge: string;
-				name: LanguageValue[];
-				shortId: string;
-				owner?: {
-					badge: string;
-					name: LanguageValue[];
-					shortId: string;
-				};
-			};
+			cooperation?: Institution[];
+			contract?: Institution;
 			isContract?: boolean;
-			place?: {
-				city: LanguageValue[];
-				country: string;
-				shortId: string;
-			};
+			place?: Place;
 			remark?: LanguageValue[];
 		};
 		brewing?: {
@@ -320,21 +131,9 @@ export type RawBeverage = {
 			};
 			filtration?: boolean;
 			pasteurization?: boolean;
-			aged?: {
-				type?: AgedType;
-				wood?: AgedWood;
-				time?: {
-					value: number;
-					unit: AgedTimeUnit;
-				};
-				previousContent?: AgedPreviousContent[];
-			}[];
+			aged?: Aged[];
 			isDryHopped?: boolean;
-			dryHopped?: {
-				badge: string;
-				name: LanguageValue[];
-				type: IngredientType;
-			}[];
+			dryHopped?: Ingredient[];
 			nitrogen?: boolean;
 		};
 		impressions?: {
@@ -360,12 +159,7 @@ export type RawBeverage = {
 				date?: Date;
 			};
 		};
-		price?: {
-			currency: Currency;
-			date: Date;
-			shop?: string;
-			value: number;
-		}[];
+		price?: Price[];
 		photos?: {
 			cap?: boolean;
 			cover?: {

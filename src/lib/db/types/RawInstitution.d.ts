@@ -1,4 +1,4 @@
-import type { LanguageValue } from './LanguageValue.d';
+import type LanguageValue from './LanguageValue.d';
 
 export type RawInstitution = {
 	// _id: string;

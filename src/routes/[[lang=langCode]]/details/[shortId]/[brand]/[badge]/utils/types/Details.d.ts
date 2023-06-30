@@ -1,4 +1,4 @@
-import { LanguageValue } from '$lib/db/types/LanguageValue.d';
+import LanguageValue from '$lib/db/types/LanguageValue.d';
 import {
 	AgedPreviousContent,
 	AgedTimeUnit,
@@ -21,7 +21,17 @@ import {
 	IngredientType,
 	TemperatureUnit
 } from '$lib/db/enums/Beverage.enum';
-import { FormattedInstitution } from './Institution.d';
+
+export type Institution = {
+	badge: string;
+	name: LanguageValue;
+	shortId: string;
+	owner?: {
+		badge: string;
+		name: LanguageValue;
+		shortId: string;
+	};
+};
 
 export type Details = {
 	shortId: string;
@@ -32,16 +42,16 @@ export type Details = {
 		producer?: LanguageValue[];
 		editorial?: LanguageValue[];
 	};
-	brand: FormattedInstitution;
+	brand: Institution;
 	cooperation?: {
-		label?: FormattedInstitution[];
-		producer?: FormattedInstitution[];
-		editorial?: FormattedInstitution[];
+		label?: Institution[];
+		producer?: Institution[];
+		editorial?: Institution[];
 	};
 	contract?: {
-		label?: FormattedInstitution;
-		producer?: FormattedInstitution;
-		editorial?: FormattedInstitution;
+		label?: Institution;
+		producer?: Institution;
+		editorial?: Institution;
 	};
 	isContract?: {
 		label?: boolean;

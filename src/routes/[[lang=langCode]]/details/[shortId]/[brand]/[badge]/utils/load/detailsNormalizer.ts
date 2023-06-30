@@ -4,19 +4,14 @@ import type { Locales } from '$lib/i18n/i18n-types';
 import { deleteIfEmpty, translate } from '$lib/utils/api';
 import { DateFormat } from '$lib/db/enums/Globals.enum';
 import type { RawBeverage } from '$lib/db/types/RawBeverage.d';
-import type { Details } from '../../types/Details.d';
-import type { FormattedInstitution, Institution } from '../../types/Institution.d';
+import type InstitutionRaw from '$lib/db/types/RawBeverage/Institution.d';
+import type { Details, Institution } from '../types/Details.d';
 import countryList from './countryList';
 
 function normalizer(beverage: RawBeverage, desiredLanguage: Locales): Details {
 	const countries = countryList[desiredLanguage];
 
-	const formatIntitution = ({
-		badge,
-		name,
-		shortId,
-		owner
-	}: Institution): FormattedInstitution => ({
+	const formatIntitution = ({ badge, name, shortId, owner }: InstitutionRaw): Institution => ({
 		badge,
 		name: translate(name, desiredLanguage),
 		...(owner && {

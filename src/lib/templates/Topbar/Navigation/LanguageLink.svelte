@@ -2,7 +2,7 @@
 	import { loadLocaleAsync } from '$lib/i18n/i18n-util.async';
 	import { setLocale } from '$lib/i18n/i18n-svelte';
 	import type { Locales } from '$lib/i18n/i18n-types';
-	// import { invalidateAll } from '$app/navigation';
+	import { invalidateAll } from '$app/navigation';
 
 	export let lang: Locales;
 	export let link: string;
@@ -11,7 +11,7 @@
 		await loadLocaleAsync(lang);
 		setLocale(lang);
 
-		// invalidateAll();
+		invalidateAll();
 
 		const html = document.querySelector('html') as HTMLHtmlElement;
 		html.setAttribute('lang', lang);
