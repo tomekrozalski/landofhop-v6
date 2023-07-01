@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { loadLocaleAsync } from '$lib/i18n/i18n-util.async';
 	import { setLocale } from '$lib/i18n/i18n-svelte';
 	import type { Locales } from '$lib/i18n/i18n-types';
@@ -8,10 +9,9 @@
 	export let link: string;
 
 	const changeHtmlLangAttribute = async () => {
+		await invalidateAll();
 		await loadLocaleAsync(lang);
 		setLocale(lang);
-
-		invalidateAll();
 
 		const html = document.querySelector('html') as HTMLHtmlElement;
 		html.setAttribute('lang', lang);

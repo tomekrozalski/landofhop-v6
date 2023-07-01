@@ -1,7 +1,7 @@
 <script lang="ts">
-	export let data;
+	// export let data;
 
-	console.log('data', data);
+	// console.log('data', data);
 </script>
 
 <div>Test</div>

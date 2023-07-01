@@ -4,7 +4,7 @@ import { JWT_SECRET } from '$env/static/private';
 import { removeTokens } from '$lib/utils/api/sessions';
 import { sessions } from '$lib/db/mongo';
 
-export const POST = async ({ cookies }) => {
+export const POST = async ({ cookies, locals }) => {
 	if (!cookies.get('refreshToken')) {
 		throw error(400, 'Already logged out');
 	}
@@ -21,5 +21,5 @@ export const POST = async ({ cookies }) => {
 	await sessions.deleteOne({ sessionToken });
 	removeTokens(cookies);
 
-	throw redirect(303, '/');
+	throw redirect(303, locals.LL.link('/'));
 };

@@ -1,42 +1,28 @@
 <script lang="ts">
-	import { LL } from '$lib/i18n/i18n-svelte';
+	import type { SuperValidated } from 'sveltekit-superforms';
+	import { superForm } from 'sveltekit-superforms/client';
 	import { page } from '$app/stores';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import Article from '$lib/atoms/Article.svelte';
 	import Header from '$lib/atoms/headers/Primary.svelte';
-	import ErrorMessage from './ErrorMessage.svelte';
-	import SuccessMessage from './SuccessMessage.svelte';
-
-	import { superForm } from 'sveltekit-superforms/client';
-	import type { Validation } from 'sveltekit-superforms';
-
 	import Label from '$lib/atoms/forms/Label.svelte';
 	import TextInput from '$lib/atoms/forms/TextInput.svelte';
 	import Button from '$lib/atoms/forms/Button.svelte';
 	import type { ValidationSchemaTypes } from './validationSchema';
+	import ErrorMessage from './ErrorMessage.svelte';
+	import SuccessMessage from './SuccessMessage.svelte';
 
-	$: data = $page.data.form as Validation<ValidationSchemaTypes>;
+	$: data = $page.data.form as SuperValidated<ValidationSchemaTypes>;
 
 	let isError = false;
 
 	const { form, errors, enhance, constraints, delayed } = superForm(data, {
-		onUpdated: ({ form }) => {
-			if (form.valid) {
-				// authentication.setLoginStatus('fulfilled');
-				console.log('valid', form);
-			}
-
-			console.log('form', form);
-		},
-		onError: ({ result, message }) => {
-			console.log('!', { result, message });
-
+		onError: () => {
 			isError = true;
 		}
 	});
 
 	const formName = 'login';
-
-	$: ({ authenticated } = $page.data);
 </script>
 
 <svelte:head>
@@ -45,7 +31,7 @@
 
 <Article>
 	<Header>{$LL.pages.login.title()}</Header>
-	{#if authenticated}
+	{#if $page.data.authenticated}
 		<SuccessMessage />
 	{/if}
 	{#if isError}

@@ -3,32 +3,17 @@ import { superValidate } from 'sveltekit-superforms/server';
 import { error, fail, redirect } from '@sveltejs/kit';
 import { users } from '$lib/db/mongo';
 import { createSession, generateTokens } from '$lib/utils/api/sessions';
-import validationSchema from './validationSchema';
+import getValidationSchema from './validationSchema';
 
-import { z } from 'zod';
-
-export const load = async ({ parent, locals }) => {
-	const form = await superValidate(
-		z.object({
-			email: z.string().trim().email({ message: locals.LL.pages.login.incorrectEmail() }),
-			password: z.string().trim().min(1, { message: locals.LL.forms.validation.required() })
-		})
-	);
-
-	console.log('1', locals.LL.about.header());
+export const load = async ({ locals }) => {
+	const form = await superValidate(getValidationSchema(locals.LL));
 
 	return { form };
 };
 
 export const actions = {
 	default: async ({ cookies, getClientAddress, request, locals }) => {
-		const form = await superValidate(
-			request,
-			z.object({
-				email: z.string().trim().email({ message: locals.LL.pages.login.incorrectEmail() }),
-				password: z.string().trim().min(1, { message: locals.LL.forms.validation.required() })
-			})
-		);
+		const form = await superValidate(request, getValidationSchema(locals.LL));
 
 		if (!form.valid) {
 			return fail(400, { form });
@@ -63,6 +48,6 @@ export const actions = {
 			userId: user._id.toString()
 		});
 
-		throw redirect(303, '/dashboard/add-new-beverage');
+		throw redirect(303, locals.LL.link('/dashboard/add-new-beverage'));
 	}
 };
