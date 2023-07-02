@@ -1,7 +1,13 @@
 <script lang="ts">
-	// export let data;
+	import Breadcrumbs from '$lib/atoms/Breadcrumbs.svelte';
 
-	// console.log('data', data);
+	export let data;
+
+	$: [month, year] = data.details.added
+		.split('.')
+		.slice(1)
+		.map((value) => +value);
 </script>
 
+<Breadcrumbs {month} {year} link="/" />
 <div>Test</div>
