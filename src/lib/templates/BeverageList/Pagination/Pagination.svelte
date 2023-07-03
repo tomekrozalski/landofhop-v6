@@ -1,22 +1,27 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import NextLink from './NextLink.svelte';
 	import PreviousLink from './PreviousLink.svelte';
 	import TheMostRecent from './TheMostRecent.svelte';
 	import TheOldest from './TheOldest.svelte';
 
-	export let isTheMostRecent: boolean = false;
+	type BreadcrumgsTypes = {
+		link: string;
+		phrase: string;
+	};
+
+	export let next: BreadcrumgsTypes | undefined = undefined;
+	export let previous: BreadcrumgsTypes | undefined = undefined;
 </script>
 
 <nav class="md:pb-23 container flex justify-between gap-5 px-3 pb-10">
-	{#if isTheMostRecent}
+	{#if next}
+		<NextLink {...next} />
+	{:else}
 		<TheMostRecent />
-	{:else}
-		<NextLink />
 	{/if}
-	{#if $page.data.isTheOldest}
-		<TheOldest />
+	{#if previous}
+		<PreviousLink {...previous} />
 	{:else}
-		<PreviousLink />
+		<TheOldest />
 	{/if}
 </nav>

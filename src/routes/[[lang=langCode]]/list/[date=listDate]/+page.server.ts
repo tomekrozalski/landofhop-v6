@@ -1,4 +1,5 @@
-import { differenceInMonths, endOfMonth, isAfter, isBefore } from 'date-fns';
+import { differenceInMonths, endOfMonth, format, isAfter, isBefore, subMonths } from 'date-fns';
+import locale from 'date-fns/locale';
 import { error } from '@sveltejs/kit';
 import { basics } from '$lib/db/mongo';
 import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
@@ -43,11 +44,20 @@ export const load = async ({ locals, params }) => {
 
 	return {
 		beverages,
-		isOneBeforeMostRecent,
-		isTheOldest: month === OLDEST_LIST.month && year === OLDEST_LIST.year,
-		scope: {
-			month,
-			year
-		}
+		breadcrumbs: {
+			phrase: format(date, 'LLLL yyyy', { locale: locals.locale === 'pl' ? locale.pl : undefined }),
+			next: {
+				link: isOneBeforeMostRecent
+					? '/'
+					: '/list/' + format(nextMonth, 'yyyy-MM') ,
+				phrase: format(nextMonth, 'LLLL yyyy', { locale: locals.locale === 'pl' ? locale.pl : undefined })
+			},
+			...(!(month === OLDEST_LIST.month && year === OLDEST_LIST.year) && {
+				previous: {
+					link: '/list/' + format(subMonths(new Date(year, month), 2), 'yyyy-MM'),
+					phrase: format(subMonths(new Date(year, month), 2), 'LLLL yyyy', { locale: locals.locale === 'pl' ? locale.pl : undefined })
+				}
+			})
+		},
 	};
 };

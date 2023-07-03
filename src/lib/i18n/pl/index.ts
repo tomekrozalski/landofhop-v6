@@ -5,6 +5,7 @@ const pl = {
 		header: 'O stronie'
 	},
 	breadcrumbs: {
+		details: 'detale',
 		list: 'lista'
 	},
 	forms: {

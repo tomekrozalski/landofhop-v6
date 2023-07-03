@@ -5,6 +5,7 @@ const en = {
 		header: 'About the app'
 	},
 	breadcrumbs: {
+		details: 'details',
 		list: 'list'
 	},
 	forms: {

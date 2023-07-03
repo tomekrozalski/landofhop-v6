@@ -6,6 +6,7 @@
 	import Pagination from '$lib/templates/BeverageList/Pagination/Pagination.svelte';
 
 	export let data;
+	$: ({ beverages, breadcrumbs } = data);
 </script>
 
 <svelte:head>
@@ -14,6 +15,6 @@
 	<link rel="preconnect" href={PHOTO_SERVER} />
 </svelte:head>
 
-<Breadcrumbs month={data.scope.month} year={data.scope.year} />
-<BeverageList beverages={data.beverages} />
-<Pagination isTheMostRecent />
+<Breadcrumbs phrase={breadcrumbs.phrase} />
+<BeverageList {beverages} />
+<Pagination previous={breadcrumbs.previous} />

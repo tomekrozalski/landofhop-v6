@@ -1,4 +1,5 @@
-import { endOfMonth } from 'date-fns';
+import { endOfMonth, format, subMonths } from 'date-fns';
+import locale from 'date-fns/locale';
 import { basics } from '$lib/db/mongo';
 import normalizeApiData from '$lib/templates/BeverageList/normalizeApiData';
 import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
@@ -25,9 +26,12 @@ export const load = async ({ locals }) => {
 
 	return {
 		beverages,
-		scope: {
-			month,
-			year
-		}
+		breadcrumbs: {
+			phrase: format(currentDate, 'LLLL yyyy', { locale: locals.locale === 'pl' ? locale.pl : undefined }),
+			previous: {
+				link: '/list/' + format(subMonths(new Date(year, month), 2), 'yyyy-MM'),
+				phrase: format(subMonths(new Date(year, month), 2), 'LLLL yyyy', { locale: locals.locale === 'pl' ? locale.pl : undefined })
+			}
+		},
 	};
 };
