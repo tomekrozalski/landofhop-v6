@@ -1,7 +1,7 @@
 import { basics } from '$lib/db/mongo';
 import type { LinkData } from '../types/LinkData.d';
 
-const getNext = async ({ added }: { added: Date }): Promise<LinkData | null> => {
+const getNext = async (added: Date): Promise<LinkData | null> => {
 	const nextBasics: LinkData[] = await basics
 		.find({ added: { $gt: added } })
 		.sort({ added: 1 })

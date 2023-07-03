@@ -1,11 +1,7 @@
 import { OLDEST_LIST } from '$lib/utils/constants';
+import { getMonth, getYear } from 'date-fns';
 
-type MonthYearTypes = {
-	month: number;
-	year: number;
-};
-
-const getListPages = (latest: MonthYearTypes): string[] => {
+const getListPages = (latest: Date): string[] => {
 	const results = [OLDEST_LIST];
 
 	const addNext = () => {
@@ -17,7 +13,7 @@ const getListPages = (latest: MonthYearTypes): string[] => {
 			results.push({ month: month + 1, year });
 		}
 
-		if (year < latest.year || (year === latest.year && month < latest.month - 2)) {
+		if (year < getYear(latest) || (year === getYear(latest) && month < getMonth(latest) - 2)) { // @ToDo: to refactor
 			addNext();
 		}
 	};

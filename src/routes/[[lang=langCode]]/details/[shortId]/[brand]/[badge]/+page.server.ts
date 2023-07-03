@@ -1,10 +1,9 @@
 import { format } from 'date-fns';
-import locale from 'date-fns/locale';
 import { error } from '@sveltejs/kit';
-import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
+import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
 import { detailsNormalizer, getAdminData, getDetails, getNext, getPrevious } from './utils/load';
 
-export const load = async ({ locals, params }) => {
+export const load = async ({ locals: { authenticated, locale }, params }) => {
 	const badge = params.badge;
 	const shortId = params.shortId;
 
@@ -13,26 +12,23 @@ export const load = async ({ locals, params }) => {
 	}
 
 	const beverage = await getDetails({ shortId });
-	const formattedDetails = detailsNormalizer(beverage, locals.locale);
+	const formattedDetails = detailsNormalizer(beverage, locale);
 	const latestMonth = await getLatestMonth();
 	const addedDate = new Date(beverage.added);
-	const latestDate = new Date(latestMonth.year, latestMonth.month);
-
-	console.log('addedDate', addedDate, format(addedDate, 'M-yyyy'))
-	console.log('latestDate', latestDate, format(latestDate, 'M-yyyy'))
 
 	return {
-		previous: getPrevious({ added: beverage.added }),
+		previous: getPrevious(beverage.added),
 		details: formattedDetails,
 		breadcrumbs: {
-			link: format(addedDate, 'M-yyyy') === format(latestDate, 'M-yyyy')
-			? '/'
-			: `/list/${format(addedDate, 'yyyy-MM')}`,
-			phrase: format(addedDate, 'LLLL yyyy', { locale: locals.locale === 'pl' ? locale.pl : undefined })
+			link:
+				format(addedDate, 'M-yyyy') === format(latestMonth, 'M-yyyy')
+					? '/'
+					: `/list/${format(addedDate, 'yyyy-MM')}`,
+			phrase: getBreadcrumbPhrase(addedDate, locale)
 		},
-		next: getNext({ added: beverage.added }),
+		next: getNext(beverage.added),
 		streamed: {
-			...(locals.authenticated && { adminData: getAdminData(shortId, locals.locale) })
+			...(authenticated && { adminData: getAdminData(shortId, locale) })
 		}
 	};
 };

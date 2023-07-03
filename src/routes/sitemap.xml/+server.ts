@@ -1,15 +1,15 @@
 import { format } from 'date-fns';
 import type { RequestHandler } from '@sveltejs/kit';
-import getLatestMonth from '$lib/utils/api/list/getLatestMonth';
+import getLatestMonth from '$lib/utils/api/getLatestMonth';
 import getListPages from './getListPages';
 
 export const GET: RequestHandler = async ({ setHeaders }) => {
 	// -----------------------------------
 	// Beverage lists pages
-	const { month, year } = await getLatestMonth();
+	const latestMonth = await getLatestMonth();
 
-	const lastMod = format(new Date(year, month), 'yyyy-MM-dd');
-	const listPages = getListPages({ month, year });
+	const lastMod = format(latestMonth, 'yyyy-MM-dd');
+	const listPages = getListPages(latestMonth);
 
 	const beverageListsPages = `
 	  <url>
