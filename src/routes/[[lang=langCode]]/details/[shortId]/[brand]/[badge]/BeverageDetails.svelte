@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	// import Navigation from './Navigation.svelte';
+	import Navigation from './Navigation.svelte';
 	import Gallery from './Gallery/Gallery.svelte';
 	// import Header from './Header.svelte';
 	// import Tale from './Tale/Tale.svelte';
@@ -32,8 +32,7 @@
 		{/if}
 	</div>
 	<aside>
-		<div class="details-navigation">Navigation</div>
-		<!-- <Navigation /> -->
+		<Navigation />
 		{#if details.ratings}
 			<div>Rating</div>
 			<!-- <Rating /> -->

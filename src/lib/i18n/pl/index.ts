@@ -21,6 +21,10 @@ const pl = {
 				show: 'pokaż widok z góry',
 				title: '{name}, widok z góry'
 			}
+		},
+		navigation: {
+			next: 'Następne piwo',
+			previous: 'Poprzednie piwo'
 		}
 	},
 	forms: {

@@ -21,6 +21,10 @@ const en = {
 				show: 'show view from above',
 				title: '{name}, view from above'
 			}
+		},
+		navigation: {
+			next: 'Next beverage',
+			previous: 'Previous beverage'
 		}
 	},
 	forms: {

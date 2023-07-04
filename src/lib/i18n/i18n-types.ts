@@ -67,6 +67,16 @@ type RootTranslation = {
 				title: RequiredParams<'name'>
 			}
 		}
+		navigation: {
+			/**
+			 * N​a​s​t​ę​p​n​e​ ​p​i​w​o
+			 */
+			next: string
+			/**
+			 * P​o​p​r​z​e​d​n​i​e​ ​p​i​w​o
+			 */
+			previous: string
+		}
 	}
 	forms: {
 		validation: {
@@ -239,6 +249,16 @@ export type TranslationFunctions = {
 				 */
 				title: (arg: { name: unknown }) => LocalizedString
 			}
+		}
+		navigation: {
+			/**
+			 * Następne piwo
+			 */
+			next: () => LocalizedString
+			/**
+			 * Poprzednie piwo
+			 */
+			previous: () => LocalizedString
 		}
 	}
 	forms: {
