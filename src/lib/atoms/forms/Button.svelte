@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
-	import { faSpinner } from '@fortawesome/pro-solid-svg-icons';
+	import { faSpinner } from 'pro-solid-svg-icons';
 
 	export let isDelayed: boolean = false;
 	export let isDisabled: boolean = false;

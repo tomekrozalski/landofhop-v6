@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	// import Navigation from './Navigation.svelte';
-	// import Gallery from './Gallery/Gallery.svelte';
+	import Gallery from './Gallery/Gallery.svelte';
 	// import Header from './Header.svelte';
 	// import Tale from './Tale/Tale.svelte';
 	// import Testimony from './Testimony/Testimony.svelte';
@@ -10,15 +10,12 @@
 	// import AdminBar from './AdminBar/AdminBar.svelte';
 	// import Rating from './Rating/Rating.svelte';
 
-	// $: ({ authenticated, details, next, previous } = $page.data);
-
-	// console.log('->', $page);
+	$: ({ authenticated, details } = $page.data);
 </script>
 
-<article>
-	<div>Gallery</div>
-	<!-- <Gallery /> -->
-	<div>
+<article class="details container grid gap-x-10 px-3 py-0 lg:pt-5">
+	<Gallery />
+	<div class="details-main">
 		<div>Header</div>
 		<!-- <Header /> -->
 		<div>Tale</div>
@@ -29,86 +26,17 @@
 		<!-- <Impressions /> -->
 		<div>FootNotes</div>
 		<!-- <FootNotes /> -->
-		<!-- {#if authenticated} -->
-		<!-- <AdminBar /> -->
-		<!-- {/if} -->
+		{#if authenticated}
+			<div>AdminBar</div>
+			<!-- <AdminBar /> -->
+		{/if}
 	</div>
 	<aside>
-		<div>Navigation</div>
+		<div class="details-navigation">Navigation</div>
 		<!-- <Navigation /> -->
-		<!-- {#if details.ratings} -->
-		<!-- <Rating /> -->
-		<!-- {/if} -->
+		{#if details.ratings}
+			<div>Rating</div>
+			<!-- <Rating /> -->
+		{/if}
 	</aside>
 </article>
-
-<style>
-	article {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-areas:
-			'navigation'
-			'gallery'
-			'main';
-		column-gap: 4rem;
-	}
-
-	div {
-		grid-area: main;
-		padding: 0 2rem;
-	}
-
-	article :global(em) {
-		font-weight: var(--font-weight-regular);
-		font-style: normal;
-	}
-
-	article :global(.label),
-	article :global(.producer),
-	article :global(.editorial) {
-		background-position: 0px 0.8em;
-		background-repeat: repeat-x;
-		font-weight: initial;
-		color: inherit;
-	}
-	article :global(a.label),
-	article :global(a.producer),
-	article :global(a.editorial) {
-		transition: background-position var(--transition-default);
-	}
-
-	article :global(a.label:hover),
-	article :global(a.producer:hover),
-	article :global(a.editorial:hover) {
-		background-position: 0px 0.2em;
-	}
-
-	article :global(.label) {
-		background-image: linear-gradient(var(--color-label-light), var(--color-label-light));
-	}
-
-	article :global(.producer) {
-		background-image: linear-gradient(var(--color-producer-light), var(--color-producer-light));
-	}
-
-	article :global(.editorial) {
-		background-image: linear-gradient(var(--color-editorial-light), var(--color-editorial-light));
-	}
-
-	article :global(dd) {
-		margin-left: 0;
-		padding: 0;
-	}
-
-	@media (min-width: 1024px) {
-		article {
-			grid-template-columns: 22rem 1fr 18rem;
-			grid-template-areas: 'gallery main navigation';
-			padding-top: 2rem;
-		}
-
-		div {
-			padding: 0;
-		}
-	}
-</style>

@@ -68,6 +68,26 @@
 		grid-template-areas: 'search logo more';
 	}
 
+	.details {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			'navigation'
+			'gallery'
+			'main';
+	}
+
+	.details-navigation {
+		grid-area: navigation;
+	}
+
+	.details-gallery {
+		grid-area: gallery;
+	}
+
+	.details-main {
+		grid-area: main;
+	}
+
 	.logo {
 		grid-area: logo;
 	}
@@ -111,6 +131,11 @@
 	@media screen(xl) {
 		.beverage-list {
 			grid-template-columns: repeat(auto-fill, 220px);
+		}
+
+		.details {
+			grid-template-columns: 220px 1fr 220px;
+			grid-template-areas: 'gallery main navigation';
 		}
 	}
 }

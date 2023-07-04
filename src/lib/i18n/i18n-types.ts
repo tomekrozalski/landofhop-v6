@@ -30,6 +30,44 @@ type RootTranslation = {
 		 */
 		list: string
 	}
+	details: {
+		gallery: {
+			cap: {
+				/**
+				 * s​c​h​o​w​a​j​ ​k​a​p​s​e​l
+				 */
+				hide: string
+				/**
+				 * p​o​k​a​ż​ ​k​a​p​s​e​l
+				 */
+				show: string
+				/**
+				 * {​n​a​m​e​}​,​ ​k​a​p​s​e​l
+				 * @param {unknown} name
+				 */
+				title: RequiredParams<'name'>
+			}
+			/**
+			 * N​i​e​ ​z​n​a​l​e​z​i​o​n​o​ ​z​d​j​ę​c​i​a
+			 */
+			imageNotFound: string
+			viewFromAbove: {
+				/**
+				 * s​c​h​o​w​a​j​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
+				 */
+				hide: string
+				/**
+				 * p​o​k​a​ż​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
+				 */
+				show: string
+				/**
+				 * {​n​a​m​e​}​,​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
+				 * @param {unknown} name
+				 */
+				title: RequiredParams<'name'>
+			}
+		}
+	}
 	forms: {
 		validation: {
 			/**
@@ -166,6 +204,42 @@ export type TranslationFunctions = {
 		 * lista
 		 */
 		list: () => LocalizedString
+	}
+	details: {
+		gallery: {
+			cap: {
+				/**
+				 * schowaj kapsel
+				 */
+				hide: () => LocalizedString
+				/**
+				 * pokaż kapsel
+				 */
+				show: () => LocalizedString
+				/**
+				 * {name}, kapsel
+				 */
+				title: (arg: { name: unknown }) => LocalizedString
+			}
+			/**
+			 * Nie znaleziono zdjęcia
+			 */
+			imageNotFound: () => LocalizedString
+			viewFromAbove: {
+				/**
+				 * schowaj widok z góry
+				 */
+				hide: () => LocalizedString
+				/**
+				 * pokaż widok z góry
+				 */
+				show: () => LocalizedString
+				/**
+				 * {name}, widok z góry
+				 */
+				title: (arg: { name: unknown }) => LocalizedString
+			}
+		}
 	}
 	forms: {
 		validation: {

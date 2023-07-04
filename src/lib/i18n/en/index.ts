@@ -8,6 +8,21 @@ const en = {
 		details: 'details',
 		list: 'list'
 	},
+	details: {
+		gallery: {
+			cap: {
+				hide: 'hide cap',
+				show: 'show cap',
+				title: '{name}, cap'
+			},
+			imageNotFound: 'Image not found',
+			viewFromAbove: {
+				hide: 'hide view from above',
+				show: 'show view from above',
+				title: '{name}, view from above'
+			}
+		}
+	},
 	forms: {
 		validation: {
 			required: 'Field is required'

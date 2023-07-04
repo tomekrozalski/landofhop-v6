@@ -8,6 +8,21 @@ const pl = {
 		details: 'detale',
 		list: 'lista'
 	},
+	details: {
+		gallery: {
+			cap: {
+				hide: 'schowaj kapsel',
+				show: 'pokaż kapsel',
+				title: '{name}, kapsel'
+			},
+			imageNotFound: 'Nie znaleziono zdjęcia',
+			viewFromAbove: {
+				hide: 'schowaj widok z góry',
+				show: 'pokaż widok z góry',
+				title: '{name}, widok z góry'
+			}
+		}
+	},
 	forms: {
 		validation: {
 			required: 'Pole jest wymagane'
