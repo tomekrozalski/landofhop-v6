@@ -1,8 +1,7 @@
 <script lang="ts">
-	// import { translate } from 'svelte-intl';
+	import { Confetti } from 'svelte-confetti';
 	import { tweened } from 'svelte/motion';
 	import LL from '$lib/i18n/i18n-svelte';
-	// import { Confetti } from 'svelte-confetti';
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import RatingDetails from './RatingDetails.svelte';
@@ -18,16 +17,15 @@
 	});
 </script>
 
-<section class="mx-3">
+<section>
 	<header
 		class:cursor-pointer={!isDetailsOpened}
-		class="group relative rounded-t bg-green px-3 pb-5 pt-3 text-center text-white"
+		class="group relative flex flex-col items-center rounded-t bg-green px-3 pb-5 pt-3 text-center text-white"
 	>
 		<h3 class="mb-3 text-base">{$LL.pages.details.ratings.title()}</h3>
 		{#if ratings.total.value >= 4}
 			{#key shortId}
-				<div>Confetti</div>
-				<!-- <Confetti /> -->
+				<Confetti />
 			{/key}
 		{/if}
 		<Stars {isDetailsOpened} score={$ratingStore || ratings.total.value} />
@@ -37,10 +35,10 @@
 	{/if}
 	<button
 		class:bg-green={isDetailsOpened}
+		class:bg-gray-100={!isDetailsOpened}
 		class:text-white={isDetailsOpened}
 		class:hover:text-black={isDetailsOpened}
-		class:bg-gray-100={!isDetailsOpened}
-		class="block w-full rounded-b p-1 text-sm transition-colors hover:bg-gray-200"
+		class="block w-full rounded-b p-1 text-sm transition-colors hover:bg-gray-200 focus:outline-0"
 		on:click={() => {
 			isDetailsOpened = !isDetailsOpened;
 		}}

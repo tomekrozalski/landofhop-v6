@@ -17,7 +17,7 @@
 
 {#if photos?.viewFromAbove}
 	<button
-		class="mb-3 mt-5 w-full bg-gray-100 p-1 text-base transition-colors hover:bg-gray-200"
+		class="mt-5 w-full bg-gray-100 p-1 text-base transition-colors hover:bg-gray-200 lg:mb-3"
 		on:click={() => (isOpened = !isOpened)}
 	>
 		{isOpened

@@ -13,7 +13,7 @@
 	$: ({ authenticated, details } = $page.data);
 </script>
 
-<article class="details container grid gap-x-10 px-3 py-0 lg:pt-5">
+<article class="details container grid px-3 py-0 lg:gap-x-14 lg:px-0 lg:pt-5">
 	<Gallery />
 	<div class="details-main">
 		<Header />

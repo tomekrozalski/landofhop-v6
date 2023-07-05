@@ -75,8 +75,8 @@
 	.details {
 		grid-template-columns: 1fr;
 		grid-template-areas:
-			'navigation'
 			'gallery'
+			'navigation'
 			'main';
 	}
 
@@ -132,14 +132,16 @@
 		grid-template-columns: repeat(auto-fill, 160px);
 	}
 
+	@media screen(lg) {
+		.details {
+			grid-template-columns: 220px 1fr 200px;
+			grid-template-areas: 'gallery main navigation';
+		}
+	}
+
 	@media screen(xl) {
 		.beverage-list {
 			grid-template-columns: repeat(auto-fill, 220px);
-		}
-
-		.details {
-			grid-template-columns: 220px 1fr 220px;
-			grid-template-areas: 'gallery main navigation';
 		}
 	}
 }

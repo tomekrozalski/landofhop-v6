@@ -14,7 +14,7 @@
 </script>
 
 <strong
-	class="absolute left-1/2 top-auto -translate-x-1/2 text-xl font-bold leading-tight"
+	class="absolute left-1/2 top-12 -translate-x-1/2 text-xl font-bold leading-tight"
 	class:opacity-100={isDetailsOpened}
 	class:opacity-0={!isDetailsOpened}
 	class:transition-opacity={!isDetailsOpened}

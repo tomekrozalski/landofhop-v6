@@ -18,7 +18,7 @@
 </script>
 
 <section
-	class="details-gallery relative mx-auto my-0 flex h-[500px] w-[220px] items-center justify-center"
+	class="details-gallery relative mx-auto mt-4 flex h-[500px] w-[220px] items-center justify-center lg:mt-0"
 >
 	{#if $page.data.details.photos?.gallery}
 		{#if !loaded && $page.data.details.photos.outline}

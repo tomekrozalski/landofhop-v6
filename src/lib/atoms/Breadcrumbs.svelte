@@ -6,7 +6,7 @@
 </script>
 
 <nav class="bg-gray-200 text-base">
-	<ul class="container flex px-3">
+	<ul class="container flex lg:px-3">
 		{#if link}
 			<li class="flex">
 				<a
