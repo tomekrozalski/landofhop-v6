@@ -46,6 +46,10 @@
 		min-height: calc(100vh - var(--size-header-height));
 	}
 
+	em {
+		font-style: normal;
+	}
+
 	@media screen(md) {
 		:root {
 			--size-header-height: theme('spacing.20');

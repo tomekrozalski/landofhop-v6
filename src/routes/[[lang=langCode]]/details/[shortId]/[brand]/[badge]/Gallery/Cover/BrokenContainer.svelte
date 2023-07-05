@@ -5,7 +5,7 @@
 </script>
 
 <img
-	alt={$LL.details.gallery.imageNotFound()}
+	alt={$LL.pages.details.gallery.imageNotFound()}
 	class="my-10 h-64"
 	src={`${PHOTO_SERVER}/broken-${$page.data.details.container.type}.svg`}
 />

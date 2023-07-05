@@ -407,12 +407,12 @@ function normalizer(beverage: RawBeverage, desiredLanguage: Locales): Details {
 				total: {
 					quantity: beverage.editorial.ratings.total.quantity,
 					value: beverage.editorial.ratings.total.value,
-					// ...(beverage.editorial.ratings.total.date && {
-					// 	date: format(
-					// 		new Date(beverage.editorial.ratings.total.date),
-					// 		DateFormat[desiredLanguage]
-					// 	)
-					// })
+					...(beverage.editorial.ratings.total.date && {
+						date: format(
+							new Date(beverage.editorial.ratings.total.date),
+							DateFormat[desiredLanguage]
+						)
+					})
 				}
 			})
 		},

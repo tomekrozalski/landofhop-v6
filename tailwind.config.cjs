@@ -21,13 +21,16 @@ export default {
 				light: '#fdf1d3'
 			},
 			green: {
-				DEFAULT: '#90be6d'
+				DEFAULT: '#90be6d',
+				medium: '#9dcd79',
+				light: '#e3efda'
 			},
 			turquoise: {
 				DEFAULT: '#4d908e'
 			},
 			sea: {
-				DEFAULT: '#277da1'
+				DEFAULT: '#277da1',
+				light: '#d5dce3'
 			}
 		},
 		container: {

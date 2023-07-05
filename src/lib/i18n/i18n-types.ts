@@ -14,12 +14,6 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
-	about: {
-		/**
-		 * O​ ​s​t​r​o​n​i​e
-		 */
-		header: string
-	}
 	breadcrumbs: {
 		/**
 		 * d​e​t​a​l​e
@@ -30,54 +24,6 @@ type RootTranslation = {
 		 */
 		list: string
 	}
-	details: {
-		gallery: {
-			cap: {
-				/**
-				 * s​c​h​o​w​a​j​ ​k​a​p​s​e​l
-				 */
-				hide: string
-				/**
-				 * p​o​k​a​ż​ ​k​a​p​s​e​l
-				 */
-				show: string
-				/**
-				 * {​n​a​m​e​}​,​ ​k​a​p​s​e​l
-				 * @param {unknown} name
-				 */
-				title: RequiredParams<'name'>
-			}
-			/**
-			 * N​i​e​ ​z​n​a​l​e​z​i​o​n​o​ ​z​d​j​ę​c​i​a
-			 */
-			imageNotFound: string
-			viewFromAbove: {
-				/**
-				 * s​c​h​o​w​a​j​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
-				 */
-				hide: string
-				/**
-				 * p​o​k​a​ż​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
-				 */
-				show: string
-				/**
-				 * {​n​a​m​e​}​,​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
-				 * @param {unknown} name
-				 */
-				title: RequiredParams<'name'>
-			}
-		}
-		navigation: {
-			/**
-			 * N​a​s​t​ę​p​n​e​ ​p​i​w​o
-			 */
-			next: string
-			/**
-			 * P​o​p​r​z​e​d​n​i​e​ ​p​i​w​o
-			 */
-			previous: string
-		}
-	}
 	forms: {
 		validation: {
 			/**
@@ -85,6 +31,16 @@ type RootTranslation = {
 			 */
 			required: string
 		}
+	}
+	global: {
+		/**
+		 * o​r​a​z
+		 */
+		longConjunction: string
+		/**
+		 * i
+		 */
+		shortConjunction: string
 	}
 	header: {
 		/**
@@ -113,11 +69,6 @@ type RootTranslation = {
 	 * @param {unknown} 0
 	 */
 	link: RequiredParams<'0'>
-	/**
-	 * T​o​ ​z​o​s​t​a​ł​o​ ​w​y​w​o​ł​a​n​e​ ​p​r​z​e​z​ ​'​{​f​i​l​e​N​a​m​e​}​'
-	 * @param {string} fileName
-	 */
-	log: RequiredParams<'fileName'>
 	navigation: {
 		/**
 		 * O​ ​s​t​r​o​n​i​e
@@ -141,6 +92,106 @@ type RootTranslation = {
 		stats: string
 	}
 	pages: {
+		about: {
+			/**
+			 * O​ ​s​t​r​o​n​i​e
+			 */
+			header: string
+		}
+		details: {
+			gallery: {
+				cap: {
+					/**
+					 * s​c​h​o​w​a​j​ ​k​a​p​s​e​l
+					 */
+					hide: string
+					/**
+					 * p​o​k​a​ż​ ​k​a​p​s​e​l
+					 */
+					show: string
+					/**
+					 * {​n​a​m​e​}​,​ ​k​a​p​s​e​l
+					 * @param {unknown} name
+					 */
+					title: RequiredParams<'name'>
+				}
+				/**
+				 * N​i​e​ ​z​n​a​l​e​z​i​o​n​o​ ​z​d​j​ę​c​i​a
+				 */
+				imageNotFound: string
+				viewFromAbove: {
+					/**
+					 * s​c​h​o​w​a​j​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
+					 */
+					hide: string
+					/**
+					 * p​o​k​a​ż​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
+					 */
+					show: string
+					/**
+					 * {​n​a​m​e​}​,​ ​w​i​d​o​k​ ​z​ ​g​ó​r​y
+					 * @param {unknown} name
+					 */
+					title: RequiredParams<'name'>
+				}
+			}
+			header: {
+				/**
+				 * U​w​a​r​z​o​n​o
+				 */
+				brewed: string
+				/**
+				 * p​r​z​e​z
+				 */
+				by: string
+				/**
+				 * d​l​a
+				 */
+				'for': string
+				/**
+				 * w​ ​k​o​o​p​e​r​a​c​j​i​ ​z
+				 */
+				inCooperationWith: string
+				/**
+				 * ,​ ​w​ ​s​e​r​i​i
+				 */
+				series: string
+			}
+			navigation: {
+				/**
+				 * N​a​s​t​ę​p​n​e​ ​p​i​w​o
+				 */
+				next: string
+				/**
+				 * P​o​p​r​z​e​d​n​i​e​ ​p​i​w​o
+				 */
+				previous: string
+			}
+			ratings: {
+				/**
+				 * s​c​h​o​w​a​j​ ​s​z​c​z​e​g​ó​ł​y
+				 */
+				hideDetails: string
+				/**
+				 * {​0​}​ ​{​{​g​ł​o​s​ó​w​|​g​ł​o​s​|​g​ł​o​s​y​|​g​ł​o​s​y​|​g​ł​o​s​ó​w​}​}
+				 * @param {string | number | boolean} 0
+				 */
+				quantity: RequiredParams<'0'>
+				/**
+				 * p​o​k​a​ż​ ​s​z​c​z​e​g​ó​ł​y
+				 */
+				showDetails: string
+				/**
+				 * O​c​e​n​a​ ​s​p​o​ł​e​c​z​n​o​ś​c​i
+				 */
+				title: string
+				/**
+				 * o​s​t​a​t​n​i​a​ ​a​k​t​u​a​l​i​z​a​c​j​a​ ​{​0​}
+				 * @param {unknown} 0
+				 */
+				updatedAt: RequiredParams<'0'>
+			}
+		}
 		home: {
 			/**
 			 * B​a​z​a​ ​p​i​w​,​ ​k​t​ó​r​e​ ​w​y​p​i​ł​e​m​ ​w​ ​p​r​z​e​c​i​ą​g​u​ ​o​s​t​a​t​n​i​c​h​ ​l​a​t
@@ -199,12 +250,6 @@ type RootTranslation = {
 }
 
 export type TranslationFunctions = {
-	about: {
-		/**
-		 * O stronie
-		 */
-		header: () => LocalizedString
-	}
 	breadcrumbs: {
 		/**
 		 * detale
@@ -215,52 +260,6 @@ export type TranslationFunctions = {
 		 */
 		list: () => LocalizedString
 	}
-	details: {
-		gallery: {
-			cap: {
-				/**
-				 * schowaj kapsel
-				 */
-				hide: () => LocalizedString
-				/**
-				 * pokaż kapsel
-				 */
-				show: () => LocalizedString
-				/**
-				 * {name}, kapsel
-				 */
-				title: (arg: { name: unknown }) => LocalizedString
-			}
-			/**
-			 * Nie znaleziono zdjęcia
-			 */
-			imageNotFound: () => LocalizedString
-			viewFromAbove: {
-				/**
-				 * schowaj widok z góry
-				 */
-				hide: () => LocalizedString
-				/**
-				 * pokaż widok z góry
-				 */
-				show: () => LocalizedString
-				/**
-				 * {name}, widok z góry
-				 */
-				title: (arg: { name: unknown }) => LocalizedString
-			}
-		}
-		navigation: {
-			/**
-			 * Następne piwo
-			 */
-			next: () => LocalizedString
-			/**
-			 * Poprzednie piwo
-			 */
-			previous: () => LocalizedString
-		}
-	}
 	forms: {
 		validation: {
 			/**
@@ -268,6 +267,16 @@ export type TranslationFunctions = {
 			 */
 			required: () => LocalizedString
 		}
+	}
+	global: {
+		/**
+		 * oraz
+		 */
+		longConjunction: () => LocalizedString
+		/**
+		 * i
+		 */
+		shortConjunction: () => LocalizedString
 	}
 	header: {
 		/**
@@ -295,10 +304,6 @@ export type TranslationFunctions = {
 	 * {0}
 	 */
 	link: (arg0: unknown) => LocalizedString
-	/**
-	 * To zostało wywołane przez '{fileName}'
-	 */
-	log: (arg: { fileName: string }) => LocalizedString
 	navigation: {
 		/**
 		 * O stronie
@@ -322,6 +327,102 @@ export type TranslationFunctions = {
 		stats: () => LocalizedString
 	}
 	pages: {
+		about: {
+			/**
+			 * O stronie
+			 */
+			header: () => LocalizedString
+		}
+		details: {
+			gallery: {
+				cap: {
+					/**
+					 * schowaj kapsel
+					 */
+					hide: () => LocalizedString
+					/**
+					 * pokaż kapsel
+					 */
+					show: () => LocalizedString
+					/**
+					 * {name}, kapsel
+					 */
+					title: (arg: { name: unknown }) => LocalizedString
+				}
+				/**
+				 * Nie znaleziono zdjęcia
+				 */
+				imageNotFound: () => LocalizedString
+				viewFromAbove: {
+					/**
+					 * schowaj widok z góry
+					 */
+					hide: () => LocalizedString
+					/**
+					 * pokaż widok z góry
+					 */
+					show: () => LocalizedString
+					/**
+					 * {name}, widok z góry
+					 */
+					title: (arg: { name: unknown }) => LocalizedString
+				}
+			}
+			header: {
+				/**
+				 * Uwarzono
+				 */
+				brewed: () => LocalizedString
+				/**
+				 * przez
+				 */
+				by: () => LocalizedString
+				/**
+				 * dla
+				 */
+				'for': () => LocalizedString
+				/**
+				 * w kooperacji z
+				 */
+				inCooperationWith: () => LocalizedString
+				/**
+				 * , w serii
+				 */
+				series: () => LocalizedString
+			}
+			navigation: {
+				/**
+				 * Następne piwo
+				 */
+				next: () => LocalizedString
+				/**
+				 * Poprzednie piwo
+				 */
+				previous: () => LocalizedString
+			}
+			ratings: {
+				/**
+				 * schowaj szczegóły
+				 */
+				hideDetails: () => LocalizedString
+				/**
+				 * {0} {{głosów|głos|głosy|głosy|głosów}}
+				 */
+				quantity: (arg0: string | number | boolean) => LocalizedString
+				/**
+				 * pokaż szczegóły
+				 */
+				showDetails: () => LocalizedString
+				/**
+				 * Ocena społeczności
+				 */
+				title: () => LocalizedString
+				/**
+				 * ostatnia aktualizacja {0}
+				 */
+				updatedAt: (arg0: unknown) => LocalizedString
+			}
+		}
 		home: {
 			/**
 			 * Baza piw, które wypiłem w przeciągu ostatnich lat

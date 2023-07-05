@@ -1,31 +1,13 @@
 import type { Translation } from '../i18n-types';
 
 const en = {
-	about: {
-		header: 'About the app'
-	},
 	breadcrumbs: {
 		details: 'details',
 		list: 'list'
 	},
-	details: {
-		gallery: {
-			cap: {
-				hide: 'hide cap',
-				show: 'show cap',
-				title: '{name}, cap'
-			},
-			imageNotFound: 'Image not found',
-			viewFromAbove: {
-				hide: 'hide view from above',
-				show: 'show view from above',
-				title: '{name}, view from above'
-			}
-		},
-		navigation: {
-			next: 'Next beverage',
-			previous: 'Previous beverage'
-		}
+	global: {
+		longConjunction: 'and',
+		shortConjunction: 'and'
 	},
 	forms: {
 		validation: {
@@ -40,7 +22,6 @@ const en = {
 		search: 'Search'
 	},
 	link: '/en{0}',
-	log: `This log was called from '{fileName:string}'`,
 	navigation: {
 		about: 'About',
 		addBeverage: 'Add new beverage',
@@ -49,6 +30,42 @@ const en = {
 		stats: 'Stats'
 	},
 	pages: {
+		about: {
+			header: 'About the app'
+		},
+		details: {
+			gallery: {
+				cap: {
+					hide: 'hide cap',
+					show: 'show cap',
+					title: '{name}, cap'
+				},
+				imageNotFound: 'Image not found',
+				viewFromAbove: {
+					hide: 'hide view from above',
+					show: 'show view from above',
+					title: '{name}, view from above'
+				}
+			},
+			header: {
+				brewed: 'Brewed',
+				by: 'by',
+				for: 'for',
+				inCooperationWith: 'in cooperation with',
+				series: ', in series'
+			},
+			navigation: {
+				next: 'Next beverage',
+				previous: 'Previous beverage'
+			},
+			ratings: {
+				hideDetails: 'hide details',
+				quantity: '{0} {{rate|rates}}',
+				showDetails: 'show details',
+				title: 'Community assessment',
+				updatedAt: 'last update {0}'
+			}
+		},
 		home: {
 			description: 'Database of beers that I drunk last years'
 		},

@@ -1,36 +1,18 @@
 import type { BaseTranslation } from '../i18n-types';
 
 const pl = {
-	about: {
-		header: 'O stronie'
-	},
 	breadcrumbs: {
 		details: 'detale',
 		list: 'lista'
-	},
-	details: {
-		gallery: {
-			cap: {
-				hide: 'schowaj kapsel',
-				show: 'pokaż kapsel',
-				title: '{name}, kapsel'
-			},
-			imageNotFound: 'Nie znaleziono zdjęcia',
-			viewFromAbove: {
-				hide: 'schowaj widok z góry',
-				show: 'pokaż widok z góry',
-				title: '{name}, widok z góry'
-			}
-		},
-		navigation: {
-			next: 'Następne piwo',
-			previous: 'Poprzednie piwo'
-		}
 	},
 	forms: {
 		validation: {
 			required: 'Pole jest wymagane'
 		}
+	},
+	global: {
+		longConjunction: 'oraz',
+		shortConjunction: 'i'
 	},
 	header: {
 		closeNavigation: 'Zamknij nawigację',
@@ -40,7 +22,6 @@ const pl = {
 		search: 'Szukaj'
 	},
 	link: '{0}',
-	log: `To zostało wywołane przez '{fileName:string}'`,
 	navigation: {
 		about: 'O stronie',
 		addBeverage: 'Dodaj piwo',
@@ -49,6 +30,42 @@ const pl = {
 		stats: 'Statystyki'
 	},
 	pages: {
+		about: {
+			header: 'O stronie'
+		},
+		details: {
+			gallery: {
+				cap: {
+					hide: 'schowaj kapsel',
+					show: 'pokaż kapsel',
+					title: '{name}, kapsel'
+				},
+				imageNotFound: 'Nie znaleziono zdjęcia',
+				viewFromAbove: {
+					hide: 'schowaj widok z góry',
+					show: 'pokaż widok z góry',
+					title: '{name}, widok z góry'
+				}
+			},
+			header: {
+				brewed: 'Uwarzono',
+				by: 'przez',
+				for: 'dla',
+				inCooperationWith: 'w kooperacji z',
+				series: ', w serii'
+			},
+			navigation: {
+				next: 'Następne piwo',
+				previous: 'Poprzednie piwo'
+			},
+			ratings: {
+				hideDetails: 'schowaj szczegóły',
+				quantity: '{0} {{głosów|głos|głosy|głosy|głosów}}',
+				showDetails: 'pokaż szczegóły',
+				title: 'Ocena społeczności',
+				updatedAt: 'ostatnia aktualizacja {0}'
+			}
+		},
 		home: {
 			description: 'Baza piw, które wypiłem w przeciągu ostatnich lat'
 		},

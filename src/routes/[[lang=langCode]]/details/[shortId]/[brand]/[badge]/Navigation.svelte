@@ -16,7 +16,7 @@
 			? 'group transition-colors hover:bg-green'
 			: ''}"
 		href={next && `/details/${next.shortId}/${next.brand}/${next.badge}`}
-		aria-label={next && $LL.details.navigation.next()}
+		aria-label={next && $LL.pages.details.navigation.next()}
 	>
 		<Fa
 			icon={faChevronCircleLeft}
@@ -30,7 +30,7 @@
 			? 'group transition-colors hover:bg-green'
 			: ''}"
 		href={previous && `/details/${previous.shortId}/${previous.brand}/${previous.badge}`}
-		aria-label={previous && $LL.details.navigation.previous()}
+		aria-label={previous && $LL.pages.details.navigation.previous()}
 	>
 		<Fa
 			icon={faChevronCircleRight}
