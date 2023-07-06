@@ -68,6 +68,11 @@ const en = {
 			tale: {
 				readLess: 'read less',
 				readMore: 'read more'
+			},
+			testimony: {
+				barcode: 'barcode',
+				city: 'city',
+				country: 'kraj'
 			}
 		},
 		home: {

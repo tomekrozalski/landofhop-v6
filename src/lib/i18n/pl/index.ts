@@ -68,6 +68,11 @@ const pl = {
 			tale: {
 				readLess: 'zwiń',
 				readMore: 'czytaj więcej'
+			},
+			testimony: {
+				barcode: 'kod kreskowy',
+				city: 'miejscowość',
+				country: 'kraj'
 			}
 		},
 		home: {

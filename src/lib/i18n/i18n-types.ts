@@ -201,6 +201,20 @@ type RootTranslation = {
 				 */
 				readMore: string
 			}
+			testimony: {
+				/**
+				 * k​o​d​ ​k​r​e​s​k​o​w​y
+				 */
+				barcode: string
+				/**
+				 * m​i​e​j​s​c​o​w​o​ś​ć
+				 */
+				city: string
+				/**
+				 * k​r​a​j
+				 */
+				country: string
+			}
 		}
 		home: {
 			/**
@@ -441,6 +455,20 @@ export type TranslationFunctions = {
 				 * czytaj więcej
 				 */
 				readMore: () => LocalizedString
+			}
+			testimony: {
+				/**
+				 * kod kreskowy
+				 */
+				barcode: () => LocalizedString
+				/**
+				 * miejscowość
+				 */
+				city: () => LocalizedString
+				/**
+				 * kraj
+				 */
+				country: () => LocalizedString
 			}
 		}
 		home: {

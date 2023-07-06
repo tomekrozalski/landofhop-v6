@@ -4,7 +4,7 @@
 	import Gallery from './Gallery/Gallery.svelte';
 	import Header from './Header.svelte';
 	import Tale from './Tale/Tale.svelte';
-	// import Testimony from './Testimony/Testimony.svelte';
+	import Testimony from './Testimony/Testimony.svelte';
 	// import FootNotes from './FootNotes.svelte';
 	// import Impressions from './Impressions.svelte';
 	// import AdminBar from './AdminBar/AdminBar.svelte';
@@ -18,8 +18,7 @@
 	<div class="details-main">
 		<Header />
 		<Tale />
-		<div>Testimony</div>
-		<!-- <Testimony /> -->
+		<Testimony />
 		<div>Impressions</div>
 		<!-- <Impressions /> -->
 		<div>FootNotes</div>
