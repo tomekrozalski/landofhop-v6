@@ -64,6 +64,10 @@ const pl = {
 				showDetails: 'pokaż szczegóły',
 				title: 'Ocena społeczności',
 				updatedAt: 'ostatnia aktualizacja {0}'
+			},
+			tale: {
+				readLess: 'zwiń',
+				readMore: 'czytaj więcej'
 			}
 		},
 		home: {

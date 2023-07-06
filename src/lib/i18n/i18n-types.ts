@@ -191,6 +191,16 @@ type RootTranslation = {
 				 */
 				updatedAt: RequiredParams<'0'>
 			}
+			tale: {
+				/**
+				 * z​w​i​ń
+				 */
+				readLess: string
+				/**
+				 * c​z​y​t​a​j​ ​w​i​ę​c​e​j
+				 */
+				readMore: string
+			}
 		}
 		home: {
 			/**
@@ -421,6 +431,16 @@ export type TranslationFunctions = {
 				 * ostatnia aktualizacja {0}
 				 */
 				updatedAt: (arg0: unknown) => LocalizedString
+			}
+			tale: {
+				/**
+				 * zwiń
+				 */
+				readLess: () => LocalizedString
+				/**
+				 * czytaj więcej
+				 */
+				readMore: () => LocalizedString
 			}
 		}
 		home: {

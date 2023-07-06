@@ -64,6 +64,10 @@ const en = {
 				showDetails: 'show details',
 				title: 'Community assessment',
 				updatedAt: 'last update {0}'
+			},
+			tale: {
+				readLess: 'read less',
+				readMore: 'read more'
 			}
 		},
 		home: {
