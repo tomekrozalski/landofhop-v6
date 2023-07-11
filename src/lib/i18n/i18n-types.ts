@@ -34,6 +34,14 @@ type RootTranslation = {
 	}
 	global: {
 		/**
+		 * t​a​k
+		 */
+		confirmation: string
+		/**
+		 * n​i​e
+		 */
+		denial: string
+		/**
 		 * o​r​a​z
 		 */
 		longConjunction: string
@@ -214,6 +222,28 @@ type RootTranslation = {
 				 * k​r​a​j
 				 */
 				country: string
+				/**
+				 * f​e​r​m​e​n​t​a​c​j​a
+				 */
+				fermentation: string
+				fermentationType: {
+					/**
+					 * d​o​l​n​a
+					 */
+					bottom: string
+					/**
+					 * s​p​o​n​t​a​n​i​c​z​n​a
+					 */
+					spontaneous: string
+					/**
+					 * g​ó​r​n​a
+					 */
+					top: string
+				}
+				/**
+				 * f​i​l​t​r​a​c​j​a
+				 */
+				filtration: string
 			}
 		}
 		home: {
@@ -293,6 +323,14 @@ export type TranslationFunctions = {
 		}
 	}
 	global: {
+		/**
+		 * tak
+		 */
+		confirmation: () => LocalizedString
+		/**
+		 * nie
+		 */
+		denial: () => LocalizedString
 		/**
 		 * oraz
 		 */
@@ -469,6 +507,28 @@ export type TranslationFunctions = {
 				 * kraj
 				 */
 				country: () => LocalizedString
+				/**
+				 * fermentacja
+				 */
+				fermentation: () => LocalizedString
+				fermentationType: {
+					/**
+					 * dolna
+					 */
+					bottom: () => LocalizedString
+					/**
+					 * spontaniczna
+					 */
+					spontaneous: () => LocalizedString
+					/**
+					 * górna
+					 */
+					top: () => LocalizedString
+				}
+				/**
+				 * filtracja
+				 */
+				filtration: () => LocalizedString
 			}
 		}
 		home: {

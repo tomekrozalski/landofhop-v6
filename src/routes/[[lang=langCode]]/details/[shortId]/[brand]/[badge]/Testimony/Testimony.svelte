@@ -2,10 +2,10 @@
 	import Barcode from './Barcode.svelte';
 	import City from './City.svelte';
 	import Country from './Country.svelte';
-	// import Fermentation from './Fermentation.svelte';
+	import Fermentation from './Fermentation.svelte';
 	// import Extract from './Extract.svelte';
 	// import Alcohol from './Alcohol.svelte';
-	// import Filtration from './Filtration.svelte';
+	import Filtration from './Filtration.svelte';
 	// import Pasteurization from './Pasteurization.svelte';
 	// import Aged from './Aged/Aged.svelte';
 	// import BeverageStyle from './BeverageStyle.svelte';
@@ -26,10 +26,10 @@
 	<City />
 	<Country />
 	<Barcode />
-	<!-- <Fermentation /> -->
+	<Fermentation />
 	<!-- <Extract /> -->
 	<!-- <Alcohol /> -->
-	<!-- <Filtration /> -->
+	<Filtration />
 	<!-- <Pasteurization /> -->
 	<!-- <Aged /> -->
 	<!-- <BeverageStyle /> -->

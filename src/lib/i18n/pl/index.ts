@@ -11,6 +11,8 @@ const pl = {
 		}
 	},
 	global: {
+		confirmation: 'tak',
+		denial: 'nie',
 		longConjunction: 'oraz',
 		shortConjunction: 'i'
 	},
@@ -72,7 +74,14 @@ const pl = {
 			testimony: {
 				barcode: 'kod kreskowy',
 				city: 'miejscowość',
-				country: 'kraj'
+				country: 'kraj',
+				fermentation: 'fermentacja',
+				fermentationType: {
+					bottom: 'dolna',
+					spontaneous: 'spontaniczna',
+					top: 'górna'
+				},
+				filtration: 'filtracja'
 			}
 		},
 		home: {

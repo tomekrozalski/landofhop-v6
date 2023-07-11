@@ -6,6 +6,8 @@ const en = {
 		list: 'list'
 	},
 	global: {
+		confirmation: 'yes',
+		denial: 'no',
 		longConjunction: 'and',
 		shortConjunction: 'and'
 	},
@@ -72,7 +74,14 @@ const en = {
 			testimony: {
 				barcode: 'barcode',
 				city: 'city',
-				country: 'kraj'
+				country: 'country',
+				fermentation: 'fermentation',
+				fermentationType: {
+					bottom: 'bottom',
+					spontaneous: 'spontaneous',
+					top: 'top'
+				},
+				filtration: 'filtration'
 			}
 		},
 		home: {
