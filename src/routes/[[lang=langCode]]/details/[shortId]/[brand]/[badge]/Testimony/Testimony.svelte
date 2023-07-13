@@ -3,14 +3,14 @@
 	import City from './City.svelte';
 	import Country from './Country.svelte';
 	import Fermentation from './Fermentation.svelte';
-	// import Extract from './Extract.svelte';
-	// import Alcohol from './Alcohol.svelte';
+	import Extract from './Extract.svelte';
+	import Alcohol from './Alcohol.svelte';
 	import Filtration from './Filtration.svelte';
-	// import Pasteurization from './Pasteurization.svelte';
+	import Pasteurization from './Pasteurization.svelte';
 	// import Aged from './Aged/Aged.svelte';
 	// import BeverageStyle from './BeverageStyle.svelte';
-	// import DryHopped from './DryHopped.svelte';
-	// import HopRate from './HopRate.svelte';
+	import DryHopped from './DryHopped.svelte';
+	import HopRate from './HopRate.svelte';
 	// import ExpirationTime from './ExpirationTime.svelte';
 	// import Ingredients from './Ingredients.svelte';
 	// import IngredientTags from './IngredientTags.svelte';
@@ -27,15 +27,15 @@
 	<Country />
 	<Barcode />
 	<Fermentation />
-	<!-- <Extract /> -->
-	<!-- <Alcohol /> -->
+	<Extract />
+	<Alcohol />
 	<Filtration />
-	<!-- <Pasteurization /> -->
+	<Pasteurization />
 	<!-- <Aged /> -->
 	<!-- <BeverageStyle /> -->
 	<!-- <StyleTags /> -->
-	<!-- <DryHopped /> -->
-	<!-- <HopRate /> -->
+	<DryHopped />
+	<HopRate />
 	<!-- <Nitrogen /> -->
 	<!-- <ExpirationTime /> -->
 	<!-- <Ingredients /> -->

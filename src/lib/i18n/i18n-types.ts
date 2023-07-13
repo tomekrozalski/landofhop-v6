@@ -211,6 +211,31 @@ type RootTranslation = {
 			}
 			testimony: {
 				/**
+				 * a​l​k​o​h​o​l
+				 */
+				alcohol: string
+				alcoholScope: {
+					/**
+					 * <​0​.​5​%
+					 */
+					m500: string
+					/**
+					 * ±​0​.​5​%
+					 */
+					pm500: string
+					/**
+					 * ±​1​.​0​%
+					 */
+					pm1000: string
+				}
+				/**
+				 * {​v​a​l​u​e​}​{​u​n​i​t​|​{​d​e​g​r​e​e​:​ ​°​,​ ​p​e​r​c​e​n​t​:​ ​%​}​}​ ​{​r​e​l​a​t​e​|​{​c​a​p​a​c​i​t​y​:​ ​o​b​j​.​,​ ​a​b​v​:​ ​A​b​v​}​}
+				 * @param {'capacity' | 'abv'} relate
+				 * @param {'degree' | 'percent'} unit
+				 * @param {unknown} value
+				 */
+				alcoholValue: RequiredParams<`relate|{capacity:${string}, abv:${string}}` | `unit|{degree:${string}, percent:${string}}` | 'value'>
+				/**
 				 * k​o​d​ ​k​r​e​s​k​o​w​y
 				 */
 				barcode: string
@@ -222,6 +247,21 @@ type RootTranslation = {
 				 * k​r​a​j
 				 */
 				country: string
+				/**
+				 * c​h​m​i​e​l​o​n​e​ ​n​a​ ​z​i​m​n​o
+				 */
+				dryHopped: string
+				/**
+				 * e​k​s​t​r​a​k​t
+				 */
+				extract: string
+				/**
+				 * {​v​a​l​u​e​}​{​u​n​i​t​|​{​d​e​g​r​e​e​:​ ​°​,​ ​p​e​r​c​e​n​t​:​ ​%​}​}​ ​{​r​e​l​a​t​e​|​{​w​e​i​g​h​t​:​ ​w​a​g​.​,​ ​b​l​g​:​ ​B​l​g​,​ ​p​l​a​t​o​:​ ​P​l​a​t​o​}​}
+				 * @param {'weight' | 'blg' | 'plato'} relate
+				 * @param {'degree' | 'percent'} unit
+				 * @param {unknown} value
+				 */
+				extractValue: RequiredParams<`relate|{weight:${string}, blg:${string}, plato:${string}}` | `unit|{degree:${string}, percent:${string}}` | 'value'>
 				/**
 				 * f​e​r​m​e​n​t​a​c​j​a
 				 */
@@ -244,6 +284,20 @@ type RootTranslation = {
 				 * f​i​l​t​r​a​c​j​a
 				 */
 				filtration: string
+				/**
+				 * h​o​p​ ​r​a​t​e
+				 */
+				hopRate: string
+				/**
+				 * {​v​a​l​u​e​}​ ​{​u​n​i​t​|​{​g​l​:​ ​g​/​L​}​}
+				 * @param {'gl'} unit
+				 * @param {unknown} value
+				 */
+				hopRateValue: RequiredParams<`unit|{gl:${string}}` | 'value'>
+				/**
+				 * p​a​s​t​e​r​y​z​a​c​j​a
+				 */
+				pasteurization: string
 			}
 		}
 		home: {
@@ -496,6 +550,28 @@ export type TranslationFunctions = {
 			}
 			testimony: {
 				/**
+				 * alkohol
+				 */
+				alcohol: () => LocalizedString
+				alcoholScope: {
+					/**
+					 * <0.5%
+					 */
+					m500: () => LocalizedString
+					/**
+					 * ±0.5%
+					 */
+					pm500: () => LocalizedString
+					/**
+					 * ±1.0%
+					 */
+					pm1000: () => LocalizedString
+				}
+				/**
+				 * {value}{unit|{degree: °, percent: %}} {relate|{capacity: obj., abv: Abv}}
+				 */
+				alcoholValue: (arg: { relate: 'capacity' | 'abv', unit: 'degree' | 'percent', value: unknown }) => LocalizedString
+				/**
 				 * kod kreskowy
 				 */
 				barcode: () => LocalizedString
@@ -507,6 +583,18 @@ export type TranslationFunctions = {
 				 * kraj
 				 */
 				country: () => LocalizedString
+				/**
+				 * chmielone na zimno
+				 */
+				dryHopped: () => LocalizedString
+				/**
+				 * ekstrakt
+				 */
+				extract: () => LocalizedString
+				/**
+				 * {value}{unit|{degree: °, percent: %}} {relate|{weight: wag., blg: Blg, plato: Plato}}
+				 */
+				extractValue: (arg: { relate: 'weight' | 'blg' | 'plato', unit: 'degree' | 'percent', value: unknown }) => LocalizedString
 				/**
 				 * fermentacja
 				 */
@@ -529,6 +617,18 @@ export type TranslationFunctions = {
 				 * filtracja
 				 */
 				filtration: () => LocalizedString
+				/**
+				 * hop rate
+				 */
+				hopRate: () => LocalizedString
+				/**
+				 * {value} {unit|{gl: g/L}}
+				 */
+				hopRateValue: (arg: { unit: 'gl', value: unknown }) => LocalizedString
+				/**
+				 * pasteryzacja
+				 */
+				pasteurization: () => LocalizedString
 			}
 		}
 		home: {

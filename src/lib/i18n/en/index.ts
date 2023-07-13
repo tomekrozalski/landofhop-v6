@@ -72,16 +72,30 @@ const en = {
 				readMore: 'read more'
 			},
 			testimony: {
+				alcohol: 'alcohol',
+				alcoholScope: {
+					m500: '<0.5%',
+					pm500: '±0.5%',
+					pm1000: '±1.0%'
+				},
+				alcoholValue: '{value}{unit|{degree: °, percent: %}} {relate|{capacity: cap., abv: Abv}}',
 				barcode: 'barcode',
 				city: 'city',
 				country: 'country',
+				dryHopped: 'dry hopped',
+				extract: 'ekstrakt',
+				extractValue:
+					'{value}{unit|{degree: °, percent: %}} {relate|{weight: weight, blg: Blg, plato: Plato}}',
 				fermentation: 'fermentation',
 				fermentationType: {
 					bottom: 'bottom',
 					spontaneous: 'spontaneous',
 					top: 'top'
 				},
-				filtration: 'filtration'
+				filtration: 'filtration',
+				hopRate: 'hop rate',
+				hopRateValue: '{value} {unit|{gl: g/L}}',
+				pasteurization: 'pasteurization'
 			}
 		},
 		home: {
