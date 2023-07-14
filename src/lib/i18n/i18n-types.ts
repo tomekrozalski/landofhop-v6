@@ -210,6 +210,96 @@ type RootTranslation = {
 				readMore: string
 			}
 			testimony: {
+				aged: {
+					/**
+					 * l​e​ż​a​k​o​w​a​n​i​e
+					 */
+					title: string
+					barrel: {
+						/**
+						 * w​ ​b​e​c​z​c​e
+						 */
+						title: string
+						/**
+						 * w​ ​b​e​c​z​c​e​ ​b​u​k​o​w​e​j
+						 */
+						beech: string
+						/**
+						 * w​ ​b​e​c​z​c​e​ ​d​ę​b​o​w​e​j
+						 */
+						oak: string
+					}
+					/**
+					 * b​u​k
+					 */
+					beech: string
+					/**
+					 * S​p​o​s​ó​b​ ​l​e​ż​a​k​o​w​a​n​i​a​ ​{​o​r​d​e​r​}
+					 * @param {unknown} order
+					 */
+					flow: RequiredParams<'order'>
+					/**
+					 * d​ą​b
+					 */
+					oak: string
+					previousContent: {
+						/**
+						 * P​o​p​r​z​e​d​n​i​a​ ​z​a​w​a​r​t​o​ś​ć​ ​w​ ​k​t​ó​r​y​m​ ​d​r​e​w​n​o​ ​m​i​a​ł​o​ ​k​o​n​t​a​k​t
+						 */
+						title: string
+						/**
+						 * b​o​u​r​b​o​n
+						 */
+						bourbon: string
+						/**
+						 * k​o​n​i​a​k
+						 */
+						cognac: string
+						/**
+						 * {​i​t​e​m​|​{​b​o​u​r​b​o​n​:​ ​b​o​u​r​b​o​n​i​e​,​ ​c​o​g​n​a​c​:​ ​k​o​n​i​a​k​u​,​ ​p​o​r​t​o​:​ ​p​o​r​t​o​,​ ​r​e​d​W​i​n​e​:​ ​c​z​e​r​w​o​n​y​m​ ​w​i​n​i​e​,​ ​r​u​m​:​ ​r​u​m​i​e​,​ ​w​h​i​s​k​y​:​ ​w​h​i​s​k​y​}​}
+						 * @param {'bourbon' | 'cognac' | 'porto' | 'redWine' | 'rum' | 'whisky'} item
+						 */
+						content: RequiredParams<`item|{bourbon:${string}, cognac:${string}, porto:${string}, redWine:${string}, rum:${string}, whisky:${string}}`>
+						/**
+						 * p​o
+						 */
+						name: string
+						/**
+						 * p​o​r​t​o
+						 */
+						porto: string
+						/**
+						 * c​z​e​r​w​o​n​e​ ​w​i​n​o
+						 */
+						redWine: string
+						/**
+						 * r​u​m
+						 */
+						rum: string
+						/**
+						 * w​h​i​s​k​y
+						 */
+						whisky: string
+					}
+					/**
+					 * C​z​a​s​ ​l​e​ż​a​k​o​w​a​n​i​a
+					 */
+					timeOfAged: string
+					wood: {
+						/**
+						 * z​ ​d​r​e​w​n​e​m
+						 */
+						title: string
+						/**
+						 * z​ ​d​r​e​w​n​e​m​ ​b​u​k​o​w​y​m
+						 */
+						beech: string
+						/**
+						 * z​ ​d​r​e​w​n​e​m​ ​d​ę​b​o​w​y​m
+						 */
+						oak: string
+					}
+				}
 				/**
 				 * a​l​k​o​h​o​l
 				 */
@@ -298,6 +388,10 @@ type RootTranslation = {
 				 * p​a​s​t​e​r​y​z​a​c​j​a
 				 */
 				pasteurization: string
+				/**
+				 * s​t​y​l
+				 */
+				style: string
 			}
 		}
 		home: {
@@ -354,6 +448,23 @@ type RootTranslation = {
 			 */
 			tryAgain: string
 		}
+	}
+	time: {
+		/**
+		 * {​0​}​ ​{​{​d​n​i​|​d​z​i​e​ń​|​d​n​i​|​d​n​i​|​d​n​i​}​}
+		 * @param {string | number | boolean} 0
+		 */
+		day: RequiredParams<'0'>
+		/**
+		 * {​0​}​ ​{​{​m​i​e​s​i​ę​c​y​|​m​i​e​s​i​ą​c​|​m​i​e​s​i​ą​c​e​|​m​i​e​s​i​ą​c​e​|​m​i​e​s​i​ę​c​y​}​}
+		 * @param {string | number | boolean} 0
+		 */
+		month: RequiredParams<'0'>
+		/**
+		 * {​0​}​ ​{​{​l​a​t​|​r​o​k​|​l​a​t​a​|​l​a​t​a​|​l​a​t​}​}
+		 * @param {string | number | boolean} 0
+		 */
+		year: RequiredParams<'0'>
 	}
 }
 
@@ -549,6 +660,94 @@ export type TranslationFunctions = {
 				readMore: () => LocalizedString
 			}
 			testimony: {
+				aged: {
+					/**
+					 * leżakowanie
+					 */
+					title: () => LocalizedString
+					barrel: {
+						/**
+						 * w beczce
+						 */
+						title: () => LocalizedString
+						/**
+						 * w beczce bukowej
+						 */
+						beech: () => LocalizedString
+						/**
+						 * w beczce dębowej
+						 */
+						oak: () => LocalizedString
+					}
+					/**
+					 * buk
+					 */
+					beech: () => LocalizedString
+					/**
+					 * Sposób leżakowania {order}
+					 */
+					flow: (arg: { order: unknown }) => LocalizedString
+					/**
+					 * dąb
+					 */
+					oak: () => LocalizedString
+					previousContent: {
+						/**
+						 * Poprzednia zawartość w którym drewno miało kontakt
+						 */
+						title: () => LocalizedString
+						/**
+						 * bourbon
+						 */
+						bourbon: () => LocalizedString
+						/**
+						 * koniak
+						 */
+						cognac: () => LocalizedString
+						/**
+						 * {item|{bourbon: bourbonie, cognac: koniaku, porto: porto, redWine: czerwonym winie, rum: rumie, whisky: whisky}}
+						 */
+						content: (arg: { item: 'bourbon' | 'cognac' | 'porto' | 'redWine' | 'rum' | 'whisky' }) => LocalizedString
+						/**
+						 * po
+						 */
+						name: () => LocalizedString
+						/**
+						 * porto
+						 */
+						porto: () => LocalizedString
+						/**
+						 * czerwone wino
+						 */
+						redWine: () => LocalizedString
+						/**
+						 * rum
+						 */
+						rum: () => LocalizedString
+						/**
+						 * whisky
+						 */
+						whisky: () => LocalizedString
+					}
+					/**
+					 * Czas leżakowania
+					 */
+					timeOfAged: () => LocalizedString
+					wood: {
+						/**
+						 * z drewnem
+						 */
+						title: () => LocalizedString
+						/**
+						 * z drewnem bukowym
+						 */
+						beech: () => LocalizedString
+						/**
+						 * z drewnem dębowym
+						 */
+						oak: () => LocalizedString
+					}
+				}
 				/**
 				 * alkohol
 				 */
@@ -629,6 +828,10 @@ export type TranslationFunctions = {
 				 * pasteryzacja
 				 */
 				pasteurization: () => LocalizedString
+				/**
+				 * styl
+				 */
+				style: () => LocalizedString
 			}
 		}
 		home: {
@@ -685,6 +888,20 @@ export type TranslationFunctions = {
 			 */
 			tryAgain: () => LocalizedString
 		}
+	}
+	time: {
+		/**
+		 * {0} {{dni|dzień|dni|dni|dni}}
+		 */
+		day: (arg0: string | number | boolean) => LocalizedString
+		/**
+		 * {0} {{miesięcy|miesiąc|miesiące|miesiące|miesięcy}}
+		 */
+		month: (arg0: string | number | boolean) => LocalizedString
+		/**
+		 * {0} {{lat|rok|lata|lata|lat}}
+		 */
+		year: (arg0: string | number | boolean) => LocalizedString
 	}
 }
 

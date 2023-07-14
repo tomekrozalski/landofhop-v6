@@ -72,6 +72,35 @@ const en = {
 				readMore: 'read more'
 			},
 			testimony: {
+				aged: {
+					title: 'aged',
+					barrel: {
+						title: 'barrel',
+						beech: 'inside beech barrel',
+						oak: 'inside oak barrel'
+					},
+					beech: 'beech',
+					flow: 'Way of aged {order}',
+					oak: 'oak',
+					previousContent: {
+						title: 'Previous content with which the wood had contact',
+						bourbon: 'bourbon',
+						cognac: 'cognac',
+						content:
+							'{item|{bourbon: bourbon, cognac: cognac, porto: porto, redWine: red wine, rum: rum, whisky: whisky}}',
+						name: 'after',
+						porto: 'porto',
+						redWine: 'red wine',
+						rum: 'rum',
+						whisky: 'whisky'
+					},
+					timeOfAged: 'Time of aged',
+					wood: {
+						title: 'wood',
+						beech: 'with beech wood',
+						oak: 'with oak wood'
+					}
+				},
 				alcohol: 'alcohol',
 				alcoholScope: {
 					m500: '<0.5%',
@@ -95,7 +124,8 @@ const en = {
 				filtration: 'filtration',
 				hopRate: 'hop rate',
 				hopRateValue: '{value} {unit|{gl: g/L}}',
-				pasteurization: 'pasteurization'
+				pasteurization: 'pasteurization',
+				style: 'style'
 			}
 		},
 		home: {
@@ -116,6 +146,11 @@ const en = {
 			title: 'Log in',
 			tryAgain: 'Login failed. Try again!'
 		}
+	},
+	time: {
+		day: '{0} {{day|days}}',
+		month: '{0} {{month|months}}',
+		year: '{0} {{year|years}}'
 	}
 } satisfies Translation;
 

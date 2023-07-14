@@ -7,8 +7,9 @@
 	import Alcohol from './Alcohol.svelte';
 	import Filtration from './Filtration.svelte';
 	import Pasteurization from './Pasteurization.svelte';
-	// import Aged from './Aged/Aged.svelte';
-	// import BeverageStyle from './BeverageStyle.svelte';
+	import Aged from './Aged/Aged.svelte';
+	import BeverageStyle from './BeverageStyle.svelte';
+	// import StyleTags from './StyleTags.svelte';
 	import DryHopped from './DryHopped.svelte';
 	import HopRate from './HopRate.svelte';
 	// import ExpirationTime from './ExpirationTime.svelte';
@@ -16,7 +17,6 @@
 	// import IngredientTags from './IngredientTags.svelte';
 	// import Nitrogen from './Nitrogen.svelte';
 	// import SmokedMalt from './SmokedMalt.svelte';
-	// import StyleTags from './StyleTags.svelte';
 	// import Temperature from './Temperature.svelte';
 	// import Container from './Container.svelte';
 	// import Price from './Price.svelte';
@@ -31,8 +31,8 @@
 	<Alcohol />
 	<Filtration />
 	<Pasteurization />
-	<!-- <Aged /> -->
-	<!-- <BeverageStyle /> -->
+	<Aged />
+	<BeverageStyle />
 	<!-- <StyleTags /> -->
 	<DryHopped />
 	<HopRate />

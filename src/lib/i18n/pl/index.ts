@@ -72,6 +72,35 @@ const pl = {
 				readMore: 'czytaj więcej'
 			},
 			testimony: {
+				aged: {
+					title: 'leżakowanie',
+					barrel: {
+						title: 'w beczce',
+						beech: 'w beczce bukowej',
+						oak: 'w beczce dębowej'
+					},
+					beech: 'buk',
+					flow: 'Sposób leżakowania {order}',
+					oak: 'dąb',
+					previousContent: {
+						title: 'Poprzednia zawartość w którym drewno miało kontakt',
+						bourbon: 'bourbon',
+						cognac: 'koniak',
+						content:
+							'{item|{bourbon: bourbonie, cognac: koniaku, porto: porto, redWine: czerwonym winie, rum: rumie, whisky: whisky}}',
+						name: 'po',
+						porto: 'porto',
+						redWine: 'czerwone wino',
+						rum: 'rum',
+						whisky: 'whisky'
+					},
+					timeOfAged: 'Czas leżakowania',
+					wood: {
+						title: 'z drewnem',
+						beech: 'z drewnem bukowym',
+						oak: 'z drewnem dębowym'
+					}
+				},
 				alcohol: 'alkohol',
 				alcoholScope: {
 					m500: '<0.5%',
@@ -95,7 +124,8 @@ const pl = {
 				filtration: 'filtracja',
 				hopRate: 'hop rate',
 				hopRateValue: '{value} {unit|{gl: g/L}}',
-				pasteurization: 'pasteryzacja'
+				pasteurization: 'pasteryzacja',
+				style: 'styl'
 			}
 		},
 		home: {
@@ -116,6 +146,11 @@ const pl = {
 			title: 'Zaloguj się',
 			tryAgain: 'Nie udało się zalogować. Spróbuj ponownie!'
 		}
+	},
+	time: {
+		day: '{0} {{dni|dzień|dni|dni|dni}}',
+		month: '{0} {{miesięcy|miesiąc|miesiące|miesiące|miesięcy}}',
+		year: '{0} {{lat|rok|lata|lata|lat}}'
 	}
 } satisfies BaseTranslation;
 
