@@ -1,3 +1,3 @@
-<dt class="after:content-[':'] lg:whitespace-nowrap lg:text-right">
+<dt class="after:content-[':'] lg:text-right">
 	<slot />
 </dt>

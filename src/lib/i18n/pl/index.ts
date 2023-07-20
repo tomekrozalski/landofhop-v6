@@ -110,8 +110,10 @@ const pl = {
 				alcoholValue: '{value}{unit|{degree: °, percent: %}} {relate|{capacity: obj., abv: Abv}}',
 				barcode: 'kod kreskowy',
 				city: 'miejscowość',
+				contains: 'zawiera',
 				country: 'kraj',
 				dryHopped: 'chmielone na zimno',
+				expirationTime: 'termin ważności do spożycia',
 				extract: 'ekstrakt',
 				extractValue:
 					'{value}{unit|{degree: °, percent: %}} {relate|{weight: wag., blg: Blg, plato: Plato}}',
@@ -122,10 +124,13 @@ const pl = {
 					top: 'górna'
 				},
 				filtration: 'filtracja',
+				ingredients: 'składniki',
 				hopRate: 'hop rate',
 				hopRateValue: '{value} {unit|{gl: g/L}}',
+				nitrogen: 'nasycane azotem',
 				pasteurization: 'pasteryzacja',
-				style: 'styl'
+				style: 'styl',
+				styleTags: 'styl w grupie'
 			}
 		},
 		home: {

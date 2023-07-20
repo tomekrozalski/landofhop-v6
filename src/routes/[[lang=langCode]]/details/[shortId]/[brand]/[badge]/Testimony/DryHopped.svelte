@@ -3,6 +3,9 @@
 	import LL from '$lib/i18n/i18n-svelte';
 	import DD from './atoms/DescriptionDetails.svelte';
 	import DT from './atoms/DescriptionTerm.svelte';
+	import Label from './atoms/Label.svelte';
+	import Producer from './atoms/Producer.svelte';
+	import Editorial from './atoms/Editorial.svelte';
 	import MarkLanguage from '$lib/atoms/MarkLanguage.svelte';
 	import FormattedList from '$lib/atoms/FormattedList.svelte';
 
@@ -15,40 +18,34 @@
 	</DT>
 	<DD>
 		{#if isDryHopped?.label}
-			<span class="label">
-				<em>{$LL.global.confirmation()}</em>
-			</span>
+			<Label>{$LL.global.confirmation()}</Label>
 		{/if}
 		{#if dryHopped?.label}
-			<span class="label">
+			<Label>
 				<FormattedList mode="short" let:item data={dryHopped.label}>
 					<MarkLanguage label tag="em" name={item.name} />
 				</FormattedList>
-			</span>
+			</Label>
 		{/if}
 		{#if isDryHopped?.producer}
-			<span class="producer">
-				<em>{$LL.global.confirmation()}</em>
-			</span>
+			<Producer>{$LL.global.confirmation()}</Producer>
 		{/if}
 		{#if dryHopped?.producer}
-			<span class="producer">
+			<Producer>
 				<FormattedList mode="short" let:item data={dryHopped.producer}>
 					<MarkLanguage producer tag="em" name={item.name} />
 				</FormattedList>
-			</span>
+			</Producer>
 		{/if}
 		{#if isDryHopped?.editorial}
-			<span class="editorial">
-				<em>{$LL.global.confirmation()}</em>
-			</span>
+			<Editorial>{$LL.global.confirmation()}</Editorial>
 		{/if}
 		{#if dryHopped?.editorial}
-			<span class="editorial">
+			<Editorial>
 				<FormattedList mode="short" let:item data={dryHopped.editorial}>
 					<MarkLanguage editorial tag="em" name={item.name} />
 				</FormattedList>
-			</span>
+			</Editorial>
 		{/if}
 	</DD>
 {/if}

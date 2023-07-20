@@ -334,6 +334,10 @@ type RootTranslation = {
 				 */
 				city: string
 				/**
+				 * z​a​w​i​e​r​a
+				 */
+				contains: string
+				/**
 				 * k​r​a​j
 				 */
 				country: string
@@ -341,6 +345,10 @@ type RootTranslation = {
 				 * c​h​m​i​e​l​o​n​e​ ​n​a​ ​z​i​m​n​o
 				 */
 				dryHopped: string
+				/**
+				 * t​e​r​m​i​n​ ​w​a​ż​n​o​ś​c​i​ ​d​o​ ​s​p​o​ż​y​c​i​a
+				 */
+				expirationTime: string
 				/**
 				 * e​k​s​t​r​a​k​t
 				 */
@@ -375,6 +383,10 @@ type RootTranslation = {
 				 */
 				filtration: string
 				/**
+				 * s​k​ł​a​d​n​i​k​i
+				 */
+				ingredients: string
+				/**
 				 * h​o​p​ ​r​a​t​e
 				 */
 				hopRate: string
@@ -385,6 +397,10 @@ type RootTranslation = {
 				 */
 				hopRateValue: RequiredParams<`unit|{gl:${string}}` | 'value'>
 				/**
+				 * n​a​s​y​c​a​n​e​ ​a​z​o​t​e​m
+				 */
+				nitrogen: string
+				/**
 				 * p​a​s​t​e​r​y​z​a​c​j​a
 				 */
 				pasteurization: string
@@ -392,6 +408,10 @@ type RootTranslation = {
 				 * s​t​y​l
 				 */
 				style: string
+				/**
+				 * s​t​y​l​ ​w​ ​g​r​u​p​i​e
+				 */
+				styleTags: string
 			}
 		}
 		home: {
@@ -779,6 +799,10 @@ export type TranslationFunctions = {
 				 */
 				city: () => LocalizedString
 				/**
+				 * zawiera
+				 */
+				contains: () => LocalizedString
+				/**
 				 * kraj
 				 */
 				country: () => LocalizedString
@@ -786,6 +810,10 @@ export type TranslationFunctions = {
 				 * chmielone na zimno
 				 */
 				dryHopped: () => LocalizedString
+				/**
+				 * termin ważności do spożycia
+				 */
+				expirationTime: () => LocalizedString
 				/**
 				 * ekstrakt
 				 */
@@ -817,6 +845,10 @@ export type TranslationFunctions = {
 				 */
 				filtration: () => LocalizedString
 				/**
+				 * składniki
+				 */
+				ingredients: () => LocalizedString
+				/**
 				 * hop rate
 				 */
 				hopRate: () => LocalizedString
@@ -825,6 +857,10 @@ export type TranslationFunctions = {
 				 */
 				hopRateValue: (arg: { unit: 'gl', value: unknown }) => LocalizedString
 				/**
+				 * nasycane azotem
+				 */
+				nitrogen: () => LocalizedString
+				/**
 				 * pasteryzacja
 				 */
 				pasteurization: () => LocalizedString
@@ -832,6 +868,10 @@ export type TranslationFunctions = {
 				 * styl
 				 */
 				style: () => LocalizedString
+				/**
+				 * styl w grupie
+				 */
+				styleTags: () => LocalizedString
 			}
 		}
 		home: {

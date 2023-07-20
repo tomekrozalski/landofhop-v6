@@ -110,8 +110,10 @@ const en = {
 				alcoholValue: '{value}{unit|{degree: °, percent: %}} {relate|{capacity: cap., abv: Abv}}',
 				barcode: 'barcode',
 				city: 'city',
+				contains: 'contains',
 				country: 'country',
 				dryHopped: 'dry hopped',
+				expirationTime: 'expiration time',
 				extract: 'ekstrakt',
 				extractValue:
 					'{value}{unit|{degree: °, percent: %}} {relate|{weight: weight, blg: Blg, plato: Plato}}',
@@ -124,8 +126,11 @@ const en = {
 				filtration: 'filtration',
 				hopRate: 'hop rate',
 				hopRateValue: '{value} {unit|{gl: g/L}}',
+				ingredients: 'ingredients',
+				nitrogen: 'saturated with nitrogen',
 				pasteurization: 'pasteurization',
-				style: 'style'
+				style: 'style',
+				styleTags: 'style in group'
 			}
 		},
 		home: {
