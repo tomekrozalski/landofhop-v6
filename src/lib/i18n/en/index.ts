@@ -110,6 +110,29 @@ const en = {
 				alcoholValue: '{value}{unit|{degree: °, percent: %}} {relate|{capacity: cap., abv: Abv}}',
 				barcode: 'barcode',
 				city: 'city',
+				container: {
+					title: 'container',
+					color: {
+						brown: 'brown',
+						golden: 'golden',
+						green: 'green',
+						black: 'black',
+						silver: 'silver',
+						transparent: 'transparent'
+					},
+					material: {
+						glass: 'glass',
+						aluminum: 'aluminum'
+					},
+					type: {
+						bottle: 'bottle',
+						can: 'can'
+					},
+					unit: {
+						ml: 'ml'
+					},
+					value: '{value} {unit|{ml: ml}}'
+				},
 				contains: 'contains',
 				country: 'country',
 				dryHopped: 'dry hopped',
@@ -127,10 +150,15 @@ const en = {
 				hopRate: 'hop rate',
 				hopRateValue: '{value} {unit|{gl: g/L}}',
 				ingredients: 'ingredients',
+				ingredientsByTag: 'ingredients by tag',
 				nitrogen: 'saturated with nitrogen',
 				pasteurization: 'pasteurization',
+				price: 'price',
+				smokedMalt: 'contains malt dried with smoke',
 				style: 'style',
-				styleTags: 'style in group'
+				styleTags: 'style in group',
+				temperature: 'serving temperature',
+				temperatureUnit: '{0|{celcius: °C}}'
 			}
 		},
 		home: {

@@ -31,6 +31,26 @@ export default {
 			sea: {
 				DEFAULT: '#277da1',
 				light: '#d5dce3'
+			},
+			water: {
+				DEFAULT: '#264653',
+				light: '#9fb3bc'
+			},
+			malt: {
+				DEFAULT: '#e9c46a',
+				light: '#eae1cd'
+			},
+			hop: {
+				DEFAULT: '#2a9d8f',
+				light: '#a7d4cf'
+			},
+			yeast: {
+				DEFAULT: '#f4a261',
+				light: '#ddccbe'
+			},
+			addition: {
+				DEFAULT: '#e76f51',
+				light: '#e0c5bf'
 			}
 		},
 		container: {

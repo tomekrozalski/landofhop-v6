@@ -15,11 +15,11 @@
 	import ExpirationTime from './ExpirationTime.svelte';
 	import Nitrogen from './Nitrogen.svelte';
 	import Ingredients from './Ingredients/Ingredients.svelte';
-	// import IngredientTags from './IngredientTags.svelte';
-	// import SmokedMalt from './SmokedMalt.svelte';
-	// import Temperature from './Temperature.svelte';
-	// import Container from './Container.svelte';
-	// import Price from './Price.svelte';
+	import IngredientTags from './IngredientTags.svelte';
+	import SmokedMalt from './SmokedMalt.svelte';
+	import Temperature from './Temperature.svelte';
+	import Container from './Container.svelte';
+	import Price from './Price.svelte';
 </script>
 
 <dl class="mb-5 mt-8 grid grid-cols-1 gap-x-5 lg:grid-cols-3">
@@ -39,9 +39,9 @@
 	<Nitrogen />
 	<ExpirationTime />
 	<Ingredients />
-	<!-- <IngredientTags /> -->
-	<!-- <SmokedMalt /> -->
-	<!-- <Temperature /> -->
-	<!-- <Container /> -->
-	<!-- <Price /> -->
+	<IngredientTags />
+	<SmokedMalt />
+	<Temperature />
+	<Container />
+	<Price />
 </dl>

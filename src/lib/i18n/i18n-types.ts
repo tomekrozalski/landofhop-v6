@@ -333,6 +333,70 @@ type RootTranslation = {
 				 * m​i​e​j​s​c​o​w​o​ś​ć
 				 */
 				city: string
+				container: {
+					/**
+					 * o​p​a​k​o​w​a​n​i​e
+					 */
+					title: string
+					color: {
+						/**
+						 * b​r​ą​z​o​w​a
+						 */
+						brown: string
+						/**
+						 * z​ł​o​t​a
+						 */
+						golden: string
+						/**
+						 * z​i​e​l​o​n​a
+						 */
+						green: string
+						/**
+						 * c​z​a​r​n​a
+						 */
+						black: string
+						/**
+						 * s​r​e​b​r​n​a
+						 */
+						silver: string
+						/**
+						 * p​r​z​e​z​r​o​c​z​y​s​t​a
+						 */
+						transparent: string
+					}
+					material: {
+						/**
+						 * s​z​k​l​a​n​a
+						 */
+						glass: string
+						/**
+						 * a​l​u​m​i​n​i​o​w​a
+						 */
+						aluminum: string
+					}
+					type: {
+						/**
+						 * b​u​t​e​l​k​a
+						 */
+						bottle: string
+						/**
+						 * p​u​s​z​k​a
+						 */
+						can: string
+					}
+					unit: {
+						/**
+						 * m​l
+						 */
+						ml: string
+					}
+					/**
+					 * {​v​a​l​u​e​}​ ​{​u​n​i​t​|​{​m​l​:​ ​m​l​}​}
+					 * @param {'ml'} unit
+					 * @param {unknown} value
+					 */
+					value: RequiredParams<`unit|{ml:${string}}` | 'value'>
+				}
 				/**
 				 * z​a​w​i​e​r​a
 				 */
@@ -387,6 +451,10 @@ type RootTranslation = {
 				 */
 				ingredients: string
 				/**
+				 * s​k​ł​a​d​n​i​k​i​ ​w​e​d​l​e​ ​t​a​g​ó​w
+				 */
+				ingredientsByTag: string
+				/**
 				 * h​o​p​ ​r​a​t​e
 				 */
 				hopRate: string
@@ -405,6 +473,14 @@ type RootTranslation = {
 				 */
 				pasteurization: string
 				/**
+				 * c​e​n​a
+				 */
+				price: string
+				/**
+				 * z​a​w​i​e​r​a​ ​s​ł​ó​d​ ​w​ę​d​z​o​n​y
+				 */
+				smokedMalt: string
+				/**
 				 * s​t​y​l
 				 */
 				style: string
@@ -412,6 +488,15 @@ type RootTranslation = {
 				 * s​t​y​l​ ​w​ ​g​r​u​p​i​e
 				 */
 				styleTags: string
+				/**
+				 * t​e​m​p​e​r​a​t​u​r​a​ ​p​o​d​a​w​a​n​i​a
+				 */
+				temperature: string
+				/**
+				 * {​0​|​{​c​e​l​c​i​u​s​:​ ​°​C​}​}
+				 * @param {'celcius'} 0
+				 */
+				temperatureUnit: RequiredParams<`0|{celcius:${string}}`>
 			}
 		}
 		home: {
@@ -798,6 +883,68 @@ export type TranslationFunctions = {
 				 * miejscowość
 				 */
 				city: () => LocalizedString
+				container: {
+					/**
+					 * opakowanie
+					 */
+					title: () => LocalizedString
+					color: {
+						/**
+						 * brązowa
+						 */
+						brown: () => LocalizedString
+						/**
+						 * złota
+						 */
+						golden: () => LocalizedString
+						/**
+						 * zielona
+						 */
+						green: () => LocalizedString
+						/**
+						 * czarna
+						 */
+						black: () => LocalizedString
+						/**
+						 * srebrna
+						 */
+						silver: () => LocalizedString
+						/**
+						 * przezroczysta
+						 */
+						transparent: () => LocalizedString
+					}
+					material: {
+						/**
+						 * szklana
+						 */
+						glass: () => LocalizedString
+						/**
+						 * aluminiowa
+						 */
+						aluminum: () => LocalizedString
+					}
+					type: {
+						/**
+						 * butelka
+						 */
+						bottle: () => LocalizedString
+						/**
+						 * puszka
+						 */
+						can: () => LocalizedString
+					}
+					unit: {
+						/**
+						 * ml
+						 */
+						ml: () => LocalizedString
+					}
+					/**
+					 * {value} {unit|{ml: ml}}
+					 */
+					value: (arg: { unit: 'ml', value: unknown }) => LocalizedString
+				}
 				/**
 				 * zawiera
 				 */
@@ -849,6 +996,10 @@ export type TranslationFunctions = {
 				 */
 				ingredients: () => LocalizedString
 				/**
+				 * składniki wedle tagów
+				 */
+				ingredientsByTag: () => LocalizedString
+				/**
 				 * hop rate
 				 */
 				hopRate: () => LocalizedString
@@ -865,6 +1016,14 @@ export type TranslationFunctions = {
 				 */
 				pasteurization: () => LocalizedString
 				/**
+				 * cena
+				 */
+				price: () => LocalizedString
+				/**
+				 * zawiera słód wędzony
+				 */
+				smokedMalt: () => LocalizedString
+				/**
 				 * styl
 				 */
 				style: () => LocalizedString
@@ -872,6 +1031,14 @@ export type TranslationFunctions = {
 				 * styl w grupie
 				 */
 				styleTags: () => LocalizedString
+				/**
+				 * temperatura podawania
+				 */
+				temperature: () => LocalizedString
+				/**
+				 * {0|{celcius: °C}}
+				 */
+				temperatureUnit: (arg0: 'celcius') => LocalizedString
 			}
 		}
 		home: {

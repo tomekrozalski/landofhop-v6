@@ -110,6 +110,29 @@ const pl = {
 				alcoholValue: '{value}{unit|{degree: °, percent: %}} {relate|{capacity: obj., abv: Abv}}',
 				barcode: 'kod kreskowy',
 				city: 'miejscowość',
+				container: {
+					title: 'opakowanie',
+					color: {
+						brown: 'brązowa',
+						golden: 'złota',
+						green: 'zielona',
+						black: 'czarna',
+						silver: 'srebrna',
+						transparent: 'przezroczysta'
+					},
+					material: {
+						glass: 'szklana',
+						aluminum: 'aluminiowa'
+					},
+					type: {
+						bottle: 'butelka',
+						can: 'puszka'
+					},
+					unit: {
+						ml: 'ml'
+					},
+					value: '{value} {unit|{ml: ml}}'
+				},
 				contains: 'zawiera',
 				country: 'kraj',
 				dryHopped: 'chmielone na zimno',
@@ -125,12 +148,17 @@ const pl = {
 				},
 				filtration: 'filtracja',
 				ingredients: 'składniki',
+				ingredientsByTag: 'składniki wedle tagów',
 				hopRate: 'hop rate',
 				hopRateValue: '{value} {unit|{gl: g/L}}',
 				nitrogen: 'nasycane azotem',
 				pasteurization: 'pasteryzacja',
+				price: 'cena',
+				smokedMalt: 'zawiera słód wędzony',
 				style: 'styl',
-				styleTags: 'styl w grupie'
+				styleTags: 'styl w grupie',
+				temperature: 'temperatura podawania',
+				temperatureUnit: '{0|{celcius: °C}}'
 			}
 		},
 		home: {
