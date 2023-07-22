@@ -165,6 +165,62 @@ type RootTranslation = {
 				 */
 				series: string
 			}
+			impressions: {
+				/**
+				 * g​o​r​y​c​z
+				 */
+				bitterness: string
+				clarity: {
+					/**
+					 * k​l​a​r​o​w​n​o​ś​ć
+					 */
+					title: string
+					/**
+					 * c​z​y​s​t​e
+					 */
+					clear: string
+					/**
+					 * k​r​y​s​t​a​l​i​c​z​n​e
+					 */
+					crystalline: string
+					/**
+					 * h​a​z​y
+					 */
+					hazy: string
+					/**
+					 * z​a​m​g​l​o​n​e
+					 */
+					misty: string
+					/**
+					 * b​ł​o​t​n​i​s​t​e
+					 */
+					muddy: string
+					/**
+					 * o​p​a​l​i​z​u​j​ą​c​e
+					 */
+					opalescent: string
+				}
+				/**
+				 * k​o​l​o​r
+				 */
+				color: string
+				/**
+				 * p​e​ł​n​i​a
+				 */
+				fullness: string
+				/**
+				 * c​h​m​i​e​l​o​w​o​ś​ć
+				 */
+				hoppyness: string
+				/**
+				 * m​o​c
+				 */
+				power: string
+				/**
+				 * s​ł​o​d​y​c​z
+				 */
+				sweetness: string
+			}
 			navigation: {
 				/**
 				 * N​a​s​t​ę​p​n​e​ ​p​i​w​o
@@ -721,6 +777,62 @@ export type TranslationFunctions = {
 				 * , w serii
 				 */
 				series: () => LocalizedString
+			}
+			impressions: {
+				/**
+				 * gorycz
+				 */
+				bitterness: () => LocalizedString
+				clarity: {
+					/**
+					 * klarowność
+					 */
+					title: () => LocalizedString
+					/**
+					 * czyste
+					 */
+					clear: () => LocalizedString
+					/**
+					 * krystaliczne
+					 */
+					crystalline: () => LocalizedString
+					/**
+					 * hazy
+					 */
+					hazy: () => LocalizedString
+					/**
+					 * zamglone
+					 */
+					misty: () => LocalizedString
+					/**
+					 * błotniste
+					 */
+					muddy: () => LocalizedString
+					/**
+					 * opalizujące
+					 */
+					opalescent: () => LocalizedString
+				}
+				/**
+				 * kolor
+				 */
+				color: () => LocalizedString
+				/**
+				 * pełnia
+				 */
+				fullness: () => LocalizedString
+				/**
+				 * chmielowość
+				 */
+				hoppyness: () => LocalizedString
+				/**
+				 * moc
+				 */
+				power: () => LocalizedString
+				/**
+				 * słodycz
+				 */
+				sweetness: () => LocalizedString
 			}
 			navigation: {
 				/**

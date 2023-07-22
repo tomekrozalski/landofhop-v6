@@ -56,6 +56,23 @@ const en = {
 				inCooperationWith: 'in cooperation with',
 				series: ', in series'
 			},
+			impressions: {
+				bitterness: 'bitterness',
+				clarity: {
+					title: 'clarity',
+					clear: 'clear',
+					crystalline: 'crystalline',
+					hazy: 'hazy',
+					misty: 'zammistyglone',
+					muddy: 'muddy',
+					opalescent: 'opalescent'
+				},
+				color: 'color',
+				fullness: 'fullness',
+				hoppyness: 'hoppyness',
+				power: 'power',
+				sweetness: 'sweetness'
+			},
 			navigation: {
 				next: 'Next beverage',
 				previous: 'Previous beverage'

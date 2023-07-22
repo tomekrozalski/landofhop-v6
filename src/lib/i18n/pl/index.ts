@@ -56,6 +56,23 @@ const pl = {
 				inCooperationWith: 'w kooperacji z',
 				series: ', w serii'
 			},
+			impressions: {
+				bitterness: 'gorycz',
+				clarity: {
+					title: 'klarowność',
+					clear: 'czyste',
+					crystalline: 'krystaliczne',
+					hazy: 'hazy',
+					misty: 'zamglone',
+					muddy: 'błotniste',
+					opalescent: 'opalizujące'
+				},
+				color: 'kolor',
+				fullness: 'pełnia',
+				hoppyness: 'chmielowość',
+				power: 'moc',
+				sweetness: 'słodycz'
+			},
 			navigation: {
 				next: 'Następne piwo',
 				previous: 'Poprzednie piwo'
