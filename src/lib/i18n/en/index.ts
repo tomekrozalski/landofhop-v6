@@ -36,6 +36,18 @@ const en = {
 			header: 'About the app'
 		},
 		details: {
+			adminBar: {
+				areYouSure: 'Are you sure?',
+				notes: 'notes',
+				lastTimeUpdated: 'last time updated',
+				removeBeverage: 'Remove beverage',
+				updateContent: 'Update data',
+				updateImages: 'Update photos',
+				updateRatings: 'Update ratings'
+			},
+			footNotes: {
+				added: 'dodano'
+			},
 			gallery: {
 				cap: {
 					hide: 'hide cap',

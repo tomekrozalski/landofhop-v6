@@ -11,7 +11,8 @@ export default {
 			transparent: colors.transparent,
 			gray: colors.gray,
 			red: {
-				DEFAULT: '#f94144'
+				DEFAULT: '#f94144',
+				light: '#fa9d9f'
 			},
 			orange: {
 				DEFAULT: '#f8961e'

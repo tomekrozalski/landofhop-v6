@@ -36,6 +36,18 @@ const pl = {
 			header: 'O stronie'
 		},
 		details: {
+			adminBar: {
+				areYouSure: 'Na pewno usunąć?',
+				notes: 'notatki',
+				lastTimeUpdated: 'ostatnio poprawiono',
+				removeBeverage: 'Usuń piwo',
+				updateContent: 'Popraw informacje',
+				updateImages: 'Popraw zdjęcia',
+				updateRating: 'Uaktualnij oceny'
+			},
+			footNotes: {
+				added: 'dodano'
+			},
 			gallery: {
 				cap: {
 					hide: 'schowaj kapsel',

@@ -107,6 +107,42 @@ type RootTranslation = {
 			header: string
 		}
 		details: {
+			adminBar: {
+				/**
+				 * N​a​ ​p​e​w​n​o​ ​u​s​u​n​ą​ć​?
+				 */
+				areYouSure: string
+				/**
+				 * n​o​t​a​t​k​i
+				 */
+				notes: string
+				/**
+				 * o​s​t​a​t​n​i​o​ ​p​o​p​r​a​w​i​o​n​o
+				 */
+				lastTimeUpdated: string
+				/**
+				 * U​s​u​ń​ ​p​i​w​o
+				 */
+				removeBeverage: string
+				/**
+				 * P​o​p​r​a​w​ ​i​n​f​o​r​m​a​c​j​e
+				 */
+				updateContent: string
+				/**
+				 * P​o​p​r​a​w​ ​z​d​j​ę​c​i​a
+				 */
+				updateImages: string
+				/**
+				 * U​a​k​t​u​a​l​n​i​j​ ​o​c​e​n​y
+				 */
+				updateRating: string
+			}
+			footNotes: {
+				/**
+				 * d​o​d​a​n​o
+				 */
+				added: string
+			}
 			gallery: {
 				cap: {
 					/**
@@ -722,6 +758,42 @@ export type TranslationFunctions = {
 			header: () => LocalizedString
 		}
 		details: {
+			adminBar: {
+				/**
+				 * Na pewno usunąć?
+				 */
+				areYouSure: () => LocalizedString
+				/**
+				 * notatki
+				 */
+				notes: () => LocalizedString
+				/**
+				 * ostatnio poprawiono
+				 */
+				lastTimeUpdated: () => LocalizedString
+				/**
+				 * Usuń piwo
+				 */
+				removeBeverage: () => LocalizedString
+				/**
+				 * Popraw informacje
+				 */
+				updateContent: () => LocalizedString
+				/**
+				 * Popraw zdjęcia
+				 */
+				updateImages: () => LocalizedString
+				/**
+				 * Uaktualnij oceny
+				 */
+				updateRating: () => LocalizedString
+			}
+			footNotes: {
+				/**
+				 * dodano
+				 */
+				added: () => LocalizedString
+			}
 			gallery: {
 				cap: {
 					/**
