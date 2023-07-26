@@ -17,7 +17,7 @@
 
 {#if photos?.viewFromAbove}
 	<button
-		class="mt-5 w-full bg-gray-100 p-1 text-base transition-colors hover:bg-gray-200 lg:mb-3"
+		class="mb-2 mt-5 w-full bg-gray-100 p-1 text-base transition-colors hover:bg-gray-200"
 		on:click={() => (isOpened = !isOpened)}
 	>
 		{isOpened
@@ -25,9 +25,10 @@
 			: $LL.pages.details.gallery.viewFromAbove.show()}
 	</button>
 	{#if isOpened}
-		<div class="aspect-square w-full" transition:slide>
+		<div class="pb-2 lg:w-full lg:pt-0" transition:slide>
 			<img
 				alt={$LL.pages.details.gallery.viewFromAbove.title({ name: brand.name.value })}
+				class="mx-auto h-[220px]"
 				srcset="{basicPath}/view-from-above/webp/1x.webp 1x, {basicPath}/view-from-above/webp/2x.webp 2x"
 				src="{basicPath}/view-from-above/jpg/1x.jpg"
 				loading="lazy"

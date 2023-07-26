@@ -13,7 +13,9 @@
 	$: ({ authenticated, details } = $page.data);
 </script>
 
-<article class="details container grid px-3 pb-10 pt-0 lg:gap-x-14 lg:px-0 lg:pb-36 lg:pt-5">
+<article
+	class="details container grid px-3 pb-10 pt-0 md:pb-16 lg:gap-x-14 lg:px-0 lg:pt-5 xl:pb-36"
+>
 	<Gallery />
 	<div class="details-main">
 		<Header />

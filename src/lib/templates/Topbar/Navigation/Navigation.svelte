@@ -7,7 +7,7 @@
 <nav
 	id="navigation"
 	aria-hidden={!$layoutStore.isNavigationOpened}
-	class="fixed left-0 top-0 z-10 w-full bg-white transition-transform"
+	class="fixed left-0 top-0 z-20 w-full bg-white transition-transform"
 	class:-translate-y-full={!$layoutStore.isNavigationOpened}
 >
 	<div class="container flex h-80 w-full flex-row justify-between md:h-20 md:flex-row-reverse">

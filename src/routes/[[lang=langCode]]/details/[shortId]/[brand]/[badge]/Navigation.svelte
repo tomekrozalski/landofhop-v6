@@ -8,7 +8,7 @@
 </script>
 
 <nav
-	class="details-navigation my-2 flex items-center justify-center gap-3 md:justify-end lg:my-0 lg:justify-center lg:pb-3"
+	class="details-navigation mb-2 flex items-center justify-center gap-3 md:justify-end lg:my-0 lg:justify-center lg:pb-3"
 >
 	<svelte:element
 		this={next ? 'a' : 'span'}
