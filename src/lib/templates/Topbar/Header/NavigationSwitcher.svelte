@@ -7,9 +7,9 @@
 
 <button
 	on:click={layoutStore.toggleNavbar}
-	class="more group flex items-center justify-center text-xs
-	focus:border-2 focus:border-black focus:bg-white focus:outline-none md:text-sm
-	lg:text-base"
+	class="more group flex items-center justify-center
+	text-xs focus-visible:border-2 focus-visible:border-black focus-visible:bg-white focus-visible:outline-none
+	md:text-sm lg:text-base"
 	aria-label={$layoutStore.isNavigationOpened
 		? $LL.header.closeNavigation()
 		: $LL.header.openNavigation()}
@@ -19,6 +19,6 @@
 	<Fa
 		icon={faEllipsis}
 		size="2x"
-		class="text-white transition-colors group-hover:text-gray-400 group-focus:text-black md:h-[0.37rem]"
+		class="text-white transition-colors group-hover:text-gray-400 group-focus-visible:text-black md:h-[0.37rem]"
 	/>
 </button>

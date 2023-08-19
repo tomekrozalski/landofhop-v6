@@ -17,7 +17,7 @@
 			{:else}
 				<a
 					href={$LL.link('/details/{beverage.shortId}/{beverage.brand.badge}/{beverage.badge}')}
-					class="group flex w-full justify-center focus:border-8 focus:border-black focus:outline-none"
+					class="group flex w-full justify-center focus-visible:border-8 focus-visible:border-black focus-visible:outline-none"
 				>
 					<BrokenCoverImage type={beverage.containerType} />
 				</a>

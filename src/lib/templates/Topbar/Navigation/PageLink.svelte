@@ -2,6 +2,7 @@
 	export let classNames: string = '';
 	export let link: string;
 	export let label: string;
+	export let underlined: boolean = false;
 </script>
 
 <li class="flex">
@@ -12,6 +13,10 @@
 		href={link}
 	>
 		<slot />
-		{label}
+		{#if underlined}
+			<span class="border-b border-gray-300">{label}</span>
+		{:else}
+			{label}
+		{/if}
 	</a>
 </li>

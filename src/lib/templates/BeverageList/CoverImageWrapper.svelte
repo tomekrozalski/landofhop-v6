@@ -29,7 +29,7 @@
 	href={$LL.link(`/details/${beverage.shortId}/${beverage.brand.badge}/${beverage.badge}`)}
 	style:aspect-ratio="{coverImage?.width} / {coverImage?.height}"
 	aria-label="{name.value}, {brand.name.value}"
-	class="group relative w-full focus:z-10 focus:outline-none focus:outline-8 focus:outline-black"
+	class="group relative w-full focus-visible:z-10 focus-visible:outline-none focus-visible:outline-8 focus-visible:outline-black"
 >
 	{#if !eager && !nativeLoading && !loaded && coverImage?.outline}
 		<span transition:toggleVisibility>

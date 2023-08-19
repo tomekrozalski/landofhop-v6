@@ -13,7 +13,8 @@
 	<PageLink
 		label={$LL.navigation.addBeverage()}
 		link={$LL.link('/dashboard/add-new-beverage')}
-		classNames="relative pl-9 underline md:pl-8"
+		classNames="relative pl-9 md:pl-8"
+		underlined
 	>
 		<Fa icon={faLock} size="0.8x" class="absolute left-4 md:left-3" />
 	</PageLink>
