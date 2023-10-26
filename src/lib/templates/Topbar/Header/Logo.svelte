@@ -20,15 +20,26 @@
 				fill="#222"
 				d="M49.9 96.35h-9v-28.8h-32v28.8H0v-66.2h8.9v29.2h32v-29.2h9v66.2z"
 			/>
-			{#if $layoutStore.isLoading}
-				<path
-					class="letter-o animate-spin fill-none stroke-orange"
-					fill="#f9c74f"
-					d="M92.35 31.39a55.5 55.5 0 1 0 18.77-16.68"
+			<circle
+				cx="137.6"
+				cy="63.5"
+				r="55.5"
+				fill="#f9c74f"
+				class="letter-o fill-none"
+				style:stroke-dasharray={$layoutStore.isLoading ? '280' : '360'}
+				style:transition="stroke-dasharray 1s"
+			>
+				<animateTransform
+					attributeType="xml"
+					attributeName="transform"
+					type="rotate"
+					from="360 0 0"
+					to="0 0 0"
+					dur="1s"
+					additive="sum"
+					repeatCount="indefinite"
 				/>
-			{:else}
-				<circle cx="137.6" cy="63.5" r="55.5" fill="#f9c74f" class="letter-o fill-none" />
-			{/if}
+			</circle>
 			<path
 				class="fill-black transition-colors duration-200 group-hover:fill-white group-focus:fill-white"
 				fill="#222"
