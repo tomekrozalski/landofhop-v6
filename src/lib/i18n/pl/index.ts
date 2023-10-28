@@ -13,10 +13,12 @@ const pl = {
 	global: {
 		confirmation: 'tak',
 		denial: 'nie',
+		foundCount: 'znaleziono',
 		longConjunction: 'oraz',
 		shortConjunction: 'i'
 	},
 	header: {
+		advancedSearchLink: 'wyszukiwanie zaawansowane',
 		closeNavigation: 'Zamknij nawigację',
 		closeSearchbar: 'Zamnij wyszukiwarkę',
 		openNavigation: 'Otwórz nawigację',
@@ -207,6 +209,12 @@ const pl = {
 			submit: 'Wyślij',
 			title: 'Zaloguj się',
 			tryAgain: 'Nie udało się zalogować. Spróbuj ponownie!'
+		},
+		search: {
+			pagination: {
+				nextPage: 'następna strona',
+				previousPage: 'poprzednia strona'
+			}
 		}
 	},
 	time: {

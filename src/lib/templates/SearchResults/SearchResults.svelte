@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { debounce } from 'lodash-es';
-	// import { BEVERAGES_ON_PAGE } from '$lib/utils/constants';
-	import pushState from '$lib/utils/helpers/pushState';
-	// import Spinner from '$lib/atoms/spinners/FullScreen.svelte';
-	// import Total from '$lib/molecules/pagination/elements/Total.svelte';
-	// import Pagination from '$lib/molecules/pagination/Pagination.svelte';
-	import BeverageList from '$lib/templates/BeverageList/BeverageList.svelte';
-	// import NothingFound from '$lib/templates/BeverageList/NothingFound.svelte';
-	import type { Basics } from '$lib/templates/BeverageList/Basics.d';
-	import layoutStore from '$lib/templates/Main/store';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	// import AdvancedSearchLink from './AdvancedSearchLink.svelte';
-	//
+	import layoutStore from '$lib/templates/Main/store';
+	import { MAX_BEVERAGES_ON_PAGE } from '$lib/utils/constants';
+	import pushState from '$lib/utils/helpers/pushState';
+	import Spinner from '$lib/atoms/spinners/FullScreen.svelte';
+	import BeverageList from '$lib/templates/BeverageList/BeverageList.svelte';
+	import NoBeverageFound from '$lib/templates/BeverageList/NoBeverageFound.svelte';
+	import type { Basics } from '$lib/templates/BeverageList/Basics.d';
+	import Pagination from './pagination/Pagination.svelte';
+	import AdvancedSearchLink from './AdvancedSearchLink.svelte';
+	import Total from './Total.svelte';
+
 	let order = 1;
 	let value: string;
 
@@ -41,24 +41,20 @@
 
 <svelte:window on:popstate={updateOrder} />
 
-<!-- <AdvancedSearchLink /> -->
-<div>AdvancedSearchLink</div>
+<AdvancedSearchLink />
+
 {#if value}
 	{#await callToApi(value, order)}
-		<!-- <Spinner /> -->
-		<div>Spinner</div>
+		<Spinner />
 	{:then { beverages, total }}
 		{#if beverages.length}
-			<!-- <Total currentPage={order} {total} inline /> -->
-			<div>total: {total}</div>
+			<Total currentPage={order} {total} inline />
 			<BeverageList {beverages} />
-			{#if total > 30}
-				<!-- <Pagination {order} {total} /> -->
-				<div>pagination: {order} {total}</div>
+			{#if total > MAX_BEVERAGES_ON_PAGE}
+				<Pagination {order} {total} />
 			{/if}
 		{:else}
-			<!-- <NothingFound /> -->
-			<div>NothingFound</div>
+			<NoBeverageFound />
 		{/if}
 	{/await}
 {/if}

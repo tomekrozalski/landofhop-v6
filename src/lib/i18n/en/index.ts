@@ -8,6 +8,7 @@ const en = {
 	global: {
 		confirmation: 'yes',
 		denial: 'no',
+		foundCount: 'found',
 		longConjunction: 'and',
 		shortConjunction: 'and'
 	},
@@ -17,6 +18,7 @@ const en = {
 		}
 	},
 	header: {
+		advancedSearchLink: 'advanced search',
 		closeNavigation: 'Close navigation',
 		closeSearchbar: 'Close searchbar',
 		openNavigation: 'Open navigation',
@@ -207,6 +209,12 @@ const en = {
 			submit: 'Send',
 			title: 'Log in',
 			tryAgain: 'Login failed. Try again!'
+		},
+		search: {
+			pagination: {
+				nextPage: 'next page',
+				previousPage: 'previous page'
+			}
 		}
 	},
 	time: {

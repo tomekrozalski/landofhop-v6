@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { beverages } from '$lib/db/mongo';
+import { MAX_BEVERAGES_ON_PAGE } from '$lib/utils/constants';
 import beveragesToBasics from '$lib/templates/SearchResults/beverageToBasics';
 import type { Locales } from '$lib/i18n/i18n-types.js';
 
@@ -80,8 +81,8 @@ export const GET = async ({ params }) => {
 					values: [
 						{ $sort: { added: -1 } },
 						{ $match: query },
-						...(page ? [{ $skip: +page * 50 - 50 }] : []),
-						{ $limit: 50 }
+						...(page ? [{ $skip: +page * MAX_BEVERAGES_ON_PAGE - MAX_BEVERAGES_ON_PAGE }] : []),
+						{ $limit: MAX_BEVERAGES_ON_PAGE }
 					]
 				}
 			}

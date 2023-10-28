@@ -42,6 +42,10 @@ type RootTranslation = {
 		 */
 		denial: string
 		/**
+		 * z​n​a​l​e​z​i​o​n​o
+		 */
+		foundCount: string
+		/**
 		 * o​r​a​z
 		 */
 		longConjunction: string
@@ -51,6 +55,10 @@ type RootTranslation = {
 		shortConjunction: string
 	}
 	header: {
+		/**
+		 * w​y​s​z​u​k​i​w​a​n​i​e​ ​z​a​a​w​a​n​s​o​w​a​n​e
+		 */
+		advancedSearchLink: string
 		/**
 		 * Z​a​m​k​n​i​j​ ​n​a​w​i​g​a​c​j​ę
 		 */
@@ -645,6 +653,18 @@ type RootTranslation = {
 			 */
 			tryAgain: string
 		}
+		search: {
+			pagination: {
+				/**
+				 * n​a​s​t​ę​p​n​a​ ​s​t​r​o​n​a
+				 */
+				nextPage: string
+				/**
+				 * p​o​p​r​z​e​d​n​i​a​ ​s​t​r​o​n​a
+				 */
+				previousPage: string
+			}
+		}
 	}
 	time: {
 		/**
@@ -694,6 +714,10 @@ export type TranslationFunctions = {
 		 */
 		denial: () => LocalizedString
 		/**
+		 * znaleziono
+		 */
+		foundCount: () => LocalizedString
+		/**
 		 * oraz
 		 */
 		longConjunction: () => LocalizedString
@@ -703,6 +727,10 @@ export type TranslationFunctions = {
 		shortConjunction: () => LocalizedString
 	}
 	header: {
+		/**
+		 * wyszukiwanie zaawansowane
+		 */
+		advancedSearchLink: () => LocalizedString
 		/**
 		 * Zamknij nawigację
 		 */
@@ -1278,6 +1306,18 @@ export type TranslationFunctions = {
 			 * Nie udało się zalogować. Spróbuj ponownie!
 			 */
 			tryAgain: () => LocalizedString
+		}
+		search: {
+			pagination: {
+				/**
+				 * następna strona
+				 */
+				nextPage: () => LocalizedString
+				/**
+				 * poprzednia strona
+				 */
+				previousPage: () => LocalizedString
+			}
 		}
 	}
 	time: {
