@@ -1,7 +1,7 @@
 <script>
 	import { afterUpdate } from 'svelte';
+	import SearchResults from '$lib/templates/SearchResults/SearchResults.svelte';
 	import layoutStore from './store';
-	// import SearchResults from './SearchResults/SearchResults.svelte';
 
 	let path = '';
 
@@ -22,8 +22,7 @@
 
 <main>
 	{#if $layoutStore.isSearchbarActive}
-		<div>@ToDo Search Results</div>
-		<!-- <SearchResults /> -->
+		<SearchResults />
 	{:else}
 		<slot />
 	{/if}
