@@ -5,7 +5,9 @@
 <div class="container relative">
 	<a
 		href="/advanced-search"
-		class="absolute right-0 top-0 bg-white p-5 transition-colors hover:bg-gray-200"
+		class="block bg-gray-200 p-3 text-center transition-colors
+			sm:absolute sm:right-0 sm:top-0 sm:bg-white sm:p-5 sm:hover:bg-gray-200
+		"
 	>
 		{$LL.header.advancedSearchLink()}
 	</a>

@@ -213,6 +213,7 @@ const en = {
 		search: {
 			pagination: {
 				nextPage: 'next page',
+				page: 'page',
 				previousPage: 'previous page'
 			}
 		}

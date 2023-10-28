@@ -17,7 +17,7 @@
 	</div>
 	{#if pages > 1}
 		<div class="py-5">
-			strona z wynikami:
+			{$LL.pages.search.pagination.page()}:
 			<strong class="ml-1 inline-block bg-green px-2 font-normal leading-relaxed text-white">
 				{currentPage} / {pages}
 			</strong>

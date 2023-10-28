@@ -6,11 +6,11 @@
 	export let name: string;
 </script>
 
-<li class="m-3 w-full sm:m-1 sm:w-auto">
+<li class="m-1 mx-3 w-full sm:m-1 sm:w-auto">
 	<span
-		class="flex h-full w-full cursor-not-allowed items-center border border-gray-300 bg-gray-300 p-3 text-center text-white
-      sm:px-4 sm:py-2
-      lg:px-3 lg:py-1
+		class="flex h-14 w-full cursor-not-allowed items-center justify-center border-gray-300 bg-gray-300 px-4 py-2 text-center text-white
+			sm:h-10
+			lg:py-1
     "
 		aria-label={label}
 	>

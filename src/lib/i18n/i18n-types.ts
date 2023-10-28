@@ -660,6 +660,10 @@ type RootTranslation = {
 				 */
 				nextPage: string
 				/**
+				 * s​t​r​o​n​a​ ​z​ ​w​y​n​i​k​a​m​i
+				 */
+				page: string
+				/**
 				 * p​o​p​r​z​e​d​n​i​a​ ​s​t​r​o​n​a
 				 */
 				previousPage: string
@@ -1313,6 +1317,10 @@ export type TranslationFunctions = {
 				 * następna strona
 				 */
 				nextPage: () => LocalizedString
+				/**
+				 * strona z wynikami
+				 */
+				page: () => LocalizedString
 				/**
 				 * poprzednia strona
 				 */
