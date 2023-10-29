@@ -113,6 +113,14 @@ type RootTranslation = {
 			 * O​ ​s​t​r​o​n​i​e
 			 */
 			header: string
+			/**
+			 * *​*​L​a​n​d​ ​o​f​ ​H​o​p​*​*​ ​t​o​ ​k​a​t​a​l​o​g​ ​p​i​w​,​ ​k​t​ó​r​e​ ​w​y​p​i​ł​e​m​ ​o​d​ ​p​a​ź​d​z​i​e​r​n​i​k​a​ ​2​0​1​7​.​ ​T​y​l​k​o​ ​t​y​l​k​o​ ​i​&​n​b​s​p​;​a​ż​ ​t​y​l​e​&​n​b​s​p​;​�​�​ ​N​i​e​ ​m​y​ś​l​ę​ ​o​&​n​b​s​p​;​n​i​e​j​ ​j​a​k​o​ ​o​&​n​b​s​p​;​k​o​n​k​u​r​e​n​c​j​i​ ​d​l​a​ ​R​a​t​e​B​e​e​r​,​ ​a​n​i​ ​w​&​n​b​s​p​;​o​g​ó​l​e​ ​n​i​e​ ​m​a​m​ ​w​&​n​b​s​p​;​s​t​o​s​u​n​k​u​ ​d​o​ ​n​i​e​j​ ​o​c​z​e​k​i​w​a​ń​ ​b​i​z​n​e​s​o​w​y​c​h​.​ ​P​i​s​z​ę​ ​j​ą​,​ ​b​y​ ​ć​w​i​c​z​y​ć​ ​p​r​o​g​r​a​m​o​w​a​n​i​e​.​ ​P​r​z​e​z​ ​d​ł​u​ż​s​z​y​ ​c​z​a​s​ ​b​y​ł​ ​t​o​ ​R​e​a​c​t​,​ ​G​a​t​s​b​y​,​ ​N​e​x​t​,​ ​F​a​s​t​i​f​y​,​ ​N​e​s​t​ ​i​t​d​.​,​ ​a​ ​a​k​t​u​a​l​n​i​e​ ​S​v​e​l​t​e​,​ ​S​v​e​l​t​e​K​i​t​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​T​a​i​l​w​i​n​d​,​ ​A​W​S​ ​S​3​,​ ​M​o​n​g​o​D​B​.​ ​W​i​ę​c​e​j​ ​n​a​ ​t​e​n​ ​t​e​m​a​t​ ​n​a​ ​[​s​t​r​o​n​i​e​ ​r​e​p​o​z​y​t​o​r​i​u​m​ ​n​a​ ​p​o​r​t​a​l​u​ ​G​i​t​H​u​b​]​(​h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​t​o​m​e​k​r​o​z​a​l​s​k​i​/​l​a​n​d​o​f​h​o​p​-​v​6​)​.
+			 */
+			body: string
+			/**
+			 * O​ ​s​t​r​o​n​i​e
+			 */
+			title: string
 		}
 		details: {
 			adminBar: {
@@ -604,6 +612,10 @@ type RootTranslation = {
 			 * B​a​z​a​ ​p​i​w​,​ ​k​t​ó​r​e​ ​w​y​p​i​ł​e​m​ ​w​ ​p​r​z​e​c​i​ą​g​u​ ​o​s​t​a​t​n​i​c​h​ ​l​a​t
 			 */
 			description: string
+			/**
+			 * L​a​n​d​ ​o​f​ ​H​o​p
+			 */
+			title: string
 		}
 		listing: {
 			/**
@@ -622,6 +634,11 @@ type RootTranslation = {
 			 * t​o​ ​j​e​s​t​ ​n​a​j​s​t​a​r​s​z​y​ ​m​i​e​s​i​ą​c
 			 */
 			theOldestMonth: string
+			/**
+			 * L​i​s​t​a​ ​p​i​w​ ​n​a​ ​{​m​o​n​t​h​}
+			 * @param {unknown} month
+			 */
+			title: RequiredParams<'month'>
 		}
 		login: {
 			/**
@@ -788,6 +805,14 @@ export type TranslationFunctions = {
 			 * O stronie
 			 */
 			header: () => LocalizedString
+			/**
+			 * **Land of Hop** to katalog piw, które wypiłem od października 2017. Tylko tylko i&nbsp;aż tyle&nbsp;🙂 Nie myślę o&nbsp;niej jako o&nbsp;konkurencji dla RateBeer, ani w&nbsp;ogóle nie mam w&nbsp;stosunku do niej oczekiwań biznesowych. Piszę ją, by ćwiczyć programowanie. Przez dłuższy czas był to React, Gatsby, Next, Fastify, Nest itd., a aktualnie Svelte, SvelteKit, TypeScript, Tailwind, AWS S3, MongoDB. Więcej na ten temat na [stronie repozytorium na portalu GitHub](https://github.com/tomekrozalski/landofhop-v6).
+			 */
+			body: () => LocalizedString
+			/**
+			 * O stronie
+			 */
+			title: () => LocalizedString
 		}
 		details: {
 			adminBar: {
@@ -1262,6 +1287,10 @@ export type TranslationFunctions = {
 			 * Baza piw, które wypiłem w przeciągu ostatnich lat
 			 */
 			description: () => LocalizedString
+			/**
+			 * Land of Hop
+			 */
+			title: () => LocalizedString
 		}
 		listing: {
 			/**
@@ -1280,6 +1309,10 @@ export type TranslationFunctions = {
 			 * to jest najstarszy miesiąc
 			 */
 			theOldestMonth: () => LocalizedString
+			/**
+			 * Lista piw na {month}
+			 */
+			title: (arg: { month: unknown }) => LocalizedString
 		}
 		login: {
 			/**

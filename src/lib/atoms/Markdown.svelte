@@ -14,21 +14,13 @@
 		margin: 0.5rem 0;
 	}
 
-	/* span :global(ul) {
-		margin-left: 1rem;
-	} */
+	span :global(a) {
+		color: theme('colors.green.DEFAULT');
+		text-decoration: underline;
+		transition: color 0.2s;
+	}
 
-	/* span :global(li) {
-		list-style-type: square;
-	} */
-
-	/* span :global(a) {
-		color: var(--color-success);
-		border-bottom: 1px solid var(--color-white);
-		transition: border-color var(--transition-default);
-	} */
-
-	/* span :global(a:hover) {
-		border-color: var(--color-black);
-	} */
+	span :global(a:hover) {
+		color: theme('colors.black');
+	}
 </style>

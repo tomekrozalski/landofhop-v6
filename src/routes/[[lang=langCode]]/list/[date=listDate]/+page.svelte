@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Land of Hop</title>
+	<title>{$LL.pages.listing.title({ month: breadcrumbs.phrase })}</title>
 	<meta name="description" content={$LL.pages.home.description()} />
 	<link rel="preconnect" href={PHOTO_SERVER} />
 </svelte:head>

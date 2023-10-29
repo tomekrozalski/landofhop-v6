@@ -35,7 +35,9 @@ const en = {
 	},
 	pages: {
 		about: {
-			header: 'About the app'
+			header: 'About the site',
+			body: '**Land of Hop** is a base of ales which I have drunk since 2017. That is it 🙂 I do not have any bussiness expectations about it. You know, it is not new RateBeer or something. I work on it just to practice programming. It was React, Gatsby, Next, Fastify, Nest etc., recently Svelte, SvelteKit, TypeScript, Tailwind, AWS S3, MongoDB. More about it on [repository page on Github](https://github.com/tomekrozalski/landofhop-v6).',
+			title: 'About the site'
 		},
 		details: {
 			adminBar: {
@@ -45,7 +47,7 @@ const en = {
 				removeBeverage: 'Remove beverage',
 				updateContent: 'Update data',
 				updateImages: 'Update photos',
-				updateRatings: 'Update ratings'
+				updateRating: 'Update ratings'
 			},
 			footNotes: {
 				added: 'dodano'
@@ -193,13 +195,15 @@ const en = {
 			}
 		},
 		home: {
-			description: 'Database of beers that I drunk last years'
+			description: 'Database of beers that I drunk last years',
+			title: 'Land of Hop'
 		},
 		listing: {
 			imageNotFound: 'Image not found',
 			noBeverageFound: 'No beverage found',
 			theNewestMonth: 'this is the newest month',
-			theOldestMonth: 'this is the oldest month'
+			theOldestMonth: 'this is the oldest month',
+			title: 'List of beverages on {month}'
 		},
 		login: {
 			email: 'E-mail',

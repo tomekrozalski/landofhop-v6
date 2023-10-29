@@ -35,7 +35,9 @@ const pl = {
 	},
 	pages: {
 		about: {
-			header: 'O stronie'
+			header: 'O stronie',
+			body: '**Land of Hop** to katalog piw, które wypiłem od października 2017. Tylko tylko i&nbsp;aż tyle&nbsp;🙂 Nie myślę o&nbsp;niej jako o&nbsp;konkurencji dla RateBeer, ani w&nbsp;ogóle nie mam w&nbsp;stosunku do niej oczekiwań biznesowych. Piszę ją, by ćwiczyć programowanie. Przez dłuższy czas był to React, Gatsby, Next, Fastify, Nest itd., a aktualnie Svelte, SvelteKit, TypeScript, Tailwind, AWS S3, MongoDB. Więcej na ten temat na [stronie repozytorium na portalu GitHub](https://github.com/tomekrozalski/landofhop-v6).',
+			title: 'O stronie'
 		},
 		details: {
 			adminBar: {
@@ -193,13 +195,15 @@ const pl = {
 			}
 		},
 		home: {
-			description: 'Baza piw, które wypiłem w przeciągu ostatnich lat'
+			description: 'Baza piw, które wypiłem w przeciągu ostatnich lat',
+			title: 'Land of Hop'
 		},
 		listing: {
 			imageNotFound: 'Nie znaleziono zdjęcia',
 			noBeverageFound: 'Nie znaleziono żadnej pozycji',
 			theNewestMonth: 'to jest najnowszy miesiąc',
-			theOldestMonth: 'to jest najstarszy miesiąc'
+			theOldestMonth: 'to jest najstarszy miesiąc',
+			title: 'Lista piw na {month}'
 		},
 		login: {
 			email: 'E-mail',
