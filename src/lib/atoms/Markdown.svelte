@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { parse } from 'marked';
+	import SvelteMarkdown from 'svelte-markdown';
 
 	export let style: string = '';
 	export let value: string;
 </script>
 
 <span {style}>
-	{@html parse(value)}
+	<SvelteMarkdown source={value} />
 </span>
 
 <style>
