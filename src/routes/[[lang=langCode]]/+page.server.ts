@@ -7,6 +7,8 @@ import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
 // 	isr: { expiration: 60 }
 // };
 
+export const prerender = true;
+
 export const load = async ({ locals: { locale } }) => {
 	const currentDate = await getLatestMonth();
 
