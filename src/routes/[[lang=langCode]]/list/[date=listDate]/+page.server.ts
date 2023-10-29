@@ -14,9 +14,9 @@ import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
 import { OLDEST_LIST } from '$lib/utils/constants';
 import normalizeApiData from '$lib/templates/BeverageList/normalizeApiData';
 
-// export const config = {
-// 	isr: { expiration: 60 }
-// };
+export const config = {
+	isr: { expiration: 60 }
+};
 
 export const load = async ({ locals: { locale }, params }) => {
 	const [year, month] = params.date.split('-').map((elem) => +elem) as [number, number];
