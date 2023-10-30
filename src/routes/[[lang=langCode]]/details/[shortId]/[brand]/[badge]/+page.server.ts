@@ -3,13 +3,6 @@ import { error } from '@sveltejs/kit';
 import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
 import { detailsNormalizer, getAdminData, getDetails, getNext, getPrevious } from './utils/load';
 
-export const config = {
-	isr: {
-		expiration: 60,
-		bypassToken: 'REPLACE_ME_WITH_SECRET_VALUE'
-	}
-};
-
 export const load = async ({ locals: { authenticated, locale }, params }) => {
 	const badge = params.badge;
 	const shortId = params.shortId;
