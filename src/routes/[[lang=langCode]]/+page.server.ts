@@ -3,12 +3,7 @@ import { basics } from '$lib/db/mongo';
 import normalizeApiData from '$lib/templates/BeverageList/normalizeApiData';
 import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
 
-export const config = {
-	runtime: 'nodejs18.x',
-	isr: { expiration: 60 }
-};
-
-// export const prerender = true;
+export const prerender = true;
 
 export const load = async ({ locals: { locale } }) => {
 	const currentDate = await getLatestMonth();
