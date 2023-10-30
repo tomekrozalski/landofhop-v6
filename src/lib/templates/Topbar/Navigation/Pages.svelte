@@ -7,9 +7,9 @@
 
 <ul class="flex flex-grow flex-col py-1 md:flex-grow-0 md:flex-row">
 	<PageLink label={$LL.navigation.about()} link={$LL.link('/about')} />
-	<PageLink label={$LL.navigation.stats()} link={$LL.link('/')} />
-	<PageLink label={$LL.navigation.brands()} link={$LL.link('/')} />
-	<PageLink label={$LL.navigation.places()} link={$LL.link('/')} />
+	<PageLink label={$LL.navigation.stats()} link={$LL.link('/stats')} />
+	<PageLink label={$LL.navigation.brands()} link={$LL.link('/brands')} />
+	<PageLink label={$LL.navigation.places()} link={$LL.link('/places')} />
 	<PageLink
 		label={$LL.navigation.addBeverage()}
 		link={$LL.link('/dashboard/add-new-beverage')}
