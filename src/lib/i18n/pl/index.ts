@@ -36,7 +36,7 @@ const pl = {
 	pages: {
 		about: {
 			header: 'O stronie',
-			body: '**Land of Hop** to katalog piw, które wypiłem od października 2017. Tylko tylko i&nbsp;aż tyle&nbsp;🙂 Nie myślę o&nbsp;niej jako o&nbsp;konkurencji dla RateBeer, ani w&nbsp;ogóle nie mam w&nbsp;stosunku do niej oczekiwań biznesowych. Piszę ją, by ćwiczyć programowanie. Przez dłuższy czas był to React, Gatsby, Next, Fastify, Nest itd., a aktualnie Svelte, SvelteKit, TypeScript, Tailwind, AWS S3, MongoDB. Więcej na ten temat na [stronie repozytorium na portalu GitHub](https://github.com/tomekrozalski/landofhop-v6).',
+			body: '**Land of Hop** to katalog piw, które wypiłem od października 2017. Tylko tylko i aż tyle 🙂 Nie myślę o niej jako o konkurencji dla RateBeer, ani w ogóle nie mam w stosunku do niej oczekiwań biznesowych. Piszę ją, by ćwiczyć programowanie. Przez dłuższy czas był to React, Gatsby, Next, Fastify, Nest itd., a aktualnie Svelte, SvelteKit, TypeScript, Tailwind, AWS S3, MongoDB. Więcej na ten temat na [stronie repozytorium na portalu GitHub](https://github.com/tomekrozalski/landofhop-v6).',
 			title: 'O stronie'
 		},
 		details: {

@@ -6,7 +6,7 @@
 </script>
 
 <span {style}>
-	<SvelteMarkdown source={value} />
+	<SvelteMarkdown source={value} isInline />
 </span>
 
 <style>
