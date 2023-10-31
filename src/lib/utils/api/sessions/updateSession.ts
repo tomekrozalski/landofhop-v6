@@ -1,4 +1,3 @@
-import { randomBytes } from 'crypto';
 import { sessions } from '$lib/db/mongo';
 
 type UpdateSessionTypes = {
@@ -9,7 +8,7 @@ type UpdateSessionTypes = {
 
 const updateSession = async ({ ip, sessionToken, userAgent }: UpdateSessionTypes) => {
 	try {
-		const newSessionToken = randomBytes(43).toString('hex');
+		const newSessionToken = crypto.randomUUID();
 
 		await sessions.updateOne(
 			{ sessionToken },

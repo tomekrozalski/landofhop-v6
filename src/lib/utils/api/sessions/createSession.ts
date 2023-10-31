@@ -1,4 +1,3 @@
-import { randomBytes } from 'crypto';
 import { sessions } from '$lib/db/mongo';
 
 type CreateSessionTypes = {
@@ -9,7 +8,7 @@ type CreateSessionTypes = {
 
 const createSession = async ({ ip, userId, userAgent }: CreateSessionTypes) => {
 	try {
-		const sessionToken = randomBytes(43).toString('hex');
+		const sessionToken = crypto.randomUUID();
 
 		await sessions.insertOne({
 			createdAt: new Date(),
