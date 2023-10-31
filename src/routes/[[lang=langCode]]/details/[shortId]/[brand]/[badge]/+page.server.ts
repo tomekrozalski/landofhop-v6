@@ -4,9 +4,8 @@ import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
 import { detailsNormalizer, getAdminData, getDetails, getNext, getPrevious } from './utils/load';
 
 export const config = {
-	isr: {
-		expiration: 60
-	}
+	runtime: 'edge',
+	regions: ['dub1']
 };
 
 export const load = async ({ locals: { authenticated, locale }, params }) => {
