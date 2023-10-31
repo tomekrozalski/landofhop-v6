@@ -122,6 +122,12 @@ type RootTranslation = {
 			 */
 			title: string
 		}
+		advancedSearch: {
+			/**
+			 * W​y​s​z​u​k​i​w​a​n​i​e​ ​z​a​a​w​a​n​s​o​w​a​n​e
+			 */
+			title: string
+		}
 		details: {
 			adminBar: {
 				/**
@@ -811,6 +817,12 @@ export type TranslationFunctions = {
 			body: () => LocalizedString
 			/**
 			 * O stronie
+			 */
+			title: () => LocalizedString
+		}
+		advancedSearch: {
+			/**
+			 * Wyszukiwanie zaawansowane
 			 */
 			title: () => LocalizedString
 		}
