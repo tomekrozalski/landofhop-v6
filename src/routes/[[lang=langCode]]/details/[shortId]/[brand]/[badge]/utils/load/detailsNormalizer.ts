@@ -8,7 +8,7 @@ import type InstitutionRaw from '$lib/db/types/RawBeverage/Institution.d';
 import type { Details, Institution } from '../types/Details.d';
 import countryList from './countryList';
 
-function normalizer(beverage: RawBeverage, desiredLanguage: Locales): Details {
+const detailsNormalizer = (beverage: RawBeverage, desiredLanguage: Locales): Details => {
 	const countries = countryList[desiredLanguage];
 
 	const formatIntitution = ({ badge, name, shortId, owner }: InstitutionRaw): Institution => ({
@@ -509,6 +509,6 @@ function normalizer(beverage: RawBeverage, desiredLanguage: Locales): Details {
 	);
 
 	return formattedObject;
-}
+};
 
-export default normalizer;
+export default detailsNormalizer;
