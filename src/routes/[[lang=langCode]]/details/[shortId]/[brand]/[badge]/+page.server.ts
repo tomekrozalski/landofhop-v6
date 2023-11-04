@@ -25,7 +25,7 @@ export const load = async ({ locals: { authenticated, locale }, params }) => {
 
 		return {
 			// previous: getPrevious(beverage.added),
-			details: beverage
+			details: beverage.added
 			// breadcrumbs: {
 			// 	link:
 			// 		format(addedDate, 'M-yyyy') === format(latestMonth, 'M-yyyy')
