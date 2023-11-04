@@ -3,8 +3,6 @@ import { error } from '@sveltejs/kit';
 import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
 import { detailsNormalizer, getAdminData, getDetails, getNext, getPrevious } from './utils/load';
 
-export const prerender = true;
-
 export const config = {
 	isr: {
 		expiration: 600
