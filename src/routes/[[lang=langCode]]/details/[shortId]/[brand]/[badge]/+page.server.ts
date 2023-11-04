@@ -1,7 +1,7 @@
 // import { format } from 'date-fns';
 import { error } from '@sveltejs/kit';
 // import { getBreadcrumbPhrase, getLatestMonth } from '$lib/utils/api';
-import { detailsNormalizer, getAdminData, getDetails, getNext, getPrevious } from './utils/load';
+// import { detailsNormalizer, getAdminData, getDetails, getNext, getPrevious } from './utils/load';
 
 export const config = {
 	isr: {
@@ -18,14 +18,14 @@ export const load = async ({ locals: { authenticated, locale }, params }) => {
 	}
 
 	try {
-		const beverage = await getDetails({ shortId });
+		// const beverage = await getDetails({ shortId });
 		// const formattedDetails = detailsNormalizer(beverage, locale);
 		// const latestMonth = await getLatestMonth();
 		// const addedDate = new Date(beverage.added);
 
 		return {
 			// previous: getPrevious(beverage.added),
-			details: beverage.added
+			details: { dupa: 'test' }
 			// breadcrumbs: {
 			// 	link:
 			// 		format(addedDate, 'M-yyyy') === format(latestMonth, 'M-yyyy')
