@@ -4,13 +4,15 @@
 	import BeverageDetails from './BeverageDetails.svelte';
 
 	export let data;
-	$: ({ breadcrumbs, details } = data);
+	// $: ({ breadcrumbs, details } = data);
 </script>
 
 <svelte:head>
-	<title>🍻 {details.brand.name.value}, {details.name.value}</title>
+	<!-- <title>🍻 {details.brand.name.value}, {details.name.value}</title> -->
 	<link rel="preconnect" href={PHOTO_SERVER} />
 </svelte:head>
 
-<Breadcrumbs link={breadcrumbs.link} phrase={breadcrumbs.phrase} />
-<BeverageDetails />
+<div>{JSON.stringify(data)}</div>
+
+<!-- <Breadcrumbs link={breadcrumbs.link} phrase={breadcrumbs.phrase} /> -->
+<!-- <BeverageDetails /> -->
