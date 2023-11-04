@@ -20,9 +20,6 @@
 
 	export let item: Aged;
 	let { previousContent, time, type, wood } = item;
-
-	$: console.log('type', type);
-	$: console.log('wood', wood);
 </script>
 
 {#if time}
