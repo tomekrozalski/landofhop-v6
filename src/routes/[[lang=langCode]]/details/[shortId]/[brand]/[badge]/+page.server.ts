@@ -17,24 +17,30 @@ export const load = async ({ locals: { authenticated, locale }, params }) => {
 		throw error(404, 'Incorrect params');
 	}
 
-	const beverage = await getDetails({ shortId });
-	const formattedDetails = detailsNormalizer(beverage, locale);
-	const latestMonth = await getLatestMonth();
-	const addedDate = new Date(beverage.added);
+	try {
+		const beverage = await getDetails({ shortId });
+		const formattedDetails = detailsNormalizer(beverage, locale);
+		const latestMonth = await getLatestMonth();
+		const addedDate = new Date(beverage.added);
 
-	return {
-		// previous: getPrevious(beverage.added),
-		details: formattedDetails,
-		breadcrumbs: {
-			link:
-				format(addedDate, 'M-yyyy') === format(latestMonth, 'M-yyyy')
-					? '/'
-					: `/list/${format(addedDate, 'yyyy-MM')}`,
-			phrase: getBreadcrumbPhrase(addedDate, locale)
-		},
-		// next: getNext(beverage.added),
-		streamed: {
-			...(authenticated && { adminData: getAdminData(shortId, locale) })
-		}
-	};
+		return {
+			previous: getPrevious(beverage.added),
+			details: formattedDetails,
+			breadcrumbs: {
+				link:
+					format(addedDate, 'M-yyyy') === format(latestMonth, 'M-yyyy')
+						? '/'
+						: `/list/${format(addedDate, 'yyyy-MM')}`,
+				phrase: getBreadcrumbPhrase(addedDate, locale)
+			},
+			next: getNext(beverage.added),
+			streamed: {
+				...(authenticated && { adminData: getAdminData(shortId, locale) })
+			}
+		};
+	} catch (error) {
+		console.log('Console log error:', error);
+
+		throw new Error(error as string);
+	}
 };
