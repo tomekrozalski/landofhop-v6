@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-import { MONGODB_URL } from '$env/static/private';
+import { MONGODB_URI } from '$env/static/private';
 import type { RawBasics } from './types/RawBasics';
 import type { RawBeverage } from './types/RawBeverage';
 // import type { RawIngredient } from '$types/RawIngredient';
@@ -7,7 +7,7 @@ import type { RawBeverage } from './types/RawBeverage';
 // import type { RawPlace } from '$types/RawPlace';
 // import type { RawStyle } from '$types/RawStyle';
 
-const client = new MongoClient(MONGODB_URL);
+const client = new MongoClient(MONGODB_URI);
 
 export function start_mongo(): Promise<MongoClient> {
 	console.log('Starting mongo…');
