@@ -1,23 +1,12 @@
 import { beverages } from '$lib/db/mongo';
-import { deleteIfEmpty, translate } from '$lib/utils/api';
-// import normalizer from './General/utils/normalizers';
-// import type { RawGeneralStats } from './General/utils/normalizers/RawGeneralStats.d';
+import { translate } from '$lib/utils/api';
+import normalizers from './landing/utils/normalizers/normalizers';
+import type { RawLandingStats } from './landing/utils/normalizers/RawLandingStats.d';
 
 export const prerender = true;
 
 export const load = async ({ locals: { locale } }) => {
-	const formatValue = (obj: { value: string }) => {
-		if (obj) {
-			return {
-				...obj,
-				value: +obj.value
-			};
-		}
-
-		return obj;
-	};
-
-	const rawData = await beverages
+	const rawData: RawLandingStats[] = await beverages
 		.find(
 			{},
 			{
@@ -39,58 +28,44 @@ export const load = async ({ locals: { locale } }) => {
 				}
 			}
 		)
-		.map(({ added, editorial, label, producer, shortId }) => {
-			const data = {
-				shortId,
-				brand: {
-					badge: label.general.brand.badge,
-					shortId: label.general.brand.shortId,
-					name: translate(label.general.brand.name, locale)
-				},
+		.map(({ added, editorial, label, producer, shortId }) => ({
+			shortId,
+			brand: {
+				badge: label.general.brand.badge,
+				shortId: label.general.brand.shortId,
+				name: translate(label.general.brand.name, locale)
+			},
+			...((label.brewing?.fermentation ||
+				producer?.brewing?.fermentation ||
+				editorial?.brewing?.fermentation) && {
 				fermentation: {
-					label: label.brewing?.fermentation,
-					producer: producer?.brewing?.fermentation,
-					editorial: editorial?.brewing?.fermentation
-				},
+					...(label.brewing?.fermentation && { label: label.brewing.fermentation }),
+					...(producer?.brewing?.fermentation && { producer: producer.brewing.fermentation }),
+					...(editorial?.brewing?.fermentation && { editorial: editorial.brewing.fermentation })
+				}
+			}),
+			...((label.brewing?.extract || producer?.brewing?.extract) && {
 				extract: {
-					label: formatValue(label.brewing?.extract),
-					producer: formatValue(producer?.brewing?.extract)
-				},
+					...(label.brewing?.extract && { label: label.brewing.extract }),
+					...(producer?.brewing?.extract && { producer: producer.brewing.extract })
+				}
+			}),
+			...((label.brewing?.alcohol || producer?.brewing?.alcohol || editorial?.brewing?.alcohol) && {
 				alcohol: {
-					label: formatValue(label.brewing?.alcohol),
-					producer: formatValue(producer?.brewing?.alcohol),
-					editorial: editorial?.brewing?.alcohol
-				},
-				ratings: editorial?.ratings?.total?.value,
-				container: {
-					type: label.container.type
-				},
-				added
-			};
-
-			deleteIfEmpty(
-				[
-					'fermentation.label',
-					'fermentation.producer',
-					'fermentation.editorial',
-					'fermentation',
-					'extract.label',
-					'extract.producer',
-					'extract',
-					'alcohol.label',
-					'alcohol.producer',
-					'alcohol.editorial',
-					'alcohol',
-					'ratings'
-				],
-				data
-			);
-
-			return data;
-		})
+					...(label.brewing?.alcohol && { label: label.brewing.alcohol }),
+					...(producer?.brewing?.alcohol && { producer: producer.brewing.alcohol }),
+					...(editorial?.brewing?.alcohol && { editorial: editorial.brewing.alcohol })
+				}
+			}),
+			...(editorial?.ratings?.total?.value && { ratings: editorial.ratings.total.value }),
+			container: {
+				type: label.container.type
+			},
+			added
+		}))
 		.toArray();
 
-	// const stats = normalizer(rawData, locale);
+	const stats = normalizers(rawData, locale);
 
-	return { stats: rawData };
+	return { stats };
 };
