@@ -223,6 +223,11 @@ const pl = {
 				page: 'strona z wynikami',
 				previousPage: 'poprzednia strona'
 			}
+		},
+		stats: {
+			common: {
+				name: 'Statystyki'
+			}
 		}
 	},
 	time: {

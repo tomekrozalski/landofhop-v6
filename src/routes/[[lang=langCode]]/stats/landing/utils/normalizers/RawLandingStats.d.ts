@@ -1,4 +1,4 @@
-import type { LanguageValue } from '$lib/db/types/LanguageValue.d';
+import type LanguageValue from '$lib/db/types/LanguageValue.d';
 import {
 	AlcoholRelate,
 	AlcoholScope,

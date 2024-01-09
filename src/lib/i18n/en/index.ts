@@ -223,6 +223,11 @@ const en = {
 				page: 'page',
 				previousPage: 'previous page'
 			}
+		},
+		stats: {
+			common: {
+				name: 'Statistics'
+			}
 		}
 	},
 	time: {

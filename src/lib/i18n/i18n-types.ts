@@ -692,6 +692,14 @@ type RootTranslation = {
 				previousPage: string
 			}
 		}
+		stats: {
+			common: {
+				/**
+				 * S​t​a​t​y​s​t​y​k​i
+				 */
+				name: string
+			}
+		}
 	}
 	time: {
 		/**
@@ -1370,6 +1378,14 @@ export type TranslationFunctions = {
 				 * poprzednia strona
 				 */
 				previousPage: () => LocalizedString
+			}
+		}
+		stats: {
+			common: {
+				/**
+				 * Statystyki
+				 */
+				name: () => LocalizedString
 			}
 		}
 	}

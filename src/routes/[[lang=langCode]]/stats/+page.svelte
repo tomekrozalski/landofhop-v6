@@ -1,7 +1,12 @@
 <script lang="ts">
-	export let data;
-
-	$: console.log('data', data);
+	import StatsWrapper from './elements/Wrapper.svelte';
+	import AlcoholChart from './landing/AlcoholChart/AlcoholChart.svelte';
 </script>
 
-<div class="container py-10">Stats page. @Todo. Page in revamp</div>
+<StatsWrapper>
+	<AlcoholChart />
+	<!-- <AddTimeline /> -->
+	<!-- <FermentationTimeline /> -->
+	<!-- <TopBrandsTimeline /> -->
+	<!-- <RatingsChart /> -->
+</StatsWrapper>
