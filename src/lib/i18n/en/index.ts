@@ -227,6 +227,17 @@ const en = {
 		stats: {
 			common: {
 				name: 'Statistics'
+			},
+			landing: {
+				alcohol: {
+					alcohol: 'Alcohol',
+					barLabel: '{value}% alcohol, {beverages} {{beverage|beverages}}',
+					isAverage: 'average amount of alcohol of all beverages',
+					isAverageWithoutNonAlcoholicBeverages:
+						'average amount of alcohol of all beverages excluding non-alcoholic beverages',
+					name: 'Graph of alcohol quantity in beverages'
+				},
+				numberOfBeverages: 'Number of beverages'
 			}
 		}
 	},

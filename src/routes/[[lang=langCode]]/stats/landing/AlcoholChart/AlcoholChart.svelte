@@ -1,13 +1,13 @@
 <script lang="ts">
-	// import { translate } from 'svelte-intl';
-	// import { scaleBand, scaleLinear } from 'd3-scale';
-	// import { max } from 'd3-array';
+	import { scaleBand, scaleLinear } from 'd3-scale';
+	import { max } from 'd3-array';
 	import { page } from '$app/stores';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import type { AlcoholChartBar } from '../utils/normalizers/Output.d';
 	// import type { Sizes } from '$types/Charts.d';
-	// import Xaxis from '../utils/chartBars/XAxis.svelte';
-	// import Yaxis from '../utils/chartBars/YAxis.svelte';
-	// import Bars from './Bars.svelte';
+	import Xaxis from '../utils/chartBars/XAxis.svelte';
+	import Yaxis from '../utils/chartBars/YAxis.svelte';
+	import Bars from './Bars.svelte';
 
 	const { alcoholChartData } = $page.data.stats;
 
@@ -44,14 +44,14 @@
 		.range([innerHeight, 0]);
 </script>
 
-<h2>{$translate('stats.general.alcohol.name')}</h2>
+<h2>{$LL.pages.stats.landing.alcohol.name()}</h2>
 
-<svg viewBox="0 0 {width} {height}">
+<svg viewBox="0 0 {width} {height}" class="sdf p-8 text-lg hover:m-3">
 	<g style="transform: translate({margin.left}px, {margin.top}px)">
 		<Xaxis
 			{innerHeight}
 			{innerWidth}
-			label={$translate('stats.general.alcohol.alcohol')}
+			label={$LL.pages.stats.landing.alcohol.alcohol()}
 			{xScale}
 			xScaleTicks={xScale.domain().filter((d) => !(+d % 1))}
 			unit="%"

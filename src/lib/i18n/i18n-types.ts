@@ -699,6 +699,36 @@ type RootTranslation = {
 				 */
 				name: string
 			}
+			landing: {
+				alcohol: {
+					/**
+					 * A​l​k​o​h​o​l
+					 */
+					alcohol: string
+					/**
+					 * {​v​a​l​u​e​}​%​ ​a​l​k​o​h​o​l​u​,​ ​{​b​e​v​e​r​a​g​e​s​}​ ​{​{​p​i​w​|​p​i​w​o​|​p​i​w​a​}​}
+					 * @param {string | number | boolean} beverages
+					 * @param {unknown} value
+					 */
+					barLabel: RequiredParams<'beverages' | 'value'>
+					/**
+					 * ś​r​e​d​n​i​a​ ​z​a​w​a​r​t​o​ś​ć​ ​a​l​k​o​h​o​l​u​ ​w​s​z​y​s​t​k​i​c​h​ ​p​i​w
+					 */
+					isAverage: string
+					/**
+					 * ś​r​e​d​n​i​a​ ​z​a​w​a​r​t​o​ś​ć​ ​a​l​k​o​h​o​l​u​ ​w​s​z​y​s​t​k​i​c​h​ ​p​i​w​ ​w​y​ł​ą​c​z​a​j​ą​c​ ​b​e​z​a​l​k​o​h​o​l​o​w​e
+					 */
+					isAverageWithoutNonAlcoholicBeverages: string
+					/**
+					 * W​y​k​r​e​s​ ​z​a​w​a​r​t​o​ś​c​i​ ​a​l​k​o​h​o​l​u​ ​w​ ​p​i​w​a​c​h
+					 */
+					name: string
+				}
+				/**
+				 * L​i​c​z​b​a​ ​p​i​w
+				 */
+				numberOfBeverages: string
+			}
 		}
 	}
 	time: {
@@ -1386,6 +1416,34 @@ export type TranslationFunctions = {
 				 * Statystyki
 				 */
 				name: () => LocalizedString
+			}
+			landing: {
+				alcohol: {
+					/**
+					 * Alkohol
+					 */
+					alcohol: () => LocalizedString
+					/**
+					 * {value}% alkoholu, {beverages} {{piw|piwo|piwa}}
+					 */
+					barLabel: (arg: { beverages: string | number | boolean, value: unknown }) => LocalizedString
+					/**
+					 * średnia zawartość alkoholu wszystkich piw
+					 */
+					isAverage: () => LocalizedString
+					/**
+					 * średnia zawartość alkoholu wszystkich piw wyłączając bezalkoholowe
+					 */
+					isAverageWithoutNonAlcoholicBeverages: () => LocalizedString
+					/**
+					 * Wykres zawartości alkoholu w piwach
+					 */
+					name: () => LocalizedString
+				}
+				/**
+				 * Liczba piw
+				 */
+				numberOfBeverages: () => LocalizedString
 			}
 		}
 	}

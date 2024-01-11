@@ -227,6 +227,17 @@ const pl = {
 		stats: {
 			common: {
 				name: 'Statystyki'
+			},
+			landing: {
+				alcohol: {
+					alcohol: 'Alkohol',
+					barLabel: '{value}% alkoholu, {beverages} {{piw|piwo|piwa}}',
+					isAverage: 'średnia zawartość alkoholu wszystkich piw',
+					isAverageWithoutNonAlcoholicBeverages:
+						'średnia zawartość alkoholu wszystkich piw wyłączając bezalkoholowe',
+					name: 'Wykres zawartości alkoholu w piwach'
+				},
+				numberOfBeverages: 'Liczba piw'
 			}
 		}
 	},
