@@ -6,7 +6,7 @@ import { sessions } from '$lib/db/mongo';
 
 export const POST = async ({ cookies, locals }) => {
 	if (!cookies.get('refreshToken')) {
-		throw error(400, 'Already logged out');
+		error(400, 'Already logged out');
 	}
 
 	const { sessionToken } = jwt.verify(
@@ -15,11 +15,11 @@ export const POST = async ({ cookies, locals }) => {
 	) as jwt.JwtPayload;
 
 	if (!sessionToken) {
-		throw error(401, 'Logged out failed');
+		error(401, 'Logged out failed');
 	}
 
 	await sessions.deleteOne({ sessionToken });
 	removeTokens(cookies);
 
-	throw redirect(303, locals.LL.link('/'));
+	redirect(303, locals.LL.link('/'));
 };

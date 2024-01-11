@@ -14,7 +14,7 @@ export const load = async ({ locals: { authenticated, locale }, params }) => {
 	const shortId = params.shortId;
 
 	if (!badge || !shortId) {
-		throw error(404, 'Incorrect params');
+		error(404, 'Incorrect params');
 	}
 
 	const beverage = await getDetails({ shortId });

@@ -25,11 +25,11 @@ export const load = async ({ locals: { locale }, params }) => {
 	const previousMonth = subMonths(listDate, 1);
 
 	if (month < 1 || month > 12) {
-		throw error(404, 'Wrong date format');
+		error(404, 'Wrong date format');
 	}
 
 	if (isAfter(listDate, subMonths(latestMonth, 1)) || isBefore(listDate, new Date(2017, 5))) {
-		throw error(404, 'Date our of scope');
+		error(404, 'Date our of scope');
 	}
 
 	const rawBasics = await basics

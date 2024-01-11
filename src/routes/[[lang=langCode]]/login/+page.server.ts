@@ -23,13 +23,13 @@ export const actions = {
 		const user = await users.findOne({ email });
 
 		if (!user) {
-			throw error(401, 'Authentication failed');
+			error(401, 'Authentication failed');
 		}
 
 		const isAuthorized = await bcrypt.compare(password, user.password);
 
 		if (!isAuthorized) {
-			throw error(401, 'Authentication failed');
+			error(401, 'Authentication failed');
 		}
 
 		const sessionToken = await createSession({
@@ -39,7 +39,7 @@ export const actions = {
 		});
 
 		if (!sessionToken) {
-			throw error(500, 'Creating session failed');
+			error(500, 'Creating session failed');
 		}
 
 		generateTokens({
@@ -48,6 +48,6 @@ export const actions = {
 			userId: user._id.toString()
 		});
 
-		throw redirect(303, locals.LL.link('/dashboard/add-new-beverage'));
+		redirect(303, locals.LL.link('/dashboard/add-new-beverage'));
 	}
 };

@@ -10,7 +10,7 @@ const getAdminData = async (shortId: string, desiredLanguage: Locales): Promise<
 	const beverage: RawBeverage | null = await beverages.findOne({ shortId });
 
 	if (!beverage) {
-		throw error(404, 'Wrong beverage id');
+		error(404, 'Wrong beverage id');
 	}
 
 	const ratings = beverage.editorial?.ratings;

@@ -26,11 +26,11 @@ export const handle = async ({ event, resolve }) => {
 	}
 
 	if (event.url.pathname.startsWith('/dashboard') && !event.locals.authenticated) {
-		throw redirect(303, '/login');
+		redirect(303, '/login');
 	}
 
 	if (event.url.pathname.startsWith('/en/dashboard') && !event.locals.authenticated) {
-		throw redirect(303, '/en/login');
+		redirect(303, '/en/login');
 	}
 
 	/* ---------------*/
