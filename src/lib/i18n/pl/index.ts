@@ -226,18 +226,31 @@ const pl = {
 		},
 		stats: {
 			common: {
-				name: 'Statystyki'
+				name: 'Statystyki',
+				navigation: {
+					general: "Ogólne",
+					ingredients: "Dotyczące składników",
+					styles: "Dotyczące stylów piwa"
+				}
 			},
 			landing: {
+				addTimeline: {
+					bottles: "butelki",
+					cans: "puszki",
+					depiction: "{date}: {bottle} {{butelek|butelka|butelki|butelki|butelek}} i {can} {{puszek|puszka|puszki|puszki|puszek}}",
+					name: "Liczba dodawanych piw do bazy w kolejnych miesiącach",
+					total: "razem",
+				},
 				alcohol: {
 					alcohol: 'Alkohol',
-					barLabel: '{value}% alkoholu, {beverages} {{piw|piwo|piwa}}',
+					barLabel: '{value}% alkoholu, {beverages} {{piw|piwo|piwa|piwa|piw}}',
 					isAverage: 'średnia zawartość alkoholu wszystkich piw',
 					isAverageWithoutNonAlcoholicBeverages:
 						'średnia zawartość alkoholu wszystkich piw wyłączając bezalkoholowe',
 					name: 'Wykres zawartości alkoholu w piwach'
 				},
-				numberOfBeverages: 'Liczba piw'
+				numberOfBeverages: 'Liczba piw',
+				title: '📈 Statystyki'
 			}
 		}
 	},

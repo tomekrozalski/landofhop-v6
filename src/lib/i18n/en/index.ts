@@ -226,9 +226,21 @@ const en = {
 		},
 		stats: {
 			common: {
-				name: 'Statistics'
+				name: 'Statistics',
+				navigation: {
+					general: "General",
+					ingredients: "About ingredients",
+					styles: "About beer styles"
+				}
 			},
 			landing: {
+				addTimeline: {
+					bottles: "bottles",
+					cans: "cans",
+					depiction: "{date}: {bottle} {{bottles|bottle}} and {can} {{cans|can}}",
+					name: "Amount of beers added to the database in the following months",
+					total: "total",
+				},
 				alcohol: {
 					alcohol: 'Alcohol',
 					barLabel: '{value}% alcohol, {beverages} {{beverage|beverages}}',
@@ -237,7 +249,8 @@ const en = {
 						'average amount of alcohol of all beverages excluding non-alcoholic beverages',
 					name: 'Graph of alcohol quantity in beverages'
 				},
-				numberOfBeverages: 'Number of beverages'
+				numberOfBeverages: 'Number of beverages',
+				title: "📈 Statistics"
 			}
 		}
 	},

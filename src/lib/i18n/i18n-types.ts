@@ -698,15 +698,54 @@ type RootTranslation = {
 				 * S​t​a​t​y​s​t​y​k​i
 				 */
 				name: string
+				navigation: {
+					/**
+					 * O​g​ó​l​n​e
+					 */
+					general: string
+					/**
+					 * D​o​t​y​c​z​ą​c​e​ ​s​k​ł​a​d​n​i​k​ó​w
+					 */
+					ingredients: string
+					/**
+					 * D​o​t​y​c​z​ą​c​e​ ​s​t​y​l​ó​w​ ​p​i​w​a
+					 */
+					styles: string
+				}
 			}
 			landing: {
+				addTimeline: {
+					/**
+					 * b​u​t​e​l​k​i
+					 */
+					bottles: string
+					/**
+					 * p​u​s​z​k​i
+					 */
+					cans: string
+					/**
+					 * {​d​a​t​e​}​:​ ​{​b​o​t​t​l​e​}​ ​{​{​b​u​t​e​l​e​k​|​b​u​t​e​l​k​a​|​b​u​t​e​l​k​i​|​b​u​t​e​l​k​i​|​b​u​t​e​l​e​k​}​}​ ​i​ ​{​c​a​n​}​ ​{​{​p​u​s​z​e​k​|​p​u​s​z​k​a​|​p​u​s​z​k​i​|​p​u​s​z​k​i​|​p​u​s​z​e​k​}​}
+					 * @param {string | number | boolean} bottle
+					 * @param {string | number | boolean} can
+					 * @param {unknown} date
+					 */
+					depiction: RequiredParams<'bottle' | 'can' | 'date'>
+					/**
+					 * L​i​c​z​b​a​ ​d​o​d​a​w​a​n​y​c​h​ ​p​i​w​ ​d​o​ ​b​a​z​y​ ​w​ ​k​o​l​e​j​n​y​c​h​ ​m​i​e​s​i​ą​c​a​c​h
+					 */
+					name: string
+					/**
+					 * r​a​z​e​m
+					 */
+					total: string
+				}
 				alcohol: {
 					/**
 					 * A​l​k​o​h​o​l
 					 */
 					alcohol: string
 					/**
-					 * {​v​a​l​u​e​}​%​ ​a​l​k​o​h​o​l​u​,​ ​{​b​e​v​e​r​a​g​e​s​}​ ​{​{​p​i​w​|​p​i​w​o​|​p​i​w​a​}​}
+					 * {​v​a​l​u​e​}​%​ ​a​l​k​o​h​o​l​u​,​ ​{​b​e​v​e​r​a​g​e​s​}​ ​{​{​p​i​w​|​p​i​w​o​|​p​i​w​a​|​p​i​w​a​|​p​i​w​}​}
 					 * @param {string | number | boolean} beverages
 					 * @param {unknown} value
 					 */
@@ -728,6 +767,10 @@ type RootTranslation = {
 				 * L​i​c​z​b​a​ ​p​i​w
 				 */
 				numberOfBeverages: string
+				/**
+				 * �​�​ ​S​t​a​t​y​s​t​y​k​i
+				 */
+				title: string
 			}
 		}
 	}
@@ -1416,15 +1459,51 @@ export type TranslationFunctions = {
 				 * Statystyki
 				 */
 				name: () => LocalizedString
+				navigation: {
+					/**
+					 * Ogólne
+					 */
+					general: () => LocalizedString
+					/**
+					 * Dotyczące składników
+					 */
+					ingredients: () => LocalizedString
+					/**
+					 * Dotyczące stylów piwa
+					 */
+					styles: () => LocalizedString
+				}
 			}
 			landing: {
+				addTimeline: {
+					/**
+					 * butelki
+					 */
+					bottles: () => LocalizedString
+					/**
+					 * puszki
+					 */
+					cans: () => LocalizedString
+					/**
+					 * {date}: {bottle} {{butelek|butelka|butelki|butelki|butelek}} i {can} {{puszek|puszka|puszki|puszki|puszek}}
+					 */
+					depiction: (arg: { bottle: string | number | boolean, can: string | number | boolean, date: unknown }) => LocalizedString
+					/**
+					 * Liczba dodawanych piw do bazy w kolejnych miesiącach
+					 */
+					name: () => LocalizedString
+					/**
+					 * razem
+					 */
+					total: () => LocalizedString
+				}
 				alcohol: {
 					/**
 					 * Alkohol
 					 */
 					alcohol: () => LocalizedString
 					/**
-					 * {value}% alkoholu, {beverages} {{piw|piwo|piwa}}
+					 * {value}% alkoholu, {beverages} {{piw|piwo|piwa|piwa|piw}}
 					 */
 					barLabel: (arg: { beverages: string | number | boolean, value: unknown }) => LocalizedString
 					/**
@@ -1444,6 +1523,10 @@ export type TranslationFunctions = {
 				 * Liczba piw
 				 */
 				numberOfBeverages: () => LocalizedString
+				/**
+				 * 📈 Statystyki
+				 */
+				title: () => LocalizedString
 			}
 		}
 	}

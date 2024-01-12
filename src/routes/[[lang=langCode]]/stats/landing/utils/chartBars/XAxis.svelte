@@ -8,26 +8,11 @@
 </script>
 
 <g>
-	<text x={innerWidth} y={innerHeight + 65} text-anchor="end" class="label">{label}</text>
+	<text x={innerWidth} y={innerHeight + 65} text-anchor="end">{label}</text>
 	{#each xScaleTicks as tick}
 		<g style="transform: translate({xScale(tick)}px, {innerHeight}px)">
-			<line y2="5" />
-			<text y="25" text-anchor="middle">{tick}{unit}</text>
+			<line y2="5" class="stroke-black" />
+			<text y="25" text-anchor="middle" class="text-xs">{tick}{unit}</text>
 		</g>
 	{/each}
 </g>
-
-<style>
-	line {
-		stroke: var(--color-black);
-	}
-
-	text {
-		font: var(--font-weight-light) 1.2rem / 1 var(--font-primary);
-	}
-
-	text.label {
-		font-weight: var(--font-weight-regular);
-		font-size: 1.8rem;
-	}
-</style>

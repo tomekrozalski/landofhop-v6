@@ -28,38 +28,37 @@
 	let isBarLabelVisible = false;
 	let activeBar: AlcoholChartBar;
 
-	function showLabel(e: Event) {
+	const showLabel = (e: Event) => {
 		isBarLabelVisible = true;
 		const index = Number((e.target as SVGElement).dataset.index);
 		activeBar = filteredData[index];
-	}
+	};
 
-	function hideLabel() {
+	const hideLabel = () => {
 		isBarLabelVisible = false;
-	}
+	};
 
-	function setHorintalPosition(bar: AlcoholChartBar) {
-		return xScale(xValue(bar) || '') - xScale.bandwidth() / 2;
-	}
+	const setHorintalPosition = (bar: AlcoholChartBar) =>
+		xScale(xValue(bar) || '') - xScale.bandwidth() / 2;
 
-	function setVerticalPosition(bar: AlcoholChartBar) {
-		return yScale(yValue(bar));
-	}
+	const setVerticalPosition = (bar: AlcoholChartBar) => yScale(yValue(bar));
 </script>
 
 <g>
 	{#each filteredData as bar, index}
 		<rect
 			data-index={index}
-			width={xScale.bandwidth()}
+			width={xScale.bandwidth() - 1}
 			height={innerHeight - yScale(yValue(bar))}
 			x={setHorintalPosition(bar)}
 			y={setVerticalPosition(bar)}
-			class:average={bar.value === average}
-			class:averageWithoutNonAlcoholicBeverages={bar.value === averageWithoutNonAlcoholicBeverages}
+			class="cursor-pointer fill-green"
+			class:fill-sea={bar.value === average}
+			class:fill-red={bar.value === averageWithoutNonAlcoholicBeverages}
 			on:focus={showLabel}
 			on:mouseover={showLabel}
 			on:mouseleave={hideLabel}
+			role="presentation"
 		/>
 	{/each}
 </g>
@@ -73,18 +72,3 @@
 		y={setVerticalPosition(activeBar)}
 	/>
 {/if}
-
-<style>
-	rect {
-		fill: var(--color-brand-10);
-		cursor: pointer;
-	}
-
-	rect.average {
-		fill: var(--color-brand-6);
-	}
-
-	rect.averageWithoutNonAlcoholicBeverages {
-		fill: var(--color-brand-3);
-	}
-</style>

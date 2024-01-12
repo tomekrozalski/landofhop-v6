@@ -30,8 +30,8 @@
 </script>
 
 <g use:calculatePosition in:fade>
-	<rect use:calculateWidth height="20" />
-	<text id="alcohol-chart-bar-label" x="10" y="15">
+	<rect use:calculateWidth height="20" class="fill-black" />
+	<text id="alcohol-chart-bar-label" x="10" y="15" class="fill-white text-xs">
 		{$LL.pages.stats.landing.alcohol.barLabel({
 			beverages: bar.beverages,
 			value: Intl.NumberFormat('pl').format(bar.value)
@@ -46,14 +46,3 @@
 		{/if}
 	</text>
 </g>
-
-<style>
-	rect {
-		fill: var(--color-black);
-	}
-
-	text {
-		fill: var(--color-white);
-		font: var(--font-weight-light) 1.2rem / 1 var(--font-primary);
-	}
-</style>

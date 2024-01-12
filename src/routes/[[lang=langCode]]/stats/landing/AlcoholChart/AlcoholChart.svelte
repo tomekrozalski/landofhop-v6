@@ -4,7 +4,7 @@
 	import { page } from '$app/stores';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import type { AlcoholChartBar } from '../utils/normalizers/Output.d';
-	// import type { Sizes } from '$types/Charts.d';
+	import type { Sizes } from '../../utils/Charts';
 	import Xaxis from '../utils/chartBars/XAxis.svelte';
 	import Yaxis from '../utils/chartBars/YAxis.svelte';
 	import Bars from './Bars.svelte';
@@ -44,9 +44,11 @@
 		.range([innerHeight, 0]);
 </script>
 
-<h2>{$LL.pages.stats.landing.alcohol.name()}</h2>
+<h2 class="mb-5 mt-10 border-b border-gray-200 pb-2 text-xl font-bold">
+	{$LL.pages.stats.landing.alcohol.name()}
+</h2>
 
-<svg viewBox="0 0 {width} {height}" class="sdf p-8 text-lg hover:m-3">
+<svg viewBox="0 0 {width} {height}">
 	<g style="transform: translate({margin.left}px, {margin.top}px)">
 		<Xaxis
 			{innerHeight}
