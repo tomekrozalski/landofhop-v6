@@ -70,7 +70,11 @@ export default {
 			medium: '400',
 			bold: '500'
 		},
-		extend: {}
+		extend: {
+      strokeWidth: {
+        '3': '3px',
+      }
+    }
 	},
 	plugins: []
 };

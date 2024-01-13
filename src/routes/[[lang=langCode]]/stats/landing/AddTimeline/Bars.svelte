@@ -39,9 +39,13 @@
 			on:mouseleave={() => hideInfo()}
 			role="presentation"
 		>
-			<rect class="fill-red" width={xScale.bandwidth()} height={innerHeight - yScale(cans(bar))} />
 			<rect
 				class="fill-yellow"
+				width={xScale.bandwidth()}
+				height={innerHeight - yScale(cans(bar))}
+			/>
+			<rect
+				class="fill-green"
 				width={xScale.bandwidth()}
 				height={innerHeight - yScale(bottles(bar))}
 				y={innerHeight - yScale(cans(bar))}

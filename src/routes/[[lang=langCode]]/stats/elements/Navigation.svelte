@@ -22,7 +22,7 @@
 </script>
 
 <nav>
-	<ul class="flex w-full flex-col gap-2 lg:flex-row">
+	<ul class="flex w-full flex-col gap-2 px-5 lg:flex-row lg:px-0">
 		{#each navItems as { link, name, url }}
 			<li class="flex-1">
 				<a

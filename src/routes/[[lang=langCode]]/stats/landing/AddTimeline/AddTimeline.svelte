@@ -47,7 +47,7 @@
 	let selectedLine: 'bottles' | 'cans' | 'total' | null = null;
 </script>
 
-<h2 class="mb-5 mt-10 border-b border-gray-200 pb-2 text-xl font-bold">
+<h2 class="mx-5 mb-5 mt-10 border-b border-gray-200 pb-2 text-xl font-bold lg:mx-0">
 	{$LL.pages.stats.landing.addTimeline.name()}
 </h2>
 

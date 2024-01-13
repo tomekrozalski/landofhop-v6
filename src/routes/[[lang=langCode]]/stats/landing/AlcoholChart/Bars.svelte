@@ -53,8 +53,8 @@
 			x={setHorintalPosition(bar)}
 			y={setVerticalPosition(bar)}
 			class="cursor-pointer fill-green"
-			class:fill-sea={bar.value === average}
-			class:fill-red={bar.value === averageWithoutNonAlcoholicBeverages}
+			class:fill-red={bar.value === average}
+			class:fill-sea={bar.value === averageWithoutNonAlcoholicBeverages}
 			on:focus={showLabel}
 			on:mouseover={showLabel}
 			on:mouseleave={hideLabel}

@@ -26,7 +26,7 @@
 	class:opacity-20={isBarSelected}
 >
 	<path
-		class="cursor-pointer fill-none stroke-red stroke-2 opacity-100 transition-opacity"
+		class="cursor-pointer fill-none stroke-green stroke-3 opacity-100 transition-opacity"
 		class:opacity-20={selectedLine && selectedLine !== 'bottles'}
 		d={linePath(bottles)(addTimelineData)}
 		in:draw
@@ -35,7 +35,7 @@
 		role="presentation"
 	/>
 	<path
-		class="cursor-pointer fill-none stroke-yellow stroke-2 opacity-100 transition-opacity"
+		class="cursor-pointer fill-none stroke-yellow stroke-3 opacity-100 transition-opacity"
 		class:opacity-20={selectedLine && selectedLine !== 'cans'}
 		d={linePath(cans)(addTimelineData)}
 		in:draw
@@ -44,7 +44,7 @@
 		role="presentation"
 	/>
 	<path
-		class="cursor-pointer fill-none stroke-black stroke-2 opacity-100 transition-opacity"
+		class="cursor-pointer fill-none stroke-turquoise stroke-3 opacity-100 transition-opacity"
 		class:opacity-20={selectedLine && selectedLine !== 'total'}
 		d={linePath(total)(addTimelineData)}
 		in:draw
