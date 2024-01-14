@@ -23,7 +23,7 @@ export const load = async ({ locals: { authenticated, locale }, params }) => {
 	const addedDate = new Date(beverage.added);
 
 	return {
-		previous: getPrevious(beverage.added),
+		previous: await getPrevious(beverage.added),
 		details: formattedDetails,
 		breadcrumbs: {
 			link:
@@ -32,7 +32,7 @@ export const load = async ({ locals: { authenticated, locale }, params }) => {
 					: `/list/${format(addedDate, 'yyyy-MM')}`,
 			phrase: getBreadcrumbPhrase(addedDate, locale)
 		},
-		next: getNext(beverage.added),
+		next: await getNext(beverage.added),
 		streamed: {
 			...(authenticated && { adminData: getAdminData(shortId, locale) })
 		}
