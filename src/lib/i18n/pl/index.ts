@@ -228,18 +228,19 @@ const pl = {
 			common: {
 				name: 'Statystyki',
 				navigation: {
-					general: "Ogólne",
-					ingredients: "Dotyczące składników",
-					styles: "Dotyczące stylów piwa"
+					general: 'Ogólne',
+					ingredients: 'Dotyczące składników',
+					styles: 'Dotyczące stylów piwa'
 				}
 			},
 			landing: {
 				addTimeline: {
-					bottles: "butelki",
-					cans: "puszki",
-					depiction: "{date}: {bottle} {{butelek|butelka|butelki|butelki|butelek}} i {can} {{puszek|puszka|puszki|puszki|puszek}}",
-					name: "Liczba dodawanych piw do bazy w kolejnych miesiącach",
-					total: "razem",
+					bottles: 'butelki',
+					cans: 'puszki',
+					depiction:
+						'{date}: {bottle} {{butelek|butelka|butelki|butelki|butelek}} i {can} {{puszek|puszka|puszki|puszki|puszek}}',
+					name: 'Liczba dodawanych piw do bazy w kolejnych miesiącach',
+					total: 'razem'
 				},
 				alcohol: {
 					alcohol: 'Alkohol',
@@ -250,7 +251,12 @@ const pl = {
 					name: 'Wykres zawartości alkoholu w piwach'
 				},
 				numberOfBeverages: 'Liczba piw',
-				title: '📈 Statystyki'
+				title: '📈 Statystyki',
+				topBrandsTimeline: {
+					morePopularBrands: 'Więcej popularnych marek',
+					name: 'Najpopularniejsze browary',
+					valueLabel: '{date}, wynik {value} {{piwa|piwo|piw|piw|piwa}}'
+				}
 			}
 		}
 	},

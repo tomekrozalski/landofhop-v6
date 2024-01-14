@@ -228,18 +228,18 @@ const en = {
 			common: {
 				name: 'Statistics',
 				navigation: {
-					general: "General",
-					ingredients: "About ingredients",
-					styles: "About beer styles"
+					general: 'General',
+					ingredients: 'About ingredients',
+					styles: 'About beer styles'
 				}
 			},
 			landing: {
 				addTimeline: {
-					bottles: "bottles",
-					cans: "cans",
-					depiction: "{date}: {bottle} {{bottles|bottle}} and {can} {{cans|can}}",
-					name: "Amount of beers added to the database in the following months",
-					total: "total",
+					bottles: 'bottles',
+					cans: 'cans',
+					depiction: '{date}: {bottle} {{bottles|bottle}} and {can} {{cans|can}}',
+					name: 'Amount of beers added to the database in the following months',
+					total: 'total'
 				},
 				alcohol: {
 					alcohol: 'Alcohol',
@@ -250,7 +250,12 @@ const en = {
 					name: 'Graph of alcohol quantity in beverages'
 				},
 				numberOfBeverages: 'Number of beverages',
-				title: "📈 Statistics"
+				title: '📈 Statistics',
+				topBrandsTimeline: {
+					morePopularBrands: 'More pupular brands',
+					name: 'Most popular breweries',
+					valueLabel: '{date},  value of {value} {{beers|beer}}'
+				}
 			}
 		}
 	},

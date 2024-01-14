@@ -16,6 +16,7 @@ export default {
 			},
 			orange: {
 				DEFAULT: '#f8961e'
+				// light: '#f7c68b' // I do not use it so far
 			},
 			yellow: {
 				DEFAULT: '#f9c74f',
@@ -71,10 +72,10 @@ export default {
 			bold: '500'
 		},
 		extend: {
-      strokeWidth: {
-        '3': '3px',
-      }
-    }
+			strokeWidth: {
+				3: '3px'
+			}
+		}
 	},
 	plugins: []
 };

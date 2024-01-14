@@ -771,6 +771,22 @@ type RootTranslation = {
 				 * �​�​ ​S​t​a​t​y​s​t​y​k​i
 				 */
 				title: string
+				topBrandsTimeline: {
+					/**
+					 * W​i​ę​c​e​j​ ​p​o​p​u​l​a​r​n​y​c​h​ ​m​a​r​e​k
+					 */
+					morePopularBrands: string
+					/**
+					 * N​a​j​p​o​p​u​l​a​r​n​i​e​j​s​z​e​ ​b​r​o​w​a​r​y
+					 */
+					name: string
+					/**
+					 * {​d​a​t​e​}​,​ ​w​y​n​i​k​ ​{​v​a​l​u​e​}​ ​{​{​p​i​w​a​|​p​i​w​o​|​p​i​w​|​p​i​w​|​p​i​w​a​}​}
+					 * @param {unknown} date
+					 * @param {string | number | boolean} value
+					 */
+					valueLabel: RequiredParams<'date' | 'value'>
+				}
 			}
 		}
 	}
@@ -1527,6 +1543,20 @@ export type TranslationFunctions = {
 				 * 📈 Statystyki
 				 */
 				title: () => LocalizedString
+				topBrandsTimeline: {
+					/**
+					 * Więcej popularnych marek
+					 */
+					morePopularBrands: () => LocalizedString
+					/**
+					 * Najpopularniejsze browary
+					 */
+					name: () => LocalizedString
+					/**
+					 * {date}, wynik {value} {{piwa|piwo|piw|piw|piwa}}
+					 */
+					valueLabel: (arg: { date: unknown, value: string | number | boolean }) => LocalizedString
+				}
 			}
 		}
 	}
