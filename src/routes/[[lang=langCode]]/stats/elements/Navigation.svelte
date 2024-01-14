@@ -28,8 +28,10 @@
 				<a
 					class:bg-gray-100={$page.url.pathname.match(new RegExp(url))}
 					class="flex justify-center border border-gray-300 px-3 py-2 transition-colors hover:bg-gray-100"
-					href={link}>{name}</a
+					href="/stats"
 				>
+					{name}
+				</a>
 			</li>
 		{/each}
 	</ul>
