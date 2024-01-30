@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { afterNavigate, invalidateAll } from '$app/navigation';
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import Breadcrumbs from '$lib/atoms/Breadcrumbs.svelte';
 	import BeverageDetails from './BeverageDetails.svelte';
+
+	afterNavigate(invalidateAll);
 
 	export let data;
 	$: ({ breadcrumbs, details } = data);
