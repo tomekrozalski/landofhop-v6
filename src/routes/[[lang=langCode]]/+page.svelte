@@ -16,5 +16,6 @@
 </svelte:head>
 
 <Breadcrumbs phrase={breadcrumbs.phrase} />
+<h1 class="hidden">{$LL.pages.listing.title({ month: breadcrumbs.phrase })}</h1>
 <BeverageList {beverages} />
 <Pagination previous={breadcrumbs.previous} />

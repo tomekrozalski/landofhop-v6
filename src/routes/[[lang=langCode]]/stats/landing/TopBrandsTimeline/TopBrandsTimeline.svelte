@@ -7,7 +7,7 @@
 	import type { TopBrandsTimelineBar } from '../utils/normalizers/Output.d';
 	import Line from './Line.svelte';
 	import Legend from './Legend.svelte';
-	// import Points from './Points.svelte';
+	import Points from './Points.svelte';
 
 	const { morePopularBrandsData, topBrandsTimelineData } = $page.data.stats;
 
@@ -55,7 +55,7 @@
 <TimelineWrapper highestValue={highestValue + 3} let:intersecting {sizes}>
 	{#if intersecting}
 		<Line {topBrandsTimelineData} {xScale} {xValue} {yScale} bind:selectedBrand />
-		<!-- <Points {topBrandsTimelineData} {xScale} {yScale} bind:selectedBrand /> -->
+		<Points {topBrandsTimelineData} {xScale} {yScale} bind:selectedBrand />
 	{/if}
 </TimelineWrapper>
 

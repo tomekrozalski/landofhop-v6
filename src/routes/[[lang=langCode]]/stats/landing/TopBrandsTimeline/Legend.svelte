@@ -7,7 +7,7 @@
 	export let topBrandsTimelineData: TopBrandsTimelineBar[];
 </script>
 
-<ol class="mb-10 ml-12 flex flex-col gap-1 px-3 lg:flex-row lg:flex-wrap">
+<ol class="mb-10 ml-2 mt-6 flex flex-col gap-1 px-3 lg:mt-0 lg:flex-row lg:flex-wrap">
 	{#each topBrandsTimelineData[topBrandsTimelineData.length - 1].brands as { amount, badge, id, name }, index}
 		<li>
 			<a
@@ -57,11 +57,11 @@
 	{/each}
 </ol>
 
-<h3 class="my-5 pl-16 font-medium">
+<h3 class="m-5 font-medium">
 	{$LL.pages.stats.landing.topBrandsTimeline.morePopularBrands()}
 </h3>
 
-<ul class="flex list-inside list-disc flex-col gap-1 px-12 lg:flex-row lg:flex-wrap">
+<ul class="mx-5 flex list-inside list-disc flex-col gap-1 text-base lg:flex-row lg:flex-wrap">
 	{#each morePopularBrandsData as { amount, badge, id, name }, index}
 		<li>
 			<a

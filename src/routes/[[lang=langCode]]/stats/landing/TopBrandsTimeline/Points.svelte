@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { translate } from 'svelte-intl';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import { format } from 'date-fns';
 	import pl from 'date-fns/locale/pl/index.js';
 	import type { Brand, TopBrandsTimelineBar } from '../utils/normalizers/Output.d';
@@ -12,7 +12,7 @@
 
 	let selectedDate: string | null;
 
-	function getSelectedDateVelue() {
+	const getSelectedDateVelue = () => {
 		const selectedDateData = topBrandsTimelineData.find(
 			({ date }) => date === selectedDate
 		) as TopBrandsTimelineBar;
@@ -21,15 +21,25 @@
 		) as Brand;
 
 		return selectedDateBrand.amount;
-	}
+	};
 </script>
 
 <g style="transform: translate({Math.round(xScale.bandwidth() / 2)}px, 0">
 	{#each topBrandsTimelineData as { brands, date }}
 		{#each brands.filter(({ amount }) => amount) as { amount, id }, index}
 			<circle
-				class="top-brand-point-{index + 1}"
-				class:hidden={selectedBrand && selectedBrand !== id}
+				class="cursor-pointer fill-white transition-opacity"
+				class:opacity-0={selectedBrand && selectedBrand !== id}
+				class:stroke-red={index === 0}
+				class:stroke-orange={index === 1}
+				class:stroke-yellow={index === 2}
+				class:stroke-green={index === 3}
+				class:stroke-sea={index === 4}
+				class:stroke-turquoise={index === 5}
+				class:stroke-red-light={index === 6}
+				class:stroke-gray-600={index === 7}
+				class:stroke-gray-400={index === 8}
+				class:stroke-gray-300={index === 9}
 				cx={xScale(date)}
 				cy={yScale(amount)}
 				r="3"
@@ -42,71 +52,16 @@
 					selectedBrand = null;
 					selectedDate = null;
 				}}
+				role="presentation"
 			/>
 		{/each}
 	{/each}
 </g>
 {#if selectedBrand && selectedDate}
-	<text class="label" x="200" y="20" text-anchor="middle">
-		{$translate('stats.general.topBrandsTimeline.valueLabel', {
+	<text x="200" y="20" text-anchor="middle">
+		{$LL.pages.stats.landing.topBrandsTimeline.valueLabel({
 			date: format(new Date(selectedDate), 'LLLL yyyy', { locale: pl }),
 			value: getSelectedDateVelue()
 		})}
 	</text>
 {/if}
-
-<style>
-	circle {
-		fill: var(--color-white);
-		cursor: pointer;
-	}
-
-	.top-brand-point-1 {
-		stroke: var(--color-brand-1);
-	}
-
-	.top-brand-point-2 {
-		stroke: var(--color-brand-3);
-	}
-
-	.top-brand-point-3 {
-		stroke: var(--color-brand-5);
-	}
-
-	.top-brand-point-4 {
-		stroke: var(--color-brand-6);
-	}
-
-	.top-brand-point-5 {
-		stroke: var(--color-brand-8);
-	}
-
-	.top-brand-point-6 {
-		stroke: var(--color-brand-10);
-	}
-
-	.top-brand-point-7 {
-		stroke: #555;
-	}
-
-	.top-brand-point-8 {
-		stroke: #666;
-	}
-
-	.top-brand-point-9 {
-		stroke: #999;
-	}
-
-	.top-brand-point-10 {
-		stroke: #ccc;
-	}
-
-	.hidden {
-		opacity: 0;
-	}
-
-	text {
-		font: var(--font-weight-regular) 1.2rem / 1 var(--font-primary);
-		font-size: 1.8rem;
-	}
-</style>
