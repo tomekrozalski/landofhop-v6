@@ -9,7 +9,7 @@
 {#if tale}
 	{#if tale?.label?.length}
 		{#each tale?.label as singleTale}
-			<section lang={singleTale.language !== 'pl' ? singleTale.language : null}>
+			<section lang={singleTale.language !== 'pl' ? singleTale.language : null} class="mt-3">
 				<Markdown value={singleTale.lead} />
 				{#if singleTale.article}
 					<Article>

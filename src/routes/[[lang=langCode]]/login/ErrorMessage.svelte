@@ -5,7 +5,7 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 </script>
 
-<div class=" relative mb-8 overflow-hidden bg-yellow-light p-8 text-right" in:slide>
+<div class="relative mb-8 overflow-clip bg-yellow-light p-8 text-right" in:slide>
 	<Fa icon={faTriangleExclamation} size="5x" class="absolute -top-5 text-yellow" />
 	{$LL.pages.login.tryAgain()}
 </div>

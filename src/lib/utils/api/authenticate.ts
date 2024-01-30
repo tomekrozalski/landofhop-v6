@@ -1,4 +1,4 @@
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import type { RequestEvent } from '@sveltejs/kit';
 import { JWT_SECRET } from '$env/static/private';
 import { sessions } from '$lib/db/mongo';

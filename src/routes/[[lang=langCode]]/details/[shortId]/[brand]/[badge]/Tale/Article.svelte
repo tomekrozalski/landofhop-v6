@@ -6,7 +6,7 @@
 </script>
 
 {#if isCollapsed}
-	<div transition:slide class="overflow-hidden">
+	<div transition:slide class="overflow-clip">
 		<slot />
 	</div>
 {/if}

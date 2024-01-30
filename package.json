@@ -58,7 +58,7 @@
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"date-fns": "^2.29.3",
-		"jsonwebtoken": "^9.0.0",
+		"jsonwebtoken": "^9.0.2",
 		"lodash-es": "^4.17.21",
 		"mongodb": "^5.2.0",
 		"svelte-confetti": "^1.2.4"
