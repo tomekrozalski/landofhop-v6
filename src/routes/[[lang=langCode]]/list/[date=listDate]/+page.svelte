@@ -17,6 +17,7 @@
 </svelte:head>
 
 <Breadcrumbs phrase={breadcrumbs.phrase} />
+<h1 class="sr-only">{$LL.pages.listing.title({ month: breadcrumbs.phrase })}</h1>
 {#if beverages.length}
 	<BeverageList {beverages} />
 {:else}
