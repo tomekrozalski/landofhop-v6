@@ -767,6 +767,16 @@ type RootTranslation = {
 				 * L​i​c​z​b​a​ ​p​i​w
 				 */
 				numberOfBeverages: string
+				ratings: {
+					/**
+					 * W​y​k​r​e​s​ ​o​c​e​n
+					 */
+					name: string
+					/**
+					 * W​y​s​o​k​o​ś​ć​ ​o​c​e​n​y
+					 */
+					value: string
+				}
 				/**
 				 * �​�​ ​S​t​a​t​y​s​t​y​k​i
 				 */
@@ -1539,6 +1549,16 @@ export type TranslationFunctions = {
 				 * Liczba piw
 				 */
 				numberOfBeverages: () => LocalizedString
+				ratings: {
+					/**
+					 * Wykres ocen
+					 */
+					name: () => LocalizedString
+					/**
+					 * Wysokość oceny
+					 */
+					value: () => LocalizedString
+				}
 				/**
 				 * 📈 Statystyki
 				 */

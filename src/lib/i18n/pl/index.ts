@@ -251,6 +251,10 @@ const pl = {
 					name: 'Wykres zawartości alkoholu w piwach'
 				},
 				numberOfBeverages: 'Liczba piw',
+				ratings: {
+					name: 'Wykres ocen',
+					value: 'Wysokość oceny'
+				},
 				title: '📈 Statystyki',
 				topBrandsTimeline: {
 					morePopularBrands: 'Więcej popularnych marek',

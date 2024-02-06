@@ -250,6 +250,10 @@ const en = {
 					name: 'Graph of alcohol quantity in beverages'
 				},
 				numberOfBeverages: 'Number of beverages',
+				ratings: {
+					name: 'Graph of beverages ratings',
+					value: 'Ratings'
+				},
 				title: '📈 Statistics',
 				topBrandsTimeline: {
 					morePopularBrands: 'More pupular brands',

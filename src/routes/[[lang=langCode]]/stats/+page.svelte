@@ -5,6 +5,7 @@
 	import AlcoholChart from './landing/AlcoholChart/AlcoholChart.svelte';
 	import AddTimeline from './landing/AddTimeline/AddTimeline.svelte';
 	import TopBrandsTimeline from './landing/TopBrandsTimeline/TopBrandsTimeline.svelte';
+	import RatingsChart from './landing/RatingsChart/RatingsChart.svelte';
 </script>
 
 <svelte:head>
@@ -16,5 +17,5 @@
 	<AddTimeline />
 	<!-- <FermentationTimeline /> -->
 	<TopBrandsTimeline />
-	<!-- <RatingsChart /> -->
+	<RatingsChart />
 </StatsWrapper>
