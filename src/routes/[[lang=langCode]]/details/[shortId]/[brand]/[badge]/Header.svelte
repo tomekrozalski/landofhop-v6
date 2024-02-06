@@ -7,7 +7,7 @@
 	$: ({ brand, contract, cooperation, isContract, name, remark, series } = $page.data.details);
 </script>
 
-<header class="mt-3">
+<header class="mb-6 mt-3 lg:mb-3">
 	<MarkLanguage tag="h1" {name} class="my-5 text-3xl font-bold" />
 	<p>
 		{$LL.pages.details.header.brewed()}
