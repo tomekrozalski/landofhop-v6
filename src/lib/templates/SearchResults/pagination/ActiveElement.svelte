@@ -1,28 +1,21 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
 	import { faCaretLeft, faCaretRight } from '@fortawesome/pro-solid-svg-icons';
-	import pushState from '$lib/utils/helpers/pushState';
+	import { page } from '$app/stores';
 
 	export let isCurrent: boolean = false;
 	export let label: string | undefined = undefined;
 	export let name: string;
-	export let page: number;
+	export let pageNumber: number;
 
-	const handleClick = () => {
-		const params = new URLSearchParams(location.search);
-
-		if (page === 1) {
-			params.delete('page');
-		} else {
-			params.set('page', page.toString());
-		}
-
-		pushState(params);
-	};
+	$: href =
+		pageNumber === 1
+			? '/search/' + $page.params.phrase
+			: '/search/' + $page.params.phrase + '/' + pageNumber;
 </script>
 
 <li class="m-1 mx-3 w-full sm:m-1 sm:w-auto">
-	<button
+	<a
 		class="flex h-14 w-full cursor-pointer items-center justify-center border-2 p-3 transition-colors
     hover:border-black hover:bg-white hover:text-black
 		focus:outline-none focus-visible:border-black focus-visible:bg-white focus-visible:text-black
@@ -35,7 +28,7 @@
 		class:border-gray-300={!isCurrent}
 		class:text-white={isCurrent}
 		class:text-black={!isCurrent}
-		on:click={handleClick}
+		{href}
 		{...$$restProps}
 		aria-label={label}
 	>
@@ -46,5 +39,5 @@
 		{:else}
 			{name}
 		{/if}
-	</button>
+	</a>
 </li>

@@ -222,7 +222,8 @@ const en = {
 				nextPage: 'next page',
 				page: 'page',
 				previousPage: 'previous page'
-			}
+			},
+			title: '🔍 Search results for phrase "{phrase}", page {page}'
 		},
 		stats: {
 			common: {

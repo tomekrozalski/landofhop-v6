@@ -1,13 +1,11 @@
-import { json } from '@sveltejs/kit';
 import { beverages } from '$lib/db/mongo';
 import { MAX_BEVERAGES_ON_PAGE } from '$lib/utils/constants';
 import beveragesToBasics from '$lib/templates/SearchResults/beverageToBasics';
-import type { Locales } from '$lib/i18n/i18n-types.js';
+import type { Basics } from '$lib/templates/BeverageList/Basics.d';
 
-export const GET = async ({ params }) => {
-	const language = (params.lang as Locales) ?? 'pl';
+export const load = async ({ locals: { locale }, params }) => {
 	const page = params.page ?? 1;
-	const phrase = params.phrase ?? '';
+	const phrase = params.phrase;
 
 	const query = {
 		$or: [
@@ -89,12 +87,12 @@ export const GET = async ({ params }) => {
 		])
 		.map(({ count, values }) => ({
 			count: count[0]?.count ?? 0,
-			values: values.map(beveragesToBasics(language))
+			values: values.map(beveragesToBasics(locale))
 		}))
 		.toArray();
 
-	return json({
-		beverages: rawValues[0].values,
-		total: rawValues[0].count
-	});
+	return {
+		beverages: rawValues[0].values as Basics[],
+		total: rawValues[0].count as number
+	};
 };

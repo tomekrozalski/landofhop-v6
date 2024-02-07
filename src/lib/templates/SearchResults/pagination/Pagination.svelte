@@ -19,12 +19,12 @@
 		<ActiveElement
 			label={$LL.pages.search.pagination.previousPage()}
 			name="previous"
-			page={order - 1}
+			pageNumber={order - 1}
 		/>
 	{/if}
-	{#each pages as page}
-		{#if page}
-			<ActiveElement isCurrent={page === order} name={page.toString()} {page} />
+	{#each pages as pageNumber}
+		{#if pageNumber}
+			<ActiveElement isCurrent={pageNumber === order} name={pageNumber.toString()} {pageNumber} />
 		{:else}
 			<InactiveElement name="…" />
 		{/if}
@@ -32,6 +32,10 @@
 	{#if pagesCount === order}
 		<InactiveElement label={$LL.pages.search.pagination.nextPage()} name="next" />
 	{:else}
-		<ActiveElement label={$LL.pages.search.pagination.nextPage()} name="next" page={order + 1} />
+		<ActiveElement
+			label={$LL.pages.search.pagination.nextPage()}
+			name="next"
+			pageNumber={order + 1}
+		/>
 	{/if}
 </ul>

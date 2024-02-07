@@ -691,6 +691,12 @@ type RootTranslation = {
 				 */
 				previousPage: string
 			}
+			/**
+			 * �​�​ ​W​y​n​i​k​i​ ​w​y​s​z​u​k​i​w​a​n​i​a​ ​d​l​a​ ​f​r​a​z​y​ ​"​{​p​h​r​a​s​e​}​"​,​ ​s​t​r​o​n​a​ ​{​p​a​g​e​}
+			 * @param {unknown} page
+			 * @param {unknown} phrase
+			 */
+			title: RequiredParams<'page' | 'phrase'>
 		}
 		stats: {
 			common: {
@@ -1478,6 +1484,10 @@ export type TranslationFunctions = {
 				 */
 				previousPage: () => LocalizedString
 			}
+			/**
+			 * 🔍 Wyniki wyszukiwania dla frazy "{phrase}", strona {page}
+			 */
+			title: (arg: { page: unknown, phrase: unknown }) => LocalizedString
 		}
 		stats: {
 			common: {

@@ -1,28 +1,11 @@
 <script>
-	import { afterUpdate } from 'svelte';
-	import SearchResults from '$lib/templates/SearchResults/SearchResults.svelte';
-	import layoutStore from './store';
-
-	let path = '';
-
-	afterUpdate(() => {
-		const params = new URLSearchParams(window.location.search);
-		let value = params.get('search') ?? '';
-		layoutStore.setSearchPhrase(value);
-
-		if (path !== window.location.pathname) {
-			if (!window.location.search) {
-				layoutStore.closeSearchBar();
-			}
-
-			path = window.location.pathname;
-		}
-	});
+	import { page } from '$app/stores';
+	import SearchResults from '../../../routes/[[lang=langCode]]/search/[phrase]/[[page]]/+page.svelte';
 </script>
 
 <main>
-	{#if $layoutStore.isSearchbarActive}
-		<SearchResults />
+	{#if $page.state.selected}
+		<SearchResults data={$page.state.selected} />
 	{:else}
 		<slot />
 	{/if}

@@ -222,7 +222,8 @@ const pl = {
 				nextPage: 'następna strona',
 				page: 'strona z wynikami',
 				previousPage: 'poprzednia strona'
-			}
+			},
+			title: '🔍 Wyniki wyszukiwania dla frazy "{phrase}", strona {page}'
 		},
 		stats: {
 			common: {
