@@ -10,10 +10,10 @@
 	{#if tale?.label?.length}
 		{#each tale?.label as singleTale}
 			<section lang={singleTale.language !== 'pl' ? singleTale.language : null} class="mt-3">
-				<Markdown value={singleTale.lead} />
+				<Markdown class="block text-pretty" value={singleTale.lead} />
 				{#if singleTale.article}
 					<Article>
-						<Markdown value={singleTale.article} />
+						<Markdown class="block text-pretty" value={singleTale.article} />
 					</Article>
 				{/if}
 			</section>
@@ -24,10 +24,10 @@
 			class=" my-5 border-l-8 border-green pl-5"
 			lang={tale.producer.language !== 'pl' ? tale.producer.language : null}
 		>
-			<Markdown value={tale.producer.lead} />
+			<Markdown class="block text-pretty" value={tale.producer.lead} />
 			{#if tale.producer.article}
 				<Article>
-					<Markdown value={tale.producer.article} />
+					<Markdown class="block text-pretty" value={tale.producer.article} />
 				</Article>
 			{/if}
 		</section>

@@ -8,7 +8,7 @@
 </script>
 
 <header class="mb-6 mt-3 lg:mb-3">
-	<MarkLanguage tag="h1" {name} class="my-5 text-3xl font-bold" />
+	<MarkLanguage tag="h1" {name} class="my-5 text-balance text-3xl font-bold" />
 	<p>
 		{$LL.pages.details.header.brewed()}
 		<!-- remark -->

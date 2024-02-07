@@ -14,14 +14,19 @@
 
 <svelte:element
 	this={tag}
-	class:border-b-4={isLabeled}
+	class:underline={isLabeled}
+	class:decoration-8={isLabeled}
 	class:font-medium={isLabeled}
-	class:border-yellow-light={label}
-	class:border-green-light={producer}
-	class:border-sea-light={editorial}
+	class:skip-ink-none={isLabeled}
+	class:-underline-offset-2={isLabeled}
+	class:decoration-yellow-light={label}
+	class:decoration-green-light={producer}
+	class:decoration-sea-light={editorial}
 	class:transition-all={isLink}
-	class:hover:border-b-2={isLink}
-	class:hover:border-black={isLink}
+	class:hover:decoration-2={isLink}
+	class:hover:decoration-black={isLink}
+	class:hover:underline-offset-4={isLink}
+	class:hover:skip-ink-auto={isLink}
 	lang={name.language && name.language !== $page.data.locale ? name.language : null}
 	{...$$restProps}
 >

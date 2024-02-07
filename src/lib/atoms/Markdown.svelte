@@ -5,7 +5,7 @@
 	export let value: string;
 </script>
 
-<span {style}>
+<span {style} {...$$restProps}>
 	<SvelteMarkdown source={value} isInline />
 </span>
 

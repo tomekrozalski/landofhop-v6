@@ -74,6 +74,9 @@ export default {
 		extend: {
 			strokeWidth: {
 				3: '3px'
+			},
+			textUnderlineOffset: {
+				'-2': '-2px'
 			}
 		}
 	},
