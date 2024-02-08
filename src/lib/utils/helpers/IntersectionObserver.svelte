@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	export let once = false;
-	export let threshold = 0;
-
-	let intersecting = false;
-	let container: HTMLDivElement;
+	const { once = false, threshold = 0 } = $props();
+	let intersecting = $state(false);
+	let container = $state<HTMLDivElement>();
 
 	onMount(() => {
 		if (typeof IntersectionObserver !== 'undefined') {
@@ -13,14 +11,14 @@
 				(entries) => {
 					intersecting = entries[0].isIntersecting;
 					if (intersecting && once) {
-						observer.unobserve(container);
+						observer.unobserve(container!);
 					}
 				},
 				{ threshold }
 			);
 
-			observer.observe(container);
-			return () => observer.unobserve(container);
+			observer.observe(container!);
+			return () => observer.unobserve(container!);
 		}
 	});
 </script>

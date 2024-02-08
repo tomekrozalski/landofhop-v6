@@ -2,19 +2,19 @@
 	import Fa from 'svelte-fa';
 	import { faEllipsis } from '@fortawesome/pro-regular-svg-icons';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import layoutStore from '$lib/templates/Main/store';
+	import navigation from '$lib/templates/Main/navigation.svelte';
 </script>
 
 <button
-	on:click={layoutStore.toggleNavbar}
+	on:click={navigation.toggleNavbar}
 	class="more group flex items-center justify-center
 	text-xs focus-visible:border-2 focus-visible:border-black focus-visible:bg-white focus-visible:outline-none
 	md:text-sm lg:text-base"
-	aria-label={$layoutStore.isNavigationOpened
+	aria-label={navigation.isNavigationOpened
 		? $LL.header.closeNavigation()
 		: $LL.header.openNavigation()}
 	aria-controls="navigation"
-	aria-expanded={$layoutStore.isNavigationOpened}
+	aria-expanded={navigation.isNavigationOpened}
 >
 	<Fa
 		icon={faEllipsis}

@@ -3,8 +3,7 @@
 	import { faCaretLeft } from '@fortawesome/pro-solid-svg-icons';
 	import { LL } from '$lib/i18n/i18n-svelte';
 
-	export let link: string;
-	export let phrase: string;
+	const { link, phrase } = $props<{ link: string; phrase: string }>();
 </script>
 
 <a

@@ -34,10 +34,10 @@
 </script>
 
 <Button
-	handleClick={confirmed ? confirm : removeBeverage}
 	isSecondary={!confirmed}
 	isWarning={confirmed}
 	isDelayed={isSubmitting}
+	on:click={confirmed ? confirm : removeBeverage}
 >
 	{#if confirmed}
 		{$LL.pages.details.adminBar.areYouSure()}

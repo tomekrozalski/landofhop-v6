@@ -7,12 +7,11 @@
 	import CoverImage from './CoverImage.svelte';
 	import type { Basics } from './Basics.d';
 
-	export let beverage: Basics;
-	export let eager: boolean;
-	const { badge, brand, name, coverImage, shortId } = beverage;
+	const { beverage, eager } = $props<{ beverage: Basics; eager: boolean }>();
+	const { badge, brand, name, coverImage, shortId } = $derived(beverage);
 
-	let loaded = false;
-	let nativeLoading = false;
+	let loaded = $state(false);
+	let nativeLoading = $state(false);
 
 	onMount(() => {
 		if ('loading' in HTMLImageElement.prototype) {

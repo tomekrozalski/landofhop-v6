@@ -1,17 +1,14 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { navigating } from '$app/stores';
 	import Main from '$lib/templates/Main/Main.svelte';
 	import Topbar from '$lib/templates/Topbar/Topbar.svelte';
-	import layoutStore from '$lib/templates/Main/store';
+	import navigation from '$lib/templates/Main/navigation.svelte';
 	import '../app.css';
 
 	afterNavigate(() => {
 		// when path change, close navigation
-		layoutStore.closeNavbar();
+		navigation.closeNavbar();
 	});
-
-	$: $layoutStore.isLoading = !!$navigating;
 </script>
 
 <svelte:head>

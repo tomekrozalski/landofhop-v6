@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
 
-	export let data: any[];
-	export let mode: 'long' | 'short' | 'narrow' = 'narrow';
+	const { data, mode = 'narrow' } = $props<{ data: any[]; mode: 'long' | 'short' | 'narrow' }>();
 </script>
 
 {#if mode === 'narrow'}

@@ -3,7 +3,7 @@
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import type { ContainerType } from '$lib/db/enums/Beverage.enum';
 
-	export let type: ContainerType;
+	const { type } = $props<{ type: ContainerType }>();
 </script>
 
 <img

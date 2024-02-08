@@ -2,14 +2,23 @@
 	import type LanguageValue from '$lib/db/types/LanguageValue.d';
 	import { page } from '$app/stores';
 
-	export let editorial: boolean = false;
-	export let label: boolean = false;
-	export let name: LanguageValue;
-	export let producer: boolean = false;
-	export let tag: string;
+	let {
+		editorial = false,
+		label = false,
+		name,
+		producer = false,
+		tag,
+		...rest
+	} = $props<{
+		editorial?: boolean;
+		label?: boolean;
+		name: LanguageValue;
+		producer?: boolean;
+		tag: string;
+	}>();
 
-	$: isLabeled = editorial || label || producer;
-	$: isLink = tag === 'a';
+	const isLabeled = $derived(editorial || label || producer);
+	const isLink = $derived(tag === 'a');
 </script>
 
 <svelte:element
@@ -28,7 +37,7 @@
 	class:hover:underline-offset-4={isLink}
 	class:hover:skip-ink-auto={isLink}
 	lang={name.language && name.language !== $page.data.locale ? name.language : null}
-	{...$$restProps}
+	{...rest}
 >
 	{name.value}
 </svelte:element>

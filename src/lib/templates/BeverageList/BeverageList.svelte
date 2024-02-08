@@ -4,7 +4,7 @@
 	import BrokenCoverImage from './BrokenCoverImage.svelte';
 	import type { Basics } from './Basics.d';
 
-	export let beverages: Basics[];
+	const { beverages } = $props<{ beverages: Basics[] }>();
 </script>
 
 <ul class="beverage-list container mb-16 grid items-end justify-center gap-2 px-2 py-5">

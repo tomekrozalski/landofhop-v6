@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import layoutStore from '$lib/templates/Main/store';
+	import navigation from '$lib/templates/Main/navigation.svelte';
+	import { navigating } from '$app/stores';
 </script>
 
 <a
-	on:click={layoutStore.closeNavbar}
+	on:click={navigation.closeNavbar}
 	href={$LL.link('/')}
 	class="logo group flex items-center justify-center focus-visible:outline-none"
 >
@@ -25,7 +26,7 @@
 			r="55.5"
 			fill="#f9c74f"
 			class="letter-o fill-none"
-			style:stroke-dasharray={$layoutStore.isLoading ? '280' : '360'}
+			style:stroke-dasharray={$navigating ? '280' : '360'}
 			style:transition="stroke-dasharray 1s"
 		>
 			<animateTransform

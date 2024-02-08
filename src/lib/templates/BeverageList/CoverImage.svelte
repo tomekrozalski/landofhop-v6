@@ -2,14 +2,16 @@
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import type { Basics } from './Basics.d';
 
-	export let beverage: Basics;
-	export let eager: boolean;
-	export let loaded: boolean;
+	let { beverage, eager, loaded } = $props<{
+		beverage: Basics;
+		eager: boolean;
+		loaded: boolean;
+	}>();
 
-	$: getPath = (size: 1 | 2) => {
+	const getPath = $derived((size: 1 | 2) => {
 		const basicPath = `${PHOTO_SERVER}/${beverage.brand.badge}/${beverage.badge}/${beverage.shortId}`;
 		return `${basicPath}/cover/webp/${size}x.webp`;
-	};
+	});
 
 	function loadListener(image: HTMLImageElement) {
 		image.onload = () => {

@@ -2,12 +2,21 @@
 	import Fa from 'svelte-fa';
 	import { faSpinner } from '@fortawesome/pro-solid-svg-icons';
 
-	export let handleClick: (e: Event) => void = () => {};
-	export let isDelayed: boolean = false;
-	export let isDisabled: boolean = false;
-	export let isSecondary: boolean = false;
-	export let isWarning: boolean = false;
-	export let type: 'button' | 'submit' | 'reset' = 'button';
+	const {
+		isDelayed = false,
+		isDisabled = false,
+		isSecondary = false,
+		isWarning = false,
+		type = 'button',
+		...rest
+	} = $props<{
+		isDelayed?: boolean;
+		isDisabled?: boolean;
+		isSecondary?: boolean;
+		isWarning?: boolean;
+		type?: 'button' | 'submit' | 'reset';
+		[value: string]: any;
+	}>();
 </script>
 
 <button
@@ -30,7 +39,7 @@
 	class:pl-4={isDelayed}
 	class:pr-12={isDelayed}
 	disabled={isDisabled || isDelayed}
-	on:click={handleClick}
+	{...rest}
 	{type}
 >
 	<slot />

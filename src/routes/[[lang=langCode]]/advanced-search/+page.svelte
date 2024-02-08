@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Spinner from '$lib/atoms/spinners/FullScreen.svelte';
-	import layoutStore from '$lib/templates/Main/store';
+	import navigation from '$lib/templates/Main/navigation.svelte';
 	import type AdvancedSearchData from './AdvancedSearchData.d';
 	// import Form from './Form.svelte';
 	// import Results from './Results.svelte';
@@ -17,7 +17,7 @@
 	};
 
 	onMount(async () => {
-		layoutStore.closeSearchBar();
+		navigation.closeSearchBar();
 
 		const params = new URLSearchParams(location.search);
 		initialValues.brands = params.get('brands')?.split(',') ?? null;

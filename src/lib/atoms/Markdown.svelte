@@ -1,11 +1,10 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
 
-	export let style: string = '';
-	export let value: string;
+	const { style = '', value, ...rest } = $props<{ style: string; value?: string }>();
 </script>
 
-<span {style} {...$$restProps}>
+<span {style} {...rest}>
 	<SvelteMarkdown source={value} isInline />
 </span>
 

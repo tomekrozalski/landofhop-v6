@@ -2,21 +2,21 @@
 	import Fa from 'svelte-fa';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import { faMagnifyingGlass, faXmark } from '@fortawesome/pro-light-svg-icons';
-	import layoutStore from '$lib/templates/Main/store';
+	import navigation from '$lib/templates/Main/navigation.svelte';
 	import SearchInput from './SearchInput.svelte';
 </script>
 
 <div
-	class:right-0={$layoutStore.isSearchbarActive}
+	class:right-0={navigation.isSearchbarActive}
 	class="searchbar absolute top-0 flex h-full w-full bg-black transition-all"
 >
-	{#if $layoutStore.isSearchbarActive}
+	{#if navigation.isSearchbarActive}
 		<SearchInput />
 	{/if}
-	{#if $layoutStore.isSearchbarActive}
+	{#if navigation.isSearchbarActive}
 		<button
 			aria-label={$LL.header.closeSearchbar()}
-			on:click={layoutStore.closeSearchBar}
+			on:click={navigation.closeSearchBar}
 			class="group absolute right-0 top-0 h-16 w-16 text-xs
 			focus-visible:border-2 focus-visible:border-black focus-visible:bg-white focus-visible:outline-none
 			md:h-20 md:w-20 md:text-sm lg:h-28 lg:w-28 lg:text-base"
@@ -31,7 +31,7 @@
 	{:else}
 		<button
 			aria-label={$LL.header.openSearchbar()}
-			on:click={layoutStore.openSearchBar}
+			on:click={navigation.openSearchBar}
 			class="group absolute right-0 top-0 h-16 w-16 text-xs
 			focus-visible:border-2 focus-visible:border-black focus-visible:bg-white focus-visible:outline-none
 			md:h-20 md:w-20 md:text-sm lg:h-28 lg:w-28 lg:text-base"

@@ -31,7 +31,7 @@
 </script>
 
 {#if adminData?.ratings}
-	<Button handleClick={updateBeverageRatings} isDelayed={isLoading}>
+	<Button isDelayed={isLoading} onclick={updateBeverageRatings}>
 		{$LL.pages.details.adminBar.updateRating()}
 	</Button>
 {/if}

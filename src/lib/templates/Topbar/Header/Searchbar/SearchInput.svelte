@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import { goto, preloadData, pushState } from '$app/navigation';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import layoutStore from '$lib/templates/Main/store';
+	import navigation from '$lib/templates/Main/navigation.svelte';
 
 	const focusOnMount = (input: HTMLInputElement) => {
 		input.focus();
@@ -20,7 +20,7 @@
 				goto(href);
 			}
 
-			layoutStore.moveSearchHistory();
+			navigation.moveSearchHistory();
 		}
 	}, 500);
 
@@ -35,7 +35,7 @@
 	type="text"
 	use:focusOnMount
 	on:input={onInput}
-	on:blur={layoutStore.closeSearchBar}
+	on:blur={navigation.closeSearchBar}
 	transition:fade={{ duration: 200 }}
 	placeholder={$LL.header.search()}
 	class="search-input border-b-2 border-b-black bg-transparent px-4 uppercase text-white focus:outline-none md:text-3xl lg:my-6 lg:border-b-white"

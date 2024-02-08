@@ -8,9 +8,9 @@
 	import AdvancedSearchLink from './AdvancedSearchLink.svelte';
 	import Total from './Total.svelte';
 
-	export let data: { beverages: Basics[]; total: number };
-	$: ({ beverages, total } = data);
-	$: order = parseInt($page.params.page ?? 1);
+	const { data } = $props<{ data: { beverages: Basics[]; total: number } }>();
+	const { beverages, total } = $derived(data);
+	const order = $derived(parseInt($page.params.page ?? 1));
 </script>
 
 <AdvancedSearchLink />

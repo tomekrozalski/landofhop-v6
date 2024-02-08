@@ -9,8 +9,7 @@
 		phrase: string;
 	};
 
-	export let next: BreadcrumgsTypes | undefined = undefined;
-	export let previous: BreadcrumgsTypes | undefined = undefined;
+	const { next, previous } = $props<{ next?: BreadcrumgsTypes; previous?: BreadcrumgsTypes }>();
 </script>
 
 <nav class="md:pb-23 container flex justify-between gap-5 px-3 pb-10">
