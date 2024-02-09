@@ -2,8 +2,7 @@
 	import Fa from 'svelte-fa';
 	import { faCaretLeft, faCaretRight } from '@fortawesome/pro-solid-svg-icons';
 
-	export let label: string | undefined = undefined;
-	export let name: string;
+	const { label, name } = $props<{ label?: string; name: string }>();
 </script>
 
 <li class="m-1 mx-3 w-full sm:m-1 sm:w-auto">

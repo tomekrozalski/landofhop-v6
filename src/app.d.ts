@@ -14,14 +14,6 @@ declare global {
 		}
 		// interface PageData {}
 		// interface Platform {}
-		interface PageState {
-			selected: {
-				authenticated: boolean;
-				beverages: Basics[];
-				locale: Locales;
-				total: number;
-			};
-		}
 	}
 }
 

@@ -5,11 +5,9 @@
 	import InactiveElement from './InactiveElement.svelte';
 	import getElements from './getElements';
 
-	export let order: number;
-	export let total: number;
-
+	const { order, total } = $props<{ order: number; total: number }>();
 	let pagesCount = Math.ceil(total / MAX_BEVERAGES_ON_PAGE);
-	$: pages = getElements(order, total);
+	const pages = $derived(getElements(order, total));
 </script>
 
 <ul class="container my-16 flex flex-wrap justify-center xl:mb-20 xl:mt-32">

@@ -3,15 +3,25 @@
 	import { faCaretLeft, faCaretRight } from '@fortawesome/pro-solid-svg-icons';
 	import { page } from '$app/stores';
 
-	export let isCurrent: boolean = false;
-	export let label: string | undefined = undefined;
-	export let name: string;
-	export let pageNumber: number;
+	const {
+		isCurrent = false,
+		label = '',
+		name,
+		pageNumber,
+		...rest
+	} = $props<{
+		isCurrent?: boolean;
+		label?: string;
+		name: string;
+		pageNumber: number;
+		[key: string]: any;
+	}>();
 
-	$: href =
+	const href = $derived(
 		pageNumber === 1
 			? '/search/' + $page.params.phrase
-			: '/search/' + $page.params.phrase + '/' + pageNumber;
+			: '/search/' + $page.params.phrase + '/' + pageNumber
+	);
 </script>
 
 <li class="m-1 mx-3 w-full sm:m-1 sm:w-auto">
@@ -29,7 +39,7 @@
 		class:text-white={isCurrent}
 		class:text-black={!isCurrent}
 		{href}
-		{...$$restProps}
+		{...rest}
 		aria-label={label}
 	>
 		{#if name === 'previous'}

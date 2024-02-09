@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import { MAX_BEVERAGES_ON_PAGE } from '$lib/utils/constants';
+	import { faLoveseat } from '@fortawesome/pro-solid-svg-icons';
 
-	export let currentPage: number;
-	export let inline: boolean = false;
-	export let total: number;
+	const {
+		currentPage,
+		inline = faLoveseat,
+		total
+	} = $props<{ currentPage: number; inline?: boolean; total: number }>();
 	let pages = Math.ceil(total / MAX_BEVERAGES_ON_PAGE);
 </script>
 

@@ -5,9 +5,9 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import navigation from '$lib/templates/Main/navigation.svelte';
 
-	const focusOnMount = (input: HTMLInputElement) => {
+	function focusOnMount(input: HTMLInputElement) {
 		input.focus();
-	};
+	}
 
 	const getDebouncedValue = debounce(async (value) => {
 		if (value) {
@@ -24,11 +24,11 @@
 		}
 	}, 500);
 
-	const onInput = async (e: Event) => {
+	async function onInput(e: Event) {
 		const value = (e.target as HTMLInputElement).value;
 
 		getDebouncedValue(value);
-	};
+	}
 </script>
 
 <input

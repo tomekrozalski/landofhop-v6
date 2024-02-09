@@ -4,17 +4,16 @@
 	import type { Locales } from '$lib/i18n/i18n-types';
 	import { invalidateAll } from '$app/navigation';
 
-	export let lang: Locales;
-	export let link: string;
+	const { lang, link } = $props<{ lang: Locales; link: string }>();
 
-	const changeHtmlLangAttribute = async () => {
+	async function changeHtmlLangAttribute() {
 		await invalidateAll();
 		await loadLocaleAsync(lang);
 		setLocale(lang);
 
 		const html = document.querySelector('html') as HTMLHtmlElement;
 		html.setAttribute('lang', lang);
-	};
+	}
 </script>
 
 <li class="flex">
