@@ -1,11 +1,11 @@
 <script lang="ts">
-	import SvelteMarkdown from 'svelte-markdown';
+	import snarkdown from 'snarkdown';
 
-	const { style = '', value, ...rest } = $props<{ style: string; value?: string }>();
+	const { style = '', value, ...rest } = $props<{ style?: string; value: string }>();
 </script>
 
 <span {style} {...rest}>
-	<SvelteMarkdown source={value} isInline />
+	{@html snarkdown(value)}
 </span>
 
 <style>

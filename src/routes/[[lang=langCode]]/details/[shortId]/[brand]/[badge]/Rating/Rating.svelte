@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Confetti } from 'svelte-confetti';
+	import { onMount } from 'svelte';
+	import { ConfettiBurst } from 'svelte-canvas-confetti';
 	import { tweened } from 'svelte/motion';
 	import LL from '$lib/i18n/i18n-svelte';
 	import { afterNavigate } from '$app/navigation';
@@ -7,10 +8,18 @@
 	import RatingDetails from './RatingDetails.svelte';
 	import Stars from './Stars.svelte';
 
-	$: ({ ratings, shortId } = $page.data.details);
-	let isDetailsOpened = false;
+	let { ratings, shortId } = $derived($page.data.details);
+	let isDetailsOpened = $state(false);
+	let position = $state<[number, number]>([0, 0]);
+	let headerRef = $state<HTMLHeadElement>();
 
 	const ratingStore = tweened<number>(0);
+
+	onMount(() => {
+		console.log('headerRef!.getBoundingClientRect', headerRef!.getBoundingClientRect());
+		const { height, left, top, width } = headerRef!.getBoundingClientRect();
+		position = [left + width / 2, top + height / 2];
+	});
 
 	afterNavigate(() => {
 		ratingStore.set(ratings.total.value, { duration: $ratingStore ? 400 : 0 });
@@ -19,13 +28,14 @@
 
 <section>
 	<header
+		bind:this={headerRef}
 		class:cursor-pointer={!isDetailsOpened}
 		class="group relative flex flex-col items-center rounded-t bg-green px-3 pb-5 pt-3 text-center text-white"
 	>
 		<h3 class="mb-3 text-base">{$LL.pages.details.ratings.title()}</h3>
-		{#if ratings.total.value >= 4}
+		{#if ratings.total.value >= 4 && position[0] && position[1]}
 			{#key shortId}
-				<Confetti />
+				<ConfettiBurst origin={position} />
 			{/key}
 		{/if}
 		<Stars {isDetailsOpened} score={$ratingStore || ratings.total.value} />
