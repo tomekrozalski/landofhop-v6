@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
 
-	export let innerWidth: number;
-	export let yScale: any;
+	const { innerWidth, yScale } = $props<{ innerWidth: number; yScale: any }>();
 </script>
 
 <g>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let value: number;
+	const { value } = $props<{ value: number }>();
 </script>
 
 <li class="h-6 w-6">

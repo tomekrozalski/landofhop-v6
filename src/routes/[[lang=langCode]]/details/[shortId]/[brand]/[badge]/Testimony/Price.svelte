@@ -8,7 +8,7 @@
 	import Editorial from './atoms/Editorial.svelte';
 	import FormattedList from '$lib/atoms/FormattedList.svelte';
 
-	$: ({ price } = $page.data.details);
+	const { price } = $derived($page.data.details);
 </script>
 
 {#if price}

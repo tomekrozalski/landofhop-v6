@@ -4,7 +4,7 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import { page } from '$app/stores';
 
-	$: ({ next, previous } = $page.data);
+	const { next, previous } = $derived($page.data);
 </script>
 
 <nav

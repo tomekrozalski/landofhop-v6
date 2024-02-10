@@ -16,7 +16,6 @@
 	const ratingStore = tweened<number>(0);
 
 	onMount(() => {
-		console.log('headerRef!.getBoundingClientRect', headerRef!.getBoundingClientRect());
 		const { height, left, top, width } = headerRef!.getBoundingClientRect();
 		position = [left + width / 2, top + height / 2];
 	});

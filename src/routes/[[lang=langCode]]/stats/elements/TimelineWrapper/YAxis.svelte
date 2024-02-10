@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
 
-	export let innerWidth: number;
-	export let yScale: any;
-	export let ticks: number;
-
+	const { innerWidth, yScale, ticks } = $props<{
+		innerWidth: number;
+		yScale: any;
+		ticks: number;
+	}>();
 	const formattedTicks = yScale.ticks(ticks).filter((tick: number) => Number.isInteger(tick));
 </script>
 

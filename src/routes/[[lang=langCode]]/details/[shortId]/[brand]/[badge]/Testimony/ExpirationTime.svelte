@@ -7,10 +7,11 @@
 	import Producer from './atoms/Producer.svelte';
 	import type { ExpirationDateUnit } from '$lib/db/enums/Beverage.enum';
 
-	$: ({ expirationDate } = $page.data.details);
+	const { expirationDate } = $derived($page.data.details);
 
-	const getTime = (time: { value: number; unit: ExpirationDateUnit }) =>
-		$LL.time[time.unit](time.value);
+	function getTime(time: { value: number; unit: ExpirationDateUnit }) {
+		return $LL.time[time.unit](time.value);
+	}
 </script>
 
 {#if expirationDate}

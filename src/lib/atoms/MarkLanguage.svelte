@@ -15,6 +15,7 @@
 		name: LanguageValue;
 		producer?: boolean;
 		tag: string;
+		[value: string]: unknown;
 	}>();
 
 	const isLabeled = $derived(editorial || label || producer);

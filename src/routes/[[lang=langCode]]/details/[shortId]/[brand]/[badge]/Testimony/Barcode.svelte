@@ -5,7 +5,7 @@
 	import DT from './atoms/DescriptionTerm.svelte';
 	import Label from './atoms/Label.svelte';
 
-	$: ({ barcode } = $page.data.details);
+	const { barcode } = $derived($page.data.details);
 </script>
 
 {#if barcode}

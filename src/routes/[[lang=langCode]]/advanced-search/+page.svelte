@@ -4,17 +4,15 @@
 	import Spinner from '$lib/atoms/spinners/FullScreen.svelte';
 	import navigation from '$lib/templates/Main/navigation.svelte';
 	import type AdvancedSearchData from './AdvancedSearchData.d';
-	// import Form from './Form.svelte';
-	// import Results from './Results.svelte';
 
-	let mounted = false;
-	let initialValues: AdvancedSearchData = {
+	let mounted = $state(false);
+	let initialValues: AdvancedSearchData = $state({
 		brands: null,
 		ingredientTags: null,
 		name: null,
 		page: null,
 		styleTags: null
-	};
+	});
 
 	onMount(async () => {
 		navigation.closeSearchBar();

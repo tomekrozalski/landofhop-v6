@@ -7,16 +7,16 @@
 	const pathWebpRegular = `${basicPath}/container/webp/1x/01.webp`;
 	const pathWebpLarge = `${basicPath}/container/webp/2x/01.webp`;
 
-	export let loaded: boolean;
+	let { loaded } = $props<{ loaded: boolean }>();
 
-	const loadListener = (image: HTMLImageElement) => {
+	function loadListener(image: HTMLImageElement) {
 		image.onload = () => {
 			loaded = true;
 		};
 
 		image.srcset = image.dataset.srcset as string;
 		image.src = image.dataset.src as string;
-	};
+	}
 </script>
 
 <img

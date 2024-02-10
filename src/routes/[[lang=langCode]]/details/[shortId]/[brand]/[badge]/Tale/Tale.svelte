@@ -3,7 +3,7 @@
 	import Markdown from '$lib/atoms/Markdown.svelte';
 	import Article from './Article.svelte';
 
-	$: ({ tale } = $page.data.details);
+	const { tale } = $derived($page.data.details);
 </script>
 
 {#if tale}

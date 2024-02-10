@@ -7,16 +7,23 @@
 	import Xaxis from './XAxis.svelte';
 	import Yaxis from './YAxis.svelte';
 
-	export let highestValue = 10;
-	export let startDate: YearMonth = {
-		month: 6,
-		year: 2017
-	};
-	export let finishDate: YearMonth = {
-		month: Number(format(new Date(), 'MM')),
-		year: Number(format(new Date(), 'yyyy'))
-	};
-	export let sizes: Sizes;
+	const {
+		highestValue = 10,
+		startDate = {
+			month: 6,
+			year: 2017
+		},
+		finishDate = {
+			month: Number(format(new Date(), 'MM')),
+			year: Number(format(new Date(), 'yyyy'))
+		},
+		sizes
+	} = $props<{
+		highestValue?: number;
+		startDate?: YearMonth;
+		finishDate?: YearMonth;
+		sizes: Sizes;
+	}>();
 
 	const { height, margin, width } = sizes;
 	const innerWidth = width - margin.left - margin.right;

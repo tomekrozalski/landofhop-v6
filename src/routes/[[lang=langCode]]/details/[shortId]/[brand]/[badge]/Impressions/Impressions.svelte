@@ -6,9 +6,13 @@
 	import DT from './atoms/DescriptionTerm.svelte';
 	import type { Clarity } from '$lib/db/enums/Beverage.enum';
 
-	$: ({ bitterness, clarity, color, fullness, hoppyness, power, sweetness } = $page.data.details);
+	const { bitterness, clarity, color, fullness, hoppyness, power, sweetness } = $derived(
+		$page.data.details
+	);
 
-	const getClarity = (value: Clarity) => $LL.pages.details.impressions.clarity[value]();
+	function getClarity(value: Clarity) {
+		return $LL.pages.details.impressions.clarity[value]();
+	}
 </script>
 
 {#if bitterness || clarity || color || fullness || hoppyness || power || sweetness}

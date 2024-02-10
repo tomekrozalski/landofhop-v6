@@ -10,12 +10,19 @@
 		ContainerType
 	} from '$lib/db/enums/Beverage.enum';
 
-	$: ({ type, material, color, value, unit } = $page.data.details.container);
+	const { type, material, color, value, unit } = $derived($page.data.details.container);
 
-	const getType = (type: ContainerType) => $LL.pages.details.testimony.container.type[type]();
-	const getMaterial = (material: ContainerMaterial) =>
-		$LL.pages.details.testimony.container.material[material]();
-	const getColor = (color: ContainerColor) => $LL.pages.details.testimony.container.color[color]();
+	function getType(type: ContainerType) {
+		return $LL.pages.details.testimony.container.type[type]();
+	}
+
+	function getMaterial(material: ContainerMaterial) {
+		return $LL.pages.details.testimony.container.material[material]();
+	}
+
+	function getColor(color: ContainerColor) {
+		return $LL.pages.details.testimony.container.color[color]();
+	}
 </script>
 
 <DT>

@@ -8,7 +8,7 @@
 	import Producer from './atoms/Producer.svelte';
 	import Editorial from './atoms/Editorial.svelte';
 
-	$: ({ nitrogen } = $page.data.details);
+	const { nitrogen } = $derived($page.data.details);
 </script>
 
 {#if nitrogen}

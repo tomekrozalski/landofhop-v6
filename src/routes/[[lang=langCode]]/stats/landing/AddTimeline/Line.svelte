@@ -3,22 +3,32 @@
 	import { curveBasis, line } from 'd3-shape';
 	import type { AddTimelineBar } from '../utils/normalizers/Output.d';
 
-	export let addTimelineData: AddTimelineBar[];
-	export let isBarSelected: boolean = false;
-	export let selectedLine: 'bottles' | 'cans' | 'total' | null;
-	export let xScale: any;
-	export let xValue: (value: AddTimelineBar) => string;
-	export let yScale: any;
+	let {
+		addTimelineData,
+		isBarSelected = false,
+		selectedLine,
+		xScale,
+		xValue,
+		yScale
+	} = $props<{
+		addTimelineData: AddTimelineBar[];
+		isBarSelected: boolean;
+		selectedLine: 'bottles' | 'cans' | 'total' | null;
+		xScale: any;
+		xValue: (value: AddTimelineBar) => string;
+		yScale: any;
+	}>();
 
 	const bottles = (d: AddTimelineBar) => d.bottle;
 	const cans = (d: AddTimelineBar) => d.can;
 	const total = (d: AddTimelineBar) => d.bottle + d.can;
 
-	const linePath = (type: any) =>
-		line<AddTimelineBar>()
+	function linePath(type: any) {
+		return line<AddTimelineBar>()
 			.x((d: any) => xScale(xValue(d)) || 0)
 			.y((d: any) => yScale(type(d)))
 			.curve(curveBasis);
+	}
 </script>
 
 <g

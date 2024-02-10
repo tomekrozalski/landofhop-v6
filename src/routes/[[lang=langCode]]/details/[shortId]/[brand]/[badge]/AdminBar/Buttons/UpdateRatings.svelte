@@ -5,9 +5,9 @@
 	import Button from '$lib/atoms/forms/Button.svelte';
 	import type { AdminData } from '../../utils/types/AdminData.d';
 
-	export let adminData: AdminData | null;
-	let isLoading = false;
-	$: ({ badge, brand, shortId } = $page.data.details);
+	const { adminData } = $props<{ adminData: AdminData | null }>();
+	let isLoading = $state(false);
+	const { badge, brand, shortId } = $derived($page.data.details);
 
 	const updateBeverageRatings = async () => {
 		if (adminData?.ratings) {

@@ -43,8 +43,8 @@
 
 	const yScale = scaleLinear().domain([0, highestValue]).range([innerHeight, 0]);
 
-	let isBarSelected = false;
-	let selectedLine: 'bottles' | 'cans' | 'total' | null = null;
+	let isBarSelected = $state(false);
+	let selectedLine = $state<'bottles' | 'cans' | 'total' | null>(null);
 </script>
 
 <h2 class="mx-5 mb-5 mt-10 border-b border-gray-200 pb-2 text-xl font-bold lg:mx-0">
@@ -60,7 +60,7 @@
 		{xValue}
 		{yScale}
 		{selectedLine}
-		bind:isBarSelected
+		isBarSelected
 	/>
 	{#if intersecting}
 		<Line {addTimelineData} {xScale} {xValue} {yScale} bind:selectedLine {isBarSelected} />

@@ -2,12 +2,14 @@
 	import type { AlcoholChartBar } from '../utils/normalizers/Output.d';
 	import Info from './Info.svelte';
 
-	export let alcoholChartData: AlcoholChartBar[];
-	export let innerHeight: number;
-	export let xScale: any;
-	export let xValue: (value: AlcoholChartBar) => string;
-	export let yScale: any;
-	export let yValue: (value: AlcoholChartBar) => number;
+	const { alcoholChartData, innerHeight, xScale, xValue, yScale, yValue } = $props<{
+		alcoholChartData: AlcoholChartBar[];
+		innerHeight: number;
+		xScale: any;
+		xValue: (value: AlcoholChartBar) => string;
+		yScale: any;
+		yValue: (value: AlcoholChartBar) => number;
+	}>();
 
 	const filteredData: AlcoholChartBar[] = alcoholChartData.filter(({ beverages }) => beverages);
 
@@ -19,29 +21,31 @@
 	const totalAlcoholWithoutNonAlcoholicBeverages = filteredData
 		.filter(({ value }) => value > 0.5)
 		.reduce((acc, curr) => acc + curr.beverages * curr.value, 0);
-
 	const average = +(totalAlcohol / totalBeverages).toPrecision(2);
 	const averageWithoutNonAlcoholicBeverages = +(
 		totalAlcoholWithoutNonAlcoholicBeverages / alcoholicBeverages
 	).toPrecision(2);
 
-	let isBarLabelVisible = false;
-	let activeBar: AlcoholChartBar;
+	let isBarLabelVisible = $state(false);
+	let activeBar = $state<AlcoholChartBar>();
 
-	const showLabel = (e: Event) => {
+	function showLabel(e: Event) {
 		isBarLabelVisible = true;
 		const index = Number((e.target as SVGElement).dataset.index);
 		activeBar = filteredData[index];
-	};
+	}
 
-	const hideLabel = () => {
+	function hideLabel() {
 		isBarLabelVisible = false;
-	};
+	}
 
-	const setHorintalPosition = (bar: AlcoholChartBar) =>
-		xScale(xValue(bar) || '') - xScale.bandwidth() / 2;
+	function setHorintalPosition(bar: AlcoholChartBar) {
+		return xScale(xValue(bar) || '') - xScale.bandwidth() / 2;
+	}
 
-	const setVerticalPosition = (bar: AlcoholChartBar) => yScale(yValue(bar));
+	function setVerticalPosition(bar: AlcoholChartBar) {
+		return yScale(yValue(bar));
+	}
 </script>
 
 <g>
@@ -62,7 +66,7 @@
 		/>
 	{/each}
 </g>
-{#if isBarLabelVisible}
+{#if isBarLabelVisible && activeBar}
 	<Info
 		average={activeBar.value === average}
 		averageWithoutNonAlcoholicBeverages={activeBar.value === averageWithoutNonAlcoholicBeverages}

@@ -8,9 +8,11 @@
 	import Editorial from './atoms/Editorial.svelte';
 	import type { AlcoholScope } from '$lib/db/enums/Beverage.enum';
 
-	$: ({ alcohol } = $page.data.details);
+	const { alcohol } = $derived($page.data.details);
 
-	const getScopeValue = (value: AlcoholScope) => $LL.pages.details.testimony.alcoholScope[value]();
+	function getScopeValue(value: AlcoholScope) {
+		return $LL.pages.details.testimony.alcoholScope[value]();
+	}
 </script>
 
 {#if alcohol}

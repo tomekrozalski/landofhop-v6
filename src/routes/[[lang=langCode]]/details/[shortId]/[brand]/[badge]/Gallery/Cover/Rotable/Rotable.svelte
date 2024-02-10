@@ -1,22 +1,20 @@
 <script lang="ts">
 	import { tweened } from 'svelte/motion';
-	import type { Tweened } from 'svelte/motion';
 	import { sineInOut } from 'svelte/easing';
-	import { derived, writable } from 'svelte/store';
-	import type { Writable } from 'svelte/store';
 	import { page } from '$app/stores';
 	import Group from './Group.svelte';
 	import RotableIcon from './RotableIcon.svelte';
 	import RotableSpinner from './RotableSpinner.svelte';
 
-	let areImagesLoaded = false;
-	let isRotable = false;
-	let dragData = {
+	let areImagesLoaded = $state(false);
+	let isRotable = $state(false);
+	let dragData = $state({
 		beforeXPosition: 0,
 		currentXPosition: 0
-	};
+	});
+	let selectedImage = $state<number>(0);
 
-	$: imagesInGallery = $page.data.details.photos.gallery;
+	const imagesInGallery = $derived($page.data.details.photos.gallery);
 
 	const point = tweened<number>(1, {
 		delay: 1500,
@@ -24,26 +22,27 @@
 		easing: sineInOut
 	});
 
-	const selectedImage = writable<number>(0);
+	const actualImage = $derived<number>(Math.round(($point + selectedImage) % imagesInGallery) + 1);
 
-	const actualImage = derived<[Tweened<number>, Writable<number>], number>(
-		[point, selectedImage],
-		([$point, $selectedImage]) => Math.round(($point + $selectedImage) % imagesInGallery) + 1
-	);
+	$effect(() => {
+		if (areImagesLoaded) {
+			point.set(imagesInGallery);
+		}
+	});
 
-	const turnLeft = () => {
-		selectedImage.update((index) => (index - 1 === 0 ? imagesInGallery : index - 1));
-	};
+	function turnLeft() {
+		selectedImage = selectedImage - 1 === 0 ? imagesInGallery : selectedImage - 1;
+	}
 
-	const turnRight = () => {
-		selectedImage.update((index) => (index + 1 > imagesInGallery ? 1 : index + 1));
-	};
+	function turnRight() {
+		selectedImage = selectedImage + 1 > imagesInGallery ? 1 : selectedImage + 1;
+	}
 
-	const onWheelMove = (e: WheelEvent) => {
+	function onWheelMove(e: WheelEvent) {
 		e.deltaY > 1 ? turnRight() : turnLeft();
-	};
+	}
 
-	const onMove = (e: MouseEvent) => {
+	function onMove(e: MouseEvent) {
 		if (isRotable && e.clientX !== dragData.currentXPosition) {
 			dragData.beforeXPosition = dragData.currentXPosition;
 			dragData.currentXPosition = e.clientX;
@@ -54,10 +53,6 @@
 				turnLeft();
 			}
 		}
-	};
-
-	$: if (areImagesLoaded) {
-		point.set(imagesInGallery);
 	}
 </script>
 
@@ -74,5 +69,5 @@
 	{:else}
 		<RotableSpinner />
 	{/if}
-	<Group image={$actualImage} bind:areImagesLoaded />
+	<Group image={actualImage} bind:areImagesLoaded />
 </div>

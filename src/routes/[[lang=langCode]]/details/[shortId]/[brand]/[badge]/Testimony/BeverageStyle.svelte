@@ -6,7 +6,7 @@
 	import FormattedList from '$lib/atoms/FormattedList.svelte';
 	import MarkLanguage from '$lib/atoms/MarkLanguage.svelte';
 
-	$: ({ style } = $page.data.details);
+	const { style } = $derived($page.data.details);
 </script>
 
 {#if style}

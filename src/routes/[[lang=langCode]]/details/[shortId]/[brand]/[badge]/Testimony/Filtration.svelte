@@ -8,7 +8,7 @@
 	import Producer from './atoms/Producer.svelte';
 	import Editorial from './atoms/Editorial.svelte';
 
-	$: ({ filtration } = $page.data.details);
+	const { filtration } = $derived($page.data.details);
 </script>
 
 {#if filtration}

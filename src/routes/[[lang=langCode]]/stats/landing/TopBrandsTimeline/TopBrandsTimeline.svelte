@@ -45,7 +45,7 @@
 		.domain([0, highestValue + 3])
 		.range([innerHeight, 0]);
 
-	let selectedBrand: string | null = null;
+	let selectedBrand = $state<string | null>(null);
 </script>
 
 <h2 class="mx-5 mb-5 mt-10 border-b border-gray-200 pb-2 text-xl font-bold lg:mx-0">

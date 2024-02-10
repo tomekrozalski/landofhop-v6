@@ -1,11 +1,11 @@
 <script lang="ts">
-	export let tag: string = 'em';
+	const { tag = 'em', ...rest } = $props<{ tag?: string; [value: string]: unknown }>();
 </script>
 
 <svelte:element
 	this={tag}
-	class="-underline-offset-2 skip-ink-none font-medium underline decoration-green-light decoration-8"
-	{...$$props}
+	class="skip-ink-none font-medium underline decoration-green-light decoration-8 -underline-offset-2"
+	{...rest}
 >
 	<slot />
 </svelte:element>

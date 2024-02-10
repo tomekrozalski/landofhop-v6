@@ -1,7 +1,7 @@
 <script lang="ts">
 	import LL from '$lib/i18n/i18n-svelte';
-	export let updated: string;
 
+	const { updated } = $props<{ updated: string }>();
 	const lastTimeUpdated = $LL.pages.details.adminBar.lastTimeUpdated();
 </script>
 

@@ -7,7 +7,7 @@
 	import Label from './atoms/Label.svelte';
 	import Producer from './atoms/Producer.svelte';
 
-	$: ({ smokedMalt } = $page.data.details);
+	const { smokedMalt } = $derived($page.data.details);
 </script>
 
 {#if smokedMalt}

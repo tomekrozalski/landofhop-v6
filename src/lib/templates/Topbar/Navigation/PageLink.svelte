@@ -1,8 +1,10 @@
 <script lang="ts">
-	export let classNames: string = '';
-	export let link: string;
-	export let label: string;
-	export let underlined: boolean = false;
+	const {
+		classNames = '',
+		link,
+		label,
+		underlined = false
+	} = $props<{ classNames?: string; link: string; label: string; underlined?: boolean }>();
 </script>
 
 <li class="flex">

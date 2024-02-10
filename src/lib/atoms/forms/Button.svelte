@@ -15,7 +15,7 @@
 		isSecondary?: boolean;
 		isWarning?: boolean;
 		type?: 'button' | 'submit' | 'reset';
-		[value: string]: any;
+		[value: string]: unknown;
 	}>();
 </script>
 

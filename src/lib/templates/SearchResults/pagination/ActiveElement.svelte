@@ -14,7 +14,7 @@
 		label?: string;
 		name: string;
 		pageNumber: number;
-		[key: string]: any;
+		[value: string]: unknown;
 	}>();
 
 	const href = $derived(

@@ -5,7 +5,7 @@
 	import DT from './atoms/DescriptionTerm.svelte';
 	import MarkLanguage from '$lib/atoms/MarkLanguage.svelte';
 
-	$: ({ place } = $page.data.details);
+	const { place } = $derived($page.data.details);
 </script>
 
 {#if place}

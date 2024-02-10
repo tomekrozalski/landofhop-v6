@@ -2,8 +2,10 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import type { AddTimelineBar } from '../utils/normalizers/Output.d';
 
-	export let addTimelineData: AddTimelineBar[];
-	export let selectedLine: 'bottles' | 'cans' | 'total' | null;
+	let { addTimelineData, selectedLine } = $props<{
+		addTimelineData: AddTimelineBar[];
+		selectedLine: 'bottles' | 'cans' | 'total' | null;
+	}>();
 </script>
 
 <ul class="mr-8 mt-4 flex justify-end">

@@ -4,30 +4,42 @@
 	import pl from 'date-fns/locale/pl/index.js';
 	import type { AddTimelineBar } from '../utils/normalizers/Output.d';
 
-	export let addTimelineData: AddTimelineBar[];
-	export let isBarSelected: boolean = false;
-	export let innerHeight: number;
-	export let innerWidth: number;
-	export let selectedLine: 'bottles' | 'cans' | 'total' | null;
-	export let xScale: any;
-	export let xValue: (value: AddTimelineBar) => string;
-	export let yScale: any;
+	let {
+		addTimelineData,
+		isBarSelected = false,
+		innerHeight,
+		innerWidth,
+		selectedLine,
+		xScale,
+		xValue,
+		yScale
+	} = $props<{
+		addTimelineData: AddTimelineBar[];
+		isBarSelected?: boolean;
+		innerHeight: number;
+		innerWidth: number;
+		selectedLine: 'bottles' | 'cans' | 'total' | null;
+		xScale: any;
+		xValue: (value: AddTimelineBar) => string;
+		yScale: any;
+	}>();
 
 	const bottles = (d: AddTimelineBar) => d.bottle;
 	const cans = (d: AddTimelineBar) => d.can;
 	const total = (d: AddTimelineBar) => d.bottle + d.can;
 
-	let info: AddTimelineBar | null = null;
+	let info = $state<string>();
 
-	const showInfo = (bar: AddTimelineBar) => {
-		info = { ...bar, date: format(new Date(bar.date), 'LLLL yyyy', { locale: pl }) };
+	function showInfo(bar: AddTimelineBar) {
+		const date = format(new Date(bar.date), 'LLLL yyyy', { locale: pl });
+		info = $LL.pages.stats.landing.addTimeline.depiction({ ...bar, date });
 		isBarSelected = true;
-	};
+	}
 
-	const hideInfo = () => {
-		info = null;
+	function hideInfo() {
+		info = '';
 		isBarSelected = false;
-	};
+	}
 </script>
 
 <g class="opacity-100" class:opacity-30={!!selectedLine}>
@@ -54,7 +66,7 @@
 	{/each}
 	{#if info}
 		<text x={innerWidth / 2} y="-10" text-anchor="middle">
-			{$LL.pages.stats.landing.addTimeline.depiction(info)}
+			{info}
 		</text>
 	{/if}
 </g>

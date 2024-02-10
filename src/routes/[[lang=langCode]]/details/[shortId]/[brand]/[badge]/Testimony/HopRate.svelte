@@ -6,7 +6,7 @@
 	import Label from './atoms/Label.svelte';
 	import Producer from './atoms/Producer.svelte';
 
-	$: ({ hopRate } = $page.data.details);
+	const { hopRate } = $derived($page.data.details);
 </script>
 
 {#if hopRate}

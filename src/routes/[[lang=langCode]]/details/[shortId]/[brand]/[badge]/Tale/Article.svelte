@@ -2,7 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import LL from '$lib/i18n/i18n-svelte';
 
-	let isCollapsed: boolean = false;
+	let isCollapsed = $state(false);
 </script>
 
 {#if isCollapsed}

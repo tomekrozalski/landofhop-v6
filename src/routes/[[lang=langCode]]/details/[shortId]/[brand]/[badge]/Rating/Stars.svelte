@@ -1,16 +1,16 @@
 <script lang="ts">
 	import StarElement from './StarElement.svelte';
 
-	export let isDetailsOpened: boolean;
-	export let score: number;
+	const { isDetailsOpened, score } = $props<{ isDetailsOpened: boolean; score: number }>();
+	const valuesArray = $derived(
+		new Array(5).fill(0).map((_, index) => {
+			if (score > index && score < index + 1) {
+				return Number((score - index).toFixed(5));
+			}
 
-	$: valuesArray = new Array(5).fill(0).map((_, index) => {
-		if (score > index && score < index + 1) {
-			return Number((score - index).toFixed(5));
-		}
-
-		return score >= index + 1 ? 1 : 0;
-	});
+			return score >= index + 1 ? 1 : 0;
+		})
+	);
 </script>
 
 <strong

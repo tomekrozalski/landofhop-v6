@@ -5,14 +5,15 @@
 	import pl from 'date-fns/locale/pl/index.js';
 	import type { Brand, TopBrandsTimelineBar } from '../utils/normalizers/Output.d';
 
-	export let selectedBrand: string | null;
-	export let topBrandsTimelineData: TopBrandsTimelineBar[];
-	export let xScale: any;
-	export let yScale: any;
+	let { selectedBrand, topBrandsTimelineData, xScale, yScale } = $props<{
+		selectedBrand: string | null;
+		topBrandsTimelineData: TopBrandsTimelineBar[];
+		xScale: any;
+		yScale: any;
+	}>();
+	let selectedDate = $state<string | null>();
 
-	let selectedDate: string | null;
-
-	const getSelectedDateVelue = () => {
+	function getSelectedDateVelue() {
 		const selectedDateData = topBrandsTimelineData.find(
 			({ date }) => date === selectedDate
 		) as TopBrandsTimelineBar;
@@ -21,7 +22,7 @@
 		) as Brand;
 
 		return selectedDateBrand.amount;
-	};
+	}
 </script>
 
 <g style="transform: translate({Math.round(xScale.bandwidth() / 2)}px, 0">

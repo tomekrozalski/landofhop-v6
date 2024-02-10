@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let last: boolean;
+	const { last } = $props<{ last: boolean }>();
 </script>
 
 <li

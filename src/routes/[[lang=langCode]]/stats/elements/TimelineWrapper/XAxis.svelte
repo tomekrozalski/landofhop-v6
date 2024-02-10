@@ -1,6 +1,5 @@
 <script lang="ts">
-	export let innerHeight: number;
-	export let xScale: any;
+	const { innerHeight, xScale } = $props<{ innerHeight: number; xScale: any }>();
 
 	const xScaleTicks: string[] = xScale.domain();
 	const yearTicks = xScaleTicks.filter(

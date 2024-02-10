@@ -5,10 +5,9 @@
 	import { page } from '$app/stores';
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 
-	$: ({ badge, brand, photos, shortId } = $page.data.details);
-	$: basicPath = `${PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}`;
-
-	let isOpened = false;
+	const { badge, brand, photos, shortId } = $derived($page.data.details);
+	const basicPath = $derived(`${PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}`);
+	let isOpened = $state(false);
 
 	afterNavigate(() => {
 		isOpened = false;

@@ -1,7 +1,11 @@
 <script lang="ts">
 	import snarkdown from 'snarkdown';
 
-	const { style = '', value, ...rest } = $props<{ style?: string; value: string }>();
+	const {
+		style = '',
+		value,
+		...rest
+	} = $props<{ style?: string; value: string; [value: string]: unknown }>();
 </script>
 
 <span {style} {...rest}>

@@ -9,7 +9,7 @@
 	import MarkLanguage from '$lib/atoms/MarkLanguage.svelte';
 	import FormattedList from '$lib/atoms/FormattedList.svelte';
 
-	$: ({ dryHopped, isDryHopped } = $page.data.details);
+	const { dryHopped, isDryHopped } = $derived($page.data.details);
 </script>
 
 {#if dryHopped || isDryHopped}

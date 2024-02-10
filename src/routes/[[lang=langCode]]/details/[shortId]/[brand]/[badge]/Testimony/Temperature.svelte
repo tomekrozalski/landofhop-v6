@@ -6,7 +6,7 @@
 	import Label from './atoms/Label.svelte';
 	import Producer from './atoms/Producer.svelte';
 
-	$: ({ temperature } = $page.data.details);
+	const { temperature } = $derived($page.data.details);
 </script>
 
 {#if temperature}

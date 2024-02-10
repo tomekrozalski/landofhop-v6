@@ -3,7 +3,7 @@
 		classNames = '',
 		errors,
 		...rest
-	} = $props<{ classNames?: string; errors?: string[]; [name: string]: any }>();
+	} = $props<{ classNames?: string; errors?: string[]; [value: string]: unknown }>();
 </script>
 
 <span class="relative {classNames}">

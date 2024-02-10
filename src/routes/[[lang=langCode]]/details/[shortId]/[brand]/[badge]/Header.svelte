@@ -4,7 +4,9 @@
 	import MarkLanguage from '$lib/atoms/MarkLanguage.svelte';
 	import FormattedList from '$lib/atoms/FormattedList.svelte';
 
-	$: ({ brand, contract, cooperation, isContract, name, remark, series } = $page.data.details);
+	const { brand, contract, cooperation, isContract, name, remark, series } = $derived(
+		$page.data.details
+	);
 </script>
 
 <header class="mb-6 mt-3 lg:mb-3">

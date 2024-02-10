@@ -2,17 +2,17 @@
 	import { page } from '$app/stores';
 	import Image from './Image.svelte';
 
-	export let areImagesLoaded: boolean;
-	export let image: number;
+	let { areImagesLoaded, image } = $props<{ areImagesLoaded: boolean; image: number }>();
+	const imagesInGallery = $derived($page.data.details.photos.gallery);
+	const imageIndexArray = $derived(new Array(imagesInGallery).fill('').map((_, i) => i + 1));
 
-	$: imagesInGallery = $page.data.details.photos.gallery;
-	$: imageIndexArray = new Array(imagesInGallery).fill('').map((_, i) => i + 1);
+	let loaded = $state(0);
 
-	let loaded = 0;
-
-	$: if (loaded === imagesInGallery) {
-		areImagesLoaded = true;
-	}
+	$effect(() => {
+		if (loaded === imagesInGallery) {
+			areImagesLoaded = true;
+		}
+	});
 </script>
 
 {#each imageIndexArray as imageIndex}

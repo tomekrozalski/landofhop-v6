@@ -10,7 +10,7 @@
 	import AdminBar from './AdminBar/AdminBar.svelte';
 	import Rating from './Rating/Rating.svelte';
 
-	$: ({ authenticated, details } = $page.data);
+	const { authenticated, details } = $derived($page.data);
 </script>
 
 {#if details}

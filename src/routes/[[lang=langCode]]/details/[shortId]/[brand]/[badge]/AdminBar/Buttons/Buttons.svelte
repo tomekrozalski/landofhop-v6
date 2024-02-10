@@ -5,8 +5,8 @@
 	import UpdateRatings from './UpdateRatings.svelte';
 	import LinkButton from './LinkButton.svelte';
 
-	$: ({ badge, brand, shortId } = $page.data.details);
-	$: params = `${shortId}/${brand.badge}/${badge}`;
+	const { badge, brand, shortId } = $derived($page.data.details);
+	const params = $derived(`${shortId}/${brand.badge}/${badge}`);
 </script>
 
 <div class="mb-3 flex flex-col flex-wrap gap-3 lg:flex-row">

@@ -8,7 +8,7 @@
 	import Producer from './atoms/Producer.svelte';
 	import Editorial from './atoms/Editorial.svelte';
 
-	$: ({ pasteurization } = $page.data.details);
+	const { pasteurization } = $derived($page.data.details);
 </script>
 
 {#if pasteurization}

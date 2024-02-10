@@ -12,9 +12,9 @@
 	import ErrorMessage from './ErrorMessage.svelte';
 	import SuccessMessage from './SuccessMessage.svelte';
 
-	$: data = $page.data.form as SuperValidated<ValidationSchemaTypes>;
+	const data = $derived($page.data.form as SuperValidated<ValidationSchemaTypes>);
 
-	let isError = false;
+	let isError = $state(false);
 
 	const { form, errors, enhance, constraints, delayed } = superForm(data, {
 		onError: () => {

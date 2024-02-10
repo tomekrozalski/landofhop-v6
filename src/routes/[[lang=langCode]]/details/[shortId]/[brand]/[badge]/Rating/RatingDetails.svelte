@@ -3,7 +3,7 @@
 	import LL from '$lib/i18n/i18n-svelte';
 	import { page } from '$app/stores';
 
-	$: ({ rateBeer, total, untappd } = $page.data.details.ratings);
+	const { rateBeer, total, untappd } = $derived($page.data.details.ratings);
 </script>
 
 <footer transition:slide class="bg-gray-100 p-5 text-base">

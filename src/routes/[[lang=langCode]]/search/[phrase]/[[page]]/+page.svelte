@@ -4,7 +4,7 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import SearchResults from '$lib/templates/SearchResults/SearchResults.svelte';
 
-	export let data;
+	const { data } = $props();
 </script>
 
 <svelte:head>

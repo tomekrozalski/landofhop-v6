@@ -6,8 +6,8 @@
 
 	afterNavigate(invalidateAll);
 
-	export let data;
-	$: ({ breadcrumbs, details } = data);
+	const { data } = $props();
+	const { breadcrumbs, details } = $derived(data);
 </script>
 
 <svelte:head>

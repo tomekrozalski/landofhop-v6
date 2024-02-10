@@ -7,10 +7,13 @@
 	import Producer from '../atoms/Producer.svelte';
 	import List from './IngredientsList.svelte';
 
-	$: ({ ingredients } = $page.data.details);
+	const { ingredients } = $derived($page.data.details);
 
-	const getTitle = (isComplete: boolean) =>
-		isComplete ? $LL.pages.details.testimony.ingredients() : $LL.pages.details.testimony.contains();
+	function getTitle(isComplete: boolean) {
+		return isComplete
+			? $LL.pages.details.testimony.ingredients()
+			: $LL.pages.details.testimony.contains();
+	}
 </script>
 
 {#if ingredients?.label}

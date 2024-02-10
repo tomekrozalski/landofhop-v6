@@ -9,7 +9,7 @@
 	import FormattedList from '$lib/atoms/FormattedList.svelte';
 	import AgedItem from './AgedItem.svelte';
 
-	$: ({ aged, isAged } = $page.data.details);
+	const { aged, isAged } = $derived($page.data.details);
 </script>
 
 {#if aged || isAged}

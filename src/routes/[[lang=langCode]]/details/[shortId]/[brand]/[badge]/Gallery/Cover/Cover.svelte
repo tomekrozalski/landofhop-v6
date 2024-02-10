@@ -6,15 +6,14 @@
 	import Rotable from './Rotable/Rotable.svelte';
 	import BrokenContainer from './BrokenContainer.svelte';
 
-	let isRotableGalleryVisible = false;
+	let isRotableGalleryVisible = $state(false);
+	let loaded = $state(false);
 
 	onMount(() => {
 		setTimeout(() => {
 			isRotableGalleryVisible = true;
 		}, 1500);
 	});
-
-	let loaded = false;
 </script>
 
 <section

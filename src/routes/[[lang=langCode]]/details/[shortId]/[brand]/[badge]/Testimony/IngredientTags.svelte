@@ -5,17 +5,18 @@
 	import type LanguageValue from '$lib/db/types/LanguageValue.d';
 	import type { IngredientType } from '$lib/db/enums/Beverage.enum';
 
-	type IngredientTags = {
-		badge: string;
-		name: LanguageValue;
-		type: IngredientType;
-	};
-
-	$: ingredientsTags = $page.data.details.ingredientsTags ?? {};
-	$: ingredients = [...(ingredientsTags.label ?? []), ...(ingredientsTags.producer ?? [])].reduce(
-		(acc, curr) =>
-			acc.find(({ badge }: IngredientTags) => badge === curr.badge) ? acc : [...acc, curr],
-		[]
+	const ingredientsTags = $derived($page.data.details.ingredientsTags ?? {});
+	const ingredients = $derived(
+		[...(ingredientsTags.label ?? []), ...(ingredientsTags.producer ?? [])].reduce(
+			(acc, curr) =>
+				acc.find(
+					({ badge }: { badge: string; name: LanguageValue; type: IngredientType }) =>
+						badge === curr.badge
+				)
+					? acc
+					: [...acc, curr],
+			[]
+		)
 	);
 </script>
 

@@ -4,11 +4,13 @@
 	import type { TopBrandsTimelineBar } from '../utils/normalizers/Output.d';
 	import sortData from './sortData';
 
-	export let selectedBrand: string | null;
-	export let topBrandsTimelineData: TopBrandsTimelineBar[];
-	export let xScale: any;
-	export let xValue: (value: any) => string;
-	export let yScale: any;
+	let { selectedBrand, topBrandsTimelineData, xScale, xValue, yScale } = $props<{
+		selectedBrand: string | null;
+		topBrandsTimelineData: TopBrandsTimelineBar[];
+		xScale: any;
+		xValue: (value: any) => string;
+		yScale: any;
+	}>();
 
 	const linePath = (id: string) => {
 		type DataTypes = {

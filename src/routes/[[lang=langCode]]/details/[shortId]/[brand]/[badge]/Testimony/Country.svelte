@@ -7,7 +7,7 @@
 	import Producer from './atoms/Producer.svelte';
 	import Editorial from './atoms/Editorial.svelte';
 
-	$: ({ place } = $page.data.details);
+	const { place } = $derived($page.data.details);
 </script>
 
 {#if place}

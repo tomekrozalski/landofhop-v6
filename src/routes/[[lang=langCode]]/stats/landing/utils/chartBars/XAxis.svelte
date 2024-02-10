@@ -1,10 +1,19 @@
 <script lang="ts">
-	export let innerHeight: number;
-	export let innerWidth: number;
-	export let label: string;
-	export let xScale: any;
-	export let xScaleTicks: string[];
-	export let unit: string = '';
+	const {
+		innerHeight,
+		innerWidth,
+		label,
+		xScale,
+		xScaleTicks,
+		unit = ''
+	} = $props<{
+		innerHeight: number;
+		innerWidth: number;
+		label: string;
+		xScale: any;
+		xScaleTicks: string[];
+		unit?: string;
+	}>();
 </script>
 
 <g>

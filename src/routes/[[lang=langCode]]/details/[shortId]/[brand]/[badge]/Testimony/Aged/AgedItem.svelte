@@ -8,18 +8,18 @@
 		AgedWood
 	} from '$lib/db/enums/Beverage.enum';
 
-	type Aged = {
-		type?: AgedType;
-		wood?: AgedWood;
-		time?: {
-			value: number;
-			unit: AgedTimeUnit;
+	const { item } = $props<{
+		item: {
+			type?: AgedType;
+			wood?: AgedWood;
+			time?: {
+				value: number;
+				unit: AgedTimeUnit;
+			};
+			previousContent?: AgedPreviousContent[];
 		};
-		previousContent?: AgedPreviousContent[];
-	};
-
-	export let item: Aged;
-	let { previousContent, time, type, wood } = item;
+	}>();
+	const { previousContent, time, type, wood } = $derived(item);
 </script>
 
 {#if time}

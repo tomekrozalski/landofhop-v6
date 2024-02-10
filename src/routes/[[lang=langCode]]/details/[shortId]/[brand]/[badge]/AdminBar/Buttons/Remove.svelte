@@ -4,20 +4,20 @@
 	import { page } from '$app/stores';
 	import Button from '$lib/atoms/forms/Button.svelte';
 
-	let confirmed = false;
-	let isSubmitting = false;
-	$: ({ badge, brand, shortId } = $page.data.details);
+	let confirmed = $state(false);
+	let isSubmitting = $state(false);
+	const { badge, brand, shortId } = $derived($page.data.details);
 
-	const removeBeverage = () => {
+	function removeBeverage() {
 		isSubmitting = true;
 
 		setTimeout(() => {
 			isSubmitting = false;
 			confirmed = true;
 		}, 3000);
-	};
+	}
 
-	const confirm = async () => {
+	async function confirm() {
 		isSubmitting = true;
 
 		try {
@@ -30,7 +30,7 @@
 			isSubmitting = false;
 			console.warn(err);
 		}
-	};
+	}
 </script>
 
 <Button

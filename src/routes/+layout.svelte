@@ -5,10 +5,7 @@
 	import navigation from '$lib/templates/Main/navigation.svelte';
 	import '../app.css';
 
-	afterNavigate(() => {
-		// when path change, close navigation
-		navigation.closeNavbar();
-	});
+	afterNavigate(navigation.closeNavbar);
 </script>
 
 <svelte:head>

@@ -6,7 +6,7 @@
 	import Label from './atoms/Label.svelte';
 	import Producer from './atoms/Producer.svelte';
 
-	$: ({ extract } = $page.data.details);
+	const { extract } = $derived($page.data.details);
 </script>
 
 {#if extract}

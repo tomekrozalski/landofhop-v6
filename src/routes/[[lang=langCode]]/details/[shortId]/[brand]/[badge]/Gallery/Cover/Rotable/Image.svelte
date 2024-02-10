@@ -2,13 +2,16 @@
 	import { page } from '$app/stores';
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 
-	export let loaded: number;
-	export let imageIndex: number;
-	export let isVisible: boolean = false;
-
-	$: ({ badge, brand, shortId } = $page.data.details);
-	$: imagePathBase = `${PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}/container/webp/${pixelRatio}`;
+	let {
+		loaded,
+		imageIndex,
+		isVisible = false
+	} = $props<{ loaded: number; imageIndex: number; isVisible?: boolean }>();
+	const { badge, brand, shortId } = $derived($page.data.details);
 	const pixelRatio = window.devicePixelRatio && window.devicePixelRatio >= 1.5 ? '2x' : '1x';
+	const imagePathBase = $derived(
+		`${PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}/container/webp/${pixelRatio}`
+	);
 </script>
 
 <img

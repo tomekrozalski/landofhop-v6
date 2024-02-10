@@ -9,10 +9,11 @@
 	import FormattedList from '$lib/atoms/FormattedList.svelte';
 	import type { Fermentation as FermentationEnum } from '$lib/db/enums/Beverage.enum';
 
-	$: ({ fermentation } = $page.data.details);
+	const { fermentation } = $derived($page.data.details);
 
-	const getFermentetaionType = (value: FermentationEnum) =>
-		$LL.pages.details.testimony.fermentationType[value]();
+	function getFermentetaionType(value: FermentationEnum) {
+		return $LL.pages.details.testimony.fermentationType[value]();
+	}
 </script>
 
 {#if fermentation}

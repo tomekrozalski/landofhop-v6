@@ -1,17 +1,24 @@
 <script lang="ts">
 	import type { RatingsChartBar } from '../utils/normalizers/Output.d';
 
-	export let ratingsChartData: RatingsChartBar[];
-	export let innerHeight: number;
-	export let xScale: any;
-	export let xValue: (value: RatingsChartBar) => string;
-	export let yScale: any;
-	export let yValue: (value: RatingsChartBar) => number;
+	const { ratingsChartData, innerHeight, xScale, xValue, yScale, yValue } = $props<{
+		ratingsChartData: RatingsChartBar[];
+		innerHeight: number;
+		xScale: any;
+		xValue: (value: RatingsChartBar) => string;
+		yScale: any;
+		yValue: (value: RatingsChartBar) => number;
+	}>();
 
 	const filteredData = ratingsChartData.filter(({ beverages }) => beverages);
-	const setHorintalPosition = (bar: RatingsChartBar) =>
-		xScale(xValue(bar) || '') - xScale.bandwidth() / 2;
-	const setVerticalPosition = (bar: RatingsChartBar) => yScale(yValue(bar));
+
+	function setHorintalPosition(bar: RatingsChartBar) {
+		return xScale(xValue(bar) || '') - xScale.bandwidth() / 2;
+	}
+
+	function setVerticalPosition(bar: RatingsChartBar) {
+		return yScale(yValue(bar));
+	}
 </script>
 
 <g>

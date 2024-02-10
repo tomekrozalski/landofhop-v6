@@ -6,8 +6,8 @@
 	import NoBeverageFound from '$lib/templates/BeverageList/NoBeverageFound.svelte';
 	import Pagination from '$lib/templates/BeverageList/Pagination/Pagination.svelte';
 
-	export let data;
-	$: ({ beverages, breadcrumbs } = data);
+	const { data } = $props();
+	const { beverages, breadcrumbs } = $derived(data);
 </script>
 
 <svelte:head>
