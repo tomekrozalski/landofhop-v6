@@ -22,7 +22,7 @@
 		easing: sineInOut
 	});
 
-	const actualImage = $derived<number>(Math.round(($point + selectedImage) % imagesInGallery) + 1);
+	const actualImage = $derived<number>(Math.round(($point + selectedImage) % imagesInGallery));
 
 	$effect(() => {
 		if (areImagesLoaded) {
