@@ -28,7 +28,7 @@
 </div>
 
 <style>
-	@keyframes animation {
+	@keyframes rotate {
 		0%,
 		10% {
 			-webkit-transform: perspective(140px) rotateX(-180deg);
@@ -50,7 +50,7 @@
 	}
 
 	li::before {
-		animation: animation 2.4s infinite linear both;
+		animation: rotate 2.4s infinite linear both;
 	}
 
 	li:nth-child(2)::before {

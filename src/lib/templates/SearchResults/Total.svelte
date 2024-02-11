@@ -8,7 +8,7 @@
 		inline = faLoveseat,
 		total
 	} = $props<{ currentPage: number; inline?: boolean; total: number }>();
-	let pages = Math.ceil(total / MAX_BEVERAGES_ON_PAGE);
+	let pages = $derived(Math.ceil(total / MAX_BEVERAGES_ON_PAGE));
 </script>
 
 <section class:content-start={inline} class="container flex content-between gap-5 px-3">

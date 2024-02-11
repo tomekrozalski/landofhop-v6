@@ -1,10 +1,17 @@
+import { Status } from '$lib/db/enums/Globals.enum';
+
 function createNavigation() {
 	let isNavigationOpened = $state(false);
 	let isSearchbarActive = $state(false);
 	let searchHistory = $state(0);
+	let searchStatus = $state<Status>(Status.idle);
 
 	return {
-		closeNavbar: () => (isNavigationOpened = false),
+		closeNavbar: () => {
+			isNavigationOpened = false;
+			isSearchbarActive = false;
+			searchHistory = 0;
+		},
 		closeSearchBar: () => {
 			history.go(searchHistory);
 			isSearchbarActive = false;
@@ -21,7 +28,11 @@ function createNavigation() {
 			isSearchbarActive = true;
 			isNavigationOpened = false;
 		},
-		toggleNavbar: () => (isNavigationOpened = !isNavigationOpened)
+		get searchStatus() {
+			return searchStatus;
+		},
+		toggleNavbar: () => (isNavigationOpened = !isNavigationOpened),
+		updateSearchStatus: (value: Status) => (searchStatus = value)
 	};
 }
 

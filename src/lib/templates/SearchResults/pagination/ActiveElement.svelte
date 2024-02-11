@@ -2,6 +2,7 @@
 	import Fa from 'svelte-fa';
 	import { faCaretLeft, faCaretRight } from '@fortawesome/pro-solid-svg-icons';
 	import { page } from '$app/stores';
+	import searchByPhrase from '$lib/templates/Topbar/Header/Searchbar/searchByPhrase';
 
 	const {
 		isCurrent = false,
@@ -17,6 +18,8 @@
 		[value: string]: unknown;
 	}>();
 
+	const isSearchMode = !!$page.state?.selected?.phrase;
+
 	const href = $derived(
 		pageNumber === 1
 			? '/search/' + $page.params.phrase
@@ -25,7 +28,15 @@
 </script>
 
 <li class="m-1 mx-3 w-full sm:m-1 sm:w-auto">
-	<a
+	<svelte:element
+		this={isSearchMode ? 'button' : 'a'}
+		type={isSearchMode ? 'button' : null}
+		role={isSearchMode ? 'link' : null}
+		tabindex="0"
+		href={isSearchMode ? null : href}
+		on:click={() => {
+			isSearchMode && searchByPhrase($page.state.selected.phrase, pageNumber);
+		}}
 		class="flex h-14 w-full cursor-pointer items-center justify-center border-2 p-3 transition-colors
     hover:border-black hover:bg-white hover:text-black
 		focus:outline-none focus-visible:border-black focus-visible:bg-white focus-visible:text-black
@@ -38,7 +49,6 @@
 		class:border-gray-300={!isCurrent}
 		class:text-white={isCurrent}
 		class:text-black={!isCurrent}
-		{href}
 		{...rest}
 		aria-label={label}
 	>
@@ -49,5 +59,5 @@
 		{:else}
 			{name}
 		{/if}
-	</a>
+	</svelte:element>
 </li>

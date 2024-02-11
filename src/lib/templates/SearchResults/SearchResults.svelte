@@ -10,7 +10,9 @@
 
 	const { data } = $props<{ data: { beverages: Basics[]; total: number } }>();
 	const { beverages, total } = $derived(data);
-	const order = $derived(parseInt($page.params.page ?? 1));
+	const order = $derived(
+		parseInt($page.state?.selected?.page?.toString() ?? $page.params.page ?? 1)
+	);
 </script>
 
 <AdvancedSearchLink />
