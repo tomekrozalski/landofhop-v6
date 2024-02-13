@@ -234,6 +234,16 @@ const en = {
 					styles: 'About beer styles'
 				}
 			},
+			ingredients: {
+				title: '📈 Ingredients statistics',
+				type: {
+					water: 'Water',
+					malt: 'Malts',
+					hop: 'Hops',
+					yeast: 'Yeast',
+					addition: 'Addition'
+				}
+			},
 			landing: {
 				addTimeline: {
 					bottles: 'bottles',

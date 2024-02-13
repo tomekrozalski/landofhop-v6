@@ -719,6 +719,34 @@ type RootTranslation = {
 					styles: string
 				}
 			}
+			ingredients: {
+				/**
+				 * �​�​ ​S​t​a​t​y​s​t​y​k​i​ ​d​o​t​y​c​z​ą​c​e​ ​s​k​ł​a​d​n​i​k​ó​w
+				 */
+				title: string
+				type: {
+					/**
+					 * W​o​d​a
+					 */
+					water: string
+					/**
+					 * S​ł​o​d​y
+					 */
+					malt: string
+					/**
+					 * C​h​m​i​e​l​e
+					 */
+					hop: string
+					/**
+					 * D​r​o​ż​d​ż​e
+					 */
+					yeast: string
+					/**
+					 * D​o​d​a​t​k​i
+					 */
+					addition: string
+				}
+			}
 			landing: {
 				addTimeline: {
 					/**
@@ -1508,6 +1536,34 @@ export type TranslationFunctions = {
 					 * Dotyczące stylów piwa
 					 */
 					styles: () => LocalizedString
+				}
+			}
+			ingredients: {
+				/**
+				 * 📈 Statystyki dotyczące składników
+				 */
+				title: () => LocalizedString
+				type: {
+					/**
+					 * Woda
+					 */
+					water: () => LocalizedString
+					/**
+					 * Słody
+					 */
+					malt: () => LocalizedString
+					/**
+					 * Chmiele
+					 */
+					hop: () => LocalizedString
+					/**
+					 * Drożdże
+					 */
+					yeast: () => LocalizedString
+					/**
+					 * Dodatki
+					 */
+					addition: () => LocalizedString
 				}
 			}
 			landing: {

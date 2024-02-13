@@ -234,6 +234,16 @@ const pl = {
 					styles: 'Dotyczące stylów piwa'
 				}
 			},
+			ingredients: {
+				title: '📈 Statystyki dotyczące składników',
+				type: {
+					water: 'Woda',
+					malt: 'Słody',
+					hop: 'Chmiele',
+					yeast: 'Drożdże',
+					addition: 'Dodatki'
+				}
+			},
 			landing: {
 				addTimeline: {
 					bottles: 'butelki',
