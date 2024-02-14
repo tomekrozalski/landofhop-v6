@@ -21,7 +21,7 @@
 	{/if}
 	{#if tale?.producer}
 		<section
-			class=" my-5 border-l-8 border-green pl-5"
+			class="my-5 border-l-8 border-green pl-5"
 			lang={tale.producer.language !== 'pl' ? tale.producer.language : null}
 		>
 			<Markdown class="block text-pretty" value={tale.producer.lead} />
