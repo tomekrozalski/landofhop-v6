@@ -21,9 +21,8 @@ export const load = async ({ locals: { locale }, params, parent }) => {
 		}))
 		.toArray();
 
-	navigation = navigation.map((item) =>
-		item.badge === badge ? { ...item, isActive: true } : item
-	);
+	const { type } = (await ingredients.findOne({ badge })) as RawIngredient;
+	navigation = navigation.map((item) => (item.badge === type ? { ...item, isActive: true } : item));
 
 	/* create three data */
 	/* step 1: generate path, eg. ['addition', 'vanilla', 'vanilla-extract'] */

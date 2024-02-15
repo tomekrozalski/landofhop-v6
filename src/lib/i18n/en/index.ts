@@ -235,6 +235,7 @@ const en = {
 				}
 			},
 			ingredients: {
+				info: 'List of ingredients and the number of their occurrences in beers in the database. Sorted from most popular to least popular.',
 				title: '📈 Ingredients statistics',
 				type: {
 					water: 'Water',

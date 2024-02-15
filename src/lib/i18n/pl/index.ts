@@ -235,6 +235,7 @@ const pl = {
 				}
 			},
 			ingredients: {
+				info: 'Lista składników oraz liczba ich wystąpień w piwach w bazie danych. Posortowane od najpopularniejszych do najmniej popularnych.',
 				title: '📈 Statystyki dotyczące składników',
 				type: {
 					water: 'Woda',

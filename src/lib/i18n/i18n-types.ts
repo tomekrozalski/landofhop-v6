@@ -721,6 +721,10 @@ type RootTranslation = {
 			}
 			ingredients: {
 				/**
+				 * L​i​s​t​a​ ​s​k​ł​a​d​n​i​k​ó​w​ ​o​r​a​z​ ​l​i​c​z​b​a​ ​i​c​h​ ​w​y​s​t​ą​p​i​e​ń​ ​w​ ​p​i​w​a​c​h​ ​w​ ​b​a​z​i​e​ ​d​a​n​y​c​h​.​ ​P​o​s​o​r​t​o​w​a​n​e​ ​o​d​ ​n​a​j​p​o​p​u​l​a​r​n​i​e​j​s​z​y​c​h​ ​d​o​ ​n​a​j​m​n​i​e​j​ ​p​o​p​u​l​a​r​n​y​c​h​.
+				 */
+				info: string
+				/**
 				 * �​�​ ​S​t​a​t​y​s​t​y​k​i​ ​d​o​t​y​c​z​ą​c​e​ ​s​k​ł​a​d​n​i​k​ó​w
 				 */
 				title: string
@@ -1539,6 +1543,10 @@ export type TranslationFunctions = {
 				}
 			}
 			ingredients: {
+				/**
+				 * Lista składników oraz liczba ich wystąpień w piwach w bazie danych. Posortowane od najpopularniejszych do najmniej popularnych.
+				 */
+				info: () => LocalizedString
 				/**
 				 * 📈 Statystyki dotyczące składników
 				 */

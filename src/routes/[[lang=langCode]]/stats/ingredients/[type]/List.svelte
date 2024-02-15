@@ -5,29 +5,32 @@
 	import ToggleBox from './ToggleBox.svelte';
 	import type { IngredientTree } from './types.d';
 
-	export let data: IngredientTree[];
-	export let level: number;
-	export let onUpdateClick: (badge: string) => void;
+	const { data } = $props<{ data: IngredientTree[] }>();
 </script>
 
 <ul class="px-5">
 	{#each data as { badge, name, occurrences, successors, successorsList }}
+		{@const withSuccessors = occurrences.alone !== occurrences.withSuccessors}
 		<li
 			class="relative
-			before:absolute before:-left-8 before:top-4 before:inline-block before:h-px before:w-7 before:bg-gray-300
-			after:absolute after:-left-8 after:-top-4 after:inline-block after:h-full after:w-px after:bg-gray-300"
+			before:absolute before:-left-9 before:top-4 before:inline-block before:h-px before:w-7 before:bg-gray-300
+			after:absolute after:-left-9 after:-top-3 after:inline-block after:h-full after:w-px after:bg-gray-300"
 		>
-			{name.value}
-			<span>({occurrences.withSuccessors})</span>
+			{#if withSuccessors}
+				<span class="ml-1">{name.value}</span>
+			{:else}
+				{name.value}
+			{/if}
+			<span class="text-sm text-gray-400">({occurrences.withSuccessors})</span>
 			<!-- <FindAll query="ingredientTags={[badge, ...(successorsList || [])]}" /> -->
-			{#if occurrences.alone !== occurrences.withSuccessors}
+			{#if withSuccessors}
 				<ToggleBox {badge} />
 			{/if}
 			<!-- {#if $authentication.isLoggedIn} -->
 			<!-- <UpdateButton {badge} {onUpdateClick} /> -->
 			<!-- {/if} -->
 			{#if successors}
-				<svelte:self data={successors} level={level + 1} {onUpdateClick} />
+				<svelte:self data={successors} />
 			{/if}
 		</li>
 	{/each}

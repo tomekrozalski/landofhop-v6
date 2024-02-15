@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import { page } from '$app/stores';
-	import type { IngredientsStats as IngredientsStatsTypes, Navigation } from './types.d';
+	import type { Navigation } from './types.d';
 
 	const navigation = $derived($page.data.statsData.navigation) as Navigation;
 </script>
 
-<ul class="my-2 flex flex-wrap gap-2 lg:flex-nowrap">
+<ul class="m-5 flex flex-wrap gap-2 lg:mx-0 lg:my-2 lg:flex-nowrap">
 	{#each navigation as { badge, isActive, occurrences }}
-		<li class="flex-1">
+		<li class="flex-1 basis-1/3 lg:basis-full">
 			<a
 				class="group block p-2 text-center transition-colors hover:text-white"
 				class:text-white={isActive}
