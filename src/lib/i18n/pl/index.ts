@@ -276,6 +276,15 @@ const pl = {
 			}
 		}
 	},
+	styleGroup: {
+		'british-and-irish-ales': 'Brytyjskie i irlandzkie ales',
+		'the-lager-family': 'Lagery',
+		'continental-ales-weissbiers-and-ale-lager-hybrids':
+			'Kontynentalne Ale, Weissbiery i Ale-Lager hybrydy',
+		'the-beers-of-belgium': 'Piwa belgijskie',
+		'craft-beer-in-america-and-beyond': 'Amerykańskie i światowe piwa kraftowe',
+		'a-sip-beyond': 'Inne'
+	},
 	time: {
 		day: '{0} {{dni|dzień|dni|dni|dni}}',
 		month: '{0} {{miesięcy|miesiąc|miesiące|miesiące|miesięcy}}',

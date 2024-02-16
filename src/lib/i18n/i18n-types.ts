@@ -838,6 +838,32 @@ type RootTranslation = {
 			}
 		}
 	}
+	styleGroup: {
+		/**
+		 * B​r​y​t​y​j​s​k​i​e​ ​i​ ​i​r​l​a​n​d​z​k​i​e​ ​a​l​e​s
+		 */
+		'british-and-irish-ales': string
+		/**
+		 * L​a​g​e​r​y
+		 */
+		'the-lager-family': string
+		/**
+		 * K​o​n​t​y​n​e​n​t​a​l​n​e​ ​A​l​e​,​ ​W​e​i​s​s​b​i​e​r​y​ ​i​ ​A​l​e​-​L​a​g​e​r​ ​h​y​b​r​y​d​y
+		 */
+		'continental-ales-weissbiers-and-ale-lager-hybrids': string
+		/**
+		 * P​i​w​a​ ​b​e​l​g​i​j​s​k​i​e
+		 */
+		'the-beers-of-belgium': string
+		/**
+		 * A​m​e​r​y​k​a​ń​s​k​i​e​ ​i​ ​ś​w​i​a​t​o​w​e​ ​p​i​w​a​ ​k​r​a​f​t​o​w​e
+		 */
+		'craft-beer-in-america-and-beyond': string
+		/**
+		 * I​n​n​e
+		 */
+		'a-sip-beyond': string
+	}
 	time: {
 		/**
 		 * {​0​}​ ​{​{​d​n​i​|​d​z​i​e​ń​|​d​n​i​|​d​n​i​|​d​n​i​}​}
@@ -1653,6 +1679,32 @@ export type TranslationFunctions = {
 				}
 			}
 		}
+	}
+	styleGroup: {
+		/**
+		 * Brytyjskie i irlandzkie ales
+		 */
+		'british-and-irish-ales': () => LocalizedString
+		/**
+		 * Lagery
+		 */
+		'the-lager-family': () => LocalizedString
+		/**
+		 * Kontynentalne Ale, Weissbiery i Ale-Lager hybrydy
+		 */
+		'continental-ales-weissbiers-and-ale-lager-hybrids': () => LocalizedString
+		/**
+		 * Piwa belgijskie
+		 */
+		'the-beers-of-belgium': () => LocalizedString
+		/**
+		 * Amerykańskie i światowe piwa kraftowe
+		 */
+		'craft-beer-in-america-and-beyond': () => LocalizedString
+		/**
+		 * Inne
+		 */
+		'a-sip-beyond': () => LocalizedString
 	}
 	time: {
 		/**

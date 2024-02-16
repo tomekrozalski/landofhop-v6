@@ -275,6 +275,15 @@ const en = {
 			}
 		}
 	},
+	styleGroup: {
+		'british-and-irish-ales': 'British and Irish Ales',
+		'the-lager-family': 'The Lager Family',
+		'continental-ales-weissbiers-and-ale-lager-hybrids':
+			'Continental Ales, Weissbiers and Ale-Lager Hybrids',
+		'the-beers-of-belgium': 'The Beers of Belgium',
+		'craft-beer-in-america-and-beyond': 'Craft Beer in America and Beyond',
+		'a-sip-beyond': 'A Sip Beyond'
+	},
 	time: {
 		day: '{0} {{day|days}}',
 		month: '{0} {{month|months}}',
