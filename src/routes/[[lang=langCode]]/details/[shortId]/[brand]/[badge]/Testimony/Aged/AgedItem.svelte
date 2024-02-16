@@ -40,7 +40,9 @@
 
 {#if previousContent}
 	{$LL.pages.details.testimony.aged.previousContent.name()}
-	<FormattedList mode="short" let:item data={previousContent}>
-		{$LL.pages.details.testimony.aged.previousContent.content({ item })}
+	<FormattedList mode="short" data={previousContent}>
+		{#snippet formattedList(item)}
+			{$LL.pages.details.testimony.aged.previousContent.content({ item })}
+		{/snippet}
 	</FormattedList>
 {/if}

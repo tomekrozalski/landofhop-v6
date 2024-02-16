@@ -15,14 +15,18 @@
 	</DT>
 	<DD>
 		{#if style?.label}
-			<FormattedList mode="narrow" let:item data={style.label}>
-				<MarkLanguage label tag="em" name={item} />
+			<FormattedList mode="narrow" data={style.label}>
+				{#snippet formattedList(item)}
+					<MarkLanguage label tag="em" name={item} />
+				{/snippet}
 			</FormattedList>
 		{/if}
 		{#if style?.producer}
 			{#if style?.label},{/if}
-			<FormattedList mode="narrow" let:item data={style.producer}>
-				<MarkLanguage producer tag="em" name={item} />
+			<FormattedList mode="narrow" data={style.producer}>
+				{#snippet formattedList(item)}
+					<MarkLanguage producer tag="em" name={item} />
+				{/snippet}
 			</FormattedList>
 		{/if}
 	</DD>

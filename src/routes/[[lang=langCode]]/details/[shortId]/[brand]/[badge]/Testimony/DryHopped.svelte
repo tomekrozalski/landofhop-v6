@@ -22,8 +22,10 @@
 		{/if}
 		{#if dryHopped?.label}
 			<Label>
-				<FormattedList mode="short" let:item data={dryHopped.label}>
-					<MarkLanguage label tag="em" name={item.name} />
+				<FormattedList mode="short" data={dryHopped.label}>
+					{#snippet formattedList(item)}
+						<MarkLanguage label tag="em" name={item.name} />
+					{/snippet}
 				</FormattedList>
 			</Label>
 		{/if}
@@ -32,8 +34,10 @@
 		{/if}
 		{#if dryHopped?.producer}
 			<Producer>
-				<FormattedList mode="short" let:item data={dryHopped.producer}>
-					<MarkLanguage producer tag="em" name={item.name} />
+				<FormattedList mode="short" data={dryHopped.producer}>
+					{#snippet formattedList(item)}
+						<MarkLanguage producer tag="em" name={item.name} />
+					{/snippet}
 				</FormattedList>
 			</Producer>
 		{/if}
@@ -42,8 +46,10 @@
 		{/if}
 		{#if dryHopped?.editorial}
 			<Editorial>
-				<FormattedList mode="short" let:item data={dryHopped.editorial}>
-					<MarkLanguage editorial tag="em" name={item.name} />
+				<FormattedList mode="short" data={dryHopped.editorial}>
+					{#snippet formattedList(item)}
+						<MarkLanguage editorial tag="em" name={item.name} />
+					{/snippet}
 				</FormattedList>
 			</Editorial>
 		{/if}

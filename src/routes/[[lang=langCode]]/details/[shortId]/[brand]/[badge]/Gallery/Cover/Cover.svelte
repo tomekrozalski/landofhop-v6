@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { toggleVisibility } from '$lib/utils/helpers/transitions';
 	import SingleImage from './SingleImage.svelte';
@@ -9,7 +8,7 @@
 	let isRotableGalleryVisible = $state(false);
 	let loaded = $state(false);
 
-	onMount(() => {
+	$effect(() => {
 		setTimeout(() => {
 			isRotableGalleryVisible = true;
 		}, 1500);

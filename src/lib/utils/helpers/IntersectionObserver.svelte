@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	const { once = false, threshold = 0 } = $props();
 	let intersecting = $state(false);
 	let container = $state<HTMLDivElement>();
 
-	onMount(() => {
+	$effect(() => {
 		if (typeof IntersectionObserver !== 'undefined') {
 			const observer = new IntersectionObserver(
 				(entries) => {

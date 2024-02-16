@@ -14,13 +14,15 @@
 		{$LL.pages.details.testimony.styleTags()}
 	</DT>
 	<DD>
-		<FormattedList mode="narrow" let:item data={styleTags.editorial}>
-			<MarkLanguage
-				editorial
-				tag="a"
-				href="/advanced-search?styleTags={item.badge}"
-				name={item.name}
-			/>
+		<FormattedList mode="narrow" data={styleTags.editorial}>
+			{#snippet formattedList(item)}
+				<MarkLanguage
+					editorial
+					tag="a"
+					href="/advanced-search?styleTags={item.badge}"
+					name={item.name}
+				/>
+			{/snippet}
 		</FormattedList>
 	</DD>
 {/if}

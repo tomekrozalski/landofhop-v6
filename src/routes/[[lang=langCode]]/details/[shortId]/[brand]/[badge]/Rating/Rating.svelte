@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { ConfettiBurst } from 'svelte-canvas-confetti';
 	import { tweened } from 'svelte/motion';
 	import LL from '$lib/i18n/i18n-svelte';
@@ -15,7 +14,7 @@
 
 	const ratingStore = tweened<number>(0);
 
-	onMount(() => {
+	$effect(() => {
 		const { height, left, top, width } = headerRef!.getBoundingClientRect();
 		position = [left + width / 2, top + height / 2];
 	});

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import Main from '$lib/templates/Main/Main.svelte';
 	import Topbar from '$lib/templates/Topbar/Topbar.svelte';
@@ -6,6 +7,8 @@
 	import '../app.css';
 
 	afterNavigate(navigation.closeNavbar);
+
+	let { children } = $props<{ children: Snippet }>();
 </script>
 
 <svelte:head>
@@ -31,5 +34,7 @@
 <Topbar />
 
 <Main>
-	<slot />
+	{#if children}
+		{@render children()}
+	{/if}
 </Main>

@@ -1,3 +1,11 @@
+<script lang="ts">
+	import type { Snippet } from 'svelte';
+
+	let { children } = $props<{ children: Snippet }>();
+</script>
+
 <dt class="after:content-[':'] lg:text-right">
-	<slot />
+	{#if children}
+		{@render children()}
+	{/if}
 </dt>

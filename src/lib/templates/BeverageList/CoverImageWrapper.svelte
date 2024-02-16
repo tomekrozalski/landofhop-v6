@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import IntersectionObserver from '$lib/utils/helpers/IntersectionObserver.svelte';
@@ -13,15 +12,11 @@
 	let loaded = $state(false);
 	let nativeLoading = $state(false);
 
-	onMount(() => {
+	$effect(() => {
 		if ('loading' in HTMLImageElement.prototype) {
 			nativeLoading = true;
 		}
 	});
-
-	/* TODO
-	href -> /details/{beverage.shortId}/{beverage.brand.badge}/{beverage.badge}
-	*/
 </script>
 
 <a

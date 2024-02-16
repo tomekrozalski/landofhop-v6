@@ -22,8 +22,10 @@
 		{/if}
 		{#if aged?.label}
 			<Label>
-				<FormattedList mode="long" let:item data={aged.label}>
-					<AgedItem {item} />
+				<FormattedList mode="long" data={aged.label}>
+					{#snippet formattedList(item)}
+						<AgedItem {item} />
+					{/snippet}
 				</FormattedList>
 			</Label>
 		{/if}
@@ -32,8 +34,10 @@
 		{/if}
 		{#if aged?.producer}
 			<Producer>
-				<FormattedList mode="long" let:item data={aged.producer}>
-					<AgedItem {item} />
+				<FormattedList mode="long" data={aged.producer}>
+					{#snippet formattedList(item)}
+						<AgedItem {item} />
+					{/snippet}
 				</FormattedList>
 			</Producer>
 		{/if}
@@ -42,8 +46,10 @@
 		{/if}
 		{#if aged?.editorial}
 			<Editorial>
-				<FormattedList mode="long" let:item data={aged.editorial}>
-					<AgedItem {item} />
+				<FormattedList mode="long" data={aged.editorial}>
+					{#snippet formattedList(item)}
+						<AgedItem {item} />
+					{/snippet}
 				</FormattedList>
 			</Editorial>
 		{/if}

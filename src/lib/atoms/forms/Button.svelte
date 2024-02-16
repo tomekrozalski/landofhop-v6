@@ -1,8 +1,10 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Fa from 'svelte-fa';
 	import { faSpinner } from '@fortawesome/pro-solid-svg-icons';
 
 	const {
+		children,
 		isDelayed = false,
 		isDisabled = false,
 		isSecondary = false,
@@ -10,6 +12,7 @@
 		type = 'button',
 		...rest
 	} = $props<{
+		children: Snippet;
 		isDelayed?: boolean;
 		isDisabled?: boolean;
 		isSecondary?: boolean;
@@ -42,7 +45,9 @@
 	{...rest}
 	{type}
 >
-	<slot />
+	{#if children}
+		{@render children()}
+	{/if}
 	{#if isDelayed}
 		<Fa icon={faSpinner} class="absolute right-4 top-2.5 animate-spin" />
 	{/if}

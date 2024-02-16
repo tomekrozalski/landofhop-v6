@@ -22,18 +22,24 @@
 	</DT>
 	<DD>
 		{#if fermentation.label}
-			<FormattedList mode="short" let:item data={fermentation.label}>
-				<Label>{getFermentetaionType(item)}</Label>
+			<FormattedList mode="short" data={fermentation.label}>
+				{#snippet formattedList(item)}
+					<Label>{getFermentetaionType(item)}</Label>
+				{/snippet}
 			</FormattedList>
 		{/if}
 		{#if fermentation.producer}
-			<FormattedList mode="short" let:item data={fermentation.producer}>
-				<Producer>{getFermentetaionType(item)}</Producer>
+			<FormattedList mode="short" data={fermentation.producer}>
+				{#snippet formattedList(item)}
+					<Producer>{getFermentetaionType(item)}</Producer>
+				{/snippet}
 			</FormattedList>
 		{/if}
 		{#if fermentation.editorial}
-			<FormattedList mode="short" let:item data={fermentation.editorial}>
-				<Editorial>{getFermentetaionType(item)}</Editorial>
+			<FormattedList mode="short" data={fermentation.editorial}>
+				{#snippet formattedList(item)}
+					<Editorial>{getFermentetaionType(item)}</Editorial>
+				{/snippet}
 			</FormattedList>
 		{/if}
 	</DD>

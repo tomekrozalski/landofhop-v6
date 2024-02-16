@@ -1,10 +1,19 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	const {
+		children,
 		classNames = '',
 		link,
 		label,
 		underlined = false
-	} = $props<{ classNames?: string; link: string; label: string; underlined?: boolean }>();
+	} = $props<{
+		children: Snippet;
+		classNames?: string;
+		link: string;
+		label: string;
+		underlined?: boolean;
+	}>();
 </script>
 
 <li class="flex">
@@ -14,7 +23,9 @@
 		md:w-auto md:px-2 {classNames}"
 		href={link}
 	>
-		<slot />
+		{#if children}
+			{@render children()}
+		{/if}
 		{#if underlined}
 			<span class="border-b border-gray-300">{label}</span>
 		{:else}

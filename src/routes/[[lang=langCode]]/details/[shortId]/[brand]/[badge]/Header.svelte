@@ -55,28 +55,39 @@
 		{#if cooperation}
 			{$LL.pages.details.header.inCooperationWith()}
 			{#if cooperation.label?.length}
-				<FormattedList mode="short" let:item data={cooperation.label}>
-					<MarkLanguage href="/brand/{item.shortId}/{item.badge}" label tag="a" name={item.name} />
+				<FormattedList mode="short" data={cooperation.label}>
+					{#snippet formattedList(item)}
+						<MarkLanguage
+							href="/brand/{item.shortId}/{item.badge}"
+							label
+							tag="a"
+							name={item.name}
+						/>
+					{/snippet}
 				</FormattedList>
 			{/if}
 			{#if cooperation.producer?.length}
-				<FormattedList mode="short" let:item data={cooperation.producer}>
-					<MarkLanguage
-						href="/brand/{item.shortId}/{item.badge}"
-						producer
-						tag="a"
-						name={item.name}
-					/>
+				<FormattedList mode="short" data={cooperation.producer}>
+					{#snippet formattedList(item)}
+						<MarkLanguage
+							href="/brand/{item.shortId}/{item.badge}"
+							producer
+							tag="a"
+							name={item.name}
+						/>
+					{/snippet}
 				</FormattedList>
 			{/if}
 			{#if cooperation.editorial?.length}
-				<FormattedList mode="short" let:item data={cooperation.editorial}>
-					<MarkLanguage
-						href="/brand/{item.shortId}/{item.badge}"
-						editorial
-						tag="a"
-						name={item.name}
-					/>
+				<FormattedList mode="short" data={cooperation.editorial}>
+					{#snippet formattedList(item)}
+						<MarkLanguage
+							href="/brand/{item.shortId}/{item.badge}"
+							editorial
+							tag="a"
+							name={item.name}
+						/>
+					{/snippet}
 				</FormattedList>
 			{/if}
 		{/if}
@@ -94,18 +105,24 @@
 		/>{#if series}
 			{$LL.pages.details.header.series()}
 			{#if series.label?.length}
-				<FormattedList mode="narrow" let:item data={series.label}>
-					<MarkLanguage label tag="span" name={item} />
+				<FormattedList mode="narrow" data={series.label}>
+					{#snippet formattedList(item)}
+						<MarkLanguage label tag="span" name={item} />
+					{/snippet}
 				</FormattedList>
 			{/if}
 			{#if series.producer?.length}
-				<FormattedList mode="narrow" let:item data={series.producer}>
-					<MarkLanguage producer tag="span" name={item} />
+				<FormattedList mode="narrow" data={series.producer}>
+					{#snippet formattedList(item)}
+						<MarkLanguage producer tag="span" name={item} />
+					{/snippet}
 				</FormattedList>
 			{/if}
 			{#if series.editorial?.length}
-				<FormattedList mode="narrow" let:item data={series.editorial}>
-					<MarkLanguage editorial tag="span" name={item} />
+				<FormattedList mode="narrow" data={series.editorial}>
+					{#snippet formattedList(item)}
+						<MarkLanguage editorial tag="span" name={item} />
+					{/snippet}
 				</FormattedList>
 			{/if}
 		{/if}

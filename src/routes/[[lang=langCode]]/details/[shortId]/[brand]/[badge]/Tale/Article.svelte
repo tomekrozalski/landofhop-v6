@@ -1,13 +1,17 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import LL from '$lib/i18n/i18n-svelte';
 
+	let { children } = $props<{ children: Snippet }>();
 	let isCollapsed = $state(false);
 </script>
 
 {#if isCollapsed}
 	<div transition:slide class="overflow-clip">
-		<slot />
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 {/if}
 <button

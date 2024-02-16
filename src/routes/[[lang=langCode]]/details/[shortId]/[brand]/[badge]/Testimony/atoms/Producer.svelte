@@ -1,5 +1,11 @@
 <script lang="ts">
-	const { tag = 'em', ...rest } = $props<{ tag?: string; [value: string]: unknown }>();
+	import type { Snippet } from 'svelte';
+
+	const {
+		children,
+		tag = 'em',
+		...rest
+	} = $props<{ children: Snippet; tag?: string; [value: string]: unknown }>();
 </script>
 
 <svelte:element
@@ -7,5 +13,7 @@
 	class="skip-ink-none font-medium underline decoration-green-light decoration-8 -underline-offset-2"
 	{...rest}
 >
-	<slot />
+	{#if children}
+		{@render children()}
+	{/if}
 </svelte:element>

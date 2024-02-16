@@ -18,31 +18,37 @@
 	<DD>
 		{#if price.label}
 			<Label>
-				<FormattedList mode="narrow" let:item data={price.label}>
-					{new Intl.NumberFormat('pl', {
-						style: 'currency',
-						currency: item.currency
-					}).format(item.value)}
+				<FormattedList mode="narrow" data={price.label}>
+					{#snippet formattedList(item)}
+						{new Intl.NumberFormat('pl', {
+							style: 'currency',
+							currency: item.currency
+						}).format(item.value)}
+					{/snippet}
 				</FormattedList>
 			</Label>
 		{/if}
 		{#if price.producer}
 			<Producer>
-				<FormattedList mode="narrow" let:item data={price.producer}>
-					{new Intl.NumberFormat('pl', {
-						style: 'currency',
-						currency: item.currency
-					}).format(item.value)}
+				<FormattedList mode="narrow" data={price.producer}>
+					{#snippet formattedList(item)}
+						{new Intl.NumberFormat('pl', {
+							style: 'currency',
+							currency: item.currency
+						}).format(item.value)}
+					{/snippet}
 				</FormattedList>
 			</Producer>
 		{/if}
 		{#if price.editorial}
 			<Editorial>
-				<FormattedList mode="narrow" let:item data={price.editorial}>
-					{new Intl.NumberFormat('pl', {
-						style: 'currency',
-						currency: item.currency
-					}).format(item.value)}
+				<FormattedList mode="narrow" data={price.editorial}>
+					{#snippet formattedList(item)}
+						{new Intl.NumberFormat('pl', {
+							style: 'currency',
+							currency: item.currency
+						}).format(item.value)}
+					{/snippet}
 				</FormattedList>
 			</Editorial>
 		{/if}
