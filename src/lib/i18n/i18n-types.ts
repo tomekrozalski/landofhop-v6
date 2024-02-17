@@ -128,6 +128,24 @@ type RootTranslation = {
 			 */
 			title: string
 		}
+		dashboard: {
+			beverage: {
+				/**
+				 * D​o​d​a​j​ ​n​o​w​e​ ​p​i​w​o
+				 */
+				addNewBeverage: string
+				labelInfo: {
+					/**
+					 * D​a​n​e​,​ ​k​t​ó​r​e​ ​m​o​ż​n​a​ ​w​y​c​i​ą​g​n​ą​ć​ ​t​y​l​k​o​ ​n​a​ ​p​o​d​s​t​a​w​i​e​ ​o​p​a​k​o​w​a​n​i​a
+					 */
+					description: string
+					/**
+					 * E​t​y​k​i​e​t​a
+					 */
+					title: string
+				}
+			}
+		}
 		details: {
 			adminBar: {
 				/**
@@ -996,6 +1014,24 @@ export type TranslationFunctions = {
 			 * Wyszukiwanie zaawansowane
 			 */
 			title: () => LocalizedString
+		}
+		dashboard: {
+			beverage: {
+				/**
+				 * Dodaj nowe piwo
+				 */
+				addNewBeverage: () => LocalizedString
+				labelInfo: {
+					/**
+					 * Dane, które można wyciągnąć tylko na podstawie opakowania
+					 */
+					description: () => LocalizedString
+					/**
+					 * Etykieta
+					 */
+					title: () => LocalizedString
+				}
+			}
 		}
 		details: {
 			adminBar: {

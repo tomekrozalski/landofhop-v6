@@ -42,6 +42,15 @@ const pl = {
 		advancedSearch: {
 			title: 'Wyszukiwanie zaawansowane'
 		},
+		dashboard: {
+			beverage: {
+				addNewBeverage: 'Dodaj nowe piwo',
+				labelInfo: {
+					description: 'Dane, które można wyciągnąć tylko na podstawie opakowania',
+					title: 'Etykieta'
+				}
+			}
+		},
 		details: {
 			adminBar: {
 				areYouSure: 'Na pewno usunąć?',

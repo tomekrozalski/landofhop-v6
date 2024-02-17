@@ -42,6 +42,15 @@ const en = {
 		advancedSearch: {
 			title: 'Advanced Search'
 		},
+		dashboard: {
+			beverage: {
+				addNewBeverage: 'Add new beverage',
+				labelInfo: {
+					description: 'Data which could be taken just from the container',
+					title: 'Label'
+				}
+			}
+		},
 		details: {
 			adminBar: {
 				areYouSure: 'Are you sure?',
