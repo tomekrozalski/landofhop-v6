@@ -41,7 +41,7 @@
 		<div class="my-3 grid grid-cols-3 gap-4">
 			<Label id="{formName}-email" isRequired>{$LL.pages.login.email()}</Label>
 			<TextInput
-				classNames="col-span-2"
+				class="col-span-2"
 				errors={$errors.email}
 				id="{formName}-email"
 				name="email"
@@ -53,7 +53,7 @@
 		<div class="my-3 grid grid-cols-3 gap-4">
 			<Label id="{formName}-password" isRequired>{$LL.pages.login.password()}</Label>
 			<TextInput
-				classNames="col-span-2"
+				class="col-span-2"
 				errors={$errors.password}
 				id="{formName}-password"
 				name="password"
