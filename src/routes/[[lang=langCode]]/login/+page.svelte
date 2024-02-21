@@ -18,12 +18,14 @@
 	let { data } = $props<{ data: { form: Infer<typeof schema> } }>();
 	let isError = $state(false);
 
-	const { form, errors, enhance, constraints, delayed } = superForm(data.form, {
-		onError: () => {
+	const form = superForm(data.form, {
+		onError: (e) => {
+			console.log('e', e);
 			isError = true;
 		},
 		validators: zodClient(schema)
 	});
+	const { enhance, delayed } = form;
 
 	const formName = 'login';
 </script>
@@ -40,35 +42,23 @@
 	{#if isError}
 		<ErrorMessage />
 	{/if}
-	<form method="POST">
-		<div class="my-3 grid grid-cols-3 gap-4">
-			<Label id="{formName}-email" isRequired>{$LL.pages.login.email()}</Label>
-			<input type="email" name="email" bind:value={$form.email} />
-			<!-- <TextInput
-				class="col-span-2"
-				errors={$errors.email}
-				id="{formName}-email"
-				name="email"
-				type="email"
-				bind:value={$form.email}
-				{...$constraints.email}
-			/> -->
+	<form method="POST" use:enhance>
+		<div class="my-3 grid grid-cols-5 gap-4">
+			<Label class="col-span-2" id="{formName}-email" isRequired>
+				{$LL.pages.login.email()}
+			</Label>
+			<TextInput class="col-span-2" field="email" {form} {formName} type="email" />
 		</div>
-		<div class="my-3 grid grid-cols-3 gap-4">
-			<Label id="{formName}-password" isRequired>{$LL.pages.login.password()}</Label>
-			<input type="password" name="password" bind:value={$form.password} />
-			<!-- <TextInput
-				class="col-span-2"
-				errors={$errors.password}
-				id="{formName}-password"
-				name="password"
-				type="password"
-				bind:value={$form.password}
-				{...$constraints.password}
-			/> -->
+		<div class="my-3 grid grid-cols-5 gap-4">
+			<Label class="col-span-2" id="{formName}-password" isRequired>
+				{$LL.pages.login.password()}
+			</Label>
+			<TextInput class="col-span-2" field="password" {form} {formName} type="password" />
 		</div>
-		<div class="flex justify-end">
-			<Button isDelayed={$delayed} type="submit">{$LL.pages.login.submit()}</Button>
+		<div class="my-3 grid grid-cols-5 gap-4">
+			<Button class="col-start-4" isDelayed={$delayed} type="submit">
+				{$LL.pages.login.submit()}
+			</Button>
 		</div>
 	</form>
 </Article>

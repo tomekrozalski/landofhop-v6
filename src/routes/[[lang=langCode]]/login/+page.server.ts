@@ -16,17 +16,15 @@ export const actions = {
 	default: async ({ cookies, getClientAddress, request, locals }) => {
 		const form = await superValidate(request, zod(getValidationSchema(locals.LL)));
 
-		console.log('form', form);
-
 		if (!form.valid) {
-			return fail(400, { form });
+			fail(400, { form });
 		}
 
 		const { email, password } = form.data;
 		const user = await users.findOne({ email });
 
 		if (!user) {
-			error(402, 'Authentication failed');
+			error(401, 'Authentication failed');
 		}
 
 		const isAuthorized = await bcrypt.compare(password, user.password);

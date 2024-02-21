@@ -2,9 +2,11 @@
 	import type { Snippet } from 'svelte';
 	import Fa from 'svelte-fa';
 	import { faSpinner } from '@fortawesome/pro-solid-svg-icons';
+	import cn from '$lib/utils/cn';
 
 	const {
 		children,
+		class: classNames,
 		isDelayed = false,
 		isDisabled = false,
 		isSecondary = false,
@@ -13,6 +15,7 @@
 		...rest
 	} = $props<{
 		children: Snippet;
+		class?: string;
 		isDelayed?: boolean;
 		isDisabled?: boolean;
 		isSecondary?: boolean;
@@ -23,31 +26,21 @@
 </script>
 
 <button
-	class="relative h-10 border-2 border-black px-6 text-white transition-all"
-	class:bg-black={!isSecondary && !isWarning}
-	class:bg-sea={isSecondary}
-	class:bg-red-light={isWarning}
-	class:border-black={!isSecondary && !isWarning}
-	class:border-sea={isSecondary}
-	class:border-red-light={isWarning}
-	class:hover:bg-white={!isDisabled && !isDelayed && !isSecondary && !isWarning}
-	class:hover:bg-sea-light={isSecondary}
-	class:hover:bg-red={isWarning}
-	class:hover:border-sea-light={isSecondary}
-	class:hover:border-red={isWarning}
-	class:hover:text-black={!isDisabled && !isDelayed && !isWarning}
-	class:cursor-not-allowed={isDelayed}
-	class:bg-gray-300={isDelayed}
-	class:border-gray-300={isDelayed}
-	class:pl-4={isDelayed}
-	class:pr-12={isDelayed}
+	class={cn(
+		'relative h-10 border-2 border-black px-6 text-white transition-all',
+		!isSecondary && !isWarning && 'border-black bg-black',
+		isSecondary && 'border-sea bg-sea hover:border-sea-light hover:bg-sea-light',
+		isWarning && 'border-red-light bg-red-light hover:border-red hover:bg-red',
+		!isDisabled && !isDelayed && !isSecondary && !isWarning && 'hover:bg-white',
+		!isDisabled && !isDelayed && !isWarning && 'hover:text-black',
+		isDelayed && 'cursor-not-allowed border-gray-300 bg-gray-300 pl-4 pr-12',
+		classNames
+	)}
 	disabled={isDisabled || isDelayed}
 	{...rest}
 	{type}
 >
-	{#if children}
-		{@render children()}
-	{/if}
+	{@render children()}
 	{#if isDelayed}
 		<Fa icon={faSpinner} class="absolute right-4 top-2.5 animate-spin" />
 	{/if}

@@ -29,5 +29,5 @@
 
 <div class="my-4 grid grid-cols-12 gap-2">
 	<Label class="col-span-4" id="test" isRequired>Test label</Label>
-	<TextInput class="col-span-6" />
+	<!-- <TextInput class="col-span-6" /> -->
 </div>
