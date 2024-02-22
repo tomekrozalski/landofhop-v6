@@ -49,6 +49,9 @@ const pl = {
 					description: 'Dane, które można wyciągnąć tylko na podstawie opakowania',
 					title: 'Etykieta'
 				}
+			},
+			label: {
+				badge: 'Identyfikator'
 			}
 		},
 		details: {

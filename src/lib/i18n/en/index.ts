@@ -49,6 +49,9 @@ const en = {
 					description: 'Data which could be taken just from the container',
 					title: 'Label'
 				}
+			},
+			label: {
+				badge: 'Badge'
 			}
 		},
 		details: {

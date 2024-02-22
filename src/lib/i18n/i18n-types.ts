@@ -145,6 +145,12 @@ type RootTranslation = {
 					title: string
 				}
 			}
+			label: {
+				/**
+				 * I​d​e​n​t​y​f​i​k​a​t​o​r
+				 */
+				badge: string
+			}
 		}
 		details: {
 			adminBar: {
@@ -1031,6 +1037,12 @@ export type TranslationFunctions = {
 					 */
 					title: () => LocalizedString
 				}
+			}
+			label: {
+				/**
+				 * Identyfikator
+				 */
+				badge: () => LocalizedString
 			}
 		}
 		details: {

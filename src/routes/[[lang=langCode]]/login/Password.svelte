@@ -1,5 +1,4 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-	// import slugify from 'slugify';
 	import type { SuperForm, FormPathLeaves } from 'sveltekit-superforms';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Label from '$lib/atoms/forms/Label.svelte';
@@ -9,9 +8,9 @@
 	const formId = form.formId;
 </script>
 
-<div class="my-4 grid grid-cols-12 gap-2">
-	<Label class="col-span-4" {field} formId={$formId} isRequired>
-		{$LL.pages.dashboard.label.badge()}
+<div class="my-3 grid grid-cols-5 gap-4">
+	<Label class="col-span-2" {field} formId={$formId} isRequired>
+		{$LL.pages.login.password()}
 	</Label>
-	<TextInput class="col-span-6" {field} {form} />
+	<TextInput class="col-span-2" {field} {form} type="password" />
 </div>

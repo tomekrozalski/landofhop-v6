@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
+	import type { Infer } from 'sveltekit-superforms';
 	import Label from '../beverage/Label/Label.svelte';
+	import type { ValidationSchemaTypes } from './validationSchema';
+
+	let { data } = $props<{ data: { form: Infer<ValidationSchemaTypes> } }>();
 </script>
 
 <svelte:head>
@@ -11,7 +15,7 @@
 	<h1 class="pb-5 pt-10 text-center text-3xl font-bold">
 		{$LL.pages.dashboard.beverage.addNewBeverage()}
 	</h1>
-	<Label />
+	<Label {data} />
 
 	<form action={$LL.link('?/logout')} method="POST">
 		<button class="btn btn-primary">Logout</button>
