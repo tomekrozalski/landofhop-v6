@@ -45,13 +45,15 @@ const en = {
 		dashboard: {
 			beverage: {
 				addNewBeverage: 'Add new beverage',
+				brandInfo: 'Informations connected with branding',
 				labelInfo: {
 					description: 'Data which could be taken just from the container',
 					title: 'Label'
 				}
 			},
 			label: {
-				badge: 'Badge'
+				badge: 'Badge',
+				name: 'Name'
 			}
 		},
 		details: {

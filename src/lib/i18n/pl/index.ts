@@ -45,13 +45,15 @@ const pl = {
 		dashboard: {
 			beverage: {
 				addNewBeverage: 'Dodaj nowe piwo',
+				brandInfo: 'Informacje dotyczące marki',
 				labelInfo: {
 					description: 'Dane, które można wyciągnąć tylko na podstawie opakowania',
 					title: 'Etykieta'
 				}
 			},
 			label: {
-				badge: 'Identyfikator'
+				badge: 'Identyfikator',
+				name: 'Nazwa'
 			}
 		},
 		details: {

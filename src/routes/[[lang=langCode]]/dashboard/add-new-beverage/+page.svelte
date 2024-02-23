@@ -2,7 +2,7 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import type { Infer } from 'sveltekit-superforms';
 	import Label from '../beverage/Label/Label.svelte';
-	import type { ValidationSchemaTypes } from './validationSchema';
+	import type { ValidationSchemaTypes } from '../beverage/Label/validationSchema';
 
 	let { data } = $props<{ data: { form: Infer<ValidationSchemaTypes> } }>();
 </script>

@@ -134,6 +134,10 @@ type RootTranslation = {
 				 * D​o​d​a​j​ ​n​o​w​e​ ​p​i​w​o
 				 */
 				addNewBeverage: string
+				/**
+				 * I​n​f​o​r​m​a​c​j​e​ ​d​o​t​y​c​z​ą​c​e​ ​m​a​r​k​i
+				 */
+				brandInfo: string
 				labelInfo: {
 					/**
 					 * D​a​n​e​,​ ​k​t​ó​r​e​ ​m​o​ż​n​a​ ​w​y​c​i​ą​g​n​ą​ć​ ​t​y​l​k​o​ ​n​a​ ​p​o​d​s​t​a​w​i​e​ ​o​p​a​k​o​w​a​n​i​a
@@ -150,6 +154,10 @@ type RootTranslation = {
 				 * I​d​e​n​t​y​f​i​k​a​t​o​r
 				 */
 				badge: string
+				/**
+				 * N​a​z​w​a
+				 */
+				name: string
 			}
 		}
 		details: {
@@ -1027,6 +1035,10 @@ export type TranslationFunctions = {
 				 * Dodaj nowe piwo
 				 */
 				addNewBeverage: () => LocalizedString
+				/**
+				 * Informacje dotyczące marki
+				 */
+				brandInfo: () => LocalizedString
 				labelInfo: {
 					/**
 					 * Dane, które można wyciągnąć tylko na podstawie opakowania
@@ -1043,6 +1055,10 @@ export type TranslationFunctions = {
 				 * Identyfikator
 				 */
 				badge: () => LocalizedString
+				/**
+				 * Nazwa
+				 */
+				name: () => LocalizedString
 			}
 		}
 		details: {

@@ -5,7 +5,7 @@ import { superValidate } from 'sveltekit-superforms/server';
 import { JWT_SECRET } from '$env/static/private';
 import { removeTokens } from '$lib/utils/api/sessions';
 import { sessions } from '$lib/db/mongo';
-import getValidationSchema from './validationSchema';
+import getValidationSchema from '../beverage/Label/validationSchema';
 
 export const actions = {
 	logout: async ({ cookies, locals }) => {
