@@ -7,6 +7,7 @@
 	import FieldsetTitle from '$lib/atoms/forms/FieldsetTitle.svelte';
 	import Badge from '$lib/molecules/forms/fields/Badge.svelte';
 	import Name from '$lib/molecules/forms/fields/Name.svelte';
+	import Grid from '$lib/molecules/forms/Grid.svelte';
 	import getValidationSchema, { type ValidationSchemaTypes } from './validationSchema';
 	import Header from './Header.svelte';
 
@@ -26,9 +27,9 @@
 	<Badge field="badge" {form} />
 	<FieldsetTitle>{$LL.pages.dashboard.beverage.brandInfo()}</FieldsetTitle>
 	<Name field="name" {form} />
-	<div class="my-4 grid grid-cols-12 gap-2">
-		<Button class="col-span-2 col-start-9" isDelayed={$delayed} type="submit">
+	<Grid>
+		<Button class="col-start-3 justify-self-end" isDelayed={$delayed} type="submit">
 			{$LL.pages.login.submit()}
 		</Button>
-	</div>
+	</Grid>
 </form>

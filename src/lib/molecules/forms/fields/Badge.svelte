@@ -4,14 +4,15 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Label from '$lib/atoms/forms/Label.svelte';
 	import TextInput from '$lib/atoms/forms/TextInput.svelte';
+	import Grid from '../Grid.svelte';
 
 	let { field, form } = $props<{ field: FormPathLeaves<T>; form: SuperForm<T> }>();
 	const formId = form.formId;
 </script>
 
-<div class="my-4 grid grid-cols-12 gap-2">
-	<Label class="col-span-5" {field} formId={$formId} isRequired>
+<Grid>
+	<Label class="col-span-2" {field} formId={$formId} isRequired>
 		{$LL.pages.dashboard.label.badge()}
 	</Label>
-	<TextInput class="col-span-5" {field} {form} />
-</div>
+	<TextInput {field} {form} />
+</Grid>
