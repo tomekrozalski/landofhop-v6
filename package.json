@@ -58,11 +58,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@cospired/i18n-iso-languages": "^4.2.0",
 		"bcryptjs": "^2.4.3",
+		"bits-ui": "^0.20.0",
 		"date-fns": "^2.29.3",
 		"jsonwebtoken": "^9.0.2",
 		"lodash-es": "^4.17.21",
 		"mongodb": "^5.2.0",
-		"sveltekit-superforms": "^2.4.0"
+		"sveltekit-superforms": "^2.10.6"
 	}
 }
