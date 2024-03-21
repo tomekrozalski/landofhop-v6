@@ -16,6 +16,6 @@
 	</Label>
 	<div class="grid grid-cols-2 gap-2">
 		<TextInput {field} {form} />
-		<LanguageSelect />
+		<LanguageSelect {field} {form} />
 	</div>
 </Grid>

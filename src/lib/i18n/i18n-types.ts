@@ -159,6 +159,16 @@ type RootTranslation = {
 				 */
 				name: string
 			}
+			selects: {
+				/**
+				 * W​y​b​i​e​r​z​ ​j​ę​z​y​k
+				 */
+				language: string
+				/**
+				 * N​i​c​ ​n​i​e​ ​z​n​a​l​e​z​i​o​n​o
+				 */
+				nothingFound: string
+			}
 		}
 		details: {
 			adminBar: {
@@ -1059,6 +1069,16 @@ export type TranslationFunctions = {
 				 * Nazwa
 				 */
 				name: () => LocalizedString
+			}
+			selects: {
+				/**
+				 * Wybierz język
+				 */
+				language: () => LocalizedString
+				/**
+				 * Nic nie znaleziono
+				 */
+				nothingFound: () => LocalizedString
 			}
 		}
 		details: {

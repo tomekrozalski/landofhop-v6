@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SuperDebug from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import { superForm } from 'sveltekit-superforms/client';
 	import type { Infer } from 'sveltekit-superforms';
@@ -21,6 +22,8 @@
 	});
 	const { enhance, delayed } = form;
 </script>
+
+<SuperDebug data={data.form} />
 
 <form class="mb-10" method="POST" use:enhance>
 	<Header />

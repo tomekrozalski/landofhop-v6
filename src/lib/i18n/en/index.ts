@@ -54,6 +54,10 @@ const en = {
 			label: {
 				badge: 'Badge',
 				name: 'Name'
+			},
+			selects: {
+				language: 'Select language',
+				nothingFound: 'Nothing found'
 			}
 		},
 		details: {

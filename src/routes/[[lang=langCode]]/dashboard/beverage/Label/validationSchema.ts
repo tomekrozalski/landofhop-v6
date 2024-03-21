@@ -6,7 +6,8 @@ import type { TranslationFunctions } from '$lib/i18n/i18n-types';
 const getValidationSchema = (LL: TranslationFunctions) =>
 	z.object({
 		badge: z.string().trim().min(3, { message: LL.forms.validation.required() }),
-		name: z.string()
+		name: z.string().min(2, { message: LL.forms.validation.required() }),
+		dupa: z.string().trim().min(3, { message: LL.forms.validation.required() })
 	});
 
 const validationSchema = getValidationSchema(get(LL));

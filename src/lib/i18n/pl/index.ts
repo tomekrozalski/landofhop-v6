@@ -54,6 +54,10 @@ const pl = {
 			label: {
 				badge: 'Identyfikator',
 				name: 'Nazwa'
+			},
+			selects: {
+				language: 'Wybierz język',
+				nothingFound: 'Nic nie znaleziono'
 			}
 		},
 		details: {
