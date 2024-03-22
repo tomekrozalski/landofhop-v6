@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte';
 
-	const { link = '', phrase } = $props<{ link?: string; phrase: string }>();
+	const { link = '', phrase }: { link?: string; phrase: string } = $props();
 </script>
 
 <nav class="bg-gray-200 text-base">

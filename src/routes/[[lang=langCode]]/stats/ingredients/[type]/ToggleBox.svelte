@@ -1,5 +1,5 @@
 <script lang="ts">
-	const { badge } = $props<{ badge: string }>();
+	const { badge }: { badge: string } = $props();
 </script>
 
 <a

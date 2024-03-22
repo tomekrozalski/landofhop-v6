@@ -2,14 +2,21 @@
 	import type { AlcoholChartBar } from '../utils/normalizers/Output.d';
 	import Info from './Info.svelte';
 
-	const { alcoholChartData, innerHeight, xScale, xValue, yScale, yValue } = $props<{
+	const {
+		alcoholChartData,
+		innerHeight,
+		xScale,
+		xValue,
+		yScale,
+		yValue
+	}: {
 		alcoholChartData: AlcoholChartBar[];
 		innerHeight: number;
 		xScale: any;
 		xValue: (value: AlcoholChartBar) => string;
 		yScale: any;
 		yValue: (value: AlcoholChartBar) => number;
-	}>();
+	} = $props();
 
 	const filteredData: AlcoholChartBar[] = alcoholChartData.filter(({ beverages }) => beverages);
 

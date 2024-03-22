@@ -1,14 +1,21 @@
 <script lang="ts">
 	import type { RatingsChartBar } from '../utils/normalizers/Output.d';
 
-	const { ratingsChartData, innerHeight, xScale, xValue, yScale, yValue } = $props<{
+	const {
+		ratingsChartData,
+		innerHeight,
+		xScale,
+		xValue,
+		yScale,
+		yValue
+	}: {
 		ratingsChartData: RatingsChartBar[];
 		innerHeight: number;
 		xScale: any;
 		xValue: (value: RatingsChartBar) => string;
 		yScale: any;
 		yValue: (value: RatingsChartBar) => number;
-	}>();
+	} = $props();
 
 	const filteredData = ratingsChartData.filter(({ beverages }) => beverages);
 

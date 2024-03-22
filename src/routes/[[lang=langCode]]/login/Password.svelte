@@ -4,7 +4,7 @@
 	import Label from '$lib/atoms/forms/Label.svelte';
 	import TextInput from '$lib/atoms/forms/TextInput.svelte';
 
-	let { field, form } = $props<{ field: FormPathLeaves<T>; form: SuperForm<T> }>();
+	let { field, form }: { field: FormPathLeaves<T>; form: SuperForm<T> } = $props();
 	const formId = form.formId;
 </script>
 

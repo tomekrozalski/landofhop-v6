@@ -9,14 +9,14 @@
 		producer = false,
 		tag,
 		...rest
-	} = $props<{
+	}: {
 		editorial?: boolean;
 		label?: boolean;
 		name: LanguageValue;
 		producer?: boolean;
 		tag: string;
 		[value: string]: unknown;
-	}>();
+	} = $props();
 
 	const isLabeled = $derived(editorial || label || producer);
 	const isLink = $derived(tag === 'a');

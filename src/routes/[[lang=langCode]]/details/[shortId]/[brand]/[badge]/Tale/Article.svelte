@@ -3,7 +3,7 @@
 	import { slide } from 'svelte/transition';
 	import LL from '$lib/i18n/i18n-svelte';
 
-	let { children } = $props<{ children: Snippet }>();
+	let { children }: { children: Snippet } = $props();
 	let isCollapsed = $state(false);
 </script>
 

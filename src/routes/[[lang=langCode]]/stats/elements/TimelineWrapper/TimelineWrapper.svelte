@@ -18,12 +18,12 @@
 			year: Number(format(new Date(), 'yyyy'))
 		},
 		sizes
-	} = $props<{
+	}: {
 		highestValue?: number;
 		startDate?: YearMonth;
 		finishDate?: YearMonth;
 		sizes: Sizes;
-	}>();
+	} = $props();
 
 	const { height, margin, width } = sizes;
 	const innerWidth = width - margin.left - margin.right;

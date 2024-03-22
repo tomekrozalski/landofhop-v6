@@ -4,7 +4,7 @@
 	import type { Locales } from '$lib/i18n/i18n-types';
 	import { invalidateAll } from '$app/navigation';
 
-	const { lang, link } = $props<{ lang: Locales; link: string }>();
+	const { lang, link }: { lang: Locales; link: string } = $props();
 
 	async function changeHtmlLangAttribute() {
 		await invalidateAll();

@@ -6,7 +6,7 @@
 	import { Status } from '$lib/db/enums/Globals.enum';
 	import SearchResults from '../../../routes/[[lang=langCode]]/search/[phrase]/[[page]]/+page.svelte';
 
-	let { children } = $props<{ children: Snippet }>();
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <main>

@@ -2,7 +2,7 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Button from '$lib/atoms/forms/Button.svelte';
 
-	const { isDelayed } = $props<{ isDelayed: boolean }>();
+	const { isDelayed }: { isDelayed: boolean } = $props();
 </script>
 
 <div class="my-3 grid grid-cols-5 gap-4">

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Item from './IngredientsListItem.svelte';
 
-	const { ingredientList } = $props<{ ingredientList: string[] }>();
+	const { ingredientList }: { ingredientList: string[] } = $props();
 </script>
 
 <ul class="flex flex-wrap">

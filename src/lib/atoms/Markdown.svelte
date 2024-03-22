@@ -5,7 +5,7 @@
 		style = '',
 		value,
 		...rest
-	} = $props<{ style?: string; value: string; [value: string]: unknown }>();
+	}: { style?: string; value: string; [value: string]: unknown } = $props();
 </script>
 
 <span {style} {...rest}>

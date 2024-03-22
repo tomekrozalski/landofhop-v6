@@ -7,13 +7,13 @@
 		link,
 		label,
 		underlined = false
-	} = $props<{
+	}: {
 		children: Snippet;
 		classNames?: string;
 		link: string;
 		label: string;
 		underlined?: boolean;
-	}>();
+	} = $props();
 </script>
 
 <li class="flex">

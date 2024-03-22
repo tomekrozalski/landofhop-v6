@@ -2,7 +2,7 @@
 	import Fa from 'svelte-fa';
 	import { faCaretLeft, faCaretRight } from '@fortawesome/pro-solid-svg-icons';
 
-	const { label, name } = $props<{ label?: string; name: string }>();
+	const { label, name }: { label?: string; name: string } = $props();
 </script>
 
 <li class="m-1 mx-3 w-full sm:m-1 sm:w-auto">

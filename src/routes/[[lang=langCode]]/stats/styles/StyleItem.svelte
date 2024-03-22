@@ -5,7 +5,7 @@
 	// import FindAll from '../elements/FindAll.svelte';
 	// import UpdateButton from '../elements/UpdateButton.svelte';
 
-	const { item } = $props<{ item: RawStylesStats }>();
+	const { item }: { item: RawStylesStats } = $props();
 </script>
 
 <li class="list-inside list-disc">

@@ -10,13 +10,13 @@
 		name,
 		pageNumber,
 		...rest
-	} = $props<{
+	}: {
 		isCurrent?: boolean;
 		label?: string;
 		name: string;
 		pageNumber: number;
 		[value: string]: unknown;
-	}>();
+	} = $props();
 
 	const isSearchMode = !!$page.state?.selected?.phrase;
 

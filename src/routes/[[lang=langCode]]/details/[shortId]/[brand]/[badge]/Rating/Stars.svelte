@@ -1,7 +1,7 @@
 <script lang="ts">
 	import StarElement from './StarElement.svelte';
 
-	const { isDetailsOpened, score } = $props<{ isDetailsOpened: boolean; score: number }>();
+	const { isDetailsOpened, score }: { isDetailsOpened: boolean; score: number } = $props();
 	const valuesArray = $derived(
 		new Array(5).fill(0).map((_, index) => {
 			if (score > index && score < index + 1) {

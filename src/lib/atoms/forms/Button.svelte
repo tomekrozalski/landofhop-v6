@@ -13,7 +13,7 @@
 		isWarning = false,
 		type = 'button',
 		...rest
-	} = $props<{
+	}: {
 		children: Snippet;
 		class?: string;
 		isDelayed?: boolean;
@@ -22,7 +22,7 @@
 		isWarning?: boolean;
 		type?: 'button' | 'submit' | 'reset';
 		[value: string]: unknown;
-	}>();
+	} = $props();
 </script>
 
 <button

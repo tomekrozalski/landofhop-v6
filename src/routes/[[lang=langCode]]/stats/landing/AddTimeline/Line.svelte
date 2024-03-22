@@ -10,14 +10,14 @@
 		xScale,
 		xValue,
 		yScale
-	} = $props<{
+	}: {
 		addTimelineData: AddTimelineBar[];
 		isBarSelected: boolean;
 		selectedLine: 'bottles' | 'cans' | 'total' | null;
 		xScale: any;
 		xValue: (value: AddTimelineBar) => string;
 		yScale: any;
-	}>();
+	} = $props();
 
 	const bottles = (d: AddTimelineBar) => d.bottle;
 	const cans = (d: AddTimelineBar) => d.can;

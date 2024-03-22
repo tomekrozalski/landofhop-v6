@@ -12,24 +12,27 @@
 	import getValidationSchema, { type ValidationSchemaTypes } from './validationSchema';
 	import Header from './Header.svelte';
 
-	let { data } = $props<{ data: { form: Infer<ValidationSchemaTypes> } }>();
+	let { data }: { data: { form: Infer<ValidationSchemaTypes> } } = $props();
 
-	const form = superForm(data.form, {
+	const { enhance, delayed, form, ...rest } = superForm(data.form, {
+		dataType: 'json',
 		onError: () => {
 			console.log('error');
 		},
+		scrollToError: 'smooth',
+		// SPA: true,
 		validators: zodClient(getValidationSchema($LL))
 	});
-	const { enhance, delayed } = form;
 </script>
 
-<SuperDebug data={data.form} />
+<SuperDebug data={$form} />
 
-<form class="mb-10" method="POST" use:enhance>
+<form class="mb-10" method="POST" action="?/submit" use:enhance>
 	<Header />
-	<Badge field="badge" {form} />
+	<Badge form={{ enhance, delayed, form, ...rest }} />
 	<FieldsetTitle>{$LL.pages.dashboard.beverage.brandInfo()}</FieldsetTitle>
-	<Name field="name" {form} />
+	<Name form={{ enhance, delayed, form, ...rest }} />
+
 	<Grid>
 		<Button class="col-start-3 justify-self-end" isDelayed={$delayed} type="submit">
 			{$LL.pages.login.submit()}

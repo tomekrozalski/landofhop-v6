@@ -1,5 +1,5 @@
 <script lang="ts">
-	const { value } = $props<{ value: number }>();
+	const { value }: { value: number } = $props();
 </script>
 
 <li class="h-6 w-6">

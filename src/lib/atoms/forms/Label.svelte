@@ -9,13 +9,13 @@
 		field,
 		formId,
 		isRequired = false
-	} = $props<{
+	}: {
 		children: Snippet;
 		class?: string;
 		field: FormPathLeaves<T>;
 		formId: string;
 		isRequired?: boolean;
-	}>();
+	} = $props();
 </script>
 
 <label

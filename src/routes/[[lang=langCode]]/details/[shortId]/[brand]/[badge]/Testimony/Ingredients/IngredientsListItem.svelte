@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	const { children, last } = $props<{ children: Snippet; last: boolean }>();
+	const { children, last }: { children: Snippet; last: boolean } = $props();
 </script>
 
 <li

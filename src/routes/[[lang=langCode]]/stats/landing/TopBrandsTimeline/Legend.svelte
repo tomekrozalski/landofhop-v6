@@ -2,11 +2,15 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import type { Brand, TopBrandsTimelineBar } from '../utils/normalizers/Output.d';
 
-	let { selectedBrand, morePopularBrandsData, topBrandsTimelineData } = $props<{
+	let {
+		selectedBrand,
+		morePopularBrandsData,
+		topBrandsTimelineData
+	}: {
 		selectedBrand: string | null;
 		morePopularBrandsData: Brand[];
 		topBrandsTimelineData: TopBrandsTimelineBar[];
-	}>();
+	} = $props();
 </script>
 
 <ol class="mb-10 ml-2 mt-6 flex flex-col gap-1 px-3 lg:mt-0 lg:flex-row lg:flex-wrap">

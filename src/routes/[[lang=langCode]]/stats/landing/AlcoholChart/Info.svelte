@@ -3,14 +3,21 @@
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import type { AlcoholChartBar } from '../utils/normalizers/Output.d';
 
-	const { average, averageWithoutNonAlcoholicBeverages, bandwidth, bar, x, y } = $props<{
+	const {
+		average,
+		averageWithoutNonAlcoholicBeverages,
+		bandwidth,
+		bar,
+		x,
+		y
+	}: {
 		average: boolean;
 		averageWithoutNonAlcoholicBeverages: boolean;
 		bandwidth: number;
 		bar: AlcoholChartBar;
 		x: number;
 		y: number;
-	}>();
+	} = $props();
 
 	function getTextWidth() {
 		const textElement = document.getElementById('alcohol-chart-bar-label');

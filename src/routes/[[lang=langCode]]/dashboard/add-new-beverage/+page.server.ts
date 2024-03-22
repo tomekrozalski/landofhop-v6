@@ -1,4 +1,4 @@
-import { error, redirect } from '@sveltejs/kit';
+import { error, fail, redirect } from '@sveltejs/kit';
 import jwt from 'jsonwebtoken';
 import { zod } from 'sveltekit-superforms/adapters';
 import { superValidate } from 'sveltekit-superforms/server';
@@ -26,6 +26,22 @@ export const actions = {
 		removeTokens(cookies);
 
 		redirect(303, locals.LL.link('/'));
+	},
+	submit: async ({ request, locals }) => {
+		const form = await superValidate(request, zod(getValidationSchema(locals.LL)));
+
+		if (!form.valid) {
+			console.log('is not valid');
+			return fail(400, { form });
+		}
+
+		console.log('is ok?', form);
+
+		// if (db.users.find({ where: { email: form.data.email } })) {
+		//   return setError(form, 'email', 'E-mail already exists.');
+		// }
+
+		return { form };
 	}
 };
 

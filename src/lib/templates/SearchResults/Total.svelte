@@ -7,7 +7,7 @@
 		currentPage,
 		inline = faLoveseat,
 		total
-	} = $props<{ currentPage: number; inline?: boolean; total: number }>();
+	}: { currentPage: number; inline?: boolean; total: number } = $props();
 	let pages = $derived(Math.ceil(total / MAX_BEVERAGES_ON_PAGE));
 </script>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { isNumber } from 'lodash-es';
 
-	const { values } = $props<{ values: { label?: number; producer?: number } }>();
+	const { values }: { values: { label?: number; producer?: number } } = $props();
 </script>
 
 {#if isNumber(values.label)}

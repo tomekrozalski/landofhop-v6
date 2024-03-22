@@ -4,7 +4,7 @@
 	import Label from '../beverage/Label/Label.svelte';
 	import type { ValidationSchemaTypes } from '../beverage/Label/validationSchema';
 
-	let { data } = $props<{ data: { form: Infer<ValidationSchemaTypes> } }>();
+	let { data }: { data: { form: Infer<ValidationSchemaTypes> } } = $props();
 </script>
 
 <svelte:head>

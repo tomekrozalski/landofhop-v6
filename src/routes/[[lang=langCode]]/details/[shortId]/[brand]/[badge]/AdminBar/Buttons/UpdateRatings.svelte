@@ -5,7 +5,7 @@
 	import Button from '$lib/atoms/forms/Button.svelte';
 	import type { AdminData } from '../../utils/types/AdminData.d';
 
-	const { adminData } = $props<{ adminData: AdminData | null }>();
+	const { adminData }: { adminData: AdminData | null } = $props();
 	let isLoading = $state(false);
 	const { badge, brand, shortId } = $derived($page.data.details);
 

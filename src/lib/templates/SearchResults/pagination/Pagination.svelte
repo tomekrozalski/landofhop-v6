@@ -5,7 +5,7 @@
 	import InactiveElement from './InactiveElement.svelte';
 	import getElements from './getElements';
 
-	const { order, total } = $props<{ order: number; total: number }>();
+	const { order, total }: { order: number; total: number } = $props();
 	let pagesCount = Math.ceil(total / MAX_BEVERAGES_ON_PAGE);
 	const pages = $derived(getElements(order, total));
 </script>

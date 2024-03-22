@@ -1,5 +1,5 @@
 <script lang="ts">
-	const { innerHeight, xScale } = $props<{ innerHeight: number; xScale: any }>();
+	const { innerHeight, xScale }: { innerHeight: number; xScale: any } = $props();
 
 	const xScaleTicks: string[] = xScale.domain();
 	const yearTicks = xScaleTicks.filter(

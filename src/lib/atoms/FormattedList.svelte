@@ -6,7 +6,7 @@
 		data,
 		formattedList,
 		mode = 'narrow'
-	} = $props<{ data: any[]; formattedList: Snippet<[T]>; mode: 'long' | 'short' | 'narrow' }>();
+	}: { data: any[]; formattedList: Snippet<[T]>; mode: 'long' | 'short' | 'narrow' } = $props();
 </script>
 
 {#if mode === 'narrow'}

@@ -1,5 +1,6 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-	import { formFieldProxy, type SuperForm, type FormPathLeaves } from 'sveltekit-superforms';
+	import { formFieldProxy } from 'sveltekit-superforms';
+	import type { SuperForm, FormPathLeaves, FormPathType } from 'sveltekit-superforms';
 	import { slide } from 'svelte/transition';
 	import { Combobox, type Selected } from 'bits-ui';
 	import { LL } from '$lib/i18n/i18n-svelte';
@@ -38,21 +39,21 @@
 		label = '',
 		type = 'text',
 		...rest
-	} = $props<{
+	}: {
 		class?: string;
-		field: FormPathLeaves<T>;
+		field: string;
 		form: SuperForm<T>;
 		label?: string;
 		type?: 'text' | 'number' | 'email' | 'password';
 		[value: string]: unknown;
-	}>();
+	} = $props();
 
-	let { value, errors, constraints } = formFieldProxy(form, field);
-	const formId = form.formId;
+	let { value, errors } = formFieldProxy(form, field as FormPathLeaves<T>);
 
 	const onSelectedChange = (e: Selected<string> | undefined) => {
 		if (e?.value) {
-			value = e.value;
+			const newValue = e.value as FormPathType<T, FormPathLeaves<T>>;
+			value.set(newValue);
 		}
 	};
 </script>
@@ -73,6 +74,11 @@
 			icon={faAnglesUpDown}
 			class="pointer-events-none absolute end-3 top-1/2 size-6 -translate-y-1/2 text-gray-300 transition-colors group-has-[[aria-expanded='true']]:text-black"
 		/>
+		{#if $errors}
+			<span class="absolute left-0 right-0 top-full z-10 bg-yellow-light px-4 py-2 text-sm">
+				{$errors}
+			</span>
+		{/if}
 	</div>
 
 	<Combobox.Content

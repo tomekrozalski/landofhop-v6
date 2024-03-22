@@ -13,7 +13,7 @@
 		xScale,
 		xValue,
 		yScale
-	} = $props<{
+	}: {
 		addTimelineData: AddTimelineBar[];
 		isBarSelected?: boolean;
 		innerHeight: number;
@@ -22,7 +22,7 @@
 		xScale: any;
 		xValue: (value: AddTimelineBar) => string;
 		yScale: any;
-	}>();
+	} = $props();
 
 	const bottles = (d: AddTimelineBar) => d.bottle;
 	const cans = (d: AddTimelineBar) => d.can;

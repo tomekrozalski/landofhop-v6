@@ -6,7 +6,7 @@
 		loaded,
 		imageIndex,
 		isVisible = false
-	} = $props<{ loaded: number; imageIndex: number; isVisible?: boolean }>();
+	}: { loaded: number; imageIndex: number; isVisible?: boolean } = $props();
 	const { badge, brand, shortId } = $derived($page.data.details);
 	const pixelRatio = window.devicePixelRatio && window.devicePixelRatio >= 1.5 ? '2x' : '1x';
 	const imagePathBase = $derived(

@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import Image from './Image.svelte';
 
-	let { areImagesLoaded, image } = $props<{ areImagesLoaded: boolean; image: number }>();
+	let { areImagesLoaded, image }: { areImagesLoaded: boolean; image: number } = $props();
 	const imagesInGallery = $derived($page.data.details.photos.gallery);
 	const imageIndexArray = $derived(new Array(imagesInGallery).fill('').map((_, i) => i + 1));
 

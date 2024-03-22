@@ -6,14 +6,14 @@
 		xScale,
 		xScaleTicks,
 		unit = ''
-	} = $props<{
+	}: {
 		innerHeight: number;
 		innerWidth: number;
 		label: string;
 		xScale: any;
 		xScaleTicks: string[];
 		unit?: string;
-	}>();
+	} = $props();
 </script>
 
 <g>

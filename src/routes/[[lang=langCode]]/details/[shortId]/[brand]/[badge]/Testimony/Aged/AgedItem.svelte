@@ -8,7 +8,9 @@
 		AgedWood
 	} from '$lib/db/enums/Beverage.enum';
 
-	const { item } = $props<{
+	const {
+		item
+	}: {
 		item: {
 			type?: AgedType;
 			wood?: AgedWood;
@@ -18,7 +20,7 @@
 			};
 			previousContent?: AgedPreviousContent[];
 		};
-	}>();
+	} = $props();
 	const { previousContent, time, type, wood } = $derived(item);
 </script>
 

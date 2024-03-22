@@ -6,7 +6,7 @@
 	import CoverImage from './CoverImage.svelte';
 	import type { Basics } from './Basics.d';
 
-	const { beverage, eager } = $props<{ beverage: Basics; eager: boolean }>();
+	const { beverage, eager }: { beverage: Basics; eager: boolean } = $props();
 	const { badge, brand, name, coverImage, shortId } = $derived(beverage);
 
 	let loaded = $state(false);

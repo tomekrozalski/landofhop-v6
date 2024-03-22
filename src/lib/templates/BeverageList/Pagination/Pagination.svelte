@@ -9,7 +9,7 @@
 		phrase: string;
 	};
 
-	const { next, previous } = $props<{ next?: BreadcrumgsTypes; previous?: BreadcrumgsTypes }>();
+	const { next, previous }: { next?: BreadcrumgsTypes; previous?: BreadcrumgsTypes } = $props();
 </script>
 
 <nav class="md:pb-23 container flex justify-between gap-5 px-3 pb-10">

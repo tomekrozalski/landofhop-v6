@@ -5,7 +5,7 @@
 	import ToggleBox from './ToggleBox.svelte';
 	import type { IngredientTree } from './types.d';
 
-	const { data } = $props<{ data: IngredientTree[] }>();
+	const { data }: { data: IngredientTree[] } = $props();
 </script>
 
 <ul class="px-5">

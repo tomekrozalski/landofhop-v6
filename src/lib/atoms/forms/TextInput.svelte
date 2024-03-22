@@ -9,20 +9,20 @@
 		label = '',
 		type = 'text',
 		...rest
-	} = $props<{
+	}: {
 		class?: string;
-		field: FormPathLeaves<T>;
+		field: string;
 		form: SuperForm<T>;
 		label?: string;
 		type?: 'text' | 'number' | 'email' | 'password';
 		[value: string]: unknown;
-	}>();
+	} = $props();
 
 	function typeAction(node: HTMLInputElement) {
 		node.type = type;
 	}
 
-	const { value, errors, constraints } = formFieldProxy(form, field);
+	const { value, errors } = formFieldProxy(form, field as FormPathLeaves<T, any>);
 	const formId = form.formId;
 </script>
 
@@ -35,7 +35,6 @@
 		use:typeAction
 		aria-invalid={$errors ? 'true' : undefined}
 		bind:value={$value}
-		{...$constraints}
 		{...rest}
 	/>
 	{#if $errors}

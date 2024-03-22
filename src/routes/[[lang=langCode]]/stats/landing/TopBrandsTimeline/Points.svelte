@@ -5,12 +5,17 @@
 	import pl from 'date-fns/locale/pl/index.js';
 	import type { Brand, TopBrandsTimelineBar } from '../utils/normalizers/Output.d';
 
-	let { selectedBrand, topBrandsTimelineData, xScale, yScale } = $props<{
+	let {
+		selectedBrand,
+		topBrandsTimelineData,
+		xScale,
+		yScale
+	}: {
 		selectedBrand: string | null;
 		topBrandsTimelineData: TopBrandsTimelineBar[];
 		xScale: any;
 		yScale: any;
-	}>();
+	} = $props();
 	let selectedDate = $state<string | null>();
 
 	function getSelectedDateVelue() {

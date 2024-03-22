@@ -2,11 +2,15 @@
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 	import type { Basics } from './Basics.d';
 
-	let { beverage, eager, loaded } = $props<{
+	let {
+		beverage,
+		eager,
+		loaded
+	}: {
 		beverage: Basics;
 		eager: boolean;
 		loaded: boolean;
-	}>();
+	} = $props();
 
 	const getPath = $derived((size: 1 | 2) => {
 		const basicPath = `${PHOTO_SERVER}/${beverage.brand.badge}/${beverage.badge}/${beverage.shortId}`;

@@ -14,7 +14,7 @@
 	import SubmitButton from './SubmitButton.svelte';
 
 	const schema = getValidationSchema($LL);
-	let { data } = $props<{ data: { form: Infer<typeof schema> } }>();
+	let { data }: { data: { form: Infer<typeof schema> } } = $props();
 	let isError = $state(false);
 
 	const form = superForm(data.form, {

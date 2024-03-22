@@ -5,7 +5,7 @@
 		children,
 		tag = 'em',
 		...rest
-	} = $props<{ children: Snippet; tag?: string; [value: string]: unknown }>();
+	}: { children: Snippet; tag?: string; [value: string]: unknown } = $props();
 </script>
 
 <svelte:element
