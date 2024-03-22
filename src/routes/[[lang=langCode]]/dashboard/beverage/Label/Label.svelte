@@ -14,7 +14,7 @@
 
 	let { data }: { data: { form: Infer<ValidationSchemaTypes> } } = $props();
 
-	const { enhance, delayed, form, ...rest } = superForm(data.form, {
+	const form = superForm(data.form, {
 		dataType: 'json',
 		onError: () => {
 			console.log('error');
@@ -23,15 +23,17 @@
 		// SPA: true,
 		validators: zodClient(getValidationSchema($LL))
 	});
+
+	const { enhance, delayed, form: debugData } = form;
 </script>
 
-<SuperDebug data={$form} />
+<SuperDebug data={$debugData} />
 
 <form class="mb-10" method="POST" action="?/submit" use:enhance>
 	<Header />
-	<Badge form={{ enhance, delayed, form, ...rest }} />
+	<Badge {form} />
 	<FieldsetTitle>{$LL.pages.dashboard.beverage.brandInfo()}</FieldsetTitle>
-	<Name form={{ enhance, delayed, form, ...rest }} />
+	<Name {form} />
 
 	<Grid>
 		<Button class="col-start-3 justify-self-end" isDelayed={$delayed} type="submit">
