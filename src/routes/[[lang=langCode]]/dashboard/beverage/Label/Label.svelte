@@ -24,10 +24,10 @@
 		validators: zodClient(getValidationSchema($LL))
 	});
 
-	const { enhance, delayed, form: debugData } = form;
+	const { enhance, delayed, form: formData } = form;
 </script>
 
-<SuperDebug data={$debugData} />
+<SuperDebug data={$formData} />
 
 <form class="mb-10" method="POST" action="?/submit" use:enhance>
 	<Header />

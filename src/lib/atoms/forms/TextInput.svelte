@@ -1,5 +1,6 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-	import { formFieldProxy, type SuperForm, type FormPathLeaves } from 'sveltekit-superforms';
+	import { formFieldProxy } from 'sveltekit-superforms';
+	import type { SuperForm, FormPathLeaves } from 'sveltekit-superforms';
 	import cn from '$lib/utils/cn';
 
 	const {
