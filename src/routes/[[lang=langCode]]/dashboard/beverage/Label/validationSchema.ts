@@ -9,16 +9,17 @@ const getValidationSchema = (LL: TranslationFunctions) =>
 		name: z
 			.array(
 				z.object({
-					value: z
-						.string({
-							required_error: 'Name is required',
-							invalid_type_error: 'Name must be a string'
-						})
-						.min(2, { message: 'min 2' }),
+					value: z.string().min(2, { message: LL.forms.validation.minCharacters(2) }),
 					language: z.string().length(2, { message: LL.forms.validation.required() })
 				})
 			)
-			.default([{ value: '', language: '' }] as unknown as { value: string; language: string }[])
+			.default([{ value: '', language: '' }] as unknown as { value: string; language: string }[]),
+		series: z.array(
+			z.object({
+				value: z.string().min(2, { message: LL.forms.validation.minCharacters(2) }),
+				language: z.string().length(2, { message: LL.forms.validation.required() })
+			})
+		)
 	});
 
 const validationSchema = getValidationSchema(get(LL));

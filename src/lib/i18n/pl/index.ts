@@ -7,6 +7,7 @@ const pl = {
 	},
 	forms: {
 		validation: {
+			minCharacters: 'Wymagane minimum {0} {{znaków|znak|znaki|znaki|znaków}}',
 			required: 'Pole jest wymagane'
 		}
 	},
@@ -43,6 +44,7 @@ const pl = {
 			title: 'Wyszukiwanie zaawansowane'
 		},
 		dashboard: {
+			addFirstRow: 'Dodaj',
 			beverage: {
 				addNewBeverage: 'Dodaj nowe piwo',
 				brandInfo: 'Informacje dotyczące marki',
@@ -53,7 +55,8 @@ const pl = {
 			},
 			label: {
 				badge: 'Identyfikator',
-				name: 'Nazwa'
+				name: 'Nazwa',
+				series: 'Seria'
 			},
 			selects: {
 				language: 'Wybierz język',

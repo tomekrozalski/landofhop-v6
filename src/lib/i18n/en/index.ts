@@ -14,6 +14,7 @@ const en = {
 	},
 	forms: {
 		validation: {
+			minCharacters: 'At least {0} {{character|characters}} required',
 			required: 'Field is required'
 		}
 	},
@@ -43,6 +44,7 @@ const en = {
 			title: 'Advanced Search'
 		},
 		dashboard: {
+			addFirstRow: 'Add',
 			beverage: {
 				addNewBeverage: 'Add new beverage',
 				brandInfo: 'Informations connected with branding',
@@ -53,7 +55,8 @@ const en = {
 			},
 			label: {
 				badge: 'Badge',
-				name: 'Name'
+				name: 'Name',
+				series: 'Series'
 			},
 			selects: {
 				language: 'Select language',

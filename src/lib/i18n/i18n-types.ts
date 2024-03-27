@@ -27,6 +27,11 @@ type RootTranslation = {
 	forms: {
 		validation: {
 			/**
+			 * W​y​m​a​g​a​n​e​ ​m​i​n​i​m​u​m​ ​{​0​}​ ​{​{​z​n​a​k​ó​w​|​z​n​a​k​|​z​n​a​k​i​|​z​n​a​k​i​|​z​n​a​k​ó​w​}​}
+			 * @param {string | number | boolean} 0
+			 */
+			minCharacters: RequiredParams<'0'>
+			/**
 			 * P​o​l​e​ ​j​e​s​t​ ​w​y​m​a​g​a​n​e
 			 */
 			required: string
@@ -129,6 +134,10 @@ type RootTranslation = {
 			title: string
 		}
 		dashboard: {
+			/**
+			 * D​o​d​a​j
+			 */
+			addFirstRow: string
 			beverage: {
 				/**
 				 * D​o​d​a​j​ ​n​o​w​e​ ​p​i​w​o
@@ -158,6 +167,10 @@ type RootTranslation = {
 				 * N​a​z​w​a
 				 */
 				name: string
+				/**
+				 * S​e​r​i​a
+				 */
+				series: string
 			}
 			selects: {
 				/**
@@ -939,6 +952,10 @@ export type TranslationFunctions = {
 	forms: {
 		validation: {
 			/**
+			 * Wymagane minimum {0} {{znaków|znak|znaki|znaki|znaków}}
+			 */
+			minCharacters: (arg0: string | number | boolean) => LocalizedString
+			/**
 			 * Pole jest wymagane
 			 */
 			required: () => LocalizedString
@@ -1040,6 +1057,10 @@ export type TranslationFunctions = {
 			title: () => LocalizedString
 		}
 		dashboard: {
+			/**
+			 * Dodaj
+			 */
+			addFirstRow: () => LocalizedString
 			beverage: {
 				/**
 				 * Dodaj nowe piwo
@@ -1069,6 +1090,10 @@ export type TranslationFunctions = {
 				 * Nazwa
 				 */
 				name: () => LocalizedString
+				/**
+				 * Seria
+				 */
+				series: () => LocalizedString
 			}
 			selects: {
 				/**
