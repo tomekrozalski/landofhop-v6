@@ -4,15 +4,19 @@
 	import TheMostRecent from './TheMostRecent.svelte';
 	import TheOldest from './TheOldest.svelte';
 
-	type BreadcrumgsTypes = {
+	type BreadcrumbsTypes = {
 		link: string;
 		phrase: string;
 	};
 
-	const { next, previous }: { next?: BreadcrumgsTypes; previous?: BreadcrumgsTypes } = $props();
+	[1, 2, 3].reduce((acc, curr) => {
+		return acc + curr;
+	});
+
+	const { next, previous }: { next?: BreadcrumbsTypes; previous?: BreadcrumbsTypes } = $props();
 </script>
 
-<nav class="md:pb-23 container flex justify-between gap-5 px-3 pb-10">
+<nav class="container flex justify-between gap-5 px-3 pb-10 md:pb-20">
 	{#if next}
 		<NextLink {...next} />
 	{:else}
