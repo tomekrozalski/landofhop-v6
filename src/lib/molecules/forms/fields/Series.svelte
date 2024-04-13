@@ -19,18 +19,17 @@
 	<Label class="col-span-2" field="series" formId={$formId}>
 		{$LL.pages.dashboard.label.series()}
 	</Label>
-	{@const      series = $value as { value: string; language: string }[]}
-	{#if series.length === 0}
+	{#if $value.length === 0}
 		<AddFirstRow {form} field="series" />
 	{:else}
-		{#each series as _, i}
+		{#each $value as { value: string; language: string }[] as _, i}
 			<div class="col-start-3 grid grid-cols-2 gap-2">
 				<TextInput field="series[{i}].value" {form} />
 				<LanguageSelect field="series[{i}].language" {form} />
 			</div>
 			<div class="flex gap-2">
 				<RemoveRow {form} field="series" index={i} />
-				{#if series.length === i + 1}
+				{#if $value.length === i + 1}
 					<AddRow {form} field="series" />
 				{/if}
 			</div>

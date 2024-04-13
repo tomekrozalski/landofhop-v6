@@ -54,9 +54,9 @@
 
 <TimelineWrapper highestValue={highestValue + 3} let:intersecting {sizes}>
 	{#if intersecting}
-		<Line {topBrandsTimelineData} {xScale} {xValue} {yScale} bind:selectedBrand />
-		<Points {topBrandsTimelineData} {xScale} {yScale} bind:selectedBrand />
+		<Line {topBrandsTimelineData} {xScale} {xValue} {yScale} {selectedBrand} />
+		<Points {topBrandsTimelineData} {xScale} {yScale} {selectedBrand} />
 	{/if}
 </TimelineWrapper>
 
-<Legend {morePopularBrandsData} {topBrandsTimelineData} bind:selectedBrand />
+<Legend {morePopularBrandsData} {topBrandsTimelineData} {selectedBrand} />

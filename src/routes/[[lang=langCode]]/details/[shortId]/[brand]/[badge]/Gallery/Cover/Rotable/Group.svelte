@@ -2,7 +2,8 @@
 	import { page } from '$app/stores';
 	import Image from './Image.svelte';
 
-	let { areImagesLoaded, image }: { areImagesLoaded: boolean; image: number } = $props();
+	let { areImagesLoaded = $bindable(), image }: { areImagesLoaded: boolean; image: number } =
+		$props();
 	const imagesInGallery = $derived($page.data.details.photos.gallery);
 	const imageIndexArray = $derived(new Array(imagesInGallery).fill('').map((_, i) => i + 1));
 
@@ -16,5 +17,5 @@
 </script>
 
 {#each imageIndexArray as imageIndex}
-	<Image {imageIndex} isVisible={[image, image - 1].includes(imageIndex)} bind:loaded />
+	<Image {imageIndex} isVisible={[image, image - 1].includes(imageIndex)} loaded />
 {/each}

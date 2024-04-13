@@ -5,7 +5,7 @@
 	import sortData from './sortData';
 
 	let {
-		selectedBrand,
+		selectedBrand = $bindable(),
 		topBrandsTimelineData,
 		xScale,
 		xValue,

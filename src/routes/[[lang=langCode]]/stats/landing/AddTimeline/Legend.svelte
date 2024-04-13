@@ -4,7 +4,7 @@
 
 	let {
 		addTimelineData,
-		selectedLine
+		selectedLine = $bindable()
 	}: {
 		addTimelineData: AddTimelineBar[];
 		selectedLine: 'bottles' | 'cans' | 'total' | null;

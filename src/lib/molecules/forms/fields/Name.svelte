@@ -18,17 +18,16 @@
 	<Label class="col-span-2" field="name" formId={$formId} isRequired>
 		{$LL.pages.dashboard.label.name()}
 	</Label>
-	{@const  names = $value as { value: string; language: string }[]}
-	{#each names as _, i}
+	{#each $value as { value: string; language: string }[] as _, i}
 		<div class="col-start-3 grid grid-cols-2 gap-2">
 			<TextInput field="name[{i}].value" {form} />
 			<LanguageSelect field="name[{i}].language" {form} />
 		</div>
 		<div class="flex gap-2">
-			{#if names.length > 1}
+			{#if $value.length > 1}
 				<RemoveRow {form} field="name" index={i} />
 			{/if}
-			{#if names.length === i + 1}
+			{#if $value.length === i + 1}
 				<AddRow {form} field="name" />
 			{/if}
 		</div>

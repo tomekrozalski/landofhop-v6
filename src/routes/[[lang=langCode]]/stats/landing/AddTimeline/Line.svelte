@@ -6,7 +6,7 @@
 	let {
 		addTimelineData,
 		isBarSelected = false,
-		selectedLine,
+		selectedLine = $bindable(),
 		xScale,
 		xValue,
 		yScale

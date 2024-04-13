@@ -63,8 +63,8 @@
 		isBarSelected
 	/>
 	{#if intersecting}
-		<Line {addTimelineData} {xScale} {xValue} {yScale} bind:selectedLine {isBarSelected} />
+		<Line {addTimelineData} {xScale} {xValue} {yScale} {selectedLine} {isBarSelected} />
 	{/if}
 </TimelineWrapper>
 
-<Legend {addTimelineData} bind:selectedLine />
+<Legend {addTimelineData} {selectedLine} />

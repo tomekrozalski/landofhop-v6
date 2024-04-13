@@ -69,5 +69,5 @@
 	{:else}
 		<RotableSpinner />
 	{/if}
-	<Group image={actualImage} bind:areImagesLoaded />
+	<Group image={actualImage} areImagesLoaded />
 </div>

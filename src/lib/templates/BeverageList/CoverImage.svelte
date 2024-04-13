@@ -5,7 +5,7 @@
 	let {
 		beverage,
 		eager,
-		loaded
+		loaded = $bindable()
 	}: {
 		beverage: Basics;
 		eager: boolean;

@@ -26,7 +26,7 @@
 		{:else if isRotableGalleryVisible}
 			<Rotable />
 		{/if}
-		<SingleImage bind:loaded />
+		<SingleImage loaded />
 	{:else}
 		<BrokenContainer />
 	{/if}

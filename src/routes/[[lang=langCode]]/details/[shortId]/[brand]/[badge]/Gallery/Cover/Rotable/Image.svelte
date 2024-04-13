@@ -3,7 +3,7 @@
 	import { PHOTO_SERVER } from '$lib/utils/constants';
 
 	let {
-		loaded,
+		loaded = $bindable(),
 		imageIndex,
 		isVisible = false
 	}: { loaded: number; imageIndex: number; isVisible?: boolean } = $props();

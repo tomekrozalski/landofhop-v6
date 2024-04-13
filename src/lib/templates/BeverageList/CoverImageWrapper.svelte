@@ -31,11 +31,11 @@
 		</span>
 	{/if}
 	{#if eager || nativeLoading}
-		<CoverImage {beverage} {eager} bind:loaded />
+		<CoverImage {beverage} {eager} loaded />
 	{:else}
 		<IntersectionObserver once={true} let:intersecting>
 			{#if intersecting}
-				<CoverImage {beverage} {eager} bind:loaded />
+				<CoverImage {beverage} {eager} loaded />
 			{/if}
 		</IntersectionObserver>
 		<noscript>

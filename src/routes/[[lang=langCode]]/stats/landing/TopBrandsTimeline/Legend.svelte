@@ -3,7 +3,7 @@
 	import type { Brand, TopBrandsTimelineBar } from '../utils/normalizers/Output.d';
 
 	let {
-		selectedBrand,
+		selectedBrand = $bindable(),
 		morePopularBrandsData,
 		topBrandsTimelineData
 	}: {

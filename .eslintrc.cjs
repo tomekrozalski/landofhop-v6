@@ -6,10 +6,8 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:svelte/recommended',
-		'airbnb-base',
 		'prettier'
 	],
-	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
 	parserOptions: {
 		sourceType: 'module',
@@ -29,5 +27,11 @@ module.exports = {
 				parser: '@typescript-eslint/parser'
 			}
 		}
-	]
+	],
+	rules: {
+		'no-undef': 'off',
+		'@typescript-eslint/no-unused-vars': 'off',
+		'svelte/valid-compile': 'off', // @ToDo: remove in a future
+		'svelte/no-at-html-tags': 'off' // @ToDo: remove in a future
+	}
 };

@@ -7,7 +7,7 @@
 	const pathWebpRegular = `${basicPath}/container/webp/1x/01.webp`;
 	const pathWebpLarge = `${basicPath}/container/webp/2x/01.webp`;
 
-	let { loaded }: { loaded: boolean } = $props();
+	let { loaded = $bindable() }: { loaded: boolean } = $props();
 
 	function loadListener(image: HTMLImageElement) {
 		image.onload = () => {
