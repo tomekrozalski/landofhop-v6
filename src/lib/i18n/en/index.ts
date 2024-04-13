@@ -55,10 +55,12 @@ const en = {
 			},
 			label: {
 				badge: 'Badge',
+				brand: 'Brand',
 				name: 'Name',
 				series: 'Series'
 			},
 			selects: {
+				institution: 'Select brand',
 				language: 'Select language',
 				nothingFound: 'Nothing found'
 			}

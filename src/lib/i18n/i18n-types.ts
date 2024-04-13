@@ -164,6 +164,10 @@ type RootTranslation = {
 				 */
 				badge: string
 				/**
+				 * M​a​r​k​a
+				 */
+				brand: string
+				/**
 				 * N​a​z​w​a
 				 */
 				name: string
@@ -173,6 +177,10 @@ type RootTranslation = {
 				series: string
 			}
 			selects: {
+				/**
+				 * W​y​b​i​e​r​z​ ​m​a​r​k​ę
+				 */
+				institution: string
 				/**
 				 * W​y​b​i​e​r​z​ ​j​ę​z​y​k
 				 */
@@ -1087,6 +1095,10 @@ export type TranslationFunctions = {
 				 */
 				badge: () => LocalizedString
 				/**
+				 * Marka
+				 */
+				brand: () => LocalizedString
+				/**
 				 * Nazwa
 				 */
 				name: () => LocalizedString
@@ -1096,6 +1108,10 @@ export type TranslationFunctions = {
 				series: () => LocalizedString
 			}
 			selects: {
+				/**
+				 * Wybierz markę
+				 */
+				institution: () => LocalizedString
 				/**
 				 * Wybierz język
 				 */

@@ -9,6 +9,7 @@
 	import Badge from '$lib/molecules/forms/fields/Badge.svelte';
 	import Name from '$lib/molecules/forms/fields/Name.svelte';
 	import Series from '$lib/molecules/forms/fields/Series.svelte';
+	import Brand from '$lib/molecules/forms/fields/Brand.svelte';
 	import Grid from '$lib/molecules/forms/Grid.svelte';
 	import getValidationSchema, { type ValidationSchemaTypes } from './validationSchema';
 	import Header from './Header.svelte';
@@ -36,6 +37,7 @@
 	<FieldsetTitle>{$LL.pages.dashboard.beverage.brandInfo()}</FieldsetTitle>
 	<Name {form} />
 	<Series {form} />
+	<Brand {form} />
 
 	<Grid>
 		<Button class="col-start-3 justify-self-end" isDelayed={$delayed} type="submit">

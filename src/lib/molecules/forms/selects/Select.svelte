@@ -3,7 +3,12 @@
 	import { Combobox, type Selected } from 'bits-ui';
 	import type { FormPathType, FormPathLeaves, FieldProxy } from 'sveltekit-superforms';
 	import Fa from 'svelte-fa';
-	import { faLanguage, faAnglesUpDown, faCheck } from '@fortawesome/pro-solid-svg-icons';
+	import {
+		faAnglesUpDown,
+		faBuildingColumns,
+		faCheck,
+		faLanguage
+	} from '@fortawesome/pro-regular-svg-icons';
 	import { LL } from '$lib/i18n/i18n-svelte';
 
 	let inputValue = $state('');
@@ -20,7 +25,7 @@
 			label: string;
 			value: string;
 		}[];
-		name?: 'language';
+		name?: 'language' | 'institution';
 		markMostPopular?: boolean;
 		value: FieldProxy<FormPathType<T, FormPathLeaves<T>>>;
 	} = $props();
@@ -37,6 +42,16 @@
 			value.set(newValue);
 		}
 	};
+
+	const getPlaceholder = () => {
+		if (name === 'language') {
+			return $LL.pages.dashboard.selects.language();
+		}
+
+		if (name === 'institution') {
+			return $LL.pages.dashboard.selects.institution();
+		}
+	};
 </script>
 
 <Combobox.Root items={filteredItems} bind:inputValue {onSelectedChange}>
@@ -46,12 +61,17 @@
 				icon={faLanguage}
 				class="absolute start-2 top-1/2 size-6 -translate-y-1/2 text-gray-300 transition-colors group-has-[input:focus]:text-black"
 			/>
+		{:else if name === 'institution'}
+			<Fa
+				icon={faBuildingColumns}
+				class="absolute start-2 top-1/2 size-6 -translate-y-1/2 text-gray-300 transition-colors group-has-[input:focus]:text-black"
+			/>
 		{/if}
 		<Combobox.Input
 			class="h-10 w-full border-b-2 border-b-gray-300 bg-gray-100 pl-10 pr-2 text-lg leading-10
       focus:border-b-black focus:outline-none"
-			placeholder={$LL.pages.dashboard.selects.language()}
-			aria-label={$LL.pages.dashboard.selects.language()}
+			placeholder={getPlaceholder()}
+			aria-label={getPlaceholder()}
 		/>
 		<Fa
 			icon={faAnglesUpDown}

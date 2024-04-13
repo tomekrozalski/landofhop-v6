@@ -55,10 +55,12 @@ const pl = {
 			},
 			label: {
 				badge: 'Identyfikator',
+				brand: 'Marka',
 				name: 'Nazwa',
 				series: 'Seria'
 			},
 			selects: {
+				institution: 'Wybierz markę',
 				language: 'Wybierz język',
 				nothingFound: 'Nic nie znaleziono'
 			}

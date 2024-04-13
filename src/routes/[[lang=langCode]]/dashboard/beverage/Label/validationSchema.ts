@@ -19,7 +19,8 @@ const getValidationSchema = (LL: TranslationFunctions) =>
 				value: z.string().min(2, { message: LL.forms.validation.minCharacters(2) }),
 				language: z.string().length(2, { message: LL.forms.validation.required() })
 			})
-		)
+		),
+		brand: z.string().trim().min(3, { message: LL.forms.validation.required() })
 	});
 
 const validationSchema = getValidationSchema(get(LL));
