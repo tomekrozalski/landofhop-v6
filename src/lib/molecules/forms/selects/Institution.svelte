@@ -1,22 +1,27 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-	import { onMount } from 'svelte';
 	import { formFieldProxy } from 'sveltekit-superforms';
 	import type { SuperForm, FormPathLeaves } from 'sveltekit-superforms';
+	import type FormattedInstitution from './Institution.d';
 
-	import { page } from '$app/stores';
 	import Select from './Select.svelte';
 
-	onMount(async () => {
-		const response = await fetch('/api/institutions');
-		const institutions: unknown[] = await response.json();
+	let institutions: FormattedInstitution[] = $state([]);
+	let brandList = $derived(
+		institutions
+			.map(({ name, shortId }) => ({
+				value: shortId,
+				label: name.value
+			}))
+			.sort((a, b) => a.label.localeCompare(b.label))
+	);
 
-		console.log('1', institutions);
+	$effect(() => {
+		if (!institutions.length) {
+			fetch('/api/institutions')
+				.then((response) => response.json())
+				.then((data) => (institutions = data));
+		}
 	});
-
-	let brandList = [
-		{ value: 'pl', label: 'Polski' },
-		{ value: 'en', label: 'English' }
-	];
 
 	const {
 		field,

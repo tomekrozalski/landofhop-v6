@@ -85,7 +85,7 @@
 	</div>
 
 	<Combobox.Content
-		class="z-10 max-h-80 overflow-hidden overflow-y-auto bg-white shadow-md outline-none"
+		class="z-10 max-h-80 overflow-x-hidden overflow-y-scroll bg-white shadow-md outline-none"
 		transition={slide}
 	>
 		{#each filteredItems as { label, value }, index (value)}
