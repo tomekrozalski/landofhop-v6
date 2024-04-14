@@ -1,6 +1,7 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
 	import { formFieldProxy } from 'sveltekit-superforms';
 	import type { SuperForm, FormPathLeaves } from 'sveltekit-superforms';
+	import slugify from 'slugify';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Label from '$lib/atoms/forms/Label.svelte';
 	import TextInput from '$lib/atoms/forms/TextInput.svelte';
@@ -12,6 +13,15 @@
 	let { form }: { form: SuperForm<T> } = $props();
 	let { value } = formFieldProxy(form, 'name' as FormPathLeaves<T>);
 	const formId = form.formId;
+
+	function oninput(e: InputEvent) {
+		const badge = slugify((e.target as HTMLInputElement).value, { lower: true, strict: true });
+
+		form.form.update((values) => ({
+			...values,
+			badge: badge
+		}));
+	}
 </script>
 
 <Grid>
@@ -20,7 +30,7 @@
 	</Label>
 	{#each $value as { value: string; language: string }[] as _, i}
 		<div class="col-start-3 grid grid-cols-2 gap-2">
-			<TextInput field="name[{i}].value" {form} />
+			<TextInput field="name[{i}].value" {form} {oninput} />
 			<LanguageSelect field="name[{i}].language" {form} />
 		</div>
 		<div class="flex gap-2">
