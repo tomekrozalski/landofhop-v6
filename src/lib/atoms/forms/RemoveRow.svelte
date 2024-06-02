@@ -15,7 +15,7 @@
 
 <button
 	type="button"
-	on:click={onClick}
+	onclick={onClick}
 	class="flex aspect-square h-full items-center justify-center justify-self-start bg-gray-100 text-gray-300 transition-colors
   hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white"
 >

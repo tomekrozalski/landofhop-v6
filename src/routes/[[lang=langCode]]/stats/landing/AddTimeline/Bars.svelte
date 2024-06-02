@@ -47,8 +47,8 @@
 		<g
 			class="cursor-pointer opacity-20 hover:opacity-100"
 			style="transform: translate({xScale(xValue(bar)) || ''}px, {yScale(total(bar))}px)"
-			on:mouseenter={() => showInfo(bar)}
-			on:mouseleave={() => hideInfo()}
+			onmouseenter={() => showInfo(bar)}
+			onmouseleave={() => hideInfo()}
 			role="presentation"
 		>
 			<rect

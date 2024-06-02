@@ -46,7 +46,7 @@
 		isBarLabelVisible = false;
 	}
 
-	function setHorintalPosition(bar: AlcoholChartBar) {
+	function setHorizontalPosition(bar: AlcoholChartBar) {
 		return xScale(xValue(bar) || '') - xScale.bandwidth() / 2;
 	}
 
@@ -61,14 +61,14 @@
 			data-index={index}
 			width={xScale.bandwidth() - 1}
 			height={innerHeight - yScale(yValue(bar))}
-			x={setHorintalPosition(bar)}
+			x={setHorizontalPosition(bar)}
 			y={setVerticalPosition(bar)}
 			class="cursor-pointer fill-green"
 			class:fill-red={bar.value === average}
 			class:fill-sea={bar.value === averageWithoutNonAlcoholicBeverages}
-			on:focus={showLabel}
-			on:mouseover={showLabel}
-			on:mouseleave={hideLabel}
+			onfocus={showLabel}
+			onmouseover={showLabel}
+			onmouseleave={hideLabel}
 			role="presentation"
 		/>
 	{/each}
@@ -79,7 +79,7 @@
 		averageWithoutNonAlcoholicBeverages={activeBar.value === averageWithoutNonAlcoholicBeverages}
 		bandwidth={xScale.bandwidth()}
 		bar={activeBar}
-		x={setHorintalPosition(activeBar)}
+		x={setHorizontalPosition(activeBar)}
 		y={setVerticalPosition(activeBar)}
 	/>
 {/if}

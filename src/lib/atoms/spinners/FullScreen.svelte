@@ -11,19 +11,19 @@
 		<li
 			class="relative float-left h-1/2 w-1/2 scale-110
       before:absolute before:inset-0 before:origin-bottom-right before:bg-black before:content-['']"
-		/>
+		></li>
 		<li
 			class="relative float-left h-1/2 w-1/2 rotate-90 scale-110
       before:absolute before:inset-0 before:origin-bottom-right before:bg-black before:content-['']"
-		/>
+		></li>
 		<li
 			class="relative float-left h-1/2 w-1/2 rotate-[270deg] scale-110
       before:absolute before:inset-0 before:origin-bottom-right before:bg-black before:content-['']"
-		/>
+		></li>
 		<li
 			class="relative float-left h-1/2 w-1/2 rotate-180 scale-110
       before:absolute before:inset-0 before:origin-bottom-right before:bg-black before:content-['']"
-		/>
+		></li>
 	</ul>
 </div>
 

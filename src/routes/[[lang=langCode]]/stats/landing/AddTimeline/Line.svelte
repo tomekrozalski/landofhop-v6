@@ -40,8 +40,8 @@
 		class:opacity-20={selectedLine && selectedLine !== 'bottles'}
 		d={linePath(bottles)(addTimelineData)}
 		in:draw
-		on:mouseenter={() => (selectedLine = 'bottles')}
-		on:mouseleave={() => (selectedLine = null)}
+		onmouseenter={() => (selectedLine = 'bottles')}
+		onmouseleave={() => (selectedLine = null)}
 		role="presentation"
 	/>
 	<path
@@ -49,8 +49,8 @@
 		class:opacity-20={selectedLine && selectedLine !== 'cans'}
 		d={linePath(cans)(addTimelineData)}
 		in:draw
-		on:mouseenter={() => (selectedLine = 'cans')}
-		on:mouseleave={() => (selectedLine = null)}
+		onmouseenter={() => (selectedLine = 'cans')}
+		onmouseleave={() => (selectedLine = null)}
 		role="presentation"
 	/>
 	<path
@@ -58,8 +58,8 @@
 		class:opacity-20={selectedLine && selectedLine !== 'total'}
 		d={linePath(total)(addTimelineData)}
 		in:draw
-		on:mouseenter={() => (selectedLine = 'total')}
-		on:mouseleave={() => (selectedLine = null)}
+		onmouseenter={() => (selectedLine = 'total')}
+		onmouseleave={() => (selectedLine = null)}
 		role="presentation"
 	/>
 </g>

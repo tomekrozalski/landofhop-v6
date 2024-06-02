@@ -30,8 +30,8 @@
 				class:bg-gray-400={index === 8 && id === selectedBrand}
 				class:bg-gray-300={index === 9 && id === selectedBrand}
 				href="/brand/{id}/{badge}"
-				on:mouseenter={() => (selectedBrand = id)}
-				on:mouseleave={() => (selectedBrand = null)}
+				onmouseenter={() => (selectedBrand = id)}
+				onmouseleave={() => (selectedBrand = null)}
 			>
 				<i
 					class="mr-2 flex items-center justify-center rounded border-r px-3 text-sm not-italic text-white"

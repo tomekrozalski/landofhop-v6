@@ -5,7 +5,7 @@
 </script>
 
 <a
-	on:click={navigation.closeNavbar}
+	onclick={navigation.closeNavbar}
 	href={$LL.link('/')}
 	class="logo group flex items-center justify-center focus-visible:outline-none"
 >

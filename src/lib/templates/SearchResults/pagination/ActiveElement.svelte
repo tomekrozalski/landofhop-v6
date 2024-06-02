@@ -34,7 +34,7 @@
 		role={isSearchMode ? 'link' : null}
 		tabindex="0"
 		href={isSearchMode ? null : href}
-		on:click={() => {
+		onclick={() => {
 			isSearchMode && searchByPhrase($page.state.selected.phrase, pageNumber);
 		}}
 		class="flex h-14 w-full cursor-pointer items-center justify-center border-2 p-3 transition-colors

@@ -47,7 +47,7 @@
 		class:text-white={isDetailsOpened}
 		class:hover:text-black={isDetailsOpened}
 		class="block w-full rounded-b p-1 text-sm transition-colors hover:bg-gray-200 focus:outline-0"
-		on:click={() => {
+		onclick={() => {
 			isDetailsOpened = !isDetailsOpened;
 		}}
 		type="button"

@@ -64,8 +64,8 @@
 				class:opacity-20={selectedBrand && selectedBrand !== id}
 				d={linePath(id)}
 				in:draw
-				on:mouseenter={() => (selectedBrand = id)}
-				on:mouseleave={() => (selectedBrand = null)}
+				onmouseenter={() => (selectedBrand = id)}
+				onmouseleave={() => (selectedBrand = null)}
 				role="presentation"
 			/>
 		</a>

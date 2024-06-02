@@ -16,7 +16,7 @@
 	{#if navigation.isSearchbarActive}
 		<button
 			aria-label={$LL.header.closeSearchbar()}
-			on:click={navigation.closeSearchBar}
+			onclick={navigation.closeSearchBar}
 			class="group absolute right-0 top-0 h-16 w-16 text-xs
 			focus-visible:border-2 focus-visible:border-black focus-visible:bg-white focus-visible:outline-none
 			md:h-20 md:w-20 md:text-sm lg:h-28 lg:w-28 lg:text-base"
@@ -31,7 +31,7 @@
 	{:else}
 		<button
 			aria-label={$LL.header.openSearchbar()}
-			on:click={navigation.openSearchBar}
+			onclick={navigation.openSearchBar}
 			class="group absolute right-0 top-0 h-16 w-16 text-xs
 			focus-visible:border-2 focus-visible:border-black focus-visible:bg-white focus-visible:outline-none
 			md:h-20 md:w-20 md:text-sm lg:h-28 lg:w-28 lg:text-base"

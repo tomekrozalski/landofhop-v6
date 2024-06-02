@@ -21,7 +21,7 @@
 		class="flex w-full items-center justify-end p-2 px-4 uppercase transition-colors
 		hover:bg-black hover:text-white focus:bg-black focus:text-white focus:outline-none
 		md:w-auto md:px-2"
-		on:click={changeHtmlLangAttribute}
+		onclick={changeHtmlLangAttribute}
 		href={link}
 	>
 		{lang}

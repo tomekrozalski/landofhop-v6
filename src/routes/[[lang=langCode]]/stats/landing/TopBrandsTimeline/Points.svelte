@@ -50,11 +50,11 @@
 				cy={yScale(amount)}
 				r="3"
 				in:fade={{ delay: 200 }}
-				on:mouseenter={() => {
+				onmouseenter={() => {
 					selectedBrand = id;
 					selectedDate = date;
 				}}
-				on:mouseleave={() => {
+				onmouseleave={() => {
 					selectedBrand = null;
 					selectedDate = null;
 				}}

@@ -37,7 +37,7 @@
 	isSecondary={!confirmed}
 	isWarning={confirmed}
 	isDelayed={isSubmitting}
-	on:click={confirmed ? confirm : removeBeverage}
+	onclick={confirmed ? confirm : removeBeverage}
 >
 	{#if confirmed}
 		{$LL.pages.details.adminBar.areYouSure()}

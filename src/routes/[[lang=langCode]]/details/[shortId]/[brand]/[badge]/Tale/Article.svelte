@@ -16,7 +16,7 @@
 {/if}
 <button
 	type="button"
-	on:click={() => (isCollapsed = !isCollapsed)}
+	onclick={() => (isCollapsed = !isCollapsed)}
 	class="text-green hover:underline"
 >
 	{#if isCollapsed}

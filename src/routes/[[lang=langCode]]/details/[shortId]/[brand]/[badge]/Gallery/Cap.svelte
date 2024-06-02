@@ -13,7 +13,7 @@
 {#if photos?.cap}
 	<button
 		class="mb-3 mt-5 w-full bg-gray-100 p-1 text-base transition-colors hover:bg-gray-200"
-		on:click={() => (isOpened = !isOpened)}
+		onclick={() => (isOpened = !isOpened)}
 	>
 		{isOpened ? $LL.pages.details.gallery.cap.hide() : $LL.pages.details.gallery.cap.show()}
 	</button>

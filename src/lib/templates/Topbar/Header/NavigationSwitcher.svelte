@@ -6,7 +6,7 @@
 </script>
 
 <button
-	on:click={navigation.toggleNavbar}
+	onclick={navigation.toggleNavbar}
 	class="more group flex items-center justify-center
 	text-xs focus-visible:border-2 focus-visible:border-black focus-visible:bg-white focus-visible:outline-none
 	md:text-sm lg:text-base"

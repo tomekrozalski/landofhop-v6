@@ -14,8 +14,8 @@
 <ul class="mr-8 mt-4 flex justify-end">
 	<li
 		class="flex cursor-pointer items-center"
-		on:mouseenter={() => (selectedLine = 'total')}
-		on:mouseleave={() => (selectedLine = null)}
+		onmouseenter={() => (selectedLine = 'total')}
+		onmouseleave={() => (selectedLine = null)}
 	>
 		<i
 			role="presentation"
@@ -31,8 +31,8 @@
 	</li>
 	<li
 		class="ml-4 flex cursor-pointer items-center lg:ml-8"
-		on:mouseenter={() => (selectedLine = 'bottles')}
-		on:mouseleave={() => (selectedLine = null)}
+		onmouseenter={() => (selectedLine = 'bottles')}
+		onmouseleave={() => (selectedLine = null)}
 	>
 		<i
 			role="presentation"
@@ -48,8 +48,8 @@
 	</li>
 	<li
 		class="ml-4 flex cursor-pointer items-center lg:ml-8"
-		on:mouseenter={() => (selectedLine = 'cans')}
-		on:mouseleave={() => (selectedLine = null)}
+		onmouseenter={() => (selectedLine = 'cans')}
+		onmouseleave={() => (selectedLine = null)}
 	>
 		<i
 			role="presentation"
