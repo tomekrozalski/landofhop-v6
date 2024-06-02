@@ -16,4 +16,5 @@
 	<div class="col-start-3">
 		<InstitutionSelect field="brand" {form} />
 	</div>
+	<div class="flex items-center justify-center bg-gray-100">Dodaj</div>
 </Grid>

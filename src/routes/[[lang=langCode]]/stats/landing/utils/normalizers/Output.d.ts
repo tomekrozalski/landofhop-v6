@@ -36,6 +36,11 @@ export type TopBrandsTimelineBar = {
 	brands: Brand[];
 };
 
+export type FinishDate = {
+	month: number;
+	year: number;
+};
+
 export type GeneralStats = {
 	addTimelineData: AddTimelineBar[];
 	alcoholChartData: AlcoholChartBar[];
@@ -43,4 +48,5 @@ export type GeneralStats = {
 	ratingsChartData: RatingsChartBar[];
 	topBrandsTimelineData: TopBrandsTimelineBar[];
 	morePopularBrandsData: Brand[];
+	finishDateData: FinishDate;
 };

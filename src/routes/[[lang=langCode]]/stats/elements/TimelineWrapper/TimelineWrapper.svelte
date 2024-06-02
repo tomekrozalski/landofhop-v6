@@ -6,16 +6,13 @@
 	import type { Sizes, YearMonth } from '../../utils/Charts';
 	import Xaxis from './XAxis.svelte';
 	import Yaxis from './YAxis.svelte';
+	import { page } from '$app/stores';
 
 	const {
 		highestValue = 10,
 		startDate = {
 			month: 6,
 			year: 2017
-		},
-		finishDate = {
-			month: Number(format(new Date(), 'MM')),
-			year: Number(format(new Date(), 'yyyy'))
 		},
 		sizes
 	}: {
@@ -31,7 +28,7 @@
 
 	// Define horizontal scale
 
-	const dateList = generateMonthList({ startDate, finishDate });
+	const dateList = generateMonthList({ startDate, finishDate: $page.data.stats.finishDateData });
 	const xValue = (d: Date) => format(d, 'yyyy-MM');
 	const xScale = scaleBand().domain(dateList.map(xValue)).range([0, innerWidth]).padding(0.1);
 

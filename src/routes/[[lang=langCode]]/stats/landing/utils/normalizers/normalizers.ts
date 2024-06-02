@@ -6,19 +6,22 @@ import type {
 	Brand,
 	GeneralStats,
 	RatingsChartBar,
-	TopBrandsTimelineBar
+	TopBrandsTimelineBar,
+	FinishDate
 } from './Output';
 import addTimeline from './addTimeline';
 import alcoholChart from './alcoholChart';
 import ratingsChart from './ratingsChart';
 import { getTopBrands, topBrandsTimeline } from './topBrandsTimeline';
+import finishDate from './finishDate';
 
 const normalizers = (rawData: RawLandingStats[], locale: Locales): GeneralStats => {
 	const addTimelineData: AddTimelineBar[] = addTimeline(rawData);
 	const alcoholChartData: AlcoholChartBar[] = alcoholChart(rawData);
-	const topBrandsTimelineData: TopBrandsTimelineBar[] = topBrandsTimeline(rawData);
 	const morePopularBrandsData: Brand[] = getTopBrands(rawData, 10);
 	const ratingsChartData: RatingsChartBar[] = ratingsChart(rawData);
+	const topBrandsTimelineData: TopBrandsTimelineBar[] = topBrandsTimeline(rawData);
+	const finishDateData: FinishDate = finishDate(rawData);
 
 	return {
 		addTimelineData,
@@ -26,7 +29,8 @@ const normalizers = (rawData: RawLandingStats[], locale: Locales): GeneralStats 
 		fermentationTimelineData: [],
 		morePopularBrandsData,
 		ratingsChartData,
-		topBrandsTimelineData
+		topBrandsTimelineData,
+		finishDateData
 	};
 };
 

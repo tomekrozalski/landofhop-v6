@@ -42,10 +42,12 @@
 			.y((d) => yScale(d.amount))
 			.curve(curveCardinal)(data);
 	};
+
+	const sortedData = sortData(topBrandsTimelineData);
 </script>
 
 <g style="transform: translate({Math.round(xScale.bandwidth() / 2)}px, 0">
-	{#each sortData(topBrandsTimelineData) as { id, badge }, index}
+	{#each sortedData as { id, badge }, index}
 		<a href="/brand/{id}/{badge}">
 			<path
 				class="cursor-pointer fill-none stroke-3 transition-opacity"

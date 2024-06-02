@@ -18,7 +18,7 @@
 	} = $props();
 	let selectedDate = $state<string | null>();
 
-	function getSelectedDateVelue() {
+	function getSelectedDateValue() {
 		const selectedDateData = topBrandsTimelineData.find(
 			({ date }) => date === selectedDate
 		) as TopBrandsTimelineBar;
@@ -67,7 +67,7 @@
 	<text x="200" y="20" text-anchor="middle">
 		{$LL.pages.stats.landing.topBrandsTimeline.valueLabel({
 			date: format(new Date(selectedDate), 'LLLL yyyy', { locale: pl }),
-			value: getSelectedDateVelue()
+			value: getSelectedDateValue()
 		})}
 	</text>
 {/if}

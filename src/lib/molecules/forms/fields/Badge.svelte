@@ -1,5 +1,4 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-	// import slugify from 'slugify';
 	import type { SuperForm } from 'sveltekit-superforms';
 	import { LL } from '$lib/i18n/i18n-svelte';
 	import Label from '$lib/atoms/forms/Label.svelte';
