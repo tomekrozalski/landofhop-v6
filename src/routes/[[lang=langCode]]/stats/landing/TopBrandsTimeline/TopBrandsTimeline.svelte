@@ -54,11 +54,11 @@
 
 {#snippet chart(intersecting)}
 	{#if intersecting}
-		<Line {topBrandsTimelineData} {xScale} {xValue} {yScale} {selectedBrand} />
-		<Points {topBrandsTimelineData} {xScale} {yScale} {selectedBrand} />
+		<Line {topBrandsTimelineData} {xScale} {xValue} {yScale} bind:selectedBrand />
+		<Points {topBrandsTimelineData} {xScale} {yScale} bind:selectedBrand />
 	{/if}
 {/snippet}
 
 <TimelineWrapper {chart} highestValue={highestValue + 3} {sizes} />
 
-<Legend {morePopularBrandsData} {topBrandsTimelineData} {selectedBrand} />
+<Legend {morePopularBrandsData} {topBrandsTimelineData} bind:selectedBrand />

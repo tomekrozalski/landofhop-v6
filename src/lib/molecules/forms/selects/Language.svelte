@@ -16,6 +16,7 @@
 				value,
 				label: languages.getName(value, $page.data.locale) ?? ''
 			}))
+			.sort((a, b) => b.label.localeCompare(a.label))
 			.sort((a) => (['pl', 'en'].includes(a.value) ? -1 : 1))
 	);
 

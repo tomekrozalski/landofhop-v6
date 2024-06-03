@@ -84,7 +84,10 @@
 		{/if}
 	</div>
 
-	<Combobox.Content class="z-10 max-h-80 bg-white shadow-md outline-none" transition={slide}>
+	<Combobox.Content
+		class="z-10 max-h-80 overflow-y-scroll bg-white shadow-md outline-none"
+		transition={slide}
+	>
 		{#each filteredItems as { label, value }, index (value)}
 			<Combobox.Item
 				class="flex h-10 w-full cursor-pointer select-none items-center py-3 pl-5 pr-1.5 text-sm outline-none transition-all duration-75 data-[highlighted]:bg-black data-[highlighted]:text-white"
