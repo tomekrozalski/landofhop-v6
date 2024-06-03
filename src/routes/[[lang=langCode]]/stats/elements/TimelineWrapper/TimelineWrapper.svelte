@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { format } from 'date-fns';
 	import { scaleBand, scaleLinear } from 'd3-scale';
 	import IntersectionObserver from '$lib/utils/helpers/IntersectionObserver.svelte';
@@ -9,6 +10,7 @@
 	import { page } from '$app/stores';
 
 	const {
+		chart,
 		highestValue = 10,
 		startDate = {
 			month: 6,
@@ -16,6 +18,7 @@
 		},
 		sizes
 	}: {
+		chart: Snippet<[boolean]>;
 		highestValue?: number;
 		startDate?: YearMonth;
 		finishDate?: YearMonth;
@@ -36,12 +39,16 @@
 	const yScale = scaleLinear().domain([0, highestValue]).range([innerHeight, 0]);
 </script>
 
-<IntersectionObserver once={true} let:intersecting threshold={1}>
+{#snippet figure(intersecting)}
 	<svg viewBox="0 0 {width} {height}">
 		<g style="transform: translate({margin.left}px, {margin.top}px)">
 			<Xaxis {innerHeight} {xScale} />
 			<Yaxis {innerWidth} {yScale} ticks={highestValue > 5 ? 6 : 3} />
-			<slot {intersecting} />
+			{#if chart}
+				{@render chart(intersecting)}
+			{/if}
 		</g>
 	</svg>
-</IntersectionObserver>
+{/snippet}
+
+<IntersectionObserver once={true} {figure} threshold={1} />

@@ -5,7 +5,7 @@
 	import DT from '../atoms/DescriptionTerm.svelte';
 	import Label from '../atoms/Label.svelte';
 	import Producer from '../atoms/Producer.svelte';
-	import List from './IngredientsList.svelte';
+	import Item from './IngredientsListItem.svelte';
 
 	const { ingredients } = $derived($page.data.details);
 
@@ -19,13 +19,19 @@
 {#if ingredients?.label}
 	<DT>{getTitle(ingredients.label.complete)}</DT>
 	<DD>
-		<List ingredientList={ingredients.label.list} let:ingredient>
-			<Label>{ingredient}</Label>
-		</List>
+		<ul class="flex flex-wrap">
+			{#each ingredients.label.list as ingredient, index}
+				{@const last = index === ingredients.label.list.length - 1}
+				<Item {last}><Label>{ingredient}</Label></Item>
+			{/each}
+		</ul>
 		{#if ingredients.producer && ingredients.label?.complete === ingredients.producer?.complete}
-			<List ingredientList={ingredients.producer?.list} let:ingredient>
-				<Producer>{ingredient}</Producer>
-			</List>
+			<ul class="flex flex-wrap">
+				{#each ingredients.producer?.list as ingredient, index}
+					{@const last = index === ingredients.producer?.list.length - 1}
+					<Item {last}><Producer>{ingredient}</Producer></Item>
+				{/each}
+			</ul>
 		{/if}
 	</DD>
 {/if}
@@ -33,8 +39,11 @@
 {#if ingredients?.producer && ingredients?.label?.complete !== ingredients?.producer?.complete}
 	<DT>{getTitle(ingredients.producer.complete)}</DT>
 	<DD>
-		<List ingredientList={ingredients.producer.list} let:ingredient>
-			<Producer>{ingredient}</Producer>
-		</List>
+		<ul class="flex flex-wrap">
+			{#each ingredients.producer.list as ingredient, index}
+				{@const last = index === ingredients.producer.list.length - 1}
+				<Item {last}><Producer>{ingredient}</Producer></Item>
+			{/each}
+		</ul>
 	</DD>
 {/if}

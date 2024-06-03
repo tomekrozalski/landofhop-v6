@@ -17,6 +17,7 @@
 			nativeLoading = true;
 		}
 	});
+	/* eslint-disable svelte/no-at-html-tags  */
 </script>
 
 <a
@@ -33,11 +34,12 @@
 	{#if eager || nativeLoading}
 		<CoverImage {beverage} {eager} loaded />
 	{:else}
-		<IntersectionObserver once={true} let:intersecting>
+		{#snippet figure(intersecting)}
 			{#if intersecting}
 				<CoverImage {beverage} {eager} loaded />
 			{/if}
-		</IntersectionObserver>
+		{/snippet}
+		<IntersectionObserver {figure} once={true} />
 		<noscript>
 			<picture>
 				<img

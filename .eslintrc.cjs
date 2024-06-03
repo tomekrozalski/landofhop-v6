@@ -31,7 +31,6 @@ module.exports = {
 	rules: {
 		'no-undef': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
-		'svelte/valid-compile': 'off', // @ToDo: remove in a future
-		'svelte/no-at-html-tags': 'off' // @ToDo: remove in a future
+		'@typescript-eslint/no-non-null-assertion': 'off'
 	}
 };

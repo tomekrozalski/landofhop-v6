@@ -52,11 +52,13 @@
 	{$LL.pages.stats.landing.topBrandsTimeline.name()}
 </h2>
 
-<TimelineWrapper highestValue={highestValue + 3} let:intersecting {sizes}>
+{#snippet chart(intersecting)}
 	{#if intersecting}
 		<Line {topBrandsTimelineData} {xScale} {xValue} {yScale} {selectedBrand} />
 		<Points {topBrandsTimelineData} {xScale} {yScale} {selectedBrand} />
 	{/if}
-</TimelineWrapper>
+{/snippet}
+
+<TimelineWrapper {chart} highestValue={highestValue + 3} {sizes} />
 
 <Legend {morePopularBrandsData} {topBrandsTimelineData} {selectedBrand} />

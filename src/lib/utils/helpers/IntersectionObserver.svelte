@@ -1,5 +1,15 @@
 <script lang="ts">
-	const { once = false, threshold = 0 } = $props();
+	import type { Snippet } from 'svelte';
+
+	const {
+		figure,
+		once = false,
+		threshold = 0
+	}: {
+		figure: Snippet<[boolean]>;
+		once?: boolean;
+		threshold?: number;
+	} = $props();
 	let intersecting = $state(false);
 	let container = $state<HTMLDivElement>();
 
@@ -22,5 +32,7 @@
 </script>
 
 <div bind:this={container} class="h-full w-full">
-	<slot {intersecting} />
+	{#if figure}
+		{@render figure(intersecting)}
+	{/if}
 </div>

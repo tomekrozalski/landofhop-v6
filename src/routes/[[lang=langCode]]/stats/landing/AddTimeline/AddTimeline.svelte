@@ -51,7 +51,7 @@
 	{$LL.pages.stats.landing.addTimeline.name()}
 </h2>
 
-<TimelineWrapper {highestValue} let:intersecting {sizes}>
+{#snippet chart(intersecting)}
 	<Bars
 		{addTimelineData}
 		{innerWidth}
@@ -65,6 +65,8 @@
 	{#if intersecting}
 		<Line {addTimelineData} {xScale} {xValue} {yScale} {selectedLine} {isBarSelected} />
 	{/if}
-</TimelineWrapper>
+{/snippet}
+
+<TimelineWrapper {chart} {highestValue} {sizes} />
 
 <Legend {addTimelineData} {selectedLine} />
