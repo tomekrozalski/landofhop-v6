@@ -44,6 +44,7 @@ const pl = {
 			title: 'Wyszukiwanie zaawansowane'
 		},
 		dashboard: {
+			add: 'Dodaj',
 			addFirstRow: 'Dodaj',
 			beverage: {
 				addNewBeverage: 'Dodaj nowe piwo',

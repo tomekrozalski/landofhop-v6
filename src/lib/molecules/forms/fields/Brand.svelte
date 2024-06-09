@@ -1,7 +1,8 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
 	import type { SuperForm } from 'sveltekit-superforms';
 	import { LL } from '$lib/i18n/i18n-svelte';
-	import Label from '$lib/atoms/forms/Label.svelte';
+	import LabelA from '$lib/atoms/forms/Label.svelte';
+	import AddNewBrew from '$lib/molecules/forms/modals/AddNewBrand.svelte';
 	import InstitutionSelect from '../selects/Institution.svelte';
 	import Grid from '../Grid.svelte';
 
@@ -10,11 +11,11 @@
 </script>
 
 <Grid>
-	<Label class="col-span-2" field="brand" formId={$formId} isRequired>
+	<LabelA class="col-span-2" field="brand" formId={$formId} isRequired>
 		{$LL.pages.dashboard.label.brand()}
-	</Label>
+	</LabelA>
 	<div class="col-start-3">
 		<InstitutionSelect field="brand" {form} />
 	</div>
-	<div class="flex items-center justify-center bg-gray-100">Dodaj</div>
+	<AddNewBrew />
 </Grid>

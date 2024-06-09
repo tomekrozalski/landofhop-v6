@@ -137,6 +137,10 @@ type RootTranslation = {
 			/**
 			 * D​o​d​a​j
 			 */
+			add: string
+			/**
+			 * D​o​d​a​j
+			 */
 			addFirstRow: string
 			beverage: {
 				/**
@@ -1065,6 +1069,10 @@ export type TranslationFunctions = {
 			title: () => LocalizedString
 		}
 		dashboard: {
+			/**
+			 * Dodaj
+			 */
+			add: () => LocalizedString
 			/**
 			 * Dodaj
 			 */

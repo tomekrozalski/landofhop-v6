@@ -44,6 +44,7 @@ const en = {
 			title: 'Advanced Search'
 		},
 		dashboard: {
+			add: 'Add',
 			addFirstRow: 'Add',
 			beverage: {
 				addNewBeverage: 'Add new beverage',
